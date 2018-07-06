@@ -14,6 +14,8 @@ way to update this template, but currently, we follow a pattern:
 
 ## Upcoming version
 
+* [fix] Fix listing page host section layout bug.
+  [#862](https://github.com/sharetribe/flex-template-web/pull/862)
 * [fix] Fix setting Topbar search input initial value.
   [#857](https://github.com/sharetribe/flex-template-web/pull/857)
 
