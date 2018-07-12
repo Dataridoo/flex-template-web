@@ -8,6 +8,7 @@ import {
   Avatar,
   InlineTextButton,
   Logo,
+  IconSearch,
   Menu,
   MenuLabel,
   MenuContent,
@@ -15,6 +16,7 @@ import {
   NamedLink,
 } from '../../components';
 import { TopbarSearchForm } from '../../forms';
+
 
 import css from './TopbarDesktop.css';
 
@@ -34,8 +36,10 @@ const TopbarDesktop = props => {
   } = props;
 
   const classes = classNames(rootClassName || css.root, className);
+ 
 
-  const search = (
+
+   const search = (
     <TopbarSearchForm
       className={css.searchLink}
       desktopInputRoot={css.topbarSearchWithLeftPadding}
@@ -43,7 +47,7 @@ const TopbarDesktop = props => {
       onSubmit={onSearchSubmit}
       initialValues={initialSearchFormValues}
     />
-  );
+  ); 
 
   const notificationDot = notificationCount > 0 ? <div className={css.notificationDot} /> : null;
 
@@ -109,6 +113,64 @@ const TopbarDesktop = props => {
     </Menu>
   ) : null;
 
+  
+  const rentalsPage = (
+    <NamedLink name="RentalsPage" className={css.rentalsPage}>
+      <span className={css.rentals}>
+        <FormattedMessage id="Rentals" />
+      </span>
+    </NamedLink>
+  )
+  const guidedToursPage = (
+    <NamedLink name="GuidedToursPage" className={css.guidedToursPage}>
+      <span className={css.guidedTours}>
+        <FormattedMessage id="Guided Tours" />
+      </span>
+    </NamedLink>
+  )
+
+  const eventsPage = (
+    <NamedLink name="EventsPage" className={css.eventsPage}>
+      <span className={css.events}>
+        <FormattedMessage id="Events" />
+      </span>
+    </NamedLink>
+  )
+  const aboutPage = (
+    <NamedLink name="AboutPage" className={css.aboutPage}>
+      <span className={css.about}>
+        <FormattedMessage id="About" />
+      </span>
+    </NamedLink>
+  )
+
+  const blogPage = (
+    <NamedLink name="BlogPage" className={css.blogPage}>
+      <span className={css.blog}>
+        <FormattedMessage id="Blog" />
+      </span>
+    </NamedLink>
+  )
+  const contactUsPage = (
+    <NamedLink name="ContactUsPage" className={css.contactUsPage}>
+      <span className={css.contactUs}>
+        <FormattedMessage id="Contact Us" />
+      </span>
+    </NamedLink>
+  )
+
+  const searchPage = (
+    <NamedLink name="SearchPageTwo" className={css.searchPage}>
+      <span className={css.search}>
+      <IconSearch />
+      </span>
+    </NamedLink>
+  )
+  
+
+  
+  
+
   const signupLink = isAuthenticated ? null : (
     <NamedLink name="SignupPage" className={css.signupLink}>
       <span className={css.signup}>
@@ -127,21 +189,23 @@ const TopbarDesktop = props => {
 
   return (
     <nav className={classes}>
-      <NamedLink className={css.logoLink} name="LandingPage">
+      <NamedLink className={css.logoLink} name="LandingPage">      
         <Logo
           format="desktop"
           className={css.logo}
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
-      {search}
-      <NamedLink className={css.createListingLink} name="NewListingPage">
-        <span className={css.createListing}>
-          <FormattedMessage id="TopbarDesktop.createListing" />
-        </span>
-      </NamedLink>
+     {rentalsPage}  
+     {guidedToursPage}
+     {eventsPage}
+     {aboutPage}
+     {blogPage}
+     {contactUsPage}
       {inboxLink}
-      {profileMenu}
+     
+      {search}
+      {profileMenu}     
       {signupLink}
       {loginLink}
     </nav>

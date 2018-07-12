@@ -220,6 +220,15 @@
   }
 }
 
+.searchIcon {
+  vertical-align: top;
+  stroke: var(--matterColorLight);
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
 .avatar {
   margin: 16px 0;
 }
@@ -228,7 +237,24 @@
   min-width: 276px;
   padding-top: 20px;
 }
+.aboutPage,
+.searchPage,
+.blogPage,
+.contactUsPage,
+.eventsPage,
+.guidedToursPage,
+.rentalsPage{
+  @apply --TopbarDesktop_linkHover;
+  flex-shrink: 0;
+  height: 100%;
+  padding: 0 12px 0 12px;
 
+  color: var(--matterColor);
+
+  &:hover {
+    color: var(--matterColorDark);
+  }
+}
 /* Authentication */
 .signupLink {
   @apply --TopbarDesktop_linkHover;
@@ -257,6 +283,13 @@
 }
 
 .signup,
+.search,
+.events,
+.blog,
+.contactUs,
+.about,
+.rentals,
+.guidedTours,
 .login {
   @apply --marketplaceH4FontStyles;
   @apply --TopbarDesktop_label;

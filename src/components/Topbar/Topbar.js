@@ -206,6 +206,7 @@ class TopbarComponent extends Component {
           >
             <Logo format="mobile" />
           </NamedLink>
+          
           <Button
             rootClassName={css.searchMenu}
             onClick={this.handleMobileSearchOpen}

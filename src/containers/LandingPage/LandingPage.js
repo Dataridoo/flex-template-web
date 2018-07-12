@@ -9,8 +9,11 @@ import config from '../../config';
 import {
   Page,
   SectionHero,
-  SectionHowItWorks,
+  LatestAdditions,
+  CustomerReview,
   SectionLocations,
+  SectionLocationCenter,
+  SectionLocationsBottom,
   LayoutSingleColumn,
   LayoutWrapperTopbar,
   LayoutWrapperMain,
@@ -55,27 +58,49 @@ export const LandingPageComponent = props => {
     >
       <LayoutSingleColumn>
         <LayoutWrapperTopbar>
-          <TopbarContainer />
+          <TopbarContainer /> 
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
             <SectionHero className={css.hero} history={history} location={location} />
-          </div>
+          </div>         
+            <h1 className={css.highlights}>Highlights</h1>
+         
           <ul className={css.sections}>
             <li className={css.section}>
               <div className={css.sectionContent}>
-                <SectionLocations />
-              </div>
-            </li>
-            <li className={css.section}>
-              <div className={css.sectionContent}>
-                <SectionHowItWorks />
+               <SectionLocations />
               </div>
             </li>
           </ul>
+          <h1 className={css.highlights}>Explore categories</h1>
+            <ul className={css.sections}>
+              <li className={css.section}>
+                <div className={css.sectionContent}>
+                <SectionLocationCenter />
+                </div>
+              </li>
+            </ul>
+          
+          <div className={css.latestReivew}>
+              <div className={css.latest}>
+               <LatestAdditions />
+              </div>
+               <div className={css.reivew}>
+                  <CustomerReview />
+               </div>
+           </div>
+           <h3 className={css.recently}>Recently@pedalworld</h3>
+            <ul className={css.sections}>
+              <li className={css.section}>
+                <div className={css.sectionContent}>
+                <SectionLocationsBottom />
+                </div>
+              </li>
+            </ul>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
-          <Footer />
+        <Footer />
         </LayoutWrapperFooter>
       </LayoutSingleColumn>
     </Page>

@@ -64,6 +64,11 @@ export { default as IconSocialMediaTwitter } from './IconSocialMediaTwitter/Icon
 export { default as IconSpinner } from './IconSpinner/IconSpinner';
 export { default as ImageCarousel } from './ImageCarousel/ImageCarousel';
 export { default as ImageFromFile } from './ImageFromFile/ImageFromFile';
+
+export { default as LatestAdditions } from './LatestAdditions/LatestAdditions';
+export { default as RentalsListView } from './RentalsListView/RentalsListView';
+export { default as CustomerReview } from './CustomerReview/CustomerReview';
+
 export { default as LayoutSideNavigation } from './LayoutSideNavigation/LayoutSideNavigation';
 export { default as LayoutSingleColumn } from './LayoutSingleColumn/LayoutSingleColumn';
 export { default as LayoutWrapperFooter } from './LayoutWrapperFooter/LayoutWrapperFooter';
@@ -113,6 +118,8 @@ export { default as SearchResultsPanel } from './SearchResultsPanel/SearchResult
 export { default as SectionHero } from './SectionHero/SectionHero';
 export { default as SectionHowItWorks } from './SectionHowItWorks/SectionHowItWorks';
 export { default as SectionLocations } from './SectionLocations/SectionLocations';
+export { default as SectionLocationsBottom } from './SectionLocationsBottom/SectionLocationsBottom';
+export { default as SectionLocationCenter } from './SectionLocationCenter/SectionLocationCenter';
 export { default as SectionThumbnailLinks } from './SectionThumbnailLinks/SectionThumbnailLinks';
 export { default as SelectMultipleFilter } from './SelectMultipleFilter/SelectMultipleFilter';
 export {

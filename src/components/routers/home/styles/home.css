@@ -1,0 +1,164 @@
+
+.promotions {
+  background-color:	#40E0D0;
+  padding: 20px 30px;
+}
+
+.promotion-title {
+  text-align: center;
+  color: #fff;
+}
+
+.card-body {
+  background-color: #fff;
+}
+
+.colmargin {
+  margin: 0;
+  padding: 20px 20px;
+}
+.colmarginMap {
+  margin: 0;
+  padding: 0;
+}
+.collections {
+  margin: 0 0;
+  padding: 20px 20px 0 20px;
+}
+
+.videodescription {
+  margin: 0 0;
+  padding: 0 20px;
+}
+.newsfeed{
+  margin: 0 0;
+  padding: 0 20px;
+}
+
+.news-title {
+    padding-left: 15px;
+}
+
+.news {
+  padding: 20px 0 0 0;
+  margin-bottom: -5px;
+}
+.news-header{
+  color: #40E0D0;
+}
+
+.newsContent{
+  line-height: 12px;
+  font-size: 14px;
+}
+
+.news-date{
+  font-style: italic;
+}
+.img-responsive {
+  width:100%;
+}
+
+.about {
+  background-color:	#40E0D0;  
+  padding: 20px 20px;
+}
+
+.about-title{
+  color: #fff;
+  
+}
+
+.readmore{
+  color: #40E0D0;
+}
+
+.colfooter {
+  background:#333333;  
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.float-left {
+  list-style-type: none;
+  margin: 0;
+  padding-top: 30px;
+  overflow: hidden;
+  background-color: #333333;
+  padding: 16px 16px 0 0;
+}
+
+.float-left > li {
+  float: left;
+
+}
+
+.left-link {
+  display: block;
+  color:#DCDCDC;
+  text-align: center;
+  padding: 16px 16px 0 0;
+  text-decoration: none;
+}
+.link {
+  color: #fff; 
+}
+
+.copy-right {
+  color:#DCDCDC;  
+  background-color: #333333;
+  padding: 0 0 30px 0; 
+}
+
+.float-right {
+  list-style-type: none;
+  margin-top: 0;
+  padding-top: 30px;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.float-right > li {
+  float: right;
+}
+
+.card-title-span {
+  float: right;
+  font-size: 14px;
+  color: darkgray;
+}
+
+.card-text-price {
+  float: right;
+  color: 	#40E0D0;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 14px;
+ 
+}
+
+.ratings {
+  font-size: 20px;
+}
+
+.ratings-text {
+  float: right;
+  color: #333333;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+i.fa {
+  color:	#333333;
+  background-color: #fff;
+  border-radius: 100px; 
+  padding:6px;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}

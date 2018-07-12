@@ -34,10 +34,7 @@ const SectionHero = props => {
     <div className={classes}>
       <h1 className={css.heroMainTitle}>
         <FormattedMessage id="SectionHero.title" />
-      </h1>
-      <h2 className={css.heroSubTitle}>
-        <FormattedMessage id="SectionHero.subTitle" />
-      </h2>
+      </h1>      
       <Button className={css.mobileSearchButton} onClick={handleMobileSearchClick}>
         <IconSearch rootClassName={css.searchIcon} />
         <FormattedMessage id="SectionHero.mobileSearchButtonText" />

@@ -1,0 +1,27 @@
+@import '../../marketplace.css';
+
+.latestAdditions {
+  @apply --marketplaceH1FontStyles;
+
+  margin-top: 0;
+ 
+
+}
+
+.title {
+  color:black;
+  text-align: center;
+}
+
+.reviewComment{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.reviewImage{
+  text-align: center;
+  
+}
+.reviewerName{
+  padding: 20px;
+}

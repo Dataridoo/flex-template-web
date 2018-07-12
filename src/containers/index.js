@@ -1,9 +1,13 @@
 export { default as AboutPage } from './AboutPage/AboutPage';
 export { default as AuthenticationPage } from './AuthenticationPage/AuthenticationPage';
+export { default as BlogPage } from './BlogPage/BlogPage';
 export { default as CheckoutPage } from './CheckoutPage/CheckoutPage';
 export { default as ContactDetailsPage } from './ContactDetailsPage/ContactDetailsPage';
+export { default as ContactUsPage } from './ContactUsPage/ContactUsPage';
 export { default as EditListingPage } from './EditListingPage/EditListingPage';
 export { default as EmailVerificationPage } from './EmailVerificationPage/EmailVerificationPage';
+export { default as EventsPage } from './EventsPage/EventsPage';
+export { default as GuidedToursPage } from './GuidedToursPage/GuidedToursPage';
 export { default as InboxPage } from './InboxPage/InboxPage';
 export { default as LandingPage } from './LandingPage/LandingPage';
 export { default as ListingPage } from './ListingPage/ListingPage';
@@ -17,6 +21,8 @@ export { default as PrivacyPolicyPage } from './PrivacyPolicyPage/PrivacyPolicyP
 export { default as ProfilePage } from './ProfilePage/ProfilePage';
 export { default as ProfileSettingsPage } from './ProfileSettingsPage/ProfileSettingsPage';
 export { default as SearchPage } from './SearchPage/SearchPage';
+export { default as SearchPageTwo } from './SearchPageTwo/SearchPageTwo';
+export { default as RentalsPage } from './RentalsPage/RentalsPage';
 export { default as StaticPage } from './StaticPage/StaticPage';
 export { default as StyleguidePage } from './StyleguidePage/StyleguidePage';
 export { default as TermsOfServicePage } from './TermsOfServicePage/TermsOfServicePage';

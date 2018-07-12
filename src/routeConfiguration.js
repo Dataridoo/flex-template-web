@@ -2,10 +2,14 @@ import React from 'react';
 import {
   AboutPage,
   AuthenticationPage,
+  BlogPage,
   CheckoutPage,
   ContactDetailsPage,
+  ContactUsPage,
   EditListingPage,
   EmailVerificationPage,
+  EventsPage,
+  GuidedToursPage,
   InboxPage,
   LandingPage,
   ListingPage,
@@ -18,7 +22,9 @@ import {
   PrivacyPolicyPage,
   ProfilePage,
   ProfileSettingsPage,
+  RentalsPage,
   SearchPage,
+  SearchPageTwo,
   StyleguidePage,
   TermsOfServicePage,
   TransactionPage,
@@ -51,15 +57,46 @@ const routeConfiguration = () => {
       component: props => <LandingPage {...props} />,
     },
     {
+      path: '/rental',
+      name: 'RentalsPage',
+      component: RentalsPage,
+    },
+    {
+      path: '/guide',
+      name: 'GuidedToursPage',
+      component: GuidedToursPage,
+    },
+    {
+      path: '/event',
+      name: 'EventsPage',
+      component: EventsPage,
+    },
+   
+    {
       path: '/about',
       name: 'AboutPage',
       component: AboutPage,
+    },
+    {
+      path: '/blog',
+      name: 'BlogPage',
+      component: BlogPage,
+    },
+    {
+      path: '/contactus',
+      name: 'ContactUsPage',
+      component: ContactUsPage,
     },
     {
       path: '/s',
       name: 'SearchPage',
       component: props => <SearchPage {...props} />,
       loadData: SearchPage.loadData,
+    },
+    {
+      path: '/search',
+      name: 'SearchPageTwo',
+      component:SearchPageTwo,
     },
     {
       path: '/s/filters',
@@ -84,12 +121,12 @@ const routeConfiguration = () => {
       name: 'ListingBasePage',
       component: RedirectToLandingPage,
     },
-    {
+    /* {
       path: '/l/:slug/:id',
       name: 'ListingPage',
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
-    },
+    }, */
     {
       path: '/l/:slug/:id/checkout',
       name: 'CheckoutPage',
