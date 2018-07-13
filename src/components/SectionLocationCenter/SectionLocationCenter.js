@@ -7,10 +7,10 @@ import { NamedLink } from '../../components';
 
 import css from './SectionLocationCenter.css';
 
-import PedalWorld_15 from './images/PedalWorld_15.jpg';
-import PedalWorld_16 from './images/PedalWorld_16.jpg';
-import PedalWorld_17 from './images/PedalWorld_17.jpg';
-import PedalWorld_18 from './images/PedalWorld_18.jpg';
+import ImageOne from './images/ImageOne.jpg';
+import ImageTwo from './images/ImageTwo.jpg';
+import ImageThree from './images/ImageThree.jpg';
+import ImageFour from './images/ImageFour.jpg';
 
 
 const locationLink = (name, image, searchQuery) => {
@@ -22,7 +22,6 @@ const locationLink = (name, image, searchQuery) => {
           <img src={image} alt={name} className={css.locationImage} />
         </div>
       </div>
-     
     </NamedLink>
   );
 };
@@ -38,24 +37,24 @@ const SectionLocationCenter = props => {
       <div className={css.locations}>
         {locationLink(
           '',
-          PedalWorld_15
+          ImageOne
           
         )}
         {locationLink(
           '',
-          PedalWorld_16
+          ImageTwo
           
         )}
        
         {locationLink(
           '',
-          PedalWorld_17
+          ImageThree
           
         )}
 
         {locationLink(
           '',
-          PedalWorld_18
+          ImageFour
           
         )}
         

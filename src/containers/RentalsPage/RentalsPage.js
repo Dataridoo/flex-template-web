@@ -14,17 +14,23 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
+  SelectMultipleFilter,
+  ExpandingTextarea
 } from '../../components';
 import { TopbarContainer } from '../../containers';
 
 
-import { EditListingPhotosForm, EditListingDescriptionForm } from '../../forms';
+//import 'semantic-ui-css';
+
+
+import { EditListingPhotosForm, EditListingFeaturesForm, SelectMultipleFilterForm } from '../../forms';
 
 
 import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
 import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
 import rentalsImage from '../RentalsPage/rentals.jpg';
 import css from './RentalsPage.css';
+
 
 export const LandingPageComponent = props => {
   const { history, intl, location, scrollingDisabled } = props;
@@ -62,37 +68,37 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <img src={rentalsImage} alt="rentals image"/>            
-            <div>
-              <div className={css.rentalsTop}>
-                <ul className={css.rentalsLeft}>
-                   <li> <button>All Listing types</button></li>
-                </ul>
-                <ul className={css.rentalRight}>
-                  <li >
-                    <button className={css.btnGrid}>Grid</button>
-                  </li>
-                  <li >
-                      <button className={css.btnList}>List</button>
-                  </li>
-                  <li >
-                      <button className={css.btnMap}>Map</button>
-                  </li>
-                </ul>               
-              </div><hr/>  
-              <div className={css.rentalsMain}>
-                <div className={css.slider}>
-                Hello
+            <img src={rentalsImage} alt="rentals image"/>   
+              <div>
+                <div className={css.rentalsTop}>
+                  <ul className={css.rentalsLeft}>
+                    <li> <button>All Listing types</button></li>
+                  </ul>
+                  <ul className={css.rentalRight}>
+                    <li >
+                      <button className={css.btnGrid}>Grid</button>
+                    </li>
+                    <li >
+                        <button className={css.btnList}>List</button>
+                    </li>
+                    <li >
+                        <button className={css.btnMap}>Map</button>
+                    </li>
+                  </ul>               
+                </div><hr/>                  
+
+                <div className={css.rentalsMain}>
+                  <div className={css.slider}>
+                     ALL CATEGORIES
+                   
+                  
+                  </div>
+                  <div className={css.card}>                   
+                    Hello
+                  </div>
                 </div>
-                <div className={css.card}>                   
-                <RentalsListView />
-                </div>
-               </div>
-            </div>
-          </div> 
-          
-         
-           
+              </div>
+          </div>            
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
         <Footer />

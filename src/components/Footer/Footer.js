@@ -5,30 +5,42 @@ import classNames from 'classnames';
 import { twitterPageURL } from '../../util/urlHelpers';
 import config from '../../config';
 import {
-  IconSocialMediaFacebook,
-  IconSocialMediaInstagram,
-  IconSocialMediaTwitter,
-  Logo,
   ExternalLink,
   NamedLink,
 } from '../../components';
 
+import facebook from './Images/facebook.jpg';
+import camera from './Images/camera.jpg';
+import youtube from './Images/youtube.jpg';
+import twitter from './Images/twitter.jpg';
+
+
 import css from './Footer.css';
 
 const renderSocialMediaLinks = intl => {
-  const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
+  const { siteFacebookPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
-  const goToFb = intl.formatMessage({ id: 'Footer.goToFacebook' });
-  const goToInsta = intl.formatMessage({ id: 'Footer.goToInstagram' });
+  const goToFb = intl.formatMessage({ id: 'Footer.goToFacebook' });  
   const goToTwitter = intl.formatMessage({ id: 'Footer.goToTwitter' });
 
   const fbLink = siteFacebookPage ? (
     <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
-      <IconSocialMediaFacebook />
+    <img src={facebook} alt=""/>
+     
     </ExternalLink>
   ) : null;
 
+  const youtubeLink = siteTwitterPage ? (
+    <ExternalLink
+      key="linkToTwitter"
+      href={siteTwitterPage}
+      className={css.icon}
+      title={goToTwitter}
+    >
+    <img src={youtube} alt=""/>
+    </ExternalLink>
+  ) : null;
   const twitterLink = siteTwitterPage ? (
     <ExternalLink
       key="linkToTwitter"
@@ -36,21 +48,22 @@ const renderSocialMediaLinks = intl => {
       className={css.icon}
       title={goToTwitter}
     >
-      <IconSocialMediaTwitter />
+    <img src={twitter} alt=""/>
+    </ExternalLink>
+  ) : null;
+  const cameraLink = siteTwitterPage ? (
+    <ExternalLink
+      key="linkToTwitter"
+      href={siteTwitterPage}
+      className={css.icon}
+      title={goToTwitter}
+    >
+    <img src={camera} alt=""/>
     </ExternalLink>
   ) : null;
 
-  const instragramLink = siteInstagramPage ? (
-    <ExternalLink
-      key="linkToInstagram"
-      href={siteInstagramPage}
-      className={css.icon}
-      title={goToInsta}
-    >
-      <IconSocialMediaInstagram />
-    </ExternalLink>
-  ) : null;
-  return [fbLink, twitterLink, instragramLink].filter(v => v != null);
+
+  return [fbLink, twitterLink, youtubeLink, cameraLink].filter(v => v != null);
 };
 
 const Footer = props => {
@@ -103,12 +116,15 @@ const Footer = props => {
               </li>                
             </ul>
           </div>
+          <div className={css.infoLinks}>
+            <ul className={css.list}>
+              <li className={css.listItem}>
+                 {socialMediaLinks}
+              </li>                
+            </ul>
+          </div>          
            
-            <div className={css.extraLinks}>
-              <div className={css.someLinks}>{socialMediaLinks}</div>
-              
-            </div>
-          </div>
+        </div>
           <div className={css.copyrightAndTermsMobile}>
             <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
               <FormattedMessage id="Footer.copyright" />
