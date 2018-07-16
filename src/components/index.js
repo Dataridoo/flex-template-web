@@ -66,7 +66,6 @@ export { default as ImageCarousel } from './ImageCarousel/ImageCarousel';
 export { default as ImageFromFile } from './ImageFromFile/ImageFromFile';
 
 export { default as LatestAdditions } from './LatestAdditions/LatestAdditions';
-export { default as RentalsListView } from './RentalsListView/RentalsListView';
 export { default as CustomerReview } from './CustomerReview/CustomerReview';
 
 export { default as LayoutSideNavigation } from './LayoutSideNavigation/LayoutSideNavigation';
@@ -76,6 +75,8 @@ export { default as LayoutWrapperMain } from './LayoutWrapperMain/LayoutWrapperM
 export { default as LayoutWrapperSideNav } from './LayoutWrapperSideNav/LayoutWrapperSideNav';
 export { default as LayoutWrapperTopbar } from './LayoutWrapperTopbar/LayoutWrapperTopbar';
 export { default as ListingCard } from './ListingCard/ListingCard';
+export { default as CardListPage } from './CardListPage/CardListPage';
+export { default as CardNavigationPage } from './CardNavigationPage/CardNavigationPage';
 export { default as ListingLink } from './ListingLink/ListingLink';
 export {
   default as LocationAutocompleteInput,
@@ -143,3 +144,4 @@ export { default as TransactionPanel } from './TransactionPanel/TransactionPanel
 export { default as UserCard } from './UserCard/UserCard';
 export { default as UserNav } from './UserNav/UserNav';
 export { default as ValidationError } from './ValidationError/ValidationError';
+export { default as RangeSlider } from './RangeSlider/RangeSlider';

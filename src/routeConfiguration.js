@@ -24,7 +24,7 @@ import {
   ProfileSettingsPage,
   RentalsPage,
   SearchPage,
-  SearchPageTwo,
+  
   StyleguidePage,
   TermsOfServicePage,
   TransactionPage,
@@ -92,11 +92,6 @@ const routeConfiguration = () => {
       name: 'SearchPage',
       component: props => <SearchPage {...props} />,
       loadData: SearchPage.loadData,
-    },
-    {
-      path: '/search',
-      name: 'SearchPageTwo',
-      component:SearchPageTwo,
     },
     {
       path: '/s/filters',

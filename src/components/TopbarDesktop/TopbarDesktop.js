@@ -8,7 +8,6 @@ import {
   Avatar,
   InlineTextButton,
   Logo,
-  IconSearch,
   Menu,
   MenuLabel,
   MenuContent,
@@ -159,14 +158,14 @@ const TopbarDesktop = props => {
     </NamedLink>
   )
 
-  const searchPage = (
+  /* const searchPage = (
     <NamedLink name="SearchPageTwo" className={css.searchPage}>
       <span className={css.search}>
       <IconSearch />
       </span>
     </NamedLink>
   )
-  
+   */
 
   
   

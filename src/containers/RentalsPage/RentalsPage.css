@@ -63,75 +63,13 @@
   }
 }
 
-
-.rentalsMain { 
-  width: 98%;
-  margin: 30px auto;
-  height: 250px;
+.givemargin{
+  margin: 30px;
 }
 
-.rentalsTop{
-  width: 98%;
-  margin: 30px auto;
-  height: 50px;
+.marginLeft{
+  margin: 30px;
 }
-.rentalsLeft  { 
-  float: left;
-  margin-left: 1%;
-}
-
-.rentalsLeft > li { 
-  display: inline-block; 
-  background-color:lightgray; 
-}
-
-
-.rentalsLeft > li > button{   
-  padding: 10px;
-}
-
-.rentalRight  { 
-  float: right;
-  margin-right: 1%;
-}
-.rentalRight > li{
-  display: inline-block;
-  background-color:lightgray;  
-}
-
-.rentalRight > li > button{  
-  padding: 10px;
-  width: 100px;
-}
-.btnGrid{
-  background-color:rgb(0, 225, 255); 
-}
-
-.slider  {
-  width: 24%;
- 
-  padding: 20px 20px;
-  float: left;
-  margin-left: 1%;
-}
-
-.card  {
-  width: 74%;
- 
-  float: right;
-  margin-right: 1%;
-  padding: 20px 20px;
-}
-
-.sections {
-  margin: 0;
-  padding-top: 1px;
-}
-
-.section {
-  overflow: auto;
-}
-
 /* Square corners for the last section if it's even */
 .section:nth-of-type(2n):last-of-type {
   @media (--viewportMedium) {

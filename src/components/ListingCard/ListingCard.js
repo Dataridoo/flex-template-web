@@ -34,6 +34,8 @@ const priceData = (price, intl) => {
 };
 
 export const ListingCardComponent = props => {
+
+  
   const { className, rootClassName, intl, listing, renderSizes, setActiveListing } = props;
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);

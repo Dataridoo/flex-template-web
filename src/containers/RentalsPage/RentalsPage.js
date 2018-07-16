@@ -8,22 +8,20 @@ import { isScrollingDisabled } from '../../ducks/UI.duck';
 import config from '../../config';
 import {
   Page,  
-  RentalsListView,  
   LayoutSingleColumn,
   LayoutWrapperTopbar,
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
-  SelectMultipleFilter,
-  ExpandingTextarea
+  RangeSlider,
+  CardListPage,
+  CardNavigationPage
 } from '../../components';
 import { TopbarContainer } from '../../containers';
 
 
 //import 'semantic-ui-css';
 
-
-import { EditListingPhotosForm, EditListingFeaturesForm, SelectMultipleFilterForm } from '../../forms';
 
 
 import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
@@ -32,8 +30,10 @@ import rentalsImage from '../RentalsPage/rentals.jpg';
 import css from './RentalsPage.css';
 
 
+
+
 export const LandingPageComponent = props => {
-  const { history, intl, location, scrollingDisabled } = props;
+  const { intl, scrollingDisabled } = props;
 
   // Schema for search engines (helps them to understand what this page is about)
   // http://schema.org
@@ -43,6 +43,7 @@ export const LandingPageComponent = props => {
   const schemaDescription = intl.formatMessage({ id: 'LandingPage.schemaDescription' });
   const schemaImage = `${config.canonicalRootURL}${facebookImage}`;
 
+  
   return (
     <Page
       className={css.root}
@@ -68,37 +69,27 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <img src={rentalsImage} alt="rentals image"/>   
-              <div>
-                <div className={css.rentalsTop}>
-                  <ul className={css.rentalsLeft}>
-                    <li> <button>All Listing types</button></li>
-                  </ul>
-                  <ul className={css.rentalRight}>
-                    <li >
-                      <button className={css.btnGrid}>Grid</button>
-                    </li>
-                    <li >
-                        <button className={css.btnList}>List</button>
-                    </li>
-                    <li >
-                        <button className={css.btnMap}>Map</button>
-                    </li>
-                  </ul>               
-                </div><hr/>                  
-
-                <div className={css.rentalsMain}>
-                  <div className={css.slider}>
-                     ALL CATEGORIES
-                   
-                  
-                  </div>
-                  <div className={css.card}>                   
-                    Hello
-                  </div>
-                </div>
-              </div>
-          </div>            
+            <img src={rentalsImage} alt="rentals"/>   
+            <CardNavigationPage />
+            <div class="ui grid">              
+              <div class="four wide column">
+                <div className={css.givemargin}>
+                <h3>ALL CATEGORIES</h3>
+                <p>CITY BIKES</p>
+                <p>ROAD BIKES</p>
+                <p>MOUNTAIN BIKES</p>
+                <p>E-BIKES</p> <br/>
+                <p>price</p> <hr/>
+                  <RangeSlider />
+                </div>  <br/>
+               <span className={css.marginLeft}> <button class="ui primary button">Update View</button></span>
+                          
+              </div>              
+              <div class="twelve wide column"><CardListPage /></div>
+            </div>
+              
+          </div><br/>
+                
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
         <Footer />

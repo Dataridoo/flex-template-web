@@ -40,7 +40,7 @@ class Menu extends Component {
 
     this.state = { isOpen: false };
 
-    const { isOpen, onToggleActive } = props;
+    /* const { isOpen, onToggleActive } = props;
     const isIndependentMenu = isOpen === null && onToggleActive === null;
     if (!(isIndependentMenu || isControlledMenu(isOpen, onToggleActive))) {
       throw new Error(
@@ -49,7 +49,7 @@ class Menu extends Component {
           or neither of them (menu uses its own state management).`
       );
     }
-
+ */
     this.onBlur = this.onBlur.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.toggleOpen = this.toggleOpen.bind(this);

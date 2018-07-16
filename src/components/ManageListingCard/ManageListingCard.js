@@ -111,7 +111,7 @@ export const ManageListingCardComponent = props => {
   } = props;
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureOwnListing(listing);
-  const id = currentListing.id.uuid;
+  //const id = currentListing.id.uuid;
   const { title = '', price, state } = currentListing.attributes;
   const isPendingApproval = state === LISTING_STATE_PENDING_APPROVAL;
   const isClosed = state === LISTING_STATE_CLOSED;
@@ -193,7 +193,7 @@ export const ManageListingCardComponent = props => {
     </div>
   ) : null;
 
-  const thisInProgress = actionsInProgressListingId && actionsInProgressListingId.uuid === id;
+  const thisInProgress = actionsInProgressListingId;
   const loadingOrErrorOverlay = thisInProgress ? (
     <div
       className={css.loadingOverlayWrapper}

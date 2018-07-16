@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 
 import { NamedLink } from '../../components';
@@ -14,8 +13,7 @@ import PedalWorld_18 from './images/PedalWorld_18.jpg';
 import PedalWorld_19 from './images/PedalWorld_19.jpg';
 
 const locationLink = (name, image, searchQuery) => {
-  const nameText = <span className={css.locationName}>{name}</span>;
-  return (
+   return (
     <NamedLink name="SearchPage" to={{ search: searchQuery }} className={css.location}>
       <div className={css.imageWrapper}>
         <div className={css.aspectWrapper}>
