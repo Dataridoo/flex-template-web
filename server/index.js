@@ -96,7 +96,7 @@ if (cspEnabled) {
 if (USING_SSL) {
   app.use(enforceSsl());
 }
-
+//cors issue
 // Set the TRUST_PROXY when running the app behind a reverse proxy.
 //
 // For example, when running the app in Heroku, set TRUST_PROXY to `true`.
