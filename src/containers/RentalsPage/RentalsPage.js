@@ -71,8 +71,8 @@ export const LandingPageComponent = props => {
           <div className={css.heroContainer}>
             <img src={rentalsImage} alt="rentals"/>   
             <CardNavigationPage />
-            <div class="ui grid">              
-              <div class="four wide column">
+            <div className="ui grid">              
+              <div className="four wide column">
                 <div className={css.givemargin}>
                 <h3>ALL CATEGORIES</h3>
                 <p>CITY BIKES</p>
@@ -82,10 +82,10 @@ export const LandingPageComponent = props => {
                 <p>price</p> <hr/>
                   <RangeSlider />
                 </div>  <br/>
-               <span className={css.marginLeft}> <button class="ui primary button">Update View</button></span>
+               <span className={css.marginLeft}> <button className="ui primary button">Update View</button></span>
                           
               </div>              
-              <div class="twelve wide column"><CardListPage /></div>
+              <div className="twelve wide column"><CardListPage /></div>
             </div>
               
           </div><br/>

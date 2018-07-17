@@ -33,7 +33,7 @@ const renderSocialMediaLinks = intl => {
 
   const youtubeLink = siteTwitterPage ? (
     <ExternalLink
-      key="linkToTwitter"
+      key="linkToYoutube"
       href={siteTwitterPage}
       className={css.icon}
       title={goToTwitter}
@@ -53,7 +53,7 @@ const renderSocialMediaLinks = intl => {
   ) : null;
   const cameraLink = siteTwitterPage ? (
     <ExternalLink
-      key="linkToTwitter"
+      key="linkToCamera"
       href={siteTwitterPage}
       className={css.icon}
       title={goToTwitter}

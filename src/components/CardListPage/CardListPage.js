@@ -251,7 +251,7 @@ class BikeCard extends Component {
             <img src={bike.thumbnail} alt="Bike" />
           </div>
           <div className="content">
-           <button className="ui button" > {bike.name}</button><span className={css.bgcolor}>{bike.description}</span>            
+           <button className="compact ui button" > {bike.name}</button><span className={css.bgcolor}>{bike.description}</span>            
               
           </div>
           <div className="extra content">
@@ -340,7 +340,7 @@ const bikes = [
     category:1,
     featured:true,
     name:"BHC",
-    description:"Blue Hotel Concepts Iso Syöte",
+    description:"Iso Syöte",
     thumbnail:img1,
     price:3,
     renter:"John Doe",
@@ -351,7 +351,7 @@ const bikes = [
     category:2,
     featured:false,
     name:"BHC",
-    description:"Blue Hotel Concepts Iso Syöte",
+    description:"Iso Syöte",
     thumbnail:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCeY4gNYCBVrMMUE7SMqH7_uk9Qb6zp3MgyJ8-d5CJORSP-ak3Xw",
     price:6,
     renter:"Mike",
@@ -362,7 +362,7 @@ const bikes = [
     category:3,
     featured:false,
     name:"BHC",
-    description:"Blue Hotel Concepts Iso Syöte",
+    description:"Iso Syöte",
     thumbnail:"https://www.striderbikes.com/l/assets/img/14/balance-bikes/balance-bikes-14x-strider-sport-with-pedal-kit.jpg",
     price:4,
     renter:"Jimmy",
@@ -373,7 +373,7 @@ const bikes = [
     category:4,
     featured:false,
     name:"BHC",
-    description:"Blue Hotel Concepts Iso Syöte",
+    description:"Iso Syöte",
     thumbnail:"https://cdn.shopify.com/s/files/1/2078/0975/products/Black_3-4_rear_right_Plate.JPG?v=1522081068",
     price:5,
     renter:"Fuchoro",
@@ -382,8 +382,8 @@ const bikes = [
 ]
 
 const TopNavigation = ({showBikeForm}) => (
-  <div class="ui icon buttons">
-    <button class="ui left attached button item" onClick={showBikeForm}> <i className="icon plus" />Add Bike</button>              
+  <div className="ui icon buttons">
+    <button className="ui left attached button item" onClick={showBikeForm}> <i className="icon plus" />Add Bike</button>              
   </div>         
       
             
@@ -457,7 +457,7 @@ class CardListPage extends React.Component {
     const numberOfColumns = this.state.showBikeForm ? 'ten' : 'sixteen';
     return (
       <div className="ui conatiner"> 
-      <TopNavigation showBikeForm={this.showBikeForm}/> 
+        <TopNavigation showBikeForm={this.showBikeForm}/> 
         <div className="ui stackable grid">
            {this.state.showBikeForm && (
             <div className="six wide column">

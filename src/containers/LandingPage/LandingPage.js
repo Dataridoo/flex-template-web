@@ -81,7 +81,10 @@ export const LandingPageComponent = props => {
                 </div>
               </li>
             </ul>
-          
+            <div className="ui stackable two column grid">             
+              <div className="column"> <CustomerReview /></div>
+              <div className="column"> <CustomerReview /></div>
+            </div>
           <div className={css.latestReivew}>
               <div className={css.latest}>
                <LatestAdditions />
