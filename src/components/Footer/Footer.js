@@ -2,7 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { twitterPageURL } from '../../util/urlHelpers';
+import { twitterPageURL} from '../../util/urlHelpers';
 import config from '../../config';
 import {
   ExternalLink,
@@ -10,7 +10,7 @@ import {
 } from '../../components';
 
 import facebook from './Images/facebook.jpg';
-import camera from './Images/camera.jpg';
+import instagram from './Images/insta.jpg';
 import youtube from './Images/youtube.jpg';
 import twitter from './Images/twitter.jpg';
 
@@ -18,10 +18,12 @@ import twitter from './Images/twitter.jpg';
 import css from './Footer.css';
 
 const renderSocialMediaLinks = intl => {
-  const { siteFacebookPage, siteTwitterHandle } = config;
+  const { siteFacebookPage, siteTwitterHandle, siteInstagramPage, siteYoutubePage } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
   const goToFb = intl.formatMessage({ id: 'Footer.goToFacebook' });  
+  const goToInsta = intl.formatMessage({ id: 'Footer.goToInstagram' });
+  const goToYoutube = intl.formatMessage({ id: 'Footer.goToYoutube' });
   const goToTwitter = intl.formatMessage({ id: 'Footer.goToTwitter' });
 
   const fbLink = siteFacebookPage ? (
@@ -31,12 +33,12 @@ const renderSocialMediaLinks = intl => {
     </ExternalLink>
   ) : null;
 
-  const youtubeLink = siteTwitterPage ? (
+  const youtubeLink = siteYoutubePage ? (
     <ExternalLink
       key="linkToYoutube"
-      href={siteTwitterPage}
+      href={siteYoutubePage}
       className={css.icon}
-      title={goToTwitter}
+      title={goToYoutube}
     >
     <img src={youtube} alt=""/>
     </ExternalLink>
@@ -51,20 +53,22 @@ const renderSocialMediaLinks = intl => {
     <img src={twitter} alt=""/>
     </ExternalLink>
   ) : null;
-  const cameraLink = siteTwitterPage ? (
+  
+  const instagramLink = siteInstagramPage ? (
     <ExternalLink
-      key="linkToCamera"
-      href={siteTwitterPage}
+      key="linkToInstagram"
+      href={siteInstagramPage}
       className={css.icon}
-      title={goToTwitter}
+      title={goToInsta}
     >
-    <img src={camera} alt=""/>
+    <img src={instagram} alt=""/>
     </ExternalLink>
   ) : null;
 
 
-  return [fbLink, twitterLink, youtubeLink, cameraLink].filter(v => v != null);
+  return [fbLink, twitterLink, youtubeLink, instagramLink].filter(v => v != null);
 };
+
 
 const Footer = props => {
   const { rootClassName, className, intl } = props;
@@ -74,20 +78,16 @@ const Footer = props => {
   return (
     <div className={classes}>
       <div className={css.topBorderWrapper}>
-        <div className={css.content}>
-          <div className={css.someLiksMobile}>{socialMediaLinks}</div>
+        <div className={css.content}>          
           <div className={css.links}>
-            <div className={css.organization} id="organization">
-              <NamedLink name="AboutPage" className={css.link}>
-                <FormattedMessage id="Footer.toAboutPage" />
-              </NamedLink>
-              <div className={css.organizationInfo}>                
-                <p className={css.organizationCopyright}>
-                  <NamedLink name="LandingPage" className={css.copyrightLink}>
-                    <FormattedMessage id="Footer.copyright" />
-                  </NamedLink>
-                </p>
-              </div>
+            <div className={css.infoLinks}>
+              <ul className={css.list}>
+                <li className={css.listItem}>
+                <NamedLink name="AboutPage" className={css.link}>
+                  <FormattedMessage id="Footer.toAboutPage" />
+                </NamedLink>
+                </li>                
+              </ul>
             </div>
             <div className={css.infoLinks}>
               <ul className={css.list}>
@@ -99,19 +99,19 @@ const Footer = props => {
               </ul>
             </div>
             <div className={css.infoLinks}>
-            <ul className={css.list}>
-              <li className={css.listItem}>
-              <NamedLink name="TermsOfServicePage" className={css.legalLink}>
-                <FormattedMessage id="Footer.termsOfUse" />
-              </NamedLink>
-              </li>                
-            </ul>
+              <ul className={css.list}>
+                <li className={css.listItem}>
+                <NamedLink name="TermsOfServicePage" className={css.legalLink}>
+                  <FormattedMessage id="Footer.termsOfUse" />
+                </NamedLink>
+                </li>                
+              </ul>
           </div>
           <div className={css.infoLinks}>
             <ul className={css.list}>
               <li className={css.listItem}>
-              <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
-              <FormattedMessage id="Footer.privacyPolicy" />
+              <NamedLink name="ContactUsPage" className={css.legalLink}>
+              <FormattedMessage id="Footer.toContactUsPage" />
             </NamedLink>
               </li>                
             </ul>
@@ -122,9 +122,17 @@ const Footer = props => {
                  {socialMediaLinks}
               </li>                
             </ul>
-          </div>          
-           
+          </div>  
         </div>
+          <div className={css.organization} id="organization">
+            <div className={css.organizationInfo}>                
+              <p className={css.organizationCopyright}>
+                <NamedLink name="LandingPage" className={css.copyrightLink}>
+                  <FormattedMessage id="Footer.copyright" />
+                </NamedLink>
+              </p>
+            </div>
+          </div>
           <div className={css.copyrightAndTermsMobile}>
             <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
               <FormattedMessage id="Footer.copyright" />

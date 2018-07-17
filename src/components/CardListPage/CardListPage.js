@@ -454,13 +454,13 @@ class CardListPage extends React.Component {
         })
 
     render() {
-    const numberOfColumns = this.state.showBikeForm ? 'ten' : 'sixteen';
+    const numberOfColumns = this.state.showBikeForm ? 'twelve' : 'sixteen';
     return (
       <div className="ui conatiner"> 
         <TopNavigation showBikeForm={this.showBikeForm}/> 
         <div className="ui stackable grid">
            {this.state.showBikeForm && (
-            <div className="six wide column">
+            <div className="four wide column">
               <BikeForm  
                   categories={categories} 
                   cancel={this.hideBikeForm} 

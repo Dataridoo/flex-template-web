@@ -28,7 +28,7 @@
   }
 
   @media (--viewportLarge) {
-    padding-top: 73px;
+   
 
     border-top-style: solid;
     border-top-width: 1px;
@@ -75,7 +75,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 100%;
-  margin-bottom: 18px;
+  
   
 
   @media (--viewportMedium) {
@@ -85,43 +85,10 @@
   }
 }
 
-/* Desktop: logo and organization stuff */
-.organization {
-  flex-shrink: 0;
-  flex-basis: 220px;
-  display: none;
-  margin-right: 24px;
-  margin-bottom: 24px;
-
-  @media (--viewportMedium) {
-    display: block;
-    order: 1;
-    margin-right: 12px;
-  }
-}
-
-.logoLink {
-  display: block;
-  margin-bottom: 14px;
-}
-
-.logo {
-  object-fit: contain;
-  object-position: left center;
-  width: 100%;
-  height: 27px;
-}
-
-.organizationInfo {
-}
-
-.organizationDescription {
-  @apply --marketplaceTinyFontStyles;
-}
 
 .organizationCopyright {
   @apply --marketplaceTinyFontStyles;
-  margin-top: 32px;
+ 
 }
 
 .copyrightLink {
@@ -138,7 +105,7 @@
 .infoLinks {
   order: 2;
   flex-basis: 165px;
-  margin-right: 10px;
+  
   margin-bottom: 10px;
 
   @media (--viewportMedium) {
@@ -154,7 +121,7 @@
 
 .listItem {
   min-height: 24px;
-  margin-bottom: 6px;
+  
 
   @media (--viewportMedium) {
     margin-bottom: 0;
@@ -169,7 +136,7 @@
   transition: var(--transitionStyleButton);
 
   margin-top: 0;
-  margin-bottom: 12px;
+  
 
   &:hover {
     color: var(--marketplaceColor);
@@ -182,67 +149,9 @@
   }
 }
 
-/* Desktop and Mobile: searches - first column */
-.searches {
-  order: 3;
-  flex-basis: 165px;
-  margin-right: 24px;
-  margin-bottom: 24px;
-
-  @media (--viewportMedium) {
-    padding-top: 2px;
-    margin-right: 12px;
-  }
-}
-
-/* Desktop and Mobile: searches - second column */
-/* This is not always visible */
-.searchesExtra {
-  order: 4;
-  flex-basis: 165px;
-  margin-right: 24px;
-  margin-bottom: 24px;
-
-  @media (--viewportMedium) {
-    padding-top: 2px;
-    margin-right: 12px;
-  }
-}
-
-/* Desktop: extra links (social media links and legal links) */
-.extraLinks {
-  flex-shrink: 0;
-  order: 5;
-  display: none;
-  flex-basis: 109px;
-  margin-right: 24px;
-  margin-bottom: 24px;
-
-  @media (--viewportMedium) {
-    display: flex;
-    flex-direction: column;
-    margin-right: 12px;
-  }
-}
-
-.legalMatters {
-  /* Get extra space from parent element (which is using flexbox) */
-  flex-grow: 1;
-
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-bottom: 12px;
-}
-
-.tosAndPrivacy {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .legalLink,
 .privacy,
+.link,
 .terms {
   /* Font */
   @apply --marketplaceTinyFontStyles;

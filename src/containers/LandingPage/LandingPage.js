@@ -25,6 +25,7 @@ import { TopbarContainer } from '../../containers';
 import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
 import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
 import css from './LandingPage.css';
+import './LandingPage.css';
 
 export const LandingPageComponent = props => {
   const { history, intl, location, scrollingDisabled } = props;
@@ -81,19 +82,38 @@ export const LandingPageComponent = props => {
                 </div>
               </li>
             </ul>
-            <div className="ui stackable two column grid">             
-              <div className="column"> <CustomerReview /></div>
-              <div className="column"> <CustomerReview /></div>
-            </div>
-          <div className={css.latestReivew}>
-              <div className={css.latest}>
-               <LatestAdditions />
-              </div>
-               <div className={css.reivew}>
-                  <CustomerReview />
-               </div>
-           </div>
-           <h3 className={css.recently}>Recently@pedalworld</h3>
+            
+                <div className={css.hero}>
+                    <div className="ui stackable two column grid"> 
+                      <div className="blue column"> 
+                        <LatestAdditions />
+                      </div>
+                      <div className="teal column"> 
+                          <CustomerReview />
+                      </div>
+                  </div>
+                </div>
+              
+                      
+           <h3 className={css.recently}>Recently@pedalworld &nbsp; &nbsp;
+              <span className="ui icon buttons">
+                <button className="ui button">
+                  <i className="youtube icon"></i>
+                </button>
+                <button className="ui button">
+                  <i className="facebook icon"></i>
+                </button>
+                <button className="ui button">
+                  <i className="twitter icon"></i>
+                </button>
+                <button className="ui button">
+                  <i className="instagram icon"></i>
+                </button>
+                <button className="ui button">
+                  Follow Us
+                </button>
+              </span>
+           </h3>
             <ul className={css.sections}>
               <li className={css.section}>
                 <div className={css.sectionContent}>

@@ -69,26 +69,38 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <img src={rentalsImage} alt="rentals"/>   
-            <CardNavigationPage />
-            <div className="ui grid">              
-              <div className="four wide column">
-                <div className={css.givemargin}>
-                <h3>ALL CATEGORIES</h3>
-                <p>CITY BIKES</p>
-                <p>ROAD BIKES</p>
-                <p>MOUNTAIN BIKES</p>
-                <p>E-BIKES</p> <br/>
-                <p>price</p> <hr/>
-                  <RangeSlider />
-                </div>  <br/>
-               <span className={css.marginLeft}> <button className="ui primary button">Update View</button></span>
-                          
-              </div>              
-              <div className="twelve wide column"><CardListPage /></div>
+            <img src={rentalsImage} alt="rentals"/>
+            <div className="ui stackable column grid">             
+              <div className="column">
+                 <CardNavigationPage /> 
+              </div>
             </div>
-              
-          </div><br/>
+            </div> 
+
+            <ul className={css.sections}>
+              <li className={css.section}>
+                <div className={css.sectionContent}>
+                <div className="ui stackable sixteen column grid">             
+                  <div className="four wide column">
+                    <div className={css.givemargin}>
+                      <h3>ALL CATEGORIES</h3>
+                      <p>CITY BIKES</p>
+                      <p>ROAD BIKES</p>
+                      <p>MOUNTAIN BIKES</p>
+                      <p>E-BIKES</p> <br/>
+                      <p>price</p> <hr/>
+                      <RangeSlider />
+                    </div>  <br/>
+                    <span className={css.marginLeft}> 
+                      <button className="ui primary button"> Update View</button>
+                    </span> 
+                  </div>              
+                <div className="twelve wide column"><CardListPage /></div>
+              </div>
+                </div>
+              </li>
+            </ul>              
+          <br/>
                 
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

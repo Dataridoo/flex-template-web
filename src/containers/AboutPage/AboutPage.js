@@ -46,7 +46,7 @@ const AboutPage = () => {
             <div className={css.contentMain}>
               
 
-              <h3 className={css.subtitle}>Are you a sauna owner?</h3>
+              <h3 className={css.subtitle}>pedalworld</h3>
 
               
               <h3 id="contact" className={css.subtitle}>

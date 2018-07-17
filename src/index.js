@@ -36,7 +36,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './marketplaceIndex.css';
 
-
 const { BigDecimal } = sdkTypes;
 
 const render = (store, shouldHydrate) => {
