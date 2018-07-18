@@ -15,20 +15,15 @@ import {
   Footer,
   RangeSlider,
   CardListPage,
-  CardNavigationPage
+  CardNavigationPage,
 } from '../../components';
 import { TopbarContainer } from '../../containers';
-
-
-//import 'semantic-ui-css';
-
 
 
 import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
 import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
 import rentalsImage from '../RentalsPage/rentals.jpg';
 import css from './RentalsPage.css';
-
 
 
 
@@ -80,27 +75,28 @@ export const LandingPageComponent = props => {
             <ul className={css.sections}>
               <li className={css.section}>
                 <div className={css.sectionContent}>
-                <div className="ui stackable sixteen column grid">             
-                  <div className="four wide column">
-                    <div className={css.givemargin}>
-                      <h3>ALL CATEGORIES</h3>
-                      <p>CITY BIKES</p>
-                      <p>ROAD BIKES</p>
-                      <p>MOUNTAIN BIKES</p>
-                      <p>E-BIKES</p> <br/>
-                      <p>price</p> <hr/>
-                      <RangeSlider />
-                    </div>  <br/>
-                    <span className={css.marginLeft}> 
-                      <button className="ui primary button"> Update View</button>
-                    </span> 
-                  </div>              
-                <div className="twelve wide column"><CardListPage /></div>
-              </div>
+                  <div className="ui stackable sixteen column grid">             
+                    <div className="four wide column">
+                      <div className={css.givemargin}>
+                        <h3>ALL CATEGORIES</h3>
+                        <p>CITY BIKES</p>
+                        <p>ROAD BIKES</p>
+                        <p>MOUNTAIN BIKES</p>
+                        <p>E-BIKES</p> <br/>
+                        <p>price</p> <hr/>
+                        <RangeSlider />
+                      </div>  <br/>
+                      <span className={css.marginLeft}> 
+                        <button className="ui primary button"> Update View</button>
+                      </span> 
+                    </div>              
+                  <div className="twelve wide column"><CardListPage /></div>
                 </div>
-              </li>
-            </ul>              
+              </div>
+           </li>
+          </ul>              
           <br/>
+       
                 
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
