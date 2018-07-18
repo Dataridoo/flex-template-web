@@ -27,6 +27,8 @@ import css from './RentalsPage.css';
 
 
 
+
+
 export const LandingPageComponent = props => {
   const { intl, scrollingDisabled } = props;
 
@@ -96,7 +98,7 @@ export const LandingPageComponent = props => {
            </li>
           </ul>              
           <br/>
-       
+                
                 
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

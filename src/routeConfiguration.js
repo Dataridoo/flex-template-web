@@ -23,8 +23,7 @@ import {
   ProfilePage,
   ProfileSettingsPage,
   RentalsPage,
-  SearchPage,
-  
+  SearchPage,  
   StyleguidePage,
   TermsOfServicePage,
   TransactionPage,
@@ -116,31 +115,31 @@ const routeConfiguration = () => {
       name: 'ListingBasePage',
       component: RedirectToLandingPage,
     },
-    /* {
+     {
       path: '/l/:slug/:id',
       name: 'ListingPage',
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
-    }, */
+    }, 
     {
       path: '/l/:slug/:id/checkout',
       name: 'CheckoutPage',
-      auth: true,
+     /*  auth: true, */
       component: props => <CheckoutPage {...props} />,
       setInitialValues: CheckoutPage.setInitialValues,
     },
     {
       path: '/l/:slug/:id/:variant',
       name: 'ListingPageVariant',
-      auth: true,
-      authPage: 'LoginPage',
+      /* auth: true,
+      authPage: 'LoginPage', */
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
     },
     {
       path: '/l/new',
       name: 'NewListingPage',
-      auth: true,
+     /*  auth: true, */
       component: () => (
         <NamedRedirect
           name="EditListingPage"
@@ -151,7 +150,7 @@ const routeConfiguration = () => {
     {
       path: '/l/:slug/:id/:type/:tab',
       name: 'EditListingPage',
-      auth: true,
+   /*    auth: true, */
       component: props => <EditListingPage {...props} />,
       loadData: EditListingPage.loadData,
     },
@@ -178,8 +177,8 @@ const routeConfiguration = () => {
     {
       path: '/profile-settings',
       name: 'ProfileSettingsPage',
-      auth: true,
-      authPage: 'LoginPage',
+      /* auth: true,
+      authPage: 'LoginPage', */
       component: props => <ProfileSettingsPage {...props} />,
     },
     {
@@ -200,30 +199,30 @@ const routeConfiguration = () => {
     {
       path: '/inbox',
       name: 'InboxBasePage',
-      auth: true,
-      authPage: 'LoginPage',
+      /* auth: true,
+      authPage: 'LoginPage', */
       component: () => <NamedRedirect name="InboxPage" params={{ tab: 'sales' }} />,
     },
     {
       path: '/inbox/:tab',
       name: 'InboxPage',
-      auth: true,
-      authPage: 'LoginPage',
+    /*   auth: true,
+      authPage: 'LoginPage', */
       component: props => <InboxPage {...props} />,
       loadData: InboxPage.loadData,
     },
     {
       path: '/order/:id',
       name: 'OrderPage',
-      auth: true,
-      authPage: 'LoginPage',
+      /* auth: true,
+      authPage: 'LoginPage', */
       component: props => <NamedRedirect name="OrderDetailsPage" params={{ ...props.params }} />,
     },
     {
       path: '/order/:id/details',
       name: 'OrderDetailsPage',
-      auth: true,
-      authPage: 'LoginPage',
+     /*  auth: true,
+      authPage: 'LoginPage', */
       component: props => <TransactionPage {...props} transactionRole="customer" />,
       loadData: TransactionPage.loadData,
       setInitialValues: TransactionPage.setInitialValues,
@@ -231,53 +230,53 @@ const routeConfiguration = () => {
     {
       path: '/sale/:id',
       name: 'SalePage',
-      auth: true,
-      authPage: 'LoginPage',
+     /*  auth: true,
+      authPage: 'LoginPage', */
       component: props => <NamedRedirect name="SaleDetailsPage" params={{ ...props.params }} />,
     },
     {
       path: '/sale/:id/details',
       name: 'SaleDetailsPage',
-      auth: true,
-      authPage: 'LoginPage',
+      /* auth: true,
+      authPage: 'LoginPage', */
       component: props => <TransactionPage {...props} transactionRole="provider" />,
       loadData: TransactionPage.loadData,
     },
     {
       path: '/listings',
       name: 'ManageListingsPage',
-      auth: true,
-      authPage: 'LoginPage',
+      /* auth: true,
+      authPage: 'LoginPage', */
       component: props => <ManageListingsPage {...props} />,
       loadData: ManageListingsPage.loadData,
     },
     {
       path: '/account',
       name: 'AccountSettingsPage',
-      auth: true,
-      authPage: 'LoginPage',
+      /* auth: true,
+      authPage: 'LoginPage', */
       component: () => <NamedRedirect name="ContactDetailsPage" />,
     },
     {
       path: '/account/contact-details',
       name: 'ContactDetailsPage',
-      auth: true,
-      authPage: 'LoginPage',
+      /* auth: true,
+      authPage: 'LoginPage', */
       component: props => <ContactDetailsPage {...props} />,
       loadData: ContactDetailsPage.loadData,
     },
     {
       path: '/account/change-password',
       name: 'PasswordChangePage',
-      auth: true,
-      authPage: 'LoginPage',
+     /*  auth: true,
+      authPage: 'LoginPage', */
       component: props => <PasswordChangePage {...props} />,
     },
     {
       path: '/account/payments',
       name: 'PayoutPreferencesPage',
-      auth: true,
-      authPage: 'LoginPage',
+    /*   auth: true,
+      authPage: 'LoginPage', */
       component: props => <PayoutPreferencesPage {...props} />,
       loadData: PayoutPreferencesPage.loadData,
     },
@@ -337,8 +336,8 @@ const routeConfiguration = () => {
     {
       path: '/verify-email',
       name: 'EmailVerificationPage',
-      auth: true,
-      authPage: 'LoginPage',
+     /*  auth: true,
+      authPage: 'LoginPage', */
       component: props => <EmailVerificationPage {...props} />,
     },
   ];
