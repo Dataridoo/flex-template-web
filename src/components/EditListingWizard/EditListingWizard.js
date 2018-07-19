@@ -53,12 +53,12 @@ const tabLabel = (intl, tab) => {
  * @return true if tab / step is completed.
  */
 const tabCompleted = (tab, listing) => {
-  const { description, geolocation, price, title, publicData } = listing.attributes;
+  const { frame, fork, size, drivetrain, weight, wheelset, components, accessories, geolocation, price, title, publicData } = listing.attributes;
   const images = listing.images;
 
   switch (tab) {
     case DESCRIPTION:
-      return !!(description && title);
+      return !!(frame && fork && size && drivetrain && title && weight && wheelset && components && accessories);
     case FEATURES:
       return !!(publicData && publicData.amenities);
     case POLICY:
@@ -284,7 +284,14 @@ EditListingWizard.propTypes = {
   listing: shape({
     attributes: shape({
       publicData: object,
-      description: string,
+      frame: string,
+      fork: string,
+      size: string,
+      weight: string,
+      wheelset: string,
+      components: string,
+      accessories: string,
+      drivetrain: string,
       geolocation: object,
       pricing: object,
       title: string,

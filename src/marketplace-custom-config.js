@@ -38,8 +38,10 @@ export const amenities = [
 ];
 
 export const categories = [
-  { key: 'smoke', label: 'Smoke' },
-  { key: 'electric', label: 'Electric' },
-  { key: 'wood', label: 'Wood' },
-  { key: 'other', label: 'Other' },
+  { key: 'ALL CATEGORIES', label: 'ALL CATEGORIES' },
+  { key: 'CITY BIKES', label: 'CITY BIKES' },
+  { key: 'ROAD BIKES', label: 'ROAD BIKES' },
+  { key: 'MOUNTAIN BIKES', label: 'MOUNTAIN BIKES' },
+  { key: 'E-BIKES', label: 'E-BIKES' },
+  { key: 'OTHER', label: 'OTHER' },
 ];

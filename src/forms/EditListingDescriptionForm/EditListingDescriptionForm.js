@@ -45,16 +45,89 @@ const EditListingDescriptionFormComponent = props => (
         }
       );
 
-      const descriptionMessage = intl.formatMessage({
-        id: 'EditListingDescriptionForm.description',
-      });
-      const descriptionPlaceholderMessage = intl.formatMessage({
-        id: 'EditListingDescriptionForm.descriptionPlaceholder',
-      });
       const maxLength60Message = maxLength(maxLengthMessage, TITLE_MAX_LENGTH);
-      const descriptionRequiredMessage = intl.formatMessage({
-        id: 'EditListingDescriptionForm.descriptionRequired',
+      
+
+      const frameMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.frame',
       });
+      const framePlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.framePlaceholder',
+      });     
+      const frameRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.frameRequired',
+      });
+
+      const forkMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.fork',
+      });
+      const forkPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.forkPlaceholder',
+      });     
+      const forkRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.forkRequired',
+      });
+
+      const drivetrainMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.drivetrain',
+      });
+      const drivetrainPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.drivetrainPlaceholder',
+      });     
+      const drivetrainRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.drivetrainRequired',
+      });
+
+      const sizeMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.size',
+      });
+      const sizePlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.sizePlaceholder',
+      });     
+      const sizeRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.sizeRequired',
+      });
+
+      const weightMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.weight',
+      });
+      const weightPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.weightPlaceholder',
+      });     
+      const weightRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.weightRequired',
+      });
+
+      const accessoriesMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.accessories',
+      });
+      const accessoriesPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.accessoriesPlaceholder',
+      });     
+      const accessoriesRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.accessoriesRequired',
+      });
+
+      const wheelsetMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.wheelset',
+      });
+      const wheelsetPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.wheelsetPlaceholder',
+      });     
+      const wheelsetRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.wheelsetRequired',
+      });
+
+      const componentsMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.components',
+      });
+      const componentsPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.componentsPlaceholder',
+      });     
+      const componentsRequiredMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.componentsRequired',
+      });
+
 
       const errorMessage = updateError ? (
         <p className={css.error}>
@@ -83,21 +156,107 @@ const EditListingDescriptionFormComponent = props => (
           />
 
           <FieldTextInput
-            id="description"
-            name="description"
+            id="frame"
+            name="frame"
             className={css.description}
-            type="textarea"
-            label={descriptionMessage}
-            placeholder={descriptionPlaceholderMessage}
-            validate={composeValidators(required(descriptionRequiredMessage))}
+            type="text"
+            label={frameMessage}
+            placeholder={framePlaceholderMessage}
+            maxLength={TITLE_MAX_LENGTH}
+            autoFocus
+            validate={composeValidators(required(frameRequiredMessage))}
           />
 
-          <CustomCategorySelectFieldMaybe
-            id="category"
-            name="category"
-            categories={categories}
-            intl={intl}
+          <FieldTextInput
+            id="fork"
+            name="fork"
+            className={css.description}
+            type="text"
+            label={forkMessage}
+            placeholder={forkPlaceholderMessage}
+            maxLength={TITLE_MAX_LENGTH}
+            autoFocus
+            validate={composeValidators(required(forkRequiredMessage))}
           />
+
+          <FieldTextInput
+            id="drivetrain"
+            name="drivetrain"
+            className={css.description}
+            type="textarea"
+            label={drivetrainMessage}
+            placeholder={drivetrainPlaceholderMessage}            
+            validate={composeValidators(required(drivetrainRequiredMessage))}
+          />
+
+          <FieldTextInput
+            id="components"
+            name="components"
+            className={css.description}
+            type="textarea"
+            label={componentsMessage}
+            placeholder={componentsPlaceholderMessage}                  
+            validate={composeValidators(required(componentsRequiredMessage))}
+          />
+
+          
+          
+        <FieldTextInput
+          id="wheelset"
+          name="wheelset"
+          className={css.description}
+          type="text"
+          label={wheelsetMessage}
+          placeholder={wheelsetPlaceholderMessage}
+          maxLength={TITLE_MAX_LENGTH}
+          autoFocus
+          validate={composeValidators(required(wheelsetRequiredMessage))}
+        />
+
+      <FieldTextInput
+        id="accessories"
+        name="accessories"
+        className={css.description}
+        type="text"
+        label={accessoriesMessage}
+        placeholder={accessoriesPlaceholderMessage}
+        maxLength={TITLE_MAX_LENGTH}
+        autoFocus
+        validate={composeValidators(required(accessoriesRequiredMessage))}
+        />
+
+
+      <FieldTextInput
+        id="size"
+        name="size"
+        className={css.description}
+        type="text"
+        label={sizeMessage}
+        placeholder={sizePlaceholderMessage}
+        maxLength={TITLE_MAX_LENGTH}
+        autoFocus
+        validate={composeValidators(required(sizeRequiredMessage))}
+      />
+
+      <FieldTextInput
+        id="weight"
+        name="weight"
+        className={css.description}
+        type="text"
+        label={weightMessage}
+        placeholder={weightPlaceholderMessage}
+        maxLength={TITLE_MAX_LENGTH}
+        autoFocus
+        validate={composeValidators(required(weightRequiredMessage))}
+      />
+      
+
+      <CustomCategorySelectFieldMaybe
+        id="category"
+        name="category"
+        categories={categories}
+        intl={intl}
+      />
 
           <Button
             className={css.submitButton}

@@ -166,9 +166,17 @@ const TopbarDesktop = props => {
     </NamedLink>
   )
    */
-
+  const addBike = (
+    <NamedLink name="NewListingPage" className={css.newListingPage}>
+      <span className={css.newListing}>
+        <FormattedMessage id="Footer.toNewListingPage" />
+       </span>
+    </NamedLink>    
+  )
   
-  
+    
+              
+ 
 
   const signupLink = isAuthenticated ? null : (
     <NamedLink name="SignupPage" className={css.signupLink}>
@@ -200,10 +208,11 @@ const TopbarDesktop = props => {
      {eventsPage}
      {aboutPage}
      {blogPage}
-     {contactUsPage}
-      {inboxLink}
+     {contactUsPage}    
      
       {search}
+      {addBike}
+      {inboxLink}
       {profileMenu}     
       {signupLink}
       {loginLink}

@@ -238,6 +238,7 @@
   padding-top: 20px;
 }
 .aboutPage,
+.newListingPage,
 .searchPage,
 .blogPage,
 .contactUsPage,
@@ -283,6 +284,7 @@
 }
 
 .signup,
+.newListing,
 .search,
 .events,
 .blog,

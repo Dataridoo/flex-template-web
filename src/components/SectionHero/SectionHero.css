@@ -108,6 +108,9 @@
 
 .desktopSearchForm {
   display: none;
+  margin-left: 20%;
+  
+ 
   background-color: var(--matterColorLight);
  
 

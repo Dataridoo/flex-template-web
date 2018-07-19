@@ -156,5 +156,5 @@
     var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) +
       var(--TopbarSearchForm_bottomBorder)
   );
-  max-width: 100px;
+  max-width: 434px;
 }
