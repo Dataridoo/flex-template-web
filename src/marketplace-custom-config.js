@@ -4,37 +4,25 @@
 
 export const amenities = [
   {
-    key: 'towels',
-    label: 'Towels',
+    key: 'frame',
+    label: 'Frame',
   },
   {
-    key: 'bathroom',
-    label: 'Bathroom',
+    key: 'fork',
+    label: 'Fork',
   },
   {
-    key: 'swimming_pool',
-    label: 'Swimming pool',
+    key: 'drivetrain',
+    label: 'Drive Train',
   },
   {
-    key: 'own_drinks',
-    label: 'Own drinks allowed',
+    key: 'components',
+    label: 'Components',
   },
   {
-    key: 'jacuzzi',
-    label: 'Jacuzzi',
-  },
-  {
-    key: 'audiovisual_entertainment',
-    label: 'Audiovisual entertainment',
-  },
-  {
-    key: 'barbeque',
-    label: 'Barbeque',
-  },
-  {
-    key: 'own_food_allowed',
-    label: 'Own food allowed',
-  },
+    key: 'accessories',
+    label: 'Accessories',
+  }
 ];
 
 export const categories = [

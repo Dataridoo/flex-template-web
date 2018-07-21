@@ -2,7 +2,7 @@ import EditListingFeaturesForm from './EditListingFeaturesForm';
 
 const NAME = 'amenities';
 
-const initialValueArray = ['towels', 'jacuzzi', 'bathroom'];
+const initialValueArray = ['frame', 'fork', 'accessories'];
 const initialValues = { [NAME]: initialValueArray };
 
 export const Amenities = {

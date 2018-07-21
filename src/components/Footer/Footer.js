@@ -6,7 +6,7 @@ import { twitterPageURL} from '../../util/urlHelpers';
 import config from '../../config';
 import {
   ExternalLink,
-  NamedLink,
+  NamedLink
 } from '../../components';
 
 import facebook from './Images/facebook.jpg';

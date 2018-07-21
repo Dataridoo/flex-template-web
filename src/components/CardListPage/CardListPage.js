@@ -75,7 +75,7 @@ class BikeForm extends Component{
     const { data, errors } = this.state;
 
     return(
-      <div className={css.form}>
+     
         <form className="ui form" onSubmit={this.handleSubmit}>
               <div className={errors.name ? "field error" : "field"}>
                 <label htmlFor="name">Bike Title</label>
@@ -108,10 +108,7 @@ class BikeForm extends Component{
                 src={data.thumbnail}
                 fallbackImage="http://via.placeholder.com/250x250" 
                 className="ui image"
-              />          
-          
-        
-
+              />  
           
         <div className={errors.thumbnail ? "field error" : "field"}>
           <label htmlFor="thumbnail">Bike thumbnail</label>
@@ -199,7 +196,7 @@ class BikeForm extends Component{
                 <a className="ui button" onClick={this.props.cancel}>Cancel</a>           
               </div>        
         </form>
-      </div>
+      
     )
   }
 }
@@ -254,6 +251,7 @@ class BikeCard extends Component {
            <button className="compact ui button" > {bike.name}</button><span className={css.bgcolor}>{bike.description}</span>            
               
           </div>
+
           <div className="extra content">
               {
                 this.state.showConfirmation ? (
@@ -277,6 +275,7 @@ class BikeCard extends Component {
                 )
               }              
           </div>
+          
       </div>
     )
   }
@@ -284,7 +283,7 @@ class BikeCard extends Component {
 
 
 const BikesList = ({bikes, toggleFeatured, editBike, deleteBike}) => (
-  <div className={css.bikeList}>
+  
     <div className="ui three cards" >
       { bikes.length === 0 ? (
         <div className="ui icon message" >
@@ -306,7 +305,7 @@ const BikesList = ({bikes, toggleFeatured, editBike, deleteBike}) => (
         )
       }
     </div>
-  </div>
+  
 )
 
 const categories = [

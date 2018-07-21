@@ -13,15 +13,14 @@ const LatestAdditions = props => {
       <h2 className={css.title}>Latest Additions</h2>
       <ul className={css.unorderList} >
         <li className={css.orderedList} >
-          <p className={css.paragraph} >EVENT <span className={css.latestspan} >Some text</span></p>
+          <p >EVENT <span className={css.latestspan} >Some text Some text Some text Some text</span></p>
         </li>
         <li className={css.orderedList} >
-          <p  className={css.paragraph} >RENTAL <span className={css.latestspan}  >Some text</span></p>
+          <p >RENTAL <span className={css.latestspan}  >Some text Some text Some text Some text</span></p>
         </li>
         <li className={css.orderedList} >
-          <p  className={css.paragraph} >GUIDES <span className={css.latestspan}  >Some text</span></p>
-        </li>
-        
+          <p >GUIDES <span className={css.latestspan}  >Some text Some text Some text Some text</span></p>
+        </li>        
       </ul>
       
     </div>

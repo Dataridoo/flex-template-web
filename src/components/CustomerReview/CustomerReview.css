@@ -1,8 +1,8 @@
 @import '../../marketplace.css';
 
-.latestAdditions {
+.reivews {
   @apply --marketplaceH1FontStyles;
-
+  margin-right: 30px;
   margin-top: 0;
  
 

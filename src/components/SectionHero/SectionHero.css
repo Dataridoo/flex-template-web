@@ -10,7 +10,7 @@
     since browsers support CSS Properties already.
  */
 
-  --SectionHero_desktopTitleMaxWidth: 625px;
+  --SectionHero_desktopTitleMaxWidth: 1000px;
 
   --SectionHero_animation: {
     animation-name: animationTitle;
@@ -61,7 +61,6 @@
 .heroMainTitle {
   @apply --marketplaceHeroTitleFontStyles;
   color: var(--matterColorLight);
-
   @apply --SectionHero_animation;
   animation-delay: 0.5s;
 

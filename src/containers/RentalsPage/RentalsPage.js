@@ -74,12 +74,10 @@ export const LandingPageComponent = props => {
             </div>
             </div> 
 
-            <ul className={css.sections}>
-              <li className={css.section}>
-                <div className={css.sectionContent}>
+            <div className={css.givemargin}>
                   <div className="ui stackable sixteen column grid">             
                     <div className="four wide column">
-                      <div className={css.givemargin}>
+                      <div >
                         <h3>ALL CATEGORIES</h3>
                         <p>CITY BIKES</p>
                         <p>ROAD BIKES</p>
@@ -88,15 +86,14 @@ export const LandingPageComponent = props => {
                         <p>price</p> <hr/>
                         <RangeSlider />
                       </div>  <br/>
-                      <span className={css.marginLeft}> 
+                      <span> 
                         <button className="ui primary button"> Update View</button>
                       </span> 
                     </div>              
                   <div className="twelve wide column"><CardListPage /></div>
                 </div>
-              </div>
-           </li>
-          </ul>              
+                </div>
+                   
           <br/>
                 
                 

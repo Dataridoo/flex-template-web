@@ -12,20 +12,7 @@
 
 
 
-  --LandingPage_sectionMarginTop: 80px;
-  --LandingPage_sectionMarginTopMedium: 60px;
-  --LandingPage_sectionMarginTopLarge: 94px;
   
-}
-.highlights{  
-  text-align: center;
-  color:Cyan;
-  margin-bottom: 0;
-}
-.recently {
-  color: black;
-  text-align: center;
-  padding-top: 20px;
 }
 .root {
 }
@@ -65,62 +52,8 @@
     padding-top: 60px;
   }
 }
-/* 
+
 .givemargin{
-  margin-left: 30px;
-}
-
-.marginLeft{
-  margin-left: 30px;
-} */
-/* Square corners for the last section if it's even */
-.section:nth-of-type(2n):last-of-type {
-  @media (--viewportMedium) {
-    border-radius: 4px 4px 0 0;
-  }
-}
-
-/* Every other section has a light background */
-.section:nth-of-type(2n) {
-  background-color: var(--matterColorLight);
-  @media (--viewportMedium) {
-    border-radius: 4px;
-  }
-}
-
-.sectionContent {
-  margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
-
-  @media (--viewportMedium) {
-    margin: var(--LandingPage_sectionMarginTopMedium) 7.5vw 60px 7.5vw;
-  }
-
-  @media (--viewportLarge) {
-    max-width: calc(1052px + 36px + 36px);
-    margin: var(--LandingPage_sectionMarginTopLarge) auto 93px auto;
-    padding: 0 36px 0 36px;
-  }
-}
-
-/* A bar on top of light sections */
-.section:nth-of-type(2n) .sectionContent:before {
-  background: var(--marketplaceColor);
-  content: '';
-  display: block;
-  width: 109px;
-  height: 6px;
-
-  /* Place the bar on top of .sectionContent top margin */
-  position: relative;
-  top: calc(-1 * var(--LandingPage_sectionMarginTop));
-
-  @media (--viewportMedium) {
-    width: 192px;
-    height: 8px;
-    top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
-  }
-
-  @media (--viewportLarge) {
-    top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
-  }
+  margin: 30px;
+  padding: 30px;
 }

@@ -19,6 +19,7 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
+  FollowUsPage
 } from '../../components';
 import { TopbarContainer } from '../../containers';
 
@@ -97,22 +98,8 @@ export const LandingPageComponent = props => {
                       
            <h3 className={css.recently}>Recently@pedalworld &nbsp; &nbsp;
               <span className="ui icon buttons">
-                <button className="ui button">
-                  <i className="youtube icon"></i>
-                </button>
-                <button className="ui button">
-                  <i className="facebook icon"></i>
-                </button>
-                <button className="ui button">
-                  <i className="twitter icon"></i>
-                </button>
-                <button className="ui button">
-                  <i className="instagram icon"></i>
-                </button>
-                <button className="ui button">
-                  Follow Us
-                </button>
-              </span>
+                 <FollowUsPage />
+              </span>  Follow Us 
            </h3>
             <ul className={css.sections}>
               <li className={css.section}>
