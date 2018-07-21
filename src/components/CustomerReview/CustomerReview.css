@@ -1,10 +1,9 @@
 @import '../../marketplace.css';
 
 .reivews {
-  @apply --marketplaceH1FontStyles;
   margin-right: 30px;
   margin-top: 0;
- 
+ color: black;
 
 }
 

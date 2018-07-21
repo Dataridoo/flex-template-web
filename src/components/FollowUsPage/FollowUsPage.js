@@ -3,10 +3,8 @@ import { string } from 'prop-types';
 import config from '../../config';
 import { injectIntl, intlShape } from 'react-intl';
 import { twitterPageURL} from '../../util/urlHelpers';
-import classNames from 'classnames';
+
 import { ExternalLink } from '../../components';
-import css from './FollowUsPage.css';
- 
 
   const renderYoutubeLink = () => {
     const { siteYoutubePage } = config;      
@@ -15,7 +13,7 @@ import css from './FollowUsPage.css';
               key="linkToYoutube"
               href={siteYoutubePage}
             >
-            <i className="youtube icon"></i>
+            <i className="youtube black icon"></i>
           </ExternalLink>     
     ) : null;
     
@@ -26,7 +24,7 @@ import css from './FollowUsPage.css';
     const { siteFacebookPage } = config;        
     const fbLink = siteFacebookPage ? (     
         <ExternalLink key="linkToFacebook" href={siteFacebookPage} >
-          <i className="facebook icon"></i> 
+          <i className="facebook black icon"></i> 
         </ExternalLink>     
     ) : null;
 
@@ -41,7 +39,7 @@ import css from './FollowUsPage.css';
           key="linkToTwitter"
           href={siteTwitterPage}         
         >
-        <i className="twitter icon"></i>
+        <i className="twitter black icon"></i>
       </ExternalLink>   
     ) : null;
   
@@ -55,7 +53,7 @@ import css from './FollowUsPage.css';
             key="linkToInstagram"
             href={siteInstagramPage}
           >
-          <i className="instagram icon"></i>
+          <i className="instagram black icon"></i>
         </ExternalLink>
         
       ) : null;
@@ -65,9 +63,8 @@ import css from './FollowUsPage.css';
     
   
 const FollowUsPage = props => {
-  const { rootClassName, className, intl } = props;
-  const classes = classNames(rootClassName || css.root, className);
-
+  const {intl } = props;
+  
   const facebook = renderFacebookLink(intl);
   const twitter = renderTwitterLink(intl);
   const youtube = renderYoutubeLink(intl);
@@ -75,20 +72,23 @@ const FollowUsPage = props => {
              
  
   return (
-    <div className={classes}>
-      <button className="ui button">
-        {youtube}
-      </button>
-      <button className="ui button">
-       {facebook} 
-      </button>
-      <button className="ui button">
-        {twitter}
-      </button>
-      <button className="ui button">
-        {instagram}
-      </button>
-    </div>
+    <span className="ui icon buttons">
+        <button className="ui button">
+          {youtube}
+        </button>
+        <button className="ui button">
+        {facebook} 
+        </button>
+        <button className="ui button">
+          {twitter}
+        </button>
+        <button className="ui button">
+          {instagram}
+        </button>
+        <button className="ui button">
+            Follow Us 
+        </button>
+    </span>
   );
 };
 

@@ -108,14 +108,9 @@
 .desktopSearchForm {
   display: none;
   margin-left: 20%;
-  
- 
   background-color: var(--matterColorLight);
- 
-
   @apply --SectionHero_animation;
   animation-delay: 0.8s;
-
   @media (--viewportMedium) {
     display: block;
     width: 400px;

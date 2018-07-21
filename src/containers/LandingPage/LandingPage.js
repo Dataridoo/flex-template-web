@@ -66,48 +66,46 @@ export const LandingPageComponent = props => {
           <div className={css.heroContainer}>
             <SectionHero className={css.hero} history={history} location={location} />
           </div>         
-            <h1 className={css.highlights}>Highlights</h1>
-         
+                  
           <ul className={css.sections}>
+            <h1 className={css.highlights}>Highlights</h1>
             <li className={css.section}>
               <div className={css.sectionContent}>
                <SectionLocations />
               </div>
             </li>
           </ul>
-          <h1 className={css.highlights}>Explore categories</h1>
-            <ul className={css.sections}>
-              <li className={css.section}>
-                <div className={css.sectionContent}>
+         
+          <ul className={css.sections}>
+            <h1 className={css.highlights}>Explore categories</h1>
+            <li className={css.section}>
+              <div className={css.sectionContent}>
                 <SectionLocationCenter />
-                </div>
-              </li>
-            </ul>
-            
-                <div className={css.hero}>
-                    <div className="ui stackable two column grid"> 
-                      <div className="blue column"> 
-                        <LatestAdditions />
-                      </div>
-                      <div className="teal column"> 
-                          <CustomerReview />
-                      </div>
-                  </div>
-                </div>
-              
-                      
-           <h3 className={css.recently}>Recently@pedalworld &nbsp; &nbsp;
-              <span className="ui icon buttons">
-                 <FollowUsPage />
-              </span>  Follow Us 
-           </h3>
-            <ul className={css.sections}>
-              <li className={css.section}>
-                <div className={css.sectionContent}>
-                <SectionLocationsBottom />
-                </div>
-              </li>
-            </ul>
+              </div>
+            </li>
+          </ul>
+          <ul className={css.sections}>       
+            <div className="ui stackable two column grid"> 
+              <div className="blue column"> 
+                <LatestAdditions />
+              </div>
+              <div className="teal column"> 
+                  <CustomerReview />
+              </div>
+            </div>
+            </ul> <br/>  
+            <ul className={css.sections}>                       
+              <h3 className={css.recently}>Recently@ #pedalworld &nbsp; &nbsp;
+                  <FollowUsPage />
+              </h3>
+            </ul><br/>  
+          <ul className={css.sections}>
+            <li className={css.section}>
+              <div className={css.sectionContent}>
+              <SectionLocationsBottom />
+              </div>
+            </li>
+          </ul>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
         <Footer />
