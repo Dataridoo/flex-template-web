@@ -116,14 +116,14 @@ const TopbarDesktop = props => {
   const rentalsPage = (
     <NamedLink name="RentalsPage" className={css.rentalsPage}>
       <span className={css.rentals}>
-        <FormattedMessage id="Rentals" />
+        <FormattedMessage id="TopbarDesktop.rentals" />
       </span>
     </NamedLink>
   )
   const guidedToursPage = (
     <NamedLink name="GuidedToursPage" className={css.guidedToursPage}>
       <span className={css.guidedTours}>
-        <FormattedMessage id="Guided Tours" />
+        <FormattedMessage id="TopbarDesktop.guidedTours" />
       </span>
     </NamedLink>
   )
@@ -131,14 +131,14 @@ const TopbarDesktop = props => {
   const eventsPage = (
     <NamedLink name="EventsPage" className={css.eventsPage}>
       <span className={css.events}>
-        <FormattedMessage id="Events" />
+        <FormattedMessage id="TopbarDesktop.events" />
       </span>
     </NamedLink>
   )
   const aboutPage = (
     <NamedLink name="AboutPage" className={css.aboutPage}>
       <span className={css.about}>
-        <FormattedMessage id="About" />
+        <FormattedMessage id="TopbarDesktop.about" />
       </span>
     </NamedLink>
   )
@@ -146,26 +146,19 @@ const TopbarDesktop = props => {
   const blogPage = (
     <NamedLink name="BlogPage" className={css.blogPage}>
       <span className={css.blog}>
-        <FormattedMessage id="Blog" />
+        <FormattedMessage id="TopbarDesktop.blog" />
       </span>
     </NamedLink>
   )
   const contactUsPage = (
     <NamedLink name="ContactUsPage" className={css.contactUsPage}>
       <span className={css.contactUs}>
-        <FormattedMessage id="Contact Us" />
+        <FormattedMessage id="TopbarDesktop.contactUs" />
       </span>
     </NamedLink>
   )
 
-  /* const searchPage = (
-    <NamedLink name="SearchPageTwo" className={css.searchPage}>
-      <span className={css.search}>
-      <IconSearch />
-      </span>
-    </NamedLink>
-  )
-   */
+  
   const addBike = (
     <NamedLink name="NewListingPage" className={css.newListingPage}>
       <span className={css.newListing}>

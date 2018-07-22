@@ -23,8 +23,8 @@ import {
 } from '../../components';
 import { TopbarContainer } from '../../containers';
 
-import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
-import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
+import facebookImage from '../../assets/pedalworldFacebook-1200x630.jpg';
+import twitterImage from '../../assets/pedalworldTwitter-600x314.jpg';
 import css from './LandingPage.css';
 import './LandingPage.css';
 

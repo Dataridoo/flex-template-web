@@ -152,7 +152,6 @@ const EditListingDescriptionFormComponent = props => (
             placeholder={titlePlaceholderMessage}
             maxLength={TITLE_MAX_LENGTH}
             validate={composeValidators(required(titleRequiredMessage), maxLength60Message)}
-            autoFocus
           />
 
           <FieldTextInput
@@ -163,7 +162,6 @@ const EditListingDescriptionFormComponent = props => (
             label={frameMessage}
             placeholder={framePlaceholderMessage}
             maxLength={TITLE_MAX_LENGTH}
-            autoFocus
             validate={composeValidators(required(frameRequiredMessage))}
           />
 
@@ -175,7 +173,6 @@ const EditListingDescriptionFormComponent = props => (
             label={forkMessage}
             placeholder={forkPlaceholderMessage}
             maxLength={TITLE_MAX_LENGTH}
-            autoFocus
             validate={composeValidators(required(forkRequiredMessage))}
           />
 
@@ -209,7 +206,6 @@ const EditListingDescriptionFormComponent = props => (
           label={wheelsetMessage}
           placeholder={wheelsetPlaceholderMessage}
           maxLength={TITLE_MAX_LENGTH}
-          autoFocus
           validate={composeValidators(required(wheelsetRequiredMessage))}
         />
 
@@ -221,7 +217,6 @@ const EditListingDescriptionFormComponent = props => (
         label={accessoriesMessage}
         placeholder={accessoriesPlaceholderMessage}
         maxLength={TITLE_MAX_LENGTH}
-        autoFocus
         validate={composeValidators(required(accessoriesRequiredMessage))}
         />
 
@@ -234,7 +229,6 @@ const EditListingDescriptionFormComponent = props => (
         label={sizeMessage}
         placeholder={sizePlaceholderMessage}
         maxLength={TITLE_MAX_LENGTH}
-        autoFocus
         validate={composeValidators(required(sizeRequiredMessage))}
       />
 
@@ -246,7 +240,6 @@ const EditListingDescriptionFormComponent = props => (
         label={weightMessage}
         placeholder={weightPlaceholderMessage}
         maxLength={TITLE_MAX_LENGTH}
-        autoFocus
         validate={composeValidators(required(weightRequiredMessage))}
       />
       

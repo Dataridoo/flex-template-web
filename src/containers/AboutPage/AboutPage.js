@@ -25,7 +25,7 @@ const AboutPage = () => {
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',
-        description: 'About Saunatime',
+        description: 'About Pedalworld',
         name: 'About page',
       }}
     >
@@ -50,11 +50,11 @@ const AboutPage = () => {
 
               
               <h3 id="contact" className={css.subtitle}>
-                Create your own marketplace like pedalworld
+               Welcome to pedalworld
               </h3>
               <p>
                
-                <ExternalLink href="http://sharetribe.com">pedalworld</ExternalLink>. 
+                <ExternalLink href="/">pedalworld</ExternalLink>. 
               </p>
               <p>
                 You can also checkout our{' '}

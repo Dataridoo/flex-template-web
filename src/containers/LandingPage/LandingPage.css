@@ -90,12 +90,12 @@
   margin: var(--LandingPage_sectionMarginTop) 4px 11px 4px;
 
   @media (--viewportMedium) {
-    margin: var(--LandingPage_sectionMarginTopMedium) 7.5vw 60px 7.5vw;
+    margin: var(--LandingPage_sectionMarginTopMedium) 7.5vw 40px 7.5vw;
   }
 
   @media (--viewportLarge) {
     max-width: calc(1052px + 36px + 36px);
-    margin: var(--LandingPage_sectionMarginTopLarge) auto 93px auto;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 43px auto;
     padding: 0 36px 0 36px;
   }
 }
