@@ -18,6 +18,7 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperMain,
   LayoutWrapperFooter,
+  SectionReviewAndAdditions,
   Footer,
   FollowUsPage
 } from '../../components';
@@ -84,16 +85,21 @@ export const LandingPageComponent = props => {
               </div>
             </li>
           </ul>
-          <ul className={css.sections}>       
-            <div className="ui stackable two column grid"> 
-              <div className="blue column"> 
-                <LatestAdditions />
+          
+
+          <ul className={css.sections}>
+            <div className={css.latestReview}>      
+                <div className="ui stackable two column grid"> 
+                  <div className="blue column"> 
+                    <LatestAdditions />
+                  </div>
+                  <div className="teal column"> 
+                      <CustomerReview />
+                  </div>
+                </div>
               </div>
-              <div className="teal column"> 
-                  <CustomerReview />
-              </div>
-            </div>
-            </ul> <br/>  
+            </ul>
+          <br/>  
             <ul className={css.sections}>                       
               <h3 className={css.recently}>Recently@ #pedalworld &nbsp; &nbsp;
                   <FollowUsPage />

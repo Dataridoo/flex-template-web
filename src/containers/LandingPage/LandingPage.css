@@ -24,7 +24,6 @@
   text-align: center;
   padding-top: 20px;
 }
-
 /* heroContainer gives the height for SectionHero */
 /* Safari has a bug with vw padding inside flexbox. Therefore we need an extra div (container) */
 /* If you've lot of content for the hero, multiple lines of text, make sure to adjust min-heights for each media breakpoint accordingly */
@@ -48,6 +47,10 @@
   }
 }
 
+.latestReview {
+  margin-left: 50px;
+  margin-right: 50px;
+}
 .hero {
   flex-grow: 1;
   justify-content: flex-end;

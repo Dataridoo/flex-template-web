@@ -8,8 +8,9 @@ import config from '../../config';
 import { propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
 import { formatMoney } from '../../util/currency';
+import { required, composeValidators } from '../../util/validators';
 import { types as sdkTypes } from '../../util/sdkLoader';
-import { Button, Form, FieldCurrencyInput } from '../../components';
+import { Button, Form, FieldCurrencyInput, FieldTextInput } from '../../components';
 
 import css from './EditListingPricingForm.css';
 
@@ -60,6 +61,16 @@ export const EditListingPricingFormComponent = props => (
         ? validators.composeValidators(priceRequired, minPriceRequired)
         : priceRequired;
 
+        const numberOfWeekMessage = intl.formatMessage({
+          id: 'EditListingPricingForm.numberOfWeek',
+        });
+        const numberOfWeekPlaceholderMessage = intl.formatMessage({
+          id: 'EditListingPricingForm.numberOfWeekPlaceholder',
+        });     
+        const numberOfWeekRequiredMessage = intl.formatMessage({
+          id: 'EditListingPricingForm.numberOfWeekRequired',
+        });
+
       const classes = classNames(css.root, className);
       const submitReady = updated && pristine;
       const submitInProgress = updateInProgress;
@@ -81,6 +92,16 @@ export const EditListingPricingFormComponent = props => (
             placeholder={pricePlaceholderMessage}
             currencyConfig={config.currencyConfig}
             validate={priceValidators}
+          />
+
+          <FieldTextInput
+            id="numberOfWeek"
+            name="numberOfWeek"
+            className={css.priceInput}
+            type="number"
+            label={numberOfWeekMessage}
+            placeholder={numberOfWeekPlaceholderMessage}          
+            validate={composeValidators(required(numberOfWeekRequiredMessage))}
           />
 
           <Button

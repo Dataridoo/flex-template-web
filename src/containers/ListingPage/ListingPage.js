@@ -231,6 +231,14 @@ export class ListingPageComponent extends Component {
 
     const {
       description = '',
+      frame = '',
+      fork = '',
+      drivetrain = '',
+      components = '',
+      wheelset = '',
+      accessories = '',
+      size = '',
+      weight = '',
       geolocation = null,
       price = null,
       title = '',
@@ -395,12 +403,28 @@ export class ListingPageComponent extends Component {
         author={authorDisplayName}
         contentType="website"
         description={description}
+        frame={frame}        
+        fork={fork}
+        components={components}
+        drivetrain={drivetrain}
+        wheelset={wheelset}
+        accessories={accessories}
+        size={size}
+        weight={weight}
         facebookImages={facebookImages}
         twitterImages={twitterImages}
         schema={{
           '@context': 'http://schema.org',
           '@type': 'ItemPage',
           description: description,
+          frame:frame,        
+          fork:fork,
+          components:components,
+          drivetrain:drivetrain,
+          wheelset:wheelset,
+          accessories:accessories,
+          size:size,
+          weight:weight,
           name: schemaTitle,
           image: schemaImages,
         }}
@@ -436,7 +460,17 @@ export class ListingPageComponent extends Component {
                     showContactUser={showContactUser}
                     onContactUser={this.onContactUser}
                   />
-                  <SectionDescription description={description} />
+                  <SectionDescription 
+                    description={description} 
+                    frame={frame}        
+                    fork={fork}
+                    components={components}
+                    drivetrain={drivetrain}
+                    wheelset={wheelset}
+                    accessories={accessories}
+                    size={size}
+                    weight={weight} 
+                  />
                   <SectionFeatures
                     options={amenitiesConfig}
                     selectedOptions={publicData.amenities}

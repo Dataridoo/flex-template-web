@@ -147,3 +147,4 @@ export { default as UserNav } from './UserNav/UserNav';
 export { default as ValidationError } from './ValidationError/ValidationError';
 export { default as RangeSlider } from './RangeSlider/RangeSlider';
 export { default as FollowUsPage } from './FollowUsPage/FollowUsPage';
+export { default as SectionReviewAndAdditions } from './SectionReviewAndAdditions/SectionReviewAndAdditions';

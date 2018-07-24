@@ -257,10 +257,10 @@ if (cspEnabled) {
   });
 }
 
-app.listen(4000, () => {
+app.listen(PORT, () => {
   const mode = dev ? 'development' : 'production';
-  console.log(`Listening to port ${4000} in ${mode} mode`);
+  console.log(`Listening to port ${PORT} in ${mode} mode`);
   if (dev) {
-    console.log(`Open http://localhost:${4000}/ and start hacking!`);
+    console.log(`Open http://localhost:${PORT}/ and start hacking!`);
   }
 });

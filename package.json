@@ -13,6 +13,7 @@
     "compression": "^1.7.2",
     "cookie-parser": "^1.4.3",
     "core-js": "^2.5.0",
+    "curl": "^0.1.4",
     "decimal.js": "7.2.4",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.0.1",

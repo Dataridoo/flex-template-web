@@ -1,26 +1,17 @@
 @import '../../marketplace.css';
 
 .latestAdditions {
-  @apply --marketplaceH1FontStyles;
+ font-size: 26px;
+  padding-left: 100px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.tdata {
+  padding-right: 50px;
+  padding-bottom: 10px;
+}
+
+.latestTable{
   margin-left: 30px;
- margin-top: 0;
-
-}
-
-.title {
-  color: white;
-  text-align: center;
-}
-
-.unorderList{
-  margin-left: 10px;
-  color: white;
-}
-.orderedList {
-  padding-right: 20px;
-}
-.latestspan{
-
- padding-left: 50px;
- 
+  font-size: 16px;
 }
