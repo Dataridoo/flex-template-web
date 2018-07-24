@@ -16,7 +16,7 @@ import {
   RangeSlider,
   CardListPage,
   CardNavigationPage,
-  FieldDateInput,
+  
 } from '../../components';
 import { TopbarContainer } from '../../containers';
 
