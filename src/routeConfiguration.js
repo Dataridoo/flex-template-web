@@ -81,6 +81,8 @@ const routeConfiguration = () => {
       name: 'BlogPage',
       component: BlogPage,
     },
+
+    
     {
       path: '/contactus',
       name: 'ContactUsPage',

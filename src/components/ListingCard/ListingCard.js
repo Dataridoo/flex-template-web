@@ -2,7 +2,7 @@ import React from 'react';
 import { string, func } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import { NamedLink, ResponsiveImage } from '../../components';
+import { NamedLink, ResponsiveImage} from '../../components';
 import { propTypes } from '../../util/types';
 import { formatMoney } from '../../util/currency';
 import { ensureListing, ensureUser } from '../../util/data';
@@ -33,8 +33,8 @@ const priceData = (price, intl) => {
   return {};
 };
 
-export const ListingCardComponent = props => {
 
+export const ListingCardComponent = props => {
   
   const { className, rootClassName, intl, listing, renderSizes, setActiveListing } = props;
   const classes = classNames(rootClassName || css.root, className);
@@ -51,46 +51,39 @@ export const ListingCardComponent = props => {
 
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>
-      <div
-        className={css.threeToTwoWrapper}
-        onMouseEnter={() => setActiveListing(currentListing.id)}
-        onMouseLeave={() => setActiveListing(null)}
-      >
-        <div className={css.aspectWrapper}>
-          <ResponsiveImage
-            rootClassName={css.rootForImage}
-            alt={title}
-            image={firstImage}
-            variants={['landscape-crop', 'landscape-crop2x']}
-            sizes={renderSizes}
-          />
-        </div>
-      </div>
-      <div className={css.info}>
-        <div className={css.price}>
-          <div className={css.priceValue} title={priceTitle}>
-            {formattedPrice}
+      <div className={css.container}> 
+        <div
+            className={css.threeToTwoWrapper}
+            onMouseEnter={() => setActiveListing(currentListing.id)}
+            onMouseLeave={() => setActiveListing(null)}
+          >
+            <div className={css.aspectWrapper}>
+              <ResponsiveImage
+                rootClassName={css.rootForImage}
+                alt={title}
+                image={firstImage}
+                variants={['landscape-crop', 'landscape-crop2x']}
+                sizes={renderSizes}            
+              />    
+            </div>               
           </div>
-          <div className={css.perUnit}>
-            <FormattedMessage id="ListingCard.perUnit" />
-          </div>
-        </div>
-        <div className={css.mainInfo}>
-          <div className={css.title}>
+          <button className={css.priceValueTwo} title={priceTitle}>
+            {formattedPrice}  <FormattedMessage id="ListingCard.perUnit" />
+          </button> 
+          <div className={css.titleTwo}>
             {richText(title, {
               longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
               longWordClass: css.longWord,
             })}
-          </div>
-          <div className={css.authorInfo}>
-            <FormattedMessage
-              className={css.authorName}
-              id="ListingCard.hostedBy"
-              values={{ authorName }}
-            />
-          </div>
-        </div>
+          </div> 
       </div>
+      <button className={css.info}>  
+        <FormattedMessage
+          className={css.authorName}
+          id="ListingCard.hostedBy"
+          values={{ authorName }}
+        /> 
+      </button>
     </NamedLink>
   );
 };

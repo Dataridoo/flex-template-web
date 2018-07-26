@@ -8,9 +8,7 @@ const SectionFeatures = props => {
   const { options, selectedOptions } = props;
   return (
     <div className={css.sectionFeatures}>
-      <h2 className={css.featuresTitle}>
-        <FormattedMessage id="ListingPage.featuresTitle" />
-      </h2>
+      
       <PropertyGroup
         id="ListingPage.amenities"
         options={options}

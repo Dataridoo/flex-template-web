@@ -50,7 +50,7 @@ const SectionDescription = props => {
       </p>
       
       <p className={css.descriptionTitle}>
-         <bold><FormattedMessage id="ListingPage.componentsTitle" /></bold>
+         <strong><FormattedMessage id="ListingPage.componentsTitle" /></strong>
          <span className={css.description}>
             {richText(components, {
               longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
@@ -60,7 +60,7 @@ const SectionDescription = props => {
       </p>
       
       <p className={css.descriptionTitle}>
-        <bold><FormattedMessage id="ListingPage.wheelsetTitle" /></bold>
+        <strong><FormattedMessage id="ListingPage.wheelsetTitle" /></strong>
         <span className={css.description}>
             {richText(wheelset, {
               longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
@@ -70,7 +70,7 @@ const SectionDescription = props => {
       </p>
       
       <p className={css.descriptionTitle}>
-        <bold><FormattedMessage id="ListingPage.accessoriesTitle" /></bold>
+        <strong><FormattedMessage id="ListingPage.accessoriesTitle" /></strong>
         <span  className={css.description}>
           {richText(accessories, {
             longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
@@ -80,7 +80,7 @@ const SectionDescription = props => {
       </p>
       
       <p className={css.descriptionTitle}>
-        <bold><FormattedMessage id="ListingPage.sizeTitle" /></bold>
+        <strong><FormattedMessage id="ListingPage.sizeTitle" /></strong>
         <span className={css.description}>
           {richText(size, {
             longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
@@ -90,7 +90,7 @@ const SectionDescription = props => {
       </p>
      
       <p className={css.descriptionTitle}>
-        <bold><FormattedMessage id="ListingPage.weightTitle" /></bold>
+        <strong><FormattedMessage id="ListingPage.weightTitle" /></strong>
         <span className={css.description}>
           {richText(weight, {
             longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,

@@ -1,6 +1,5 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import { obfuscatedCoordinates } from '../../util/maps';
@@ -24,10 +23,7 @@ const SectionMapMaybe = props => {
     : { address, center: geolocation };
 
   return (
-    <div className={classes}>
-      <h2 className={css.locationTitle}>
-        <FormattedMessage id="ListingPage.locationTitle" />
-      </h2>
+    <div className={classes}>      
       <div className={css.map}>
         <Map {...mapProps} />
       </div>

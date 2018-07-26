@@ -166,7 +166,7 @@ class SearchFiltersMobileComponent extends Component {
       />
     ) : null;
 
-    const amenitiesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.amenitiesLabel' });
+    //const amenitiesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.amenitiesLabel' });
 
     const initialAmenities = this.initialValues(amenitiesFilter.paramName);
 
@@ -174,7 +174,7 @@ class SearchFiltersMobileComponent extends Component {
       <SelectMultipleFilterPlain
         name="amenities"
         urlParam={amenitiesFilter.paramName}
-        label={amenitiesLabel}
+       // label={amenitiesLabel}
         onSelect={this.handleSelectMultiple}
         options={amenitiesFilter.options}
         initialValues={initialAmenities}

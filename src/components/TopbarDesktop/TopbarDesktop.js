@@ -120,6 +120,7 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
   )
+ 
   const guidedToursPage = (
     <NamedLink name="GuidedToursPage" className={css.guidedToursPage}>
       <span className={css.guidedTours}>
@@ -196,7 +197,8 @@ const TopbarDesktop = props => {
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
-     {rentalsPage}  
+     {rentalsPage} 
+    
      {guidedToursPage}
      {eventsPage}
      {aboutPage}

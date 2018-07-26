@@ -77,7 +77,7 @@ export { default as LayoutWrapperSideNav } from './LayoutWrapperSideNav/LayoutWr
 export { default as LayoutWrapperTopbar } from './LayoutWrapperTopbar/LayoutWrapperTopbar';
 export { default as ListingCard } from './ListingCard/ListingCard';
 export { default as CardListPage } from './CardListPage/CardListPage';
-export { default as CardNavigationPage } from './CardNavigationPage/CardNavigationPage';
+
 export { default as ListingLink } from './ListingLink/ListingLink';
 export {
   default as LocationAutocompleteInput,
@@ -147,3 +147,4 @@ export { default as UserNav } from './UserNav/UserNav';
 export { default as ValidationError } from './ValidationError/ValidationError';
 export { default as RangeSlider } from './RangeSlider/RangeSlider';
 export { default as FollowUsPage } from './FollowUsPage/FollowUsPage';
+

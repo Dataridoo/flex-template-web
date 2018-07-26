@@ -1,12 +1,55 @@
 @import '../../marketplace.css';
 
+.getEmails{
+  color: dodgerblue;
+  @apply --marketplaceH4FontStyles;
+}
+.SectionTitle{ 
+  background-color:lightblue;
+}
+
+.SectionTitleHeader {
+  text-align: center;
+  margin-left: 50px;
+  @apply --marketplaceH2FontStyles;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+
+}
+
+.mainContainer{
+  margin-left: 40px;
+  margin-right: 40px;
+}
 .pageRoot {
   display: flex;
-  padding-bottom: 90px;
+  padding-bottom: 10px;
   @media (--viewportLarge) {
     padding-bottom: 0;
   }
 }
+
+
+.formatedPriceAndUnit{
+  width: 150px;
+  height: 40px;
+}
+
+.formatedPrice {
+  padding-top: 30px;  
+  height: 32px;
+   width: 80px;
+}
+
+.formatedPriceUnit{ 
+  padding-top: 0;
+  width: 70px;
+  margin-left: 80px;
+  color: darkgray;
+  height: 40px;
+}
+
 
 .loadingText {
   margin: 24px;
@@ -34,11 +77,33 @@
     padding: 36px 36px 0 36px;
   }
 }
+.mainDiv { 
+  width: 300px;
+  margin-left: 0;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+.avatarContainer    {
+  width: 150px;
+  height: 100px;
+  float: left;
+}
 
+.avatarTitle {
+  width: 150px;
+  height: 100px;
+  margin-left: 150px;
+}
+
+.bookingSection{
+  padding-left: 0;
+  margin-left: 0;
+
+}
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
   position: relative; /* allow positioning own listing action bar */
-  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
+  padding-bottom:66.66%; /* 3:2 Aspect Ratio */
   background-color: var(--matterColorNegative); /* Loading BG color */
 
   /* Image carousel can be opened from the image, therefore we should show a pointer */
@@ -220,20 +285,8 @@
 }
 
 .sectionAvatar {
-  /* Position (over the listing image)*/
-  margin-left: 24px;
-  margin-top: -31px;
-
-  /* Rendering context to the same lavel as listing image */
-  position: relative;
-
-  /* Flex would give too much width by default. */
-  width: 60px;
-
+   
   @media (--viewportMedium) {
-    position: absolute;
-    left: 60px;
-    top: -49px;
     margin-left: 0;
     margin-top: 0;
   }
@@ -256,12 +309,11 @@
 }
 
 .sectionHeading {
-  margin-top: 22px;
-  margin-bottom: 34px;
+ 
 
   @media (--viewportMedium) {
     display: flex;
-    margin-bottom: 53px;
+   
   }
 }
 .desktopPriceContainer {
@@ -273,16 +325,15 @@
     flex-direction: column;
     align-items: flex-start;
     flex-shrink: 0;
-    margin: 0 48px 0 0;
+    margin: 0 8px 0 0;
     padding: 0;
   }
 }
 
 .desktopPriceValue {
   /* Font */
-  @apply --marketplaceH1FontStyles;
-  color: var(--marketplaceColor);
-
+  @apply --marketplaceH3FontStyles;
+  color: black;
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 6px;
@@ -301,8 +352,7 @@
 }
 
 .heading {
-  margin-bottom: 33px;
-  padding: 0 24px;
+  padding: 0 14px;
 
   @media (--viewportMedium) {
     margin-bottom: 0;
@@ -312,8 +362,8 @@
 
 .title {
   /* Font */
-  @apply --marketplaceH1FontStyles;
-  color: var(--matterColor);
+  @apply --marketplaceH3FontStyles;
+  color: dodgerblue;
 
   /* Layout */
   width: 100%;
@@ -356,12 +406,17 @@
 
 .contactLink {
   @apply --marketplaceH4FontStyles;
-  margin: 0;
+  margin-bottom: 15px;
+  background-color: lightgray;
+  color: black;
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .sectionDescription {
   padding: 0 24px;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
 
   @media (--viewportMedium) {
     padding: 0;
@@ -371,14 +426,14 @@
 
 .descriptionTitle {
   /* Font */
-  @apply --marketplaceH3FontStyles;
+  @apply --marketplaceH4FontStyles;
   color: var(--matterColorAnti);
 
   margin-top: 0;
-  margin-bottom: 13px;
+  margin-bottom: 3px;
   @media (--viewportMedium) {
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 }
 
@@ -394,7 +449,7 @@
 
 .featuresTitle {
   /* Font */
-  @apply --marketplaceH3FontStyles;
+  @apply --marketplaceH4FontStyles;
   color: var(--matterColorAnti);
 
   margin-top: 0;
@@ -419,8 +474,8 @@
 }
 
 .sectionMap {
-  padding: 0 24px;
-  margin-bottom: 35px;
+  padding: 0 4px;
+ 
 
   @media (--viewportMedium) {
     padding: 0;
@@ -428,18 +483,6 @@
   }
 }
 
-.locationTitle {
-  /* Font */
-  @apply --marketplaceH3FontStyles;
-  color: var(--matterColorAnti);
-
-  margin-top: 0;
-  margin-bottom: 20px;
-  @media (--viewportMedium) {
-    margin-top: 0;
-    margin-bottom: 28px;
-  }
-}
 
 .sectionReviews {
   padding: 0 24px;
@@ -546,16 +589,16 @@
 
 .map {
   /* Dimensions: Map takes all available space from viewport (excludes action button and section title) */
-  height: calc(100vh - 193px);
+  height: 150px;
   width: 100%;
   background-color: #eee;
 
   @media (--viewportMedium) {
-    height: 75vh;
+    height: 50vh;
   }
 
   @media (--viewportLarge) {
-    height: 417px;
+    height: 200px;
   }
 }
 
@@ -623,15 +666,11 @@
 .modalInMobile {
   @media (--viewportLarge) {
     display: block;
-    margin-top: 87px;
-    margin-left: 60px;
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-left-color: var(--matterColorNegative);
+    margin-top: 10px;
+   
 
     /* Calendar needs 311px width and therefore padding can't be wider than 58px */
-    padding-left: 60px;
-    padding-right: 60px;
+    
     flex-basis: 311px;
     flex-shrink: 0;
   }

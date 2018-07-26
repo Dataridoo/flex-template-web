@@ -13,12 +13,9 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
-  RangeSlider,
-  CardListPage,
-  CardNavigationPage,
   
 } from '../../components';
-import { TopbarContainer } from '../../containers';
+import { TopbarContainer, RentalsListPage } from '../../containers';
 
 
 import facebookImage from '../../assets/pedalworldFacebook-1200x630.jpg';
@@ -67,35 +64,9 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <img src={rentalsImage} alt="rentals"/>
-            <div className="ui stackable column grid">             
-              <div className="column">
-                 <CardNavigationPage /> 
-              </div>
-            </div>
+            <img src={rentalsImage} alt="rentals"/> 
+              <RentalsListPage />    
             </div> 
-
-            <div className={css.givemargin}>
-                  <div className="ui stackable sixteen column grid">             
-                    <div className="four wide column">
-                      <div >
-                        <h3>ALL CATEGORIES</h3>
-                        <p>CITY BIKES</p>
-                        <p>ROAD BIKES</p>
-                        <p>MOUNTAIN BIKES</p>
-                        <p>E-BIKES</p> <br/>
-                        <p>price</p> <hr/>
-                        <RangeSlider />
-                      </div>  <br/>
-                      <span> 
-                        <button className="ui primary button"> Update View</button>
-                      </span> 
-                    </div>              
-                  <div className="twelve wide column"><CardListPage /></div>
-                </div>
-                </div>
-                   
-          <br/>
                 
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

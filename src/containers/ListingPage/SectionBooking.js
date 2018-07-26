@@ -10,7 +10,6 @@ const MODAL_BREAKPOINT = 1023;
 
 const SectionBooking = props => {
   const {
-    listing,
     isOwnListing,
     isClosed,
     isBook,
@@ -25,7 +24,6 @@ const SectionBooking = props => {
     handleMobileBookModalClose,
     onManageDisableScrolling,
   } = props;
-  const showClosedListingHelpText = listing.id && isClosed;
   return (
     <div>
       <ModalInMobile
@@ -45,22 +43,7 @@ const SectionBooking = props => {
             </span>
           </div>
         </div>
-
-        <div className={css.bookingHeading}>
-          <h2 className={css.bookingTitle}>
-            <FormattedMessage id="ListingPage.bookingTitle" values={{ title: richTitle }} />
-          </h2>
-          <div className={css.bookingHelp}>
-            <FormattedMessage
-              id={
-                showClosedListingHelpText
-                  ? 'ListingPage.bookingHelpClosedListing'
-                  : 'ListingPage.bookingHelp'
-              }
-            />
-          </div>
-        </div>
-        {!isClosed ? (
+           {!isClosed ? (
           <BookingDatesForm
             className={css.bookingForm}
             submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}

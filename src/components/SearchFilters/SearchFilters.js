@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
 
-import { SelectSingleFilter, SelectMultipleFilter } from '../../components';
+import { SelectSingleFilter } from '../../components';
 import routeConfiguration from '../../routeConfiguration';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
@@ -20,10 +20,6 @@ const initialValue = (queryParams, paramName) => {
   return queryParams[paramName];
 };
 
-// resolve initial values for a multi value filter
-const initialValues = (queryParams, paramName) => {
-  return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
-};
 
 const SearchFiltersComponent = props => {
   const {
@@ -34,7 +30,7 @@ const SearchFiltersComponent = props => {
     resultsCount,
     searchInProgress,
     categoryFilter,
-    amenitiesFilter,
+    //amenitiesFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
     searchFiltersPanelSelectedCount,
@@ -49,15 +45,12 @@ const SearchFiltersComponent = props => {
     id: 'SearchFilters.categoryLabel',
   });
 
-  const amenitiesLabel = intl.formatMessage({
-    id: 'SearchFilters.amenitiesLabel',
-  });
 
-  const initialAmenities = initialValues(urlQueryParams, amenitiesFilter.paramName);
+  //const initialAmenities = initialValues(urlQueryParams, amenitiesFilter.paramName);
 
   const initialCategory = initialValue(urlQueryParams, categoryFilter.paramName);
 
-  const handleSelectOptions = (urlParam, options) => {
+  /* const handleSelectOptions = (urlParam, options) => {
     const queryParams =
       options && options.length > 0
         ? { ...urlQueryParams, [urlParam]: options.join(',') }
@@ -65,7 +58,7 @@ const SearchFiltersComponent = props => {
 
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
-
+ */
   const handleSelectOption = (urlParam, option) => {
     // query parameters after selecting the option
     // if no option is passed, clear the selection for the filter
@@ -87,17 +80,6 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-  const amenitiesFilterElement = amenitiesFilter ? (
-    <SelectMultipleFilter
-      name="amenities"
-      urlParam={amenitiesFilter.paramName}
-      label={amenitiesLabel}
-      onSelect={handleSelectOptions}
-      options={amenitiesFilter.options}
-      initialValues={initialAmenities}
-      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-    />
-  ) : null;
 
   const toggleSearchFiltersPanelButtonClasses =
     isSearchFiltersPanelOpen || searchFiltersPanelSelectedCount > 0
@@ -117,12 +99,25 @@ const SearchFiltersComponent = props => {
     </button>
   ) : null;
   return (
-    <div className={classes}>
-      <div className={css.filters}>
-        {categoryFilterElement}
-        {amenitiesFilterElement}
-        {toggleSearchFiltersPanelButton}
-      </div>
+    <div className={classes}>      
+      <div className="ui grid secondary pointing menu">          
+            <div className="left floated fourteen wide column">
+              <div className="ui icon buttons">
+                    {categoryFilterElement}      
+                    {toggleSearchFiltersPanelButton}  
+              </div>         
+            </div> 
+              
+            <div className="right floated  column">
+              <div className="ui icon buttons">
+                <button className="ui left attached button ui blue button"><i className="icon th"></i> &nbsp; Grid   </button>
+                <button className="ui left attached button"><i className="icon list"></i>&nbsp;List</button>
+                <button className="ui right attached button"><i className="icon anchor"></i> &nbsp;Map</button>
+              </div>
+            </div>
+          
+        </div> 
+     
 
       {listingsAreLoaded && resultsCount > 0 ? (
         <div className={css.searchResultSummary}>
@@ -153,7 +148,6 @@ SearchFiltersComponent.defaultProps = {
   resultsCount: null,
   searchingInProgress: false,
   categoryFilter: null,
-  amenitiesFilter: null,
   isSearchFiltersPanelOpen: false,
   toggleSearchFiltersPanel: null,
   searchFiltersPanelSelectedCount: 0,
@@ -168,7 +162,6 @@ SearchFiltersComponent.propTypes = {
   searchingInProgress: bool,
   onManageDisableScrolling: func.isRequired,
   categoriesFilter: propTypes.filterConfig,
-  amenitiesFilter: propTypes.filterConfig,
   isSearchFiltersPanelOpen: bool,
   toggleSearchFiltersPanel: func,
   searchFiltersPanelSelectedCount: number,

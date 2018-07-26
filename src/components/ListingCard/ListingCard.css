@@ -10,6 +10,25 @@
     text-decoration: none;
   }
 }
+.container {
+  position: relative;
+  text-align: center;
+}
+.priceValueTwo{
+  width: auto;
+  position: absolute;
+  color:black;
+  background-color: darkgray;
+  top: 0;
+  right: 3px;
+}
+.titleTwo{
+  position: absolute;
+  bottom:8px;
+  left: 30px;
+  color: white;
+  @apply --marketplaceH3FontStyles;
+}
 
 .threeToTwoWrapper {
   /* Layout */
@@ -45,7 +64,12 @@
   /* Layout */
   display: flex;
   flex-direction: row;
-  padding: 16px 0 2px 0;
+  background-color: darkgray;
+  color: dodgerblue;  
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  @apply --marketplaceH3FontStyles;
 }
 
 .price {
@@ -86,10 +110,6 @@
   }
 }
 
-.mainInfo {
-  display: flex;
-  flex-direction: column;
-}
 
 .title {
   /* Font */
@@ -105,13 +125,12 @@
     margin-bottom: 0;
   }
 }
-
+.authorbutton{
+  width: 200px;
+  padding: 10px;
+}
 .authorInfo {
-  /* Font */
-  @apply --marketplaceTinyFontStyles;
-  color: var(--matterColor);
-
-  /* Remove default margins from font */
+  
   margin-top: 0;
   margin-bottom: 0;
 

@@ -17,6 +17,7 @@ const SectionReviews = props => {
     <div className={css.sectionReviews}>
       <h2 className={css.reviewsHeading}>
         <FormattedMessage id="ListingPage.reviewsHeading" values={{ count: reviews.length }} />
+        <span className={css.getEmails}>Get emails about new comments</span>
       </h2>
       {fetchReviewsError ? reviewsError : null}
       <Reviews reviews={reviews} />
