@@ -18,7 +18,7 @@
   width: auto;
   position: absolute;
   color:black;
-  background-color: darkgray;
+  background-color: lightgray;
   top: 0;
   right: 3px;
 }
@@ -28,6 +28,10 @@
   left: 30px;
   color: white;
   @apply --marketplaceH3FontStyles;
+}
+.authorName{
+  margin-left: 20px;
+  padding-top: 10px;
 }
 
 .threeToTwoWrapper {
@@ -64,12 +68,11 @@
   /* Layout */
   display: flex;
   flex-direction: row;
-  background-color: darkgray;
+  background-color:lightgray;
   color: dodgerblue;  
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-bottom: 10px;
   @apply --marketplaceH3FontStyles;
+  margin-top: 0;
+  margin-right: 3px;
 }
 
 .price {

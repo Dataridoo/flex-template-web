@@ -10,7 +10,6 @@ import { Modal, NamedRedirect, Tabs } from '../../components';
 
 import EditListingWizardTab, {
   DESCRIPTION,
-  FEATURES,
   POLICY,
   LOCATION,
   PRICING,
@@ -20,7 +19,7 @@ import css from './EditListingWizard.css';
 
 // TODO: PHOTOS panel needs to be the last one since it currently contains PayoutDetailsForm modal
 // All the other panels can be reordered.
-export const TABS = [DESCRIPTION, FEATURES, POLICY, LOCATION, PRICING, PHOTOS];
+export const TABS = [DESCRIPTION, POLICY, LOCATION, PRICING, PHOTOS];
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
@@ -29,8 +28,6 @@ const tabLabel = (intl, tab) => {
   let key = null;
   if (tab === DESCRIPTION) {
     key = 'EditListingWizard.tabLabelDescription';
-  } else if (tab === FEATURES) {
-    key = 'EditListingWizard.tabLabelFeatures';
   } else if (tab === POLICY) {
     key = 'EditListingWizard.tabLabelPolicy';
   } else if (tab === LOCATION) {
@@ -53,14 +50,12 @@ const tabLabel = (intl, tab) => {
  * @return true if tab / step is completed.
  */
 const tabCompleted = (tab, listing) => {
-  const { frame, fork, size, drivetrain, weight, wheelset, components, accessories, geolocation, price, title, publicData } = listing.attributes;
+  const { description, frame, fork, size, drivetrain, weight, wheelset, components, accessories, geolocation, price, title, publicData } = listing.attributes;
   const images = listing.images;
 
   switch (tab) {
     case DESCRIPTION:
-      return !!(frame && fork && size && drivetrain && title && weight && wheelset && components && accessories);
-    case FEATURES:
-      return !!(publicData && publicData.amenities);
+      return !!(frame && description && fork && size && drivetrain && title && weight && wheelset && components && accessories);
     case POLICY:
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:
@@ -295,6 +290,7 @@ EditListingWizard.propTypes = {
       geolocation: object,
       pricing: object,
       title: string,
+      description: string,
     }),
     images: array,
   }),

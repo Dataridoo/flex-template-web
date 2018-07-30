@@ -38,16 +38,15 @@ const EditListingDescriptionFormComponent = props => (
       const titleRequiredMessage = intl.formatMessage({
         id: 'EditListingDescriptionForm.titleRequired',
       });
+
       const maxLengthMessage = intl.formatMessage(
         { id: 'EditListingDescriptionForm.maxLength' },
         {
           maxLength: TITLE_MAX_LENGTH,
         }
       );
-
-      const maxLength60Message = maxLength(maxLengthMessage, TITLE_MAX_LENGTH);
+  
       
-
       const frameMessage = intl.formatMessage({
         id: 'EditListingDescriptionForm.frame',
       });
@@ -57,6 +56,8 @@ const EditListingDescriptionFormComponent = props => (
       const frameRequiredMessage = intl.formatMessage({
         id: 'EditListingDescriptionForm.frameRequired',
       });
+
+      
 
       const forkMessage = intl.formatMessage({
         id: 'EditListingDescriptionForm.fork',
@@ -128,6 +129,7 @@ const EditListingDescriptionFormComponent = props => (
         id: 'EditListingDescriptionForm.componentsRequired',
       });
 
+      const maxLength60Message = maxLength(maxLengthMessage, TITLE_MAX_LENGTH);
 
       const errorMessage = updateError ? (
         <p className={css.error}>
@@ -154,26 +156,28 @@ const EditListingDescriptionFormComponent = props => (
             validate={composeValidators(required(titleRequiredMessage), maxLength60Message)}
           />
 
+         
+          
           <FieldTextInput
             id="frame"
             name="frame"
-            className={css.description}
+            className={css.title}
             type="text"
             label={frameMessage}
             placeholder={framePlaceholderMessage}
             maxLength={TITLE_MAX_LENGTH}
-            validate={composeValidators(required(frameRequiredMessage))}
+            validate={composeValidators(required(frameRequiredMessage), maxLength60Message)}
           />
 
           <FieldTextInput
             id="fork"
             name="fork"
-            className={css.description}
+            className={css.title}
             type="text"
             label={forkMessage}
             placeholder={forkPlaceholderMessage}
             maxLength={TITLE_MAX_LENGTH}
-            validate={composeValidators(required(forkRequiredMessage))}
+            validate={composeValidators(required(forkRequiredMessage), maxLength60Message)}
           />
 
           <FieldTextInput
@@ -201,46 +205,46 @@ const EditListingDescriptionFormComponent = props => (
         <FieldTextInput
           id="wheelset"
           name="wheelset"
-          className={css.description}
+          className={css.title}
           type="text"
           label={wheelsetMessage}
           placeholder={wheelsetPlaceholderMessage}
           maxLength={TITLE_MAX_LENGTH}
-          validate={composeValidators(required(wheelsetRequiredMessage))}
+          validate={composeValidators(required(wheelsetRequiredMessage), maxLength60Message)}
         />
 
       <FieldTextInput
         id="accessories"
         name="accessories"
-        className={css.description}
+        className={css.title}
         type="text"
         label={accessoriesMessage}
         placeholder={accessoriesPlaceholderMessage}
         maxLength={TITLE_MAX_LENGTH}
-        validate={composeValidators(required(accessoriesRequiredMessage))}
+        validate={composeValidators(required(accessoriesRequiredMessage), maxLength60Message)}
         />
 
 
       <FieldTextInput
         id="size"
         name="size"
-        className={css.description}
+        className={css.title}
         type="text"
         label={sizeMessage}
         placeholder={sizePlaceholderMessage}
         maxLength={TITLE_MAX_LENGTH}
-        validate={composeValidators(required(sizeRequiredMessage))}
+        validate={composeValidators(required(sizeRequiredMessage), maxLength60Message)}
       />
 
       <FieldTextInput
         id="weight"
         name="weight"
-        className={css.description}
+        className={css.title}
         type="text"
         label={weightMessage}
         placeholder={weightPlaceholderMessage}
         maxLength={TITLE_MAX_LENGTH}
-        validate={composeValidators(required(weightRequiredMessage))}
+        validate={composeValidators(required(weightRequiredMessage), maxLength60Message)}
       />
       
 

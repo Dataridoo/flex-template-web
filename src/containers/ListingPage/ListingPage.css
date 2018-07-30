@@ -9,13 +9,18 @@
 }
 
 .SectionTitleHeader {
-  text-align: center;
   margin-left: 50px;
   @apply --marketplaceH2FontStyles;
   padding-top: 10px;
-  padding-bottom: 10px;
   color: white;
 
+}
+.SectionTitleRentals{
+  margin-left: 55px;
+  @apply --marketplaceH4FontStyles;
+  color: white;
+  margin-top: -20px;
+  padding-bottom: 10px;
 }
 
 .mainContainer{
@@ -93,6 +98,8 @@
   width: 150px;
   height: 100px;
   margin-left: 150px;
+  color: dodgerblue;
+  @apply --marketplaceH3FontStyles;
 }
 
 .bookingSection{
@@ -309,8 +316,6 @@
 }
 
 .sectionHeading {
- 
-
   @media (--viewportMedium) {
     display: flex;
    
@@ -363,8 +368,6 @@
 .title {
   /* Font */
   @apply --marketplaceH3FontStyles;
-  color: dodgerblue;
-
   /* Layout */
   width: 100%;
   margin-top: 0;

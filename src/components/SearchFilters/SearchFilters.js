@@ -2,18 +2,18 @@ import React from 'react';
 import { compose } from 'redux';
 import { object, string, bool, number, func, shape } from 'prop-types';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import classNames from 'classnames';
+//import classNames from 'classnames';
 import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
 
-import { SelectSingleFilter } from '../../components';
+import { SelectSingleFilter, NamedLink } from '../../components';
 import routeConfiguration from '../../routeConfiguration';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
 import css from './SearchFilters.css';
 
 // Dropdown container can have a positional offset (in pixels)
-const FILTER_DROPDOWN_OFFSET = -14;
+const FILTER_DROPDOWN_OFFSET = -22;
 
 // resolve initial value for a single value filter
 const initialValue = (queryParams, paramName) => {
@@ -23,8 +23,8 @@ const initialValue = (queryParams, paramName) => {
 
 const SearchFiltersComponent = props => {
   const {
-    rootClassName,
-    className,
+    /* rootClassName,
+    className, */
     urlQueryParams,
     listingsAreLoaded,
     resultsCount,
@@ -39,7 +39,7 @@ const SearchFiltersComponent = props => {
   } = props;
 
   const hasNoResult = listingsAreLoaded && resultsCount === 0;
-  const classes = classNames(rootClassName || css.root, { [css.longInfo]: hasNoResult }, className);
+  /* const classes = classNames(rootClassName || css.root, { [css.longInfo]: hasNoResult }, className); */
 
   const categoryLabel = intl.formatMessage({
     id: 'SearchFilters.categoryLabel',
@@ -80,6 +80,17 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
+  const searchMap = (
+      <NamedLink name="SearchMapPage">
+        <span>Map</span>
+      </NamedLink>
+    )
+
+    const searchList = (
+      <NamedLink name="SearchListingsPage">
+        <span>List</span>
+      </NamedLink>
+    )
 
   const toggleSearchFiltersPanelButtonClasses =
     isSearchFiltersPanelOpen || searchFiltersPanelSelectedCount > 0
@@ -99,23 +110,21 @@ const SearchFiltersComponent = props => {
     </button>
   ) : null;
   return (
-    <div className={classes}>      
-      <div className="ui grid secondary pointing menu">          
-            <div className="left floated fourteen wide column">
-              <div className="ui icon buttons">
-                    {categoryFilterElement}      
-                    {toggleSearchFiltersPanelButton}  
-              </div>         
-            </div> 
+    <div className={css.MainSearchContainer}>      
+      <div className="ui secondary pointing menu">      
+            <div className="left menu">  
+              {categoryFilterElement}      
+              {toggleSearchFiltersPanelButton}                      
+                 
+            </div>
               
-            <div className="right floated  column">
+            <div className="right menu">
               <div className="ui icon buttons">
                 <button className="ui left attached button ui blue button"><i className="icon th"></i> &nbsp; Grid   </button>
-                <button className="ui left attached button"><i className="icon list"></i>&nbsp;List</button>
-                <button className="ui right attached button"><i className="icon anchor"></i> &nbsp;Map</button>
+                <button className="ui left attached button"><i className="icon list"></i>&nbsp;{searchList}</button>
+                <button className="ui right attached button"><i className="icon anchor"></i>&nbsp;{searchMap}</button>
               </div>
-            </div>
-          
+            </div>          
         </div> 
      
 

@@ -366,8 +366,8 @@
       flex-grow: 0;
       /* min-height: 568px; */
       padding: var(--modalPaddingMedium);
-      margin-top: 12.5vh;
-      margin-bottom: 12.5vh;
+      margin-top: 2.5vh;
+      margin-bottom: 22.5vh;
       border-bottom: 8px solid var(--marketplaceColor);
     }
   }
@@ -429,11 +429,11 @@
 
   --marketplaceModalBottomWrapper {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 10px;
     align-self: stretch;
 
     @media (--viewportMedium) {
-      margin-top: 96px;
+      margin-top: 36px;
     }
   }
 
@@ -554,10 +554,10 @@
   --marketplaceModalPasswordMargins {
     /* Leave space between the input and the button below when the
     viewport height is small */
-    margin-top: 24px;
+    margin-top: 4px;
 
     @media (--viewportMedium) {
-      margin-top: 32px;
+      margin-top: 12px;
     }
   }
 }

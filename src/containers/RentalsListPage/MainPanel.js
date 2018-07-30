@@ -83,7 +83,7 @@ class MainPanel extends Component {
               listingsAreLoaded={listingsAreLoaded}
               onClosePanel={() => this.setState({ isSearchFiltersPanelOpen: false })}
               filterParamNames={secondaryFilterParamNames}
-              {...secondaryFilters}
+             // {...secondaryFilters}
             />
           </div>
         ) : (

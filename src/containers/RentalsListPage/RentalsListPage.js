@@ -6,6 +6,7 @@ import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import config from '../../config';
 
+import { manageDisableScrolling } from '../../ducks/UI.duck';
 import { parse, stringify } from '../../util/urlHelpers';
 import { propTypes } from '../../util/types';
 import { getListingsById } from '../../ducks/marketplaceData.duck';
@@ -38,11 +39,7 @@ export class SearchPageComponent extends Component {
       categoryFilter: {
         paramName: 'pub_category',
         options: categories,
-      },/* 
-      amenitiesFilter: {
-        paramName: 'pub_amenities',
-        options: amenities,
-      }, */
+      },
     };
   }
   
@@ -52,7 +49,7 @@ export class SearchPageComponent extends Component {
       intl,
       listings,
       location,     
-     // onManageDisableScrolling,
+     onManageDisableScrolling,
       pagination,
      // scrollingDisabled,
       searchParams,
@@ -86,21 +83,20 @@ export class SearchPageComponent extends Component {
         schema={schema} 
       >
        
-        <div className={css.container}>
+        <div className={css.MainPanelcontainer}>
           <MainPanel
             urlQueryParams={validQueryParams}
             listings={listings}          
             searchParamsAreInSync={searchParamsAreInSync}
             onActivateListing={onActivateListing}
-           // onManageDisableScrolling={onManageDisableScrolling}            
+            onManageDisableScrolling={onManageDisableScrolling}            
             pagination={pagination}
             primaryFilters={{
               categoryFilter: filters.categoryFilter,
-              //amenitiesFilter: filters.amenitiesFilter,
             }}
-          />
-          
+          />          
         </div>
+        
       </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */
@@ -114,18 +110,17 @@ SearchPageComponent.defaultProps = {
   searchListingsError: null,
   searchParams: {},
   tab: 'listings',
-  categories: config.custom.categories,/* 
-  amenities: config.custom.amenities, */
+  categories: config.custom.categories,
   activeListingId: null,
 };
 
-const { array, func, oneOf, object, shape, string } = PropTypes;
+const { array, func, oneOf, object, shape,  string } = PropTypes;
 
 SearchPageComponent.propTypes = {
   listings: array,
   mapListings: array,
   onActivateListing: func.isRequired,
-  //onManageDisableScrolling: func.isRequired,
+  onManageDisableScrolling: func.isRequired,
   pagination: propTypes.pagination,
   //scrollingDisabled: bool.isRequired,
   searchListingsError: propTypes.error,
@@ -163,8 +158,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  /* onManageDisableScrolling: (componentId, disableScrolling) =>
-    dispatch(manageDisableScrolling(componentId, disableScrolling)), */
+   onManageDisableScrolling: (componentId, disableScrolling) =>
+    dispatch(manageDisableScrolling(componentId, disableScrolling)), 
   onActivateListing: listingId => dispatch(setActiveListing(listingId)),
 });
 

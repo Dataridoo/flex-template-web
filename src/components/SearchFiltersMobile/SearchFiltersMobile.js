@@ -12,7 +12,7 @@ import {
   ModalInMobile,
   Button,
   SelectSingleFilterPlain,
-  SelectMultipleFilterPlain,
+  //SelectMultipleFilterPlain,
 } from '../../components';
 import { propTypes } from '../../util/types';
 import css from './SearchFiltersMobile.css';
@@ -120,7 +120,7 @@ class SearchFiltersMobileComponent extends Component {
       onManageDisableScrolling,
       selectedFiltersCount,
       categoryFilter,
-      amenitiesFilter,
+     // amenitiesFilter,
       intl,
     } = this.props;
 
@@ -168,9 +168,9 @@ class SearchFiltersMobileComponent extends Component {
 
     //const amenitiesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.amenitiesLabel' });
 
-    const initialAmenities = this.initialValues(amenitiesFilter.paramName);
+    //const initialAmenities = this.initialValues(amenitiesFilter.paramName);
 
-    const amenitiesFilterElement = amenitiesFilter ? (
+    /* const amenitiesFilterElement = amenitiesFilter ? (
       <SelectMultipleFilterPlain
         name="amenities"
         urlParam={amenitiesFilter.paramName}
@@ -180,7 +180,7 @@ class SearchFiltersMobileComponent extends Component {
         initialValues={initialAmenities}
       />
     ) : null;
-
+ */
     return (
       <div className={classes}>
         <div className={css.searchResultSummary}>
@@ -211,7 +211,7 @@ class SearchFiltersMobileComponent extends Component {
           </div>
           <div className={css.filtersWrapper}>
             {categoryFilterElement}
-            {amenitiesFilterElement}
+           
           </div>
           <div className={css.showListingsContainer}>
             <Button className={css.showListingsButton} onClick={this.closeFilters}>
@@ -232,7 +232,7 @@ SearchFiltersMobileComponent.defaultProps = {
   selectedFiltersCount: 0,
   filterParamNames: [],
   categoryFilter: null,
-  amenitiesFilter: null,
+  //amenitiesFilter: null,
 };
 
 SearchFiltersMobileComponent.propTypes = {
@@ -250,7 +250,7 @@ SearchFiltersMobileComponent.propTypes = {
   selectedFiltersCount: number,
   filterParamNames: array,
   categoriesFilter: propTypes.filterConfig,
-  amenitiesFilter: propTypes.filterConfig,
+  //amenitiesFilter: propTypes.filterConfig,
 
   // from injectIntl
   intl: intlShape.isRequired,

@@ -433,8 +433,9 @@ export class ListingPageComponent extends Component {
                  <div className={css.SectionTitleHeader}> 
                   <SectionHeading 
                       richTitle={richTitle}
-                    />  
+                    />                    
                   </div>
+                  <div className={css.SectionTitleRentals}>RENTALS</div>
               </div>
              
             </div>
