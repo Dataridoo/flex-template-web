@@ -41,7 +41,7 @@
      * .container is using flexbox,
      * This specifies that searchResultContainer is taking 60% from the viewport width
      */
-    flex-basis: 50%;
+    flex-basis: 33.3%;
   }
 
   @media (--viewportLarge) {

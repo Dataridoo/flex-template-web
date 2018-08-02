@@ -24,7 +24,7 @@ const EditListingDescriptionPanel = props => {
 
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureOwnListing(listing);
-  const { description, frame, fork, weight, wheelset, components, size, drivetrain, title, accessories, publicData } = currentListing.attributes;
+  const { description, title, publicData } = currentListing.attributes;
 
   const panelTitle = currentListing.id ? (
     <FormattedMessage
@@ -40,21 +40,14 @@ const EditListingDescriptionPanel = props => {
       <h1 className={css.title}>{panelTitle}</h1>
       <EditListingDescriptionForm
         className={css.form}
-        initialValues={{ description, title, frame, size, fork, weight, wheelset, components, accessories, drivetrain, category: publicData.category }}
+        initialValues={{ description, title, category: publicData.category }}
         saveActionMsg={submitButtonText}
         onSubmit={values => {
-          const { description, title, frame,size, fork, weight, wheelset, components, accessories, drivetrain, category } = values;
+          const { description, title, category } = values;
           const updateValues = {
             title: title.trim(),
             description,
-            frame: frame.trim(),
-            fork:fork.trim(),
-            size:size.trim(),
-            weight:weight.trim(),
-            wheelset:wheelset.trim(),
-            components:components.trim(),
-            accessories:accessories.trim(),
-            drivetrain:drivetrain.trim(),
+           
             publicData: { category },
           };
 

@@ -50,14 +50,22 @@ const tabLabel = (intl, tab) => {
  * @return true if tab / step is completed.
  */
 const tabCompleted = (tab, listing) => {
-  const { description, frame, fork, size, drivetrain, weight, wheelset, components, accessories, geolocation, price, title, publicData } = listing.attributes;
+  const { description,  geolocation, price, title, publicData } = listing.attributes;
   const images = listing.images;
 
   switch (tab) {
     case DESCRIPTION:
-      return !!(frame && description && fork && size && drivetrain && title && weight && wheelset && components && accessories);
+      return !!(description && title);
     case POLICY:
-      return !!(publicData && typeof publicData.rules !== 'undefined');
+      return !!(publicData && typeof publicData.frame !== 'undefined' 
+              && publicData && typeof publicData.fork !== 'undefined'
+              && publicData && typeof publicData.components !== 'undefined'
+              && publicData && typeof publicData.accessories !== 'undefined'
+              && publicData && typeof publicData.size !== 'undefined'
+              && publicData && typeof publicData.weight !== 'undefined'
+              && publicData && typeof publicData.wheelset !== 'undefined'
+              && publicData && typeof publicData.drivetrain !== 'undefined'
+            );
     case LOCATION:
       return !!(geolocation && publicData && publicData.location && publicData.location.address);
     case PRICING:
@@ -279,14 +287,7 @@ EditListingWizard.propTypes = {
   listing: shape({
     attributes: shape({
       publicData: object,
-      frame: string,
-      fork: string,
-      size: string,
-      weight: string,
-      wheelset: string,
-      components: string,
-      accessories: string,
-      drivetrain: string,
+      
       geolocation: object,
       pricing: object,
       title: string,

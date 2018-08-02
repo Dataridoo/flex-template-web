@@ -7,6 +7,12 @@
   position: relative;
 }
 
+.searchList{
+  color:black;
+}
+.searchMap{
+  color:black;
+}
 .longInfo {
   flex-wrap: wrap;
 }

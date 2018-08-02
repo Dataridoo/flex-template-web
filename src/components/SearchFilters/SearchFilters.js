@@ -50,15 +50,15 @@ const SearchFiltersComponent = props => {
 
   const initialCategory = initialValue(urlQueryParams, categoryFilter.paramName);
 
-  /* const handleSelectOptions = (urlParam, options) => {
-    const queryParams =
-      options && options.length > 0
-        ? { ...urlQueryParams, [urlParam]: options.join(',') }
-        : omit(urlQueryParams, urlParam);
+  // const handleSelectOptions = (urlParam, options) => {
+  //   const queryParams =
+  //     options && options.length > 0
+  //       ? { ...urlQueryParams, [urlParam]: options.join(',') }
+  //       : omit(urlQueryParams, urlParam);
 
-    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
-  };
- */
+  //   history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
+  // };
+ 
   const handleSelectOption = (urlParam, option) => {
     // query parameters after selecting the option
     // if no option is passed, clear the selection for the filter
@@ -82,13 +82,13 @@ const SearchFiltersComponent = props => {
 
   const searchMap = (
       <NamedLink name="SearchMapPage">
-        <span>Map</span>
+        <span className={css.searchMap}>Map</span>
       </NamedLink>
     )
 
     const searchList = (
       <NamedLink name="SearchListingsPage">
-        <span>List</span>
+        <span className={css.searchList} >List</span>
       </NamedLink>
     )
 

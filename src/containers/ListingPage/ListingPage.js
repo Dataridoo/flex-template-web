@@ -23,15 +23,21 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperMain,
   LayoutWrapperFooter,
-  Footer,
+  Footer, NamedLink
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
+import { 
+  FacebookShareButton, 
+  TwitterShareButton,
+ 
+} from 'react-share';
+
+import SectionLikeCounter from './SectionLikeCounter';
 
 import { sendEnquiry, loadData, setInitialValues } from './ListingPage.duck';
 import SectionImages from './SectionImages';
 import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
-import SectionDescription from './SectionDescription';
 import SectionReviews from './SectionReviews';
 import SectionHost from './SectionHost';
 import SectionRulesMaybe from './SectionRulesMaybe';
@@ -227,14 +233,6 @@ export class ListingPageComponent extends Component {
 
     const {
       description = '',
-      frame = '',
-      fork = '',
-      drivetrain = '',
-      components = '',
-      wheelset = '',
-      accessories = '',
-      size = '',
-      weight = '',
       geolocation = null,
       price = null,
       title = '',
@@ -372,10 +370,13 @@ export class ListingPageComponent extends Component {
       { id: 'ListingPage.schemaTitle' },
       { title, price: formattedPrice, siteTitle }
     );
-/* 
-    const hostLink = (
+    
+    
+    const shareUrl = "http://pedal.world";
+ 
+    const hostLinkHeader = (
       <NamedLink
-        className={css.authorNameLink}
+        className={css.authorNameLinkHeader}
         name="ListingPage"
         params={params}
         to={{ hash: '#host' }}
@@ -383,7 +384,19 @@ export class ListingPageComponent extends Component {
         {authorDisplayName}
       </NamedLink>
     );
-
+    
+    const hostLinkSidebar = (
+      <NamedLink
+        className={css.authorNameLinkSidebar}
+        name="ListingPage"
+        params={params}
+        to={{ hash: '#host' }}
+      >
+        {authorDisplayName}
+      </NamedLink>
+    );
+    
+/*
     const category =
       publicData && publicData.category ? (
         <span>
@@ -399,28 +412,14 @@ export class ListingPageComponent extends Component {
         author={authorDisplayName}
         contentType="website"
         description={description}
-        frame={frame}        
-        fork={fork}
-        components={components}
-        drivetrain={drivetrain}
-        wheelset={wheelset}
-        accessories={accessories}
-        size={size}
-        weight={weight}
+        
         facebookImages={facebookImages}
         twitterImages={twitterImages}
         schema={{
           '@context': 'http://schema.org',
           '@type': 'ItemPage',
           description: description,
-          frame:frame,        
-          fork:fork,
-          components:components,
-          drivetrain:drivetrain,
-          wheelset:wheelset,
-          accessories:accessories,
-          size:size,
-          weight:weight,
+         
           name: schemaTitle,
           image: schemaImages,
         }}
@@ -431,9 +430,8 @@ export class ListingPageComponent extends Component {
             <div  className="sixteen wide column">             
                <div className={css.SectionTitle} >  
                  <div className={css.SectionTitleHeader}> 
-                  <SectionHeading 
-                      richTitle={richTitle}
-                    />                    
+                  {hostLinkHeader}
+                    
                   </div>
                   <div className={css.SectionTitleRentals}>RENTALS</div>
               </div>
@@ -457,6 +455,11 @@ export class ListingPageComponent extends Component {
                     handleViewPhotosClick={handleViewPhotosClick}
                     onManageDisableScrolling={onManageDisableScrolling}
                   />
+                  <div className={css.placeholderButton}>
+                    <button className="ui button">  </button>
+                    <button className="ui button">  </button>
+                    <button className="ui button">  </button>
+                  </div>
                 </div>              
                 <div className="six wide column">  
                    <div className={css.formatedPriceAndUnit}> 
@@ -495,35 +498,48 @@ export class ListingPageComponent extends Component {
                           params={params} 
                         />
                     </div>
-                    <div className={css.avatarTitle}> 
-                      <SectionHeading                        
-                          richTitle={richTitle}
+                    <div > 
+                      <span className={css.avatarTitle}>  {hostLinkSidebar}</span>
+                      <SectionHeading 
                           showContactUser={showContactUser}
                           onContactUser={this.onContactUser}
-                        />   
+                        />  
+                       
                     </div>             
                   </div>  <hr/>                    
                 </div>
               </div>
               <div className="ui stackable sixteen column grid">             
                 <div className="ten wide column">
-                  <SectionDescription 
-                    description={description} 
-                    frame={frame}        
-                    fork={fork}
-                    components={components}
-                    drivetrain={drivetrain}
-                    wheelset={wheelset}
-                    accessories={accessories}
-                    size={size}
-                    weight={weight} 
-                  />
+                  <div className={css.SectionHeadingNew}>
+                   {richTitle}
+                  </div>
+                   <SectionRulesMaybe publicData={publicData} />
                   
-                  <SectionRulesMaybe publicData={publicData} />
+                  <div className={css.SectionLikeCounter}>       
+                  <SectionLikeCounter />
+                  <button className="mini ui facebook button">                 
+                    <FacebookShareButton
+                        url={shareUrl}
+                        quote={schemaTitle}
+                        >
+                        Share
+                      </FacebookShareButton>
+                  </button>
 
-                  <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
+                  <button className="mini ui twitter button">
+                      <TwitterShareButton
+                        url={shareUrl}
+                       quote={schemaTitle}
+                      >
+                        <i className="twitter icon"></i>  Tweet
+                    </TwitterShareButton> 
+                  </button>   
+                </div> 
+                  
+                  <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
                     <SectionHost
-                      title={title}
+                      quote={title}
                       listing={currentListing}
                       isOwnListing={isOwnListing}
                       authorDisplayName={authorDisplayName}
@@ -535,14 +551,14 @@ export class ListingPageComponent extends Component {
                       onSubmitEnquiry={this.onSubmitEnquiry}
                       currentUser={currentUser}
                       onManageDisableScrolling={onManageDisableScrolling}
-                    /> <br/>
+                    /> 
                 </div>  
                 <div className="six wide column">
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
                     listingId={currentListing.id}
-                  />
+                  /> 
                 </div>
               </div>
           </div>

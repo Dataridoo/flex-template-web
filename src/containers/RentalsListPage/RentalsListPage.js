@@ -19,7 +19,6 @@ import {
   createSearchResultSchema,
 } from './RentalsListPage.helpers';
 import MainPanel from './MainPanel';
-import css from './RentalsListPage.css';
 
 const RESULT_PAGE_SIZE = 24;
 
@@ -72,7 +71,7 @@ export class SearchPageComponent extends Component {
     const validQueryParams = validURLParamsForExtendedData(searchInURL, filters);
    
     const { address } = searchInURL || {};
-    const { title, description, schema } = createSearchResultSchema(listings, address, intl);
+    const { title, description, frame, schema } = createSearchResultSchema(listings, address, intl);
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
@@ -80,10 +79,11 @@ export class SearchPageComponent extends Component {
         //scrollingDisabled={scrollingDisabled}
         description={description}
         title={title}
+         frame={frame}
         schema={schema} 
       >
+     
        
-        <div className={css.MainPanelcontainer}>
           <MainPanel
             urlQueryParams={validQueryParams}
             listings={listings}          
@@ -94,8 +94,9 @@ export class SearchPageComponent extends Component {
             primaryFilters={{
               categoryFilter: filters.categoryFilter,
             }}
-          />          
-        </div>
+          />  
+        
+          
         
       </div>
     );

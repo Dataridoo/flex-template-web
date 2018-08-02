@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { richText } from '../../util/richText';
 
 import css from './ListingPage.css';
@@ -7,97 +6,19 @@ import css from './ListingPage.css';
 const MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION = 20;
 
 const SectionDescription = props => {
-  const { description, frame, fork, drivetrain, components, wheelset, accessories, size, weight} = props;
+  const { description} = props;
   return (
     <div className={css.sectionDescription}>  
-      <p className={css.descriptionTitle}>
-        <strong> <FormattedMessage id="ListingPage.descriptionTitle" /> </strong>
+    <p className={css.descriptionTitleheader}>
+       
         <span className={css.description}>
           {richText(description, {
             longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
             longWordClass: css.longWord,
           })}
         </span>
-      </p>    
-      <p className={css.descriptionTitle}>
-        <strong> <FormattedMessage id="ListingPage.frameTitle" /></strong>
-        <span className={css.description}>
-          {richText(frame, {
-            longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-            longWordClass: css.longWord,
-          })}
-        </span>
-      </p>
+      </p> 
       
-      <p className={css.descriptionTitle}>
-         <strong><FormattedMessage id="ListingPage.forkTitle" /></strong>
-         <span className={css.description}>
-          {richText(fork, {
-            longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-            longWordClass: css.longWord,
-          })}
-        </span>
-      </p>
-      
-      <p className={css.descriptionTitle}>
-        <strong><FormattedMessage id="ListingPage.drivetrainTitle" /></strong>
-        <span className={css.description}>
-          {richText(drivetrain, {
-            longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-            longWordClass: css.longWord,
-          })}
-        </span>
-      </p>
-      
-      <p className={css.descriptionTitle}>
-         <strong><FormattedMessage id="ListingPage.componentsTitle" /></strong>
-         <span className={css.description}>
-            {richText(components, {
-              longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-              longWordClass: css.longWord,
-            })}
-          </span>
-      </p>
-      
-      <p className={css.descriptionTitle}>
-        <strong><FormattedMessage id="ListingPage.wheelsetTitle" /></strong>
-        <span className={css.description}>
-            {richText(wheelset, {
-              longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-              longWordClass: css.longWord,
-            })}
-          </span>
-      </p>
-      
-      <p className={css.descriptionTitle}>
-        <strong><FormattedMessage id="ListingPage.accessoriesTitle" /></strong>
-        <span  className={css.description}>
-          {richText(accessories, {
-            longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-            longWordClass: css.longWord,
-          })}
-        </span>
-      </p>
-      
-      <p className={css.descriptionTitle}>
-        <strong><FormattedMessage id="ListingPage.sizeTitle" /></strong>
-        <span className={css.description}>
-          {richText(size, {
-            longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-            longWordClass: css.longWord,
-          })}
-        </span>
-      </p>
-     
-      <p className={css.descriptionTitle}>
-        <strong><FormattedMessage id="ListingPage.weightTitle" /></strong>
-        <span className={css.description}>
-          {richText(weight, {
-            longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
-            longWordClass: css.longWord,
-          })}
-        </span>
-      </p>
       
     </div>
   );

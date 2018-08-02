@@ -200,7 +200,7 @@ export class SearchPageComponent extends Component {
     };
 
     const { address, bounds, origin } = searchInURL || {};
-    const { title, description, schema } = createSearchResultSchema(listings, address, intl);
+    const { title, description, frame, schema } = createSearchResultSchema(listings, address, intl);
 
     // Set topbar class based on if a modal is open in
     // a child component
@@ -215,6 +215,7 @@ export class SearchPageComponent extends Component {
       <Page
         scrollingDisabled={scrollingDisabled}
         description={description}
+        frame={frame}
         title={title}
         schema={schema}
       >
@@ -240,7 +241,7 @@ export class SearchPageComponent extends Component {
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             primaryFilters={{
               categoryFilter: filters.categoryFilter,
-              amenitiesFilter: filters.amenitiesFilter,
+              //amenitiesFilter: filters.amenitiesFilter,
             }}
           />
           <ModalInMobile

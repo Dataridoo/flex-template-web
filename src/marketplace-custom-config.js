@@ -26,9 +26,9 @@ export const amenities = [
 ];
 
 export const categories = [
-  { key: 'ALL CATEGORIES', label: 'ALL CATEGORIES' },
-  { key: 'CITY BIKES', label: 'CITY BIKES' },
-  { key: 'ROAD BIKES', label: 'ROAD BIKES' },
-  { key: 'MOUNTAIN BIKES', label: 'MOUNTAIN BIKES' },
-  { key: 'E-BIKES', label: 'E-BIKES' },
+  { key: 'AllCategories', label: 'ALL CATEGORIES' },
+  { key: 'CityBikes', label: 'CITY BIKES' },
+  { key: 'RoadBikes', label: 'ROAD BIKES' },
+  { key: 'MountainBike', label: 'MOUNTAIN BIKES' },
+  { key: 'E-Bike', label: 'E-BIKES' },
 ];

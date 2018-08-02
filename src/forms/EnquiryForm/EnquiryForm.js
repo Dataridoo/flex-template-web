@@ -94,7 +94,7 @@ EnquiryFormComponent.propTypes = {
 
   inProgress: bool,
 
-  listingTitle: string.isRequired,
+  listingTitle: string,
   authorDisplayName: string.isRequired,
   sendEnquiryError: propTypes.error,
 

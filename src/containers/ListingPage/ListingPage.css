@@ -8,6 +8,13 @@
   background-color:lightblue;
 }
 
+.authorNameLinkHeader{
+  color: white;
+  padding-bottom: 20px;
+}
+.authorNameLinkSidebar{
+  color: dodgerblue;
+}
 .SectionTitleHeader {
   margin-left: 50px;
   @apply --marketplaceH2FontStyles;
@@ -26,10 +33,11 @@
 .mainContainer{
   margin-left: 40px;
   margin-right: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 0;
 }
 .pageRoot {
   display: flex;
-  padding-bottom: 10px;
   @media (--viewportLarge) {
     padding-bottom: 0;
   }
@@ -79,14 +87,14 @@
   }
 
   @media (--viewportLarge) {
-    padding: 36px 36px 0 36px;
+   
   }
 }
 .mainDiv { 
   width: 300px;
   margin-left: 0;
   margin-right: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 .avatarContainer    {
   width: 150px;
@@ -95,9 +103,8 @@
 }
 
 .avatarTitle {
-  width: 150px;
-  height: 100px;
-  margin-left: 150px;
+ 
+  margin-left: 10px;
   color: dodgerblue;
   @apply --marketplaceH3FontStyles;
 }
@@ -314,6 +321,15 @@
     display: flex;
   }
 }
+.placeholderButton{
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.SectionHeadingNew{
+   @apply --marketplaceH2FontStyles;
+   margin-top: 0;
+}
 
 .sectionHeading {
   @media (--viewportMedium) {
@@ -392,7 +408,7 @@
 }
 
 .authorNameLink {
-  color: var(--matterColor);
+  color: dodgerblue;
 }
 
 .contactWrapper {
@@ -419,21 +435,34 @@
 
 .sectionDescription {
   padding: 0 24px;
-  margin-bottom: 10px;
 
   @media (--viewportMedium) {
     padding: 0;
-    margin-bottom: 52px;
+    margin-bottom: 22px;
   }
 }
 
-.descriptionTitle {
+.descriptionTitleHeader{
   /* Font */
-  @apply --marketplaceH4FontStyles;
-  color: var(--matterColorAnti);
+  @apply --marketplaceH2FontStyles;
+  color: black;
 
   margin-top: 0;
-  margin-bottom: 3px;
+  margin-bottom: 15px;
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+}
+
+
+.descriptionTitle {
+  /* Font */
+  @apply --marketplaceH2FontStyles;
+  color: black;
+
+  margin-top: 0;
+  margin-bottom: 10px;
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 10px;
@@ -501,7 +530,7 @@
 
 .reviewsHeading {
   @apply --marketplaceH3FontStyles;
-  color: var(--matterColorAnti);
+  color:black;
 
   margin: 52px 0 20px 0;
 
@@ -605,6 +634,9 @@
   }
 }
 
+.SectionLikeCounter{
+  margin-bottom: 20px;
+}
 .openBookingForm {
   /* Ensure that mobile button is over Footer too */
   z-index: 9;

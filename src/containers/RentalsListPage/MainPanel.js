@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { array, bool, func, object, objectOf, string } from 'prop-types';
+import { array, bool, func, number, object, objectOf, string } from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import merge from 'lodash/merge';
 import { propTypes } from '../../util/types';
 import {
   SearchResultsPanel,
   SearchFilters,
+  SearchFiltersMobile,
   SearchFiltersPanel,
 } from '../../components';
 import { validFilterParams } from './RentalsListPage.helpers';
@@ -28,15 +31,21 @@ class MainPanel extends Component {
       searchParamsAreInSync,
       onActivateListing,
       onManageDisableScrolling,
+      onOpenModal,
+      onCloseModal,
+      onMapIconClick,
       pagination,
       searchParamsForPagination,
+      showAsModalMaxWidth,
       primaryFilters,
       secondaryFilters,
     } = this.props;
 
     const isSearchFiltersPanelOpen = !!secondaryFilters && this.state.isSearchFiltersPanelOpen;
-   // const filters = merge(primaryFilters, secondaryFilters);  
-  
+
+    const filters = merge(primaryFilters, secondaryFilters);
+    const selectedFilters = validFilterParams(urlQueryParams, filters);
+    const selectedFiltersCount = Object.keys(selectedFilters).length;
 
     const selectedSecondaryFilters = secondaryFilters
       ? validFilterParams(urlQueryParams, secondaryFilters)
@@ -54,11 +63,12 @@ class MainPanel extends Component {
       : {};
 
     const hasPaginationInfo = !!pagination && pagination.totalItems != null;
+    const totalItems = searchParamsAreInSync && hasPaginationInfo ? pagination.totalItems : 0;
     const listingsAreLoaded = !searchInProgress && searchParamsAreInSync && hasPaginationInfo;
 
     const classes = classNames(rootClassName || css.searchResultContainer, className);
 
-    //const filterParamNames = Object.values(filters).map(f => f.paramName);
+    const filterParamNames = Object.values(filters).map(f => f.paramName);
     const secondaryFilterParamNames = secondaryFilters
       ? Object.values(secondaryFilters).map(f => f.paramName)
       : [];
@@ -69,13 +79,30 @@ class MainPanel extends Component {
           className={css.searchFilters}
           urlQueryParams={urlQueryParams}
           listingsAreLoaded={listingsAreLoaded}
+          resultsCount={totalItems}
           searchInProgress={searchInProgress}
           searchListingsError={searchListingsError}
           onManageDisableScrolling={onManageDisableScrolling}
           {...searchFiltersPanelProps}
           {...primaryFilters}
         />
-        
+        <SearchFiltersMobile
+          className={css.searchFiltersMobile}
+          urlQueryParams={urlQueryParams}
+          listingsAreLoaded={listingsAreLoaded}
+          resultsCount={totalItems}
+          searchInProgress={searchInProgress}
+          searchListingsError={searchListingsError}
+          showAsModalMaxWidth={showAsModalMaxWidth}
+          onMapIconClick={onMapIconClick}
+          onManageDisableScrolling={onManageDisableScrolling}
+          onOpenModal={onOpenModal}
+          onCloseModal={onCloseModal}
+          filterParamNames={filterParamNames}
+          selectedFiltersCount={selectedFiltersCount}
+          {...primaryFilters}
+          {...secondaryFilters}
+        />
         {isSearchFiltersPanelOpen ? (
           <div className={classNames(css.searchFiltersPanel)}>
             <SearchFiltersPanel
@@ -83,7 +110,7 @@ class MainPanel extends Component {
               listingsAreLoaded={listingsAreLoaded}
               onClosePanel={() => this.setState({ isSearchFiltersPanelOpen: false })}
               filterParamNames={secondaryFilterParamNames}
-             // {...secondaryFilters}
+              {...secondaryFilters}
             />
           </div>
         ) : (
@@ -92,7 +119,11 @@ class MainPanel extends Component {
               [css.newSearchInProgress]: !listingsAreLoaded,
             })}
           >
-            
+            {searchListingsError ? (
+              <h2 className={css.error}>
+                <FormattedMessage id="SearchPage.searchError" />
+              </h2>
+            ) : null}
             <SearchResultsPanel
               className={css.searchListingsPanel}
               listings={listings}
@@ -124,12 +155,17 @@ MainPanel.propTypes = {
 
   urlQueryParams: object.isRequired,
   listings: array,
+  searchInProgress: bool.isRequired,
   searchListingsError: propTypes.error,
   searchParamsAreInSync: bool.isRequired,
   onActivateListing: func.isRequired,
   onManageDisableScrolling: func.isRequired,
+  onOpenModal: func.isRequired,
+  onCloseModal: func.isRequired,
+  onMapIconClick: func.isRequired,
   pagination: propTypes.pagination,
   searchParamsForPagination: object,
+  showAsModalMaxWidth: number.isRequired,
   primaryFilters: objectOf(propTypes.filterConfig),
   secondaryFilters: objectOf(propTypes.filterConfig),
 };
