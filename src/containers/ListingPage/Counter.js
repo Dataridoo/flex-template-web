@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import css from './ListingPage.css';
 
 class Counter extends React.Component {
   handleCounterClick = () => {
@@ -11,7 +12,7 @@ class Counter extends React.Component {
     return (
       <button 
         onClick={this.handleCounterClick} 
-        className="mini ui facebook button"> 
+        className={css.fbShareBtn}> 
         <i className="hand point right icon"></i>&nbsp;&nbsp; Like &nbsp;
         {this.props.count}
       </button>

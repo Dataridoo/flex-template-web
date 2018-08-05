@@ -22,8 +22,6 @@ class MainPanel extends Component {
 
   render() {
     const {
-      className,
-      rootClassName,
       urlQueryParams,
       listings,
       searchInProgress,
@@ -63,10 +61,7 @@ class MainPanel extends Component {
       : {};
 
     const hasPaginationInfo = !!pagination && pagination.totalItems != null;
-    const totalItems = searchParamsAreInSync && hasPaginationInfo ? pagination.totalItems : 0;
     const listingsAreLoaded = !searchInProgress && searchParamsAreInSync && hasPaginationInfo;
-
-    const classes = classNames(rootClassName || css.searchResultContainer, className);
 
     const filterParamNames = Object.values(filters).map(f => f.paramName);
     const secondaryFilterParamNames = secondaryFilters
@@ -74,12 +69,11 @@ class MainPanel extends Component {
       : [];
 
     return (
-      <div className={classes}>
+      <div >
         <SearchFilters
-          className={css.searchFilters}
+         className={css.searchFilters}        
           urlQueryParams={urlQueryParams}
           listingsAreLoaded={listingsAreLoaded}
-          resultsCount={totalItems}
           searchInProgress={searchInProgress}
           searchListingsError={searchListingsError}
           onManageDisableScrolling={onManageDisableScrolling}
@@ -90,7 +84,6 @@ class MainPanel extends Component {
           className={css.searchFiltersMobile}
           urlQueryParams={urlQueryParams}
           listingsAreLoaded={listingsAreLoaded}
-          resultsCount={totalItems}
           searchInProgress={searchInProgress}
           searchListingsError={searchListingsError}
           showAsModalMaxWidth={showAsModalMaxWidth}
@@ -104,7 +97,10 @@ class MainPanel extends Component {
           {...secondaryFilters}
         />
         {isSearchFiltersPanelOpen ? (
-          <div className={classNames(css.searchFiltersPanel)}>
+          <div 
+          className={classNames(css.searchFiltersPanel)}
+    
+          >
             <SearchFiltersPanel
               urlQueryParams={urlQueryParams}
               listingsAreLoaded={listingsAreLoaded}
@@ -114,7 +110,7 @@ class MainPanel extends Component {
             />
           </div>
         ) : (
-          <div
+          <div      
             className={classNames(css.listings, {
               [css.newSearchInProgress]: !listingsAreLoaded,
             })}
@@ -125,7 +121,7 @@ class MainPanel extends Component {
               </h2>
             ) : null}
             <SearchResultsPanel
-              className={css.searchListingsPanel}
+              className={css.searchListingsPanel}              
               listings={listings}
               pagination={listingsAreLoaded ? pagination : null}
               search={searchParamsForPagination}

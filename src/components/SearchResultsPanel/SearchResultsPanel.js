@@ -33,13 +33,16 @@ const SearchResultsPanel = props => {
     <div className={classes}>
       <div className={css.listingCards}>
         {listings.map(l => (
+        
           <ListingCard
-            className={css.listingCard}
+           className={css.listingCard}
+           
             key={l.id.uuid}
             listing={l}
             renderSizes={cardRenderSizes}
             setActiveListing={setActiveListing}
           />
+        
         ))}
         {props.children}
       </div>

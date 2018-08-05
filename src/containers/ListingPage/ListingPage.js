@@ -42,6 +42,7 @@ import SectionReviews from './SectionReviews';
 import SectionHost from './SectionHost';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
+import SectionFeatures from './SectionFeatures';
 import SectionBooking from './SectionBooking';
 import css from './ListingPage.css';
 
@@ -201,6 +202,7 @@ export class ListingPageComponent extends Component {
       fetchReviewsError,
       sendEnquiryInProgress,
       sendEnquiryError,
+      amenitiesConfig,
     } = this.props;
 
     const isBook = !!parse(location.search).book;
@@ -515,27 +517,31 @@ export class ListingPageComponent extends Component {
                    {richTitle}
                   </div>
                    <SectionRulesMaybe publicData={publicData} />
+                   <SectionFeatures
+                      options={amenitiesConfig}
+                      selectedOptions={publicData.amenities}
+                    />
                   
                   <div className={css.SectionLikeCounter}>       
-                  <SectionLikeCounter />
-                  <button className="mini ui facebook button">                 
-                    <FacebookShareButton
+                    <SectionLikeCounter />
+                    
+                    <button className={css.fbShareBtn}>
+                      <FacebookShareButton
+                        url={shareUrl}
+                        quote={schemaTitle}
+                        >  <i className="facebook icon"></i>
+                        Share
+                      </FacebookShareButton>
+                    </button>
+                    <button className={css.twitterShareBtn}>
+                      <TwitterShareButton
                         url={shareUrl}
                         quote={schemaTitle}
                         >
-                        Share
-                      </FacebookShareButton>
-                  </button>
-
-                  <button className="mini ui twitter button">
-                      <TwitterShareButton
-                        url={shareUrl}
-                       quote={schemaTitle}
-                      >
-                        <i className="twitter icon"></i>  Tweet
-                    </TwitterShareButton> 
-                  </button>   
-                </div> 
+                          <i className="twitter icon"></i>Tweet
+                      </TwitterShareButton> 
+                    </button>
+                  </div> 
                   
                   <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
                     <SectionHost

@@ -22,7 +22,7 @@ import {
   PrivacyPolicyPage,
   ProfilePage,
   ProfileSettingsPage,
-  RentalsPage,
+  RentalsListPage,
   SearchPage,  
   StyleguidePage,
   TermsOfServicePage,
@@ -54,11 +54,6 @@ const routeConfiguration = () => {
       path: '/',
       name: 'LandingPage',
       component: props => <LandingPage {...props} />,
-    },
-    {
-      path: '/rental',
-      name: 'RentalsPage',
-      component: RentalsPage,
     },
     {
       path: '/guide',
@@ -105,6 +100,12 @@ const routeConfiguration = () => {
       name: 'SearchListingsPage',
       component: props => <SearchPage {...props} tab="listings" />,
       loadData: SearchPage.loadData,
+    },
+    {
+      path: '/rent',
+      name: 'RentalsListPage',
+      component: props => <RentalsListPage {...props} tab="listings" />,
+      loadData: RentalsListPage.loadData,
     },
     {
       path: '/s/map',

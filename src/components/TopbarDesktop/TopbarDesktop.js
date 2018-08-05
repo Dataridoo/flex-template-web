@@ -114,11 +114,12 @@ const TopbarDesktop = props => {
 
   
   const rentalsPage = (
-    <NamedLink name="RentalsPage" className={css.rentalsPage}>
+    <NamedLink name="RentalsListPage" className={css.rentalsPage}>
       <span className={css.rentals}>
         <FormattedMessage id="TopbarDesktop.rentals" />
       </span>
     </NamedLink>
+   
   )
  
   const guidedToursPage = (

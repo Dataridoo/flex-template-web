@@ -26,7 +26,7 @@ export const amenities = [
 ];
 
 export const categories = [
-  { key: 'AllCategories', label: 'ALL CATEGORIES' },
+ /*  { key: 'AllCategories', label: 'ALL CATEGORIES' }, */
   { key: 'CityBikes', label: 'CITY BIKES' },
   { key: 'RoadBikes', label: 'ROAD BIKES' },
   { key: 'MountainBike', label: 'MOUNTAIN BIKES' },

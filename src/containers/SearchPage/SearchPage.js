@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
@@ -200,7 +201,7 @@ export class SearchPageComponent extends Component {
     };
 
     const { address, bounds, origin } = searchInURL || {};
-    const { title, description, frame, schema } = createSearchResultSchema(listings, address, intl);
+    const { title, description, schema } = createSearchResultSchema(listings, address, intl);
 
     // Set topbar class based on if a modal is open in
     // a child component
@@ -215,7 +216,6 @@ export class SearchPageComponent extends Component {
       <Page
         scrollingDisabled={scrollingDisabled}
         description={description}
-        frame={frame}
         title={title}
         schema={schema}
       >
@@ -241,7 +241,7 @@ export class SearchPageComponent extends Component {
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             primaryFilters={{
               categoryFilter: filters.categoryFilter,
-              //amenitiesFilter: filters.amenitiesFilter,
+              amenitiesFilter: filters.amenitiesFilter,
             }}
           />
           <ModalInMobile
@@ -358,9 +358,7 @@ const mapDispatchToProps = dispatch => ({
 // lifecycle hook.
 //
 // See: https://github.com/ReactTraining/react-router/issues/4671
-
 const SearchPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps), injectIntl)(
-
   SearchPageComponent
 );
 

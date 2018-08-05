@@ -23,7 +23,6 @@ export { default as ProfileSettingsPage } from './ProfileSettingsPage/ProfileSet
 export { default as SearchPage } from './SearchPage/SearchPage';
 export { default as RentalsListPage } from './RentalsListPage/RentalsListPage';
 
-export { default as RentalsPage } from './RentalsPage/RentalsPage';
 export { default as StaticPage } from './StaticPage/StaticPage';
 export { default as StyleguidePage } from './StyleguidePage/StyleguidePage';
 export { default as TermsOfServicePage } from './TermsOfServicePage/TermsOfServicePage';

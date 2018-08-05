@@ -2,11 +2,10 @@ import React from 'react';
 import { compose } from 'redux';
 import { object, string, bool, number, func, shape } from 'prop-types';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-//import classNames from 'classnames';
 import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
 
-import { SelectSingleFilter, NamedLink } from '../../components';
+import { SelectSingleFilter, SelectMultipleFilter, NamedLink } from '../../components';
 import routeConfiguration from '../../routeConfiguration';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
@@ -21,16 +20,19 @@ const initialValue = (queryParams, paramName) => {
 };
 
 
+// resolve initial values for a multi value filter
+const initialValues = (queryParams, paramName) => {
+  return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
+};
+
 const SearchFiltersComponent = props => {
   const {
-    /* rootClassName,
-    className, */
     urlQueryParams,
     listingsAreLoaded,
     resultsCount,
     searchInProgress,
     categoryFilter,
-    //amenitiesFilter,
+    amenitiesFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
     searchFiltersPanelSelectedCount,
@@ -39,26 +41,28 @@ const SearchFiltersComponent = props => {
   } = props;
 
   const hasNoResult = listingsAreLoaded && resultsCount === 0;
-  /* const classes = classNames(rootClassName || css.root, { [css.longInfo]: hasNoResult }, className); */
-
+ 
   const categoryLabel = intl.formatMessage({
     id: 'SearchFilters.categoryLabel',
   });
 
+  const amenitiesLabel = intl.formatMessage({
+    id: 'SearchFilters.amenitiesLabel',
+  });
 
-  //const initialAmenities = initialValues(urlQueryParams, amenitiesFilter.paramName);
+  const initialAmenities = initialValues(urlQueryParams, amenitiesFilter.paramName);
 
   const initialCategory = initialValue(urlQueryParams, categoryFilter.paramName);
 
-  // const handleSelectOptions = (urlParam, options) => {
-  //   const queryParams =
-  //     options && options.length > 0
-  //       ? { ...urlQueryParams, [urlParam]: options.join(',') }
-  //       : omit(urlQueryParams, urlParam);
+  const handleSelectOptions = (urlParam, options) => {
+    const queryParams =
+      options && options.length > 0
+        ? { ...urlQueryParams, [urlParam]: options.join(',') }
+        : omit(urlQueryParams, urlParam);
 
-  //   history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
-  // };
- 
+    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
+  };
+
   const handleSelectOption = (urlParam, option) => {
     // query parameters after selecting the option
     // if no option is passed, clear the selection for the filter
@@ -69,6 +73,7 @@ const SearchFiltersComponent = props => {
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
 
+
   const categoryFilterElement = categoryFilter ? (
     <SelectSingleFilter
       urlParam={categoryFilter.paramName}
@@ -76,6 +81,19 @@ const SearchFiltersComponent = props => {
       onSelect={handleSelectOption}
       options={categoryFilter.options}
       initialValue={initialCategory}
+      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+    />
+  ) : null;
+
+  const amenitiesFilterElement = amenitiesFilter ? (
+    <SelectMultipleFilter
+      id={'SearchFilters.amenitiesFilter'}
+      name="amenities"
+      urlParam={amenitiesFilter.paramName}
+      label={amenitiesLabel}
+      onSelect={handleSelectOptions}
+      options={amenitiesFilter.options}
+      initialValues={initialAmenities}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
   ) : null;
@@ -113,17 +131,16 @@ const SearchFiltersComponent = props => {
     <div className={css.MainSearchContainer}>      
       <div className="ui secondary pointing menu">      
             <div className="left menu">  
-              {categoryFilterElement}      
-              {toggleSearchFiltersPanelButton}                      
-                 
+              {categoryFilterElement}     
+              {amenitiesFilterElement} 
+              {toggleSearchFiltersPanelButton} 
             </div>
+            
+            <div className="right menu">  
+            <button className={css.gridBtn}><i className="icon th"></i> &nbsp; Grid</button>
+            <button className={css.listBtn}><i className="icon list"></i>&nbsp;{searchList}</button>
+            <button className={css.mapBtn}><i className="icon anchor black"></i>&nbsp;{searchMap}</button>
               
-            <div className="right menu">
-              <div className="ui icon buttons">
-                <button className="ui left attached button ui blue button"><i className="icon th"></i> &nbsp; Grid   </button>
-                <button className="ui left attached button"><i className="icon list"></i>&nbsp;{searchList}</button>
-                <button className="ui right attached button"><i className="icon anchor"></i>&nbsp;{searchMap}</button>
-              </div>
             </div>          
         </div> 
      

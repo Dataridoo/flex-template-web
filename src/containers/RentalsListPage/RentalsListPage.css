@@ -1,54 +1,40 @@
 @import '../../marketplace.css';
 
-:root {
-  /*
-    These variables are available in global scope through ":root"
-    element (<html> tag). Variables with the same names are going to
-    overwrite each other if CSS Properties' (PostCSS plugin)
-    configuration "preserve: true" is used - meaning that variables
-    are left to CSS bundle. We are planning to enable it in the future
-    since browsers support CSS Properties already.
- */
 
-  --SearchPage_containerHeight: calc(100vh - var(--topbarHeightDesktop));
-}
-
-/* Can be given to Topbar when a modal is opened
- * so that the Topbar is not rendered on top of it.*/
-.topbarBehindModal {
-  z-index: initial;
-}
-
-.topbar {
-  @media (--viewportMedium) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* We need to raise Topbar above .container */
-    z-index: 1;
-  }
-}
-
-.searchResultContainer {
-  flex-grow: 1;
+.heroContainer {
   display: flex;
   flex-direction: column;
-  padding: 2px 0 0 0;
+  min-height: 200px;
+ 
+  max-height: 300px;
+  padding: 0;
 
   @media (--viewportMedium) {
-    padding: 18px 0 0 0;
-    /**
-     * .container is using flexbox,
-     * This specifies that searchResultContainer is taking 60% from the viewport width
-     */
-    flex-basis: 33.3%;
+    min-height: 300px;   
+    max-height: none;
   }
 
   @media (--viewportLarge) {
-    flex-basis: 62.5%;
-    padding: 23px 0 0 0;
+    min-height: 400px;   
   }
 }
+
+.MainSearchContainer{
+  margin-right: 30px;
+  margin-left: 30px;
+  
+  margin-top: 20px;
+
+  @media (--viewportMedium) {
+    margin-top: -10px;
+  
+  }
+
+  @media (--viewportLarge) {
+    margin-top: -90px;
+  }
+}
+
 
 .error {
   color: var(--failColor);
@@ -124,22 +110,3 @@
   }
 }
 
-.map {
-  width: 100vw;
-  height: 100vh;
-
-  @media (--viewportMedium) {
-    /* Map is fixed so that it doesn't scroll along search results */
-    position: fixed;
-    top: var(--topbarHeightDesktop);
-    right: 0;
-
-    /* Fixed content needs width relative to viewport */
-    width: 50vw;
-    height: var(--SearchPage_containerHeight);
-  }
-
-  @media (--viewportLarge) {
-    width: 37.5vw;
-  }
-}
