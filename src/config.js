@@ -242,7 +242,7 @@ const siteTwitterHandle = '@pedalworld/';
 const siteYoutubePage = 'https://www.youtube.com/pedalworld/';
 
 // Instagram page is used in SEO schema (http://schema.org/Organization)
-const siteInstagramPage = 'pedalworld';
+const siteInstagramPage = 'https://www.instagram.com/pedal.world.europe/';
 
 // Facebook page is used in SEO schema (http://schema.org/Organization)
 const siteFacebookPage = 'https://www.facebook.com/pedalworld/';

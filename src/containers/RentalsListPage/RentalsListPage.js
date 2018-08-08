@@ -20,6 +20,7 @@ import {
   Footer,
   SearchMap, 
   ModalInMobile,
+  RangeSlider,
 } from '../../components';
 
 import {
@@ -43,6 +44,7 @@ import {
   createSearchResultSchema,
 } from './RentalsListPage.helpers';
 import MainPanel from './MainPanel';
+import MainPanelTwo from './MainPanelTwo';
 
 import rentalsImage from '../RentalsListPage/rentals.jpg';
 import css from './RentalsListPage.css';
@@ -233,55 +235,92 @@ export class SearchPageComponent extends Component {
             <div className={css.heroContainer}>
               <img src={rentalsImage} alt="rentals"/>
             </div>   
+       
           
-          <div className={css.MainSearchContainer}>
-            <MainPanel            
-              urlQueryParams={validQueryParams}
-              listings={listings}
-              searchInProgress={searchInProgress}
-              searchListingsError={searchListingsError}
-              searchParamsAreInSync={searchParamsAreInSync}
-              onActivateListing={onActivateListing}
-              onManageDisableScrolling={onManageDisableScrolling}
-              onOpenModal={this.onOpenMobileModal}
-              onCloseModal={this.onCloseMobileModal}
-              onMapIconClick={onMapIconClick}
-              pagination={pagination}
-              searchParamsForPagination={parse(location.search)}
-              showAsModalMaxWidth={MODAL_BREAKPOINT}
-              primaryFilters={{
-                categoryFilter: filters.categoryFilter,
-                amenitiesFilter: filters.amenitiesFilter,
-              }}
-            />
-            <ModalInMobile
-              className={css.mapPanel}
-              id="SearchPage.map"
-              isModalOpenOnMobile={this.state.isSearchMapOpenOnMobile}
-              onClose={() => this.setState({ isSearchMapOpenOnMobile: false })}
-              showAsModalMaxWidth={MODAL_BREAKPOINT}
-              onManageDisableScrolling={onManageDisableScrolling}
-            >
-              <div className={css.mapWrapper}>
-                {shouldShowSearchMap ? (
-                  <SearchMap
-                    reusableContainerClassName={css.map}
-                    activeListingId={activeListingId}
-                    bounds={bounds}
-                    center={origin}
-                    listings={mapListings || []}
-                    onIdle={this.onIdle}
-                    isOpenOnModal={this.state.isSearchMapOpenOnMobile}
-                    onCloseAsModal={() => {
-                      onManageDisableScrolling('SearchPage.map', false);
+            <div class="ui stackable two column grid">
+              <div class="four wide column">
+                <div className={css.CategoryFilterOpen}>
+                  <MainPanelTwo            
+                    urlQueryParams={validQueryParams}
+                    //listings={listings}
+                    searchInProgress={searchInProgress}
+                    searchListingsError={searchListingsError}
+                    searchParamsAreInSync={searchParamsAreInSync}
+                    onActivateListing={onActivateListing}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                    onOpenModal={this.onOpenMobileModal}
+                    onCloseModal={this.onCloseMobileModal}
+                    onMapIconClick={onMapIconClick}
+                    pagination={pagination}
+                    searchParamsForPagination={parse(location.search)}
+                    showAsModalMaxWidth={MODAL_BREAKPOINT}
+                    primaryFilters={{
+                      categoryFilter: filters.categoryFilter,
+                      amenitiesFilter: filters.amenitiesFilter,
                     }}
-                    useLocationSearchBounds={!this.viewportBounds}
                   />
-                ) : null}
+                 </div>
+                 <div className={css.priceSlider}>
+                   <p className={css.price}>Price</p><hr />
+                    <RangeSlider />
+                    <p className={css.updateView}> 
+                        <button className={css.updateViewBtn}> Update View</button>
+                    </p> 
+                 </div>
+               
               </div>
-            </ModalInMobile>        
-        
-          </div>
+                 
+              <div class="twelve wide column">
+                <div className={css.MainSearchContainer}>
+                  <MainPanel            
+                    urlQueryParams={validQueryParams}
+                    listings={listings}
+                    searchInProgress={searchInProgress}
+                    searchListingsError={searchListingsError}
+                    searchParamsAreInSync={searchParamsAreInSync}
+                    onActivateListing={onActivateListing}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                    onOpenModal={this.onOpenMobileModal}
+                    onCloseModal={this.onCloseMobileModal}
+                    onMapIconClick={onMapIconClick}
+                    pagination={pagination}
+                    searchParamsForPagination={parse(location.search)}
+                    showAsModalMaxWidth={MODAL_BREAKPOINT}
+                    primaryFilters={{
+                      categoryFilter: filters.categoryFilter,
+                      amenitiesFilter: filters.amenitiesFilter,
+                    }}
+                  />
+                  <ModalInMobile
+                    className={css.mapPanel}
+                    id="SearchPage.map"
+                    isModalOpenOnMobile={this.state.isSearchMapOpenOnMobile}
+                    onClose={() => this.setState({ isSearchMapOpenOnMobile: false })}
+                    showAsModalMaxWidth={MODAL_BREAKPOINT}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                  >
+                    <div className={css.mapWrapper}>
+                      {shouldShowSearchMap ? (
+                        <SearchMap
+                          reusableContainerClassName={css.map}
+                          activeListingId={activeListingId}
+                          bounds={bounds}
+                          center={origin}
+                          listings={mapListings || []}
+                          onIdle={this.onIdle}
+                          isOpenOnModal={this.state.isSearchMapOpenOnMobile}
+                          onCloseAsModal={() => {
+                            onManageDisableScrolling('SearchPage.map', false);
+                          }}
+                          useLocationSearchBounds={!this.viewportBounds}
+                        />
+                      ) : null}
+                    </div>
+                  </ModalInMobile>        
+                
+                </div>
+              </div>
+            </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
           <Footer />

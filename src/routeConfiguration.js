@@ -55,10 +55,12 @@ const routeConfiguration = () => {
       name: 'LandingPage',
       component: props => <LandingPage {...props} />,
     },
+   
     {
       path: '/guide',
       name: 'GuidedToursPage',
-      component: GuidedToursPage,
+      component: props => <GuidedToursPage {...props} tab="listings" />,
+      loadData: GuidedToursPage.loadData,
     },
     {
       path: '/event',
@@ -92,14 +94,14 @@ const routeConfiguration = () => {
     {
       path: '/s/filters',
       name: 'SearchFiltersPage',
-      component: props => <SearchPage {...props} tab="filters" />,
-      loadData: SearchPage.loadData,
+      component: props => <RentalsListPage {...props} tab="filters" />,
+      loadData: RentalsListPage.loadData,
     },
     {
       path: '/s/listings',
       name: 'SearchListingsPage',
-      component: props => <SearchPage {...props} tab="listings" />,
-      loadData: SearchPage.loadData,
+      component: props => <RentalsListPage {...props} tab="listings" />,
+      loadData: RentalsListPage.loadData,
     },
     {
       path: '/rent',

@@ -1,57 +1,112 @@
 @import '../../marketplace.css';
 
-.pageTitle {
-  text-align: center;
-}
 
-.staticPageWrapper {
-  width: calc(100% - 48px);
-  max-width: 1056px;
-  margin: 24px auto;
+/*.heroContainer {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  min-height: 50px;*/
+ 
+/*  max-height: 300px;*/
+/*  padding: 0;*/
+
+/*  @media (--viewportMedium) {*/
+/*    min-height: 50px;   */
+/*    max-height: none;*/
+/*  }*/
+
+/*  @media (--viewportLarge) {*/
+/*    min-height: 400px;   */
+/*  }*/
+/*}*/
+
+.MainSearchContainer{
+  margin-right: 30px;
+  margin-left: 30px;
+ 
+
 
   @media (--viewportMedium) {
-    width: calc(100% - 72px);
-    margin: 72px auto;
+   margin-top: 20px;
+  
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 20px;
   }
 }
 
-.coverImage {
-  width: 100%;
-  height: 528px;
-  border-radius: 4px;
-  object-fit: cover;
-  margin: 32px 0 40px;
+
+.error {
+  color: var(--failColor);
 }
 
-.contentWrapper {
+.searchString {
+  /* Search string should not break on white spaces - i.e. line-break should happen before. */
+  white-space: nowrap;
+}
+
+.searchFilters {
+  display: none;
+
+  @media (--viewportMedium) {
+    display: flex;
+    padding: 0 24px;
+    margin-bottom: 21px;
+  }
+
+  @media (--viewportLarge) {
+    padding: 0 36px;
+  }
+}
+
+.searchFiltersMobile {
+  padding: 16px 24px;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.searchFiltersPanel {
+  flex-grow: 1;
   display: flex;
-  flex-wrap: wrap;
+  padding: 0 24px 24px 24px;
 
-  @media (--viewportMedium) {
-    flex-wrap: nowrap;
+  @media (--viewportLarge) {
+    padding: 0 36px 36px 36px;
   }
 }
 
-.contentSide {
-  font-style: italic;
+.listings {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
 
+.newSearchInProgress {
+  opacity: 0.1;
+}
+
+.searchListingsPanel {
+  flex-grow: 1;
+}
+
+.mapPanel {
   @media (--viewportMedium) {
-    width: 193px;
-    margin-right: 103px;
-    margin-top: 8px;
+    /**
+     * .container is using flexbox,
+     * This specifies that mapPanel is taking 34% from the viewport width
+     */
+    flex-basis: 50%;
+
+    /* Own layout settings */
+    display: flex;
+    height: 100%;
+  }
+
+  @media (--viewportLarge) {
+    flex-basis: 37.5%;
   }
 }
 
-.contentMain {
-  width: 90%;
-
-  @media (--viewportMedium) {
-    max-width: 650px;
-  }
-}
-
-.subtitle {
-  @apply --marketplaceH3FontStyles;
-  margin-top: 48px;
-  margin-bottom: 24px;
-}

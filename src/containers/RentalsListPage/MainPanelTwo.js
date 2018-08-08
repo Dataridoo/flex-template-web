@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import {
   SearchResultsPanel,
-  SearchFilters,
+  SearchFiltersTwo,
   SearchFiltersPanel,
 } from '../../components';
 import { validFilterParams } from './RentalsListPage.helpers';
@@ -35,7 +35,7 @@ class MainPanel extends Component {
 
     const isSearchFiltersPanelOpen = !!secondaryFilters && this.state.isSearchFiltersPanelOpen;
 
-    
+   
     const selectedSecondaryFilters = secondaryFilters
       ? validFilterParams(urlQueryParams, secondaryFilters)
       : {};
@@ -54,14 +54,14 @@ class MainPanel extends Component {
     const hasPaginationInfo = !!pagination && pagination.totalItems != null;
     const listingsAreLoaded = !searchInProgress && searchParamsAreInSync && hasPaginationInfo;
 
-   
+  
     const secondaryFilterParamNames = secondaryFilters
       ? Object.values(secondaryFilters).map(f => f.paramName)
       : [];
 
     return (
       <div >
-        <SearchFilters
+        <SearchFiltersTwo
          className={css.searchFilters}        
           urlQueryParams={urlQueryParams}
           listingsAreLoaded={listingsAreLoaded}

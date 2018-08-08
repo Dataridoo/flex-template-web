@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import { array, bool, func, number, object, objectOf, string } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import merge from 'lodash/merge';
 import { propTypes } from '../../util/types';
 import {
   SearchResultsPanel,
   SearchFilters,
+  SearchFiltersMobile,
   SearchFiltersPanel,
 } from '../../components';
-import { validFilterParams } from './RentalsListPage.helpers';
+import { validFilterParams } from './GuidedToursPage.helpers';
 
-import css from './RentalsListPage.css';
+import css from './GuidedToursPage.css';
 
 class MainPanel extends Component {
   constructor(props) {
@@ -27,15 +29,22 @@ class MainPanel extends Component {
       searchParamsAreInSync,
       onActivateListing,
       onManageDisableScrolling,
+      onOpenModal,
+      onCloseModal,
+      onMapIconClick,
       pagination,
       searchParamsForPagination,
+      showAsModalMaxWidth,
       primaryFilters,
       secondaryFilters,
     } = this.props;
 
     const isSearchFiltersPanelOpen = !!secondaryFilters && this.state.isSearchFiltersPanelOpen;
 
-    
+    const filters = merge(primaryFilters, secondaryFilters);
+    const selectedFilters = validFilterParams(urlQueryParams, filters);
+    const selectedFiltersCount = Object.keys(selectedFilters).length;
+
     const selectedSecondaryFilters = secondaryFilters
       ? validFilterParams(urlQueryParams, secondaryFilters)
       : {};
@@ -54,7 +63,7 @@ class MainPanel extends Component {
     const hasPaginationInfo = !!pagination && pagination.totalItems != null;
     const listingsAreLoaded = !searchInProgress && searchParamsAreInSync && hasPaginationInfo;
 
-   
+    const filterParamNames = Object.values(filters).map(f => f.paramName);
     const secondaryFilterParamNames = secondaryFilters
       ? Object.values(secondaryFilters).map(f => f.paramName)
       : [];
@@ -71,7 +80,22 @@ class MainPanel extends Component {
           {...searchFiltersPanelProps}
           {...primaryFilters}
         />
-       
+        <SearchFiltersMobile
+          className={css.searchFiltersMobile}
+          urlQueryParams={urlQueryParams}
+          listingsAreLoaded={listingsAreLoaded}
+          searchInProgress={searchInProgress}
+          searchListingsError={searchListingsError}
+          showAsModalMaxWidth={showAsModalMaxWidth}
+          onMapIconClick={onMapIconClick}
+          onManageDisableScrolling={onManageDisableScrolling}
+          onOpenModal={onOpenModal}
+          onCloseModal={onCloseModal}
+          filterParamNames={filterParamNames}
+          selectedFiltersCount={selectedFiltersCount}
+          {...primaryFilters}
+          {...secondaryFilters}
+        />
         {isSearchFiltersPanelOpen ? (
           <div 
           className={classNames(css.searchFiltersPanel)}

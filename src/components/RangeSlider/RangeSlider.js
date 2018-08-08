@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Slider from 'react-rangeslider';
+import css from './RangeSlider';
 
 
-class RangesliderTwo extends Component {
+class Rangeslider extends Component {
   constructor (props, context) {
     super(props, context)
     this.state = {     
@@ -20,7 +21,7 @@ class RangesliderTwo extends Component {
   render () {
     const { sliderValue } = this.state
     return (
-      <div className='slider-horizontal'>
+      <div className={css.sliderHorizontal}>
         <Slider
           min={0}
           max={100}
@@ -28,12 +29,12 @@ class RangesliderTwo extends Component {
           orientation='horizontal'
           onChange={this.handleChange}
         />
-        <div className='value'>{sliderValue}</div>
+        <div className={css.value}>{sliderValue}</div>
       </div>
        
     )
   }
 }
 
-export default RangesliderTwo; 
+export default Rangeslider; 
 

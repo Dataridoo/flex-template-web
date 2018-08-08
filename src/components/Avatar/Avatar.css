@@ -10,14 +10,14 @@
     since browsers support CSS Properties already.
  */
 
-  --Avatar_size: 40px;
-  --Avatar_sizeMedium: 60px;
+  --Avatar_size: 30px;
+  --Avatar_sizeMedium: 40px;
   --Avatar_sizeLarge: 96px;
 
   /* Base for all avatars */
   --Avatar_base: {
     font-family: 'sofiapro', Helvetica, Arial, sans-serif;
-    border-radius: 50%;
+   
 
     /* Position possible initials to the center of the component */
     display: flex;

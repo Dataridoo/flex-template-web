@@ -36,6 +36,8 @@
 }
 .authorNameLinkSidebar{
   color: dodgerblue;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 .SectionTitleHeader {
   margin-left: 50px;
@@ -117,20 +119,21 @@
   margin-left: 0;
   margin-right: 30px;
   margin-bottom: 5px;
+  height: 120px;
 }
 .avatarContainer    {
-  width: 150px;
-  height: 100px;
+  width: 70px;
+  height: 120px;
   float: left;
 }
 
 .avatarTitle {
- 
-  margin-left: 10px;
+  margin-left: 100px;
+  width: 230px;
+  height: 120px;
   color: dodgerblue;
   @apply --marketplaceH3FontStyles;
 }
-
 .bookingSection{
   padding-left: 0;
   margin-left: 0;
@@ -325,6 +328,7 @@
   @media (--viewportMedium) {
     margin-left: 0;
     margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -338,9 +342,13 @@
 
 .avatarDesktop {
   display: none; /* Hide the large avatar from the smaller screens */
+   margin-bottom: 0;
+   margin-top: 0;
 
   @media (--viewportMedium) {
     display: flex;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
 .placeholderButton{
@@ -435,9 +443,17 @@
 
 .contactWrapper {
   display: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 
   @media (--viewportMedium) {
     display: inline;
+    margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   }
 }
 
@@ -447,12 +463,11 @@
 
 .contactLink {
   @apply --marketplaceH4FontStyles;
-  margin-bottom: 15px;
   background-color: lightgray;
   color: black;
-  width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 230px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .sectionDescription {

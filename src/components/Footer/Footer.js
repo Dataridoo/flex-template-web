@@ -1,19 +1,18 @@
 import React from 'react';
 import { string } from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import classNames from 'classnames';
 import { twitterPageURL} from '../../util/urlHelpers';
 import config from '../../config';
 import {
   ExternalLink,
-  NamedLink
+  NamedLink,
+  IconSocialMediaFacebook,
+   IconSocialMediaInstagram,
+   IconSocialMediaTwitter
 } from '../../components';
 
-import facebook from './Images/facebook.jpg';
-import instagram from './Images/insta.jpg';
 import youtube from './Images/youtube.jpg';
-import twitter from './Images/twitter.jpg';
-
+import logo from './Images/logo.png';
 
 import css from './Footer.css';
 
@@ -28,11 +27,12 @@ const renderSocialMediaLinks = intl => {
 
   const fbLink = siteFacebookPage ? (
     <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
-    <img src={facebook} alt=""/>
-     
+    
+      <IconSocialMediaFacebook  className={css.IconCenter} />
     </ExternalLink>
   ) : null;
 
+ 
   const youtubeLink = siteYoutubePage ? (
     <ExternalLink
       key="linkToYoutube"
@@ -50,7 +50,7 @@ const renderSocialMediaLinks = intl => {
       className={css.icon}
       title={goToTwitter}
     >
-    <img src={twitter} alt=""/>
+     <IconSocialMediaTwitter className={css.IconCenter}/>
     </ExternalLink>
   ) : null;
   
@@ -61,7 +61,7 @@ const renderSocialMediaLinks = intl => {
       className={css.icon}
       title={goToInsta}
     >
-    <img src={instagram} alt=""/>
+     <IconSocialMediaInstagram  className={css.IconCenterInsta}/>
     </ExternalLink>
   ) : null;
 
@@ -71,84 +71,171 @@ const renderSocialMediaLinks = intl => {
 
 
 const Footer = props => {
-  const { rootClassName, className, intl } = props;
+  const {intl } = props;
   const socialMediaLinks = renderSocialMediaLinks(intl);
-  const classes = classNames(rootClassName || css.root, className);
+  
 
   return (
-    <div className={classes}>
-      <div className={css.topBorderWrapper}>
-        <div className={css.content}>          
-          <div className={css.links}>
-            <div className={css.infoLinks}>
-              <ul className={css.list}>
-                <li className={css.listItem}>
-                <NamedLink name="AboutPage" className={css.link}>
-                  <FormattedMessage id="Footer.toAboutPage" />
-                </NamedLink>
-                </li>                
-              </ul>
-            </div>
-            <div className={css.infoLinks}>
-              <ul className={css.list}>
-                <li className={css.listItem}>
-                <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
-                  <FormattedMessage id="Footer.privacyPolicy" />
-                </NamedLink>
-                </li>                
-              </ul>
-            </div>
-            <div className={css.infoLinks}>
-              <ul className={css.list}>
-                <li className={css.listItem}>
-                <NamedLink name="TermsOfServicePage" className={css.legalLink}>
-                  <FormattedMessage id="Footer.termsOfUse" />
-                </NamedLink>
-                </li>                
-              </ul>
-          </div>
+    //<div className={classes}>
+     <div className={css.footerBackground}>
+     <div class="ui stackable grid">
+        <div class="two wide column">
           <div className={css.infoLinks}>
-            <ul className={css.list}>
-              <li className={css.listItem}>
-              <NamedLink name="ContactUsPage" className={css.legalLink}>
-              <FormattedMessage id="Footer.toContactUsPage" />
-            </NamedLink>
-              </li>                
-            </ul>
+            <NamedLink name="AboutPage" className={css.link}>
+                <FormattedMessage id="Footer.toAboutPage" />
+             </NamedLink> 
           </div>
-          <div className={css.infoLinks}>
-            <ul className={css.list}>
-              <li className={css.listItem}>
-                 {socialMediaLinks}
-              </li>                
-            </ul>
-          </div>  
         </div>
-          <div className={css.organization} id="organization">
-            <div className={css.organizationInfo}>                
-              <p className={css.organizationCopyright}>
-                <NamedLink name="LandingPage" className={css.copyrightLink}>
-                  <FormattedMessage id="Footer.copyright" />
-                </NamedLink>
-              </p>
-            </div>
+        
+        <div class="two wide column">
+          <div className={css.infoLinks}>
+             <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
+                <FormattedMessage id="Footer.privacyPolicy" />
+              </NamedLink>
           </div>
-          <div className={css.copyrightAndTermsMobile}>
-            <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
-              <FormattedMessage id="Footer.copyright" />
-            </NamedLink>
-            <div className={css.tosAndPrivacyMobile}>
-              <NamedLink name="PrivacyPolicyPage" className={css.privacy}>
-                <FormattedMessage id="Footer.privacy" />
+        </div>
+        
+        <div class="two wide column">
+          <div className={css.infoLinks}>
+             <NamedLink name="TermsOfServicePage" className={css.legalLink}>
+                <FormattedMessage id="Footer.termsOfUse" />
               </NamedLink>
-              <NamedLink name="TermsOfServicePage" className={css.terms}>
-                <FormattedMessage id="Footer.terms" />
+          </div>
+        </div>
+        
+        <div class="two wide column">
+          <div className={css.infoLinks}>
+             <NamedLink name="ContactUsPage" className={css.legalLink}>
+                <FormattedMessage id="Footer.toContactUsPage" />
               </NamedLink>
-            </div>
+          </div>
+        </div>
+        
+        <div class="two wide column">
+          <div className={css.infoLinks}>
+             <NamedLink name="LandingPage" className={css.legalLink}>
+                <img src={logo} alt="" className={css.logo}/>
+              </NamedLink>
+          </div>
+        </div>
+         <div class="two wide column">
+         </div>
+      
+        <div class="four wide column">
+          <div className={css.infoLinks}>
+               {socialMediaLinks}
           </div>
         </div>
       </div>
+      
+      <div className='ui row'>
+       <div className={css.organization} id="organization">
+         <div className={css.organizationInfo}>  
+             <p className={css.organizationCopyright}>
+               <NamedLink name="LandingPage" className={css.copyrightLink}>
+                 <FormattedMessage id="Footer.copyright" />
+               </NamedLink>
+             </p>
+           </div>
+         </div>
+         <div className={css.copyrightAndTermsMobile}>
+           <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
+             <FormattedMessage id="Footer.copyright" />
+           </NamedLink>
+           <div className={css.tosAndPrivacyMobile}>
+             <NamedLink name="PrivacyPolicyPage" className={css.privacy}>
+               <FormattedMessage id="Footer.privacy" />
+             </NamedLink>
+             <NamedLink name="TermsOfServicePage" className={css.terms}>
+               <FormattedMessage id="Footer.terms" />
+             </NamedLink>
+           </div>
+         </div>
+      </div>
     </div>
+
+    //   <div className={css.topBorderWrapper}>
+    //     <div className={css.content}>          
+    //       <div className={css.links}>
+    //         <div className={css.infoLinks}>
+    //           <ul className={css.list}>
+    //             <li className={css.listItem}>
+    //             <NamedLink name="AboutPage" className={css.link}>
+    //               <FormattedMessage id="Footer.toAboutPage" />
+    //             </NamedLink>
+    //             </li>                
+    //           </ul>
+    //         </div>
+    //         <div className={css.infoLinks}>
+    //           <ul className={css.list}>
+    //             <li className={css.listItem}>
+    //             <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
+    //               <FormattedMessage id="Footer.privacyPolicy" />
+    //             </NamedLink>
+    //             </li>                
+    //           </ul>
+    //         </div>
+    //         <div className={css.infoLinks}>
+    //           <ul className={css.list}>
+    //             <li className={css.listItem}>
+    //             <NamedLink name="TermsOfServicePage" className={css.legalLink}>
+    //               <FormattedMessage id="Footer.termsOfUse" />
+    //             </NamedLink>
+    //             </li>                
+    //           </ul>
+    //       </div>
+    //       <div className={css.infoLinks}>
+    //         <ul className={css.list}>
+    //           <li className={css.listItem}>
+    //           <NamedLink name="ContactUsPage" className={css.legalLink}>
+    //           <FormattedMessage id="Footer.toContactUsPage" />
+    //         </NamedLink>
+    //           </li>                
+    //         </ul>
+    //       </div>
+    //       <div className={css.infoLinks}>
+    //         <ul className={css.list}>
+    //           <li className={css.listItem}>
+    //             <NamedLink name="LandingPage" className={css.legalLink}>
+    //               <img src={logo} alt="" className={css.logo}/>
+    //             </NamedLink>
+                 
+    //           </li>                
+    //         </ul>
+    //       </div>
+    //       <div className={css.infoLinks}>
+    //         <ul className={css.list}>
+    //           <li className={css.listItem}>
+    //             {socialMediaLinks}
+    //           </li>                
+    //         </ul>
+    //       </div>  
+    //     </div>
+    //       <div className={css.organization} id="organization">
+    //         <div className={css.organizationInfo}>                
+    //           <p className={css.organizationCopyright}>
+    //             <NamedLink name="LandingPage" className={css.copyrightLink}>
+    //               <FormattedMessage id="Footer.copyright" />
+    //             </NamedLink>
+    //           </p>
+    //         </div>
+    //       </div>
+    //       <div className={css.copyrightAndTermsMobile}>
+    //         <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
+    //           <FormattedMessage id="Footer.copyright" />
+    //         </NamedLink>
+    //         <div className={css.tosAndPrivacyMobile}>
+    //           <NamedLink name="PrivacyPolicyPage" className={css.privacy}>
+    //             <FormattedMessage id="Footer.privacy" />
+    //           </NamedLink>
+    //           <NamedLink name="TermsOfServicePage" className={css.terms}>
+    //             <FormattedMessage id="Footer.terms" />
+    //           </NamedLink>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 

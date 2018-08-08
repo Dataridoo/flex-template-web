@@ -130,7 +130,7 @@ class SearchFiltersMobileComponent extends Component {
       <FormattedMessage id="SearchFilters.foundResults" values={{ count: resultsCount }} />
     );
     const noResults = <FormattedMessage id="SearchFilters.noResultsMobile" />;
-    const loadingResults = <FormattedMessage id="SearchFilters.loadingResultsMobile" />;
+    const loadingResults = "";
     const filtersHeading = intl.formatMessage({ id: 'SearchFiltersMobile.heading' });
     const modalCloseButtonMessage = intl.formatMessage({ id: 'SearchFiltersMobile.cancel' });
 

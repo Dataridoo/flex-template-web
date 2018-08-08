@@ -109,6 +109,8 @@ export { default as ReviewModal } from './ReviewModal/ReviewModal';
 export { default as ReviewRating } from './ReviewRating/ReviewRating';
 export { default as Reviews } from './Reviews/Reviews';
 export { default as SearchFilters } from './SearchFilters/SearchFilters';
+
+export { default as SearchFiltersTwo } from './SearchFiltersTwo/SearchFiltersTwo';
 export { default as SearchFiltersMobile } from './SearchFiltersMobile/SearchFiltersMobile';
 export { default as SearchFiltersPanel } from './SearchFiltersPanel/SearchFiltersPanel';
 export { default as SearchMap } from './SearchMap/SearchMap';

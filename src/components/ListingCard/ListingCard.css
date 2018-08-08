@@ -23,6 +23,8 @@
   right: 3px;
   font-size: 10px;
   padding: 0;
+  border: none;
+  text-decoration: none;
 }
 .titleTwo{
   position: absolute;
@@ -70,10 +72,13 @@
   /* Layout */
   display: flex;
   flex-direction: row;
-  background-color:lightgray;
+  background-color:white;
   color: dodgerblue;  
   @apply --marketplaceH3FontStyles;
-  margin-top: 0;
+  border: none;
+  text-decoration: none;
+  padding-top: 0;
+  margin-top: 4px;
   
 }
 

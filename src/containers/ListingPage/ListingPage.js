@@ -29,7 +29,6 @@ import { TopbarContainer, NotFoundPage } from '../../containers';
 import { 
   FacebookShareButton, 
   TwitterShareButton,
- 
 } from 'react-share';
 
 import SectionLikeCounter from './SectionLikeCounter';
@@ -457,11 +456,7 @@ export class ListingPageComponent extends Component {
                     handleViewPhotosClick={handleViewPhotosClick}
                     onManageDisableScrolling={onManageDisableScrolling}
                   />
-                  <div className={css.placeholderButton}>
-                    <button className="ui button">  </button>
-                    <button className="ui button">  </button>
-                    <button className="ui button">  </button>
-                  </div>
+                  
                 </div>              
                 <div className="six wide column">  
                    <div className={css.formatedPriceAndUnit}> 
@@ -500,13 +495,12 @@ export class ListingPageComponent extends Component {
                           params={params} 
                         />
                     </div>
-                    <div > 
-                      <span className={css.avatarTitle}>  {hostLinkSidebar}</span>
-                      <SectionHeading 
-                          showContactUser={showContactUser}
-                          onContactUser={this.onContactUser}
-                        />  
-                       
+                    <div className={css.avatarTitle} > 
+                         {hostLinkSidebar}
+                           <SectionHeading 
+                              showContactUser={showContactUser}
+                              onContactUser={this.onContactUser}
+                            />  
                     </div>             
                   </div>  <hr/>                    
                 </div>
@@ -536,7 +530,7 @@ export class ListingPageComponent extends Component {
                     <button className={css.twitterShareBtn}>
                       <TwitterShareButton
                         url={shareUrl}
-                        quote={schemaTitle}
+                        title={schemaTitle}
                         >
                           <i className="twitter icon"></i>Tweet
                       </TwitterShareButton> 

@@ -15,7 +15,7 @@ import css from './Avatar.css';
 
 // Responsive image sizes hint
 const AVATAR_SIZES = '40px';
-const AVATAR_SIZES_MEDIUM = '60px';
+const AVATAR_SIZES_MEDIUM = '50px';
 const AVATAR_SIZES_LARGE = '96px';
 
 const AVATAR_IMAGE_VARIANTS = [
