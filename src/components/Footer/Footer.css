@@ -2,7 +2,7 @@
 
 .root {
   border-top-style: solid;
-  background-color:rgba(0, 0, 0, 0.747);
+  background-color:rgba(0, 0, 0, 0.880);
   border-top-width: 1px;
   border-top-color: var(--matterColorNegative);
 
@@ -21,8 +21,14 @@
 }
 
 .footerBackground{
- background-color:rgba(0, 0, 0, 0.747);
- padding:30px;
+  border-top-style: solid;
+ background-color:rgba(0, 0, 0, 0.880);
+ border-top-width: 1px;
+  border-top-color: var(--matterColorNegative);
+
+  width: 100%;
+  padding: 24px 24px 42px 24px;
+ 
 }
 /* Wrapper to limit the top border in desktop
  * view from the outermost paddings*/
