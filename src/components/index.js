@@ -17,6 +17,9 @@ export {
   default as EditListingFeaturesPanel,
 } from './EditListingFeaturesPanel/EditListingFeaturesPanel';
 export {
+  default as EditListingFineSetUpPanel,
+} from './EditListingFineSetUpPanel/EditListingFineSetUpPanel';
+export {
   default as EditListingLocationPanel,
 } from './EditListingLocationPanel/EditListingLocationPanel';
 export { default as EditListingPhotosPanel } from './EditListingPhotosPanel/EditListingPhotosPanel';
@@ -110,7 +113,11 @@ export { default as ReviewRating } from './ReviewRating/ReviewRating';
 export { default as Reviews } from './Reviews/Reviews';
 export { default as SearchFilters } from './SearchFilters/SearchFilters';
 
-export { default as SearchFiltersTwo } from './SearchFiltersTwo/SearchFiltersTwo';
+export { default as SearchFiltersBrand } from './SearchFiltersBrand/SearchFiltersBrand';
+
+export { default as SearchFiltersFineSetUp } from './SearchFiltersFineSetUp/SearchFiltersFineSetUp';
+
+export { default as SearchFiltersCategory } from './SearchFiltersCategory/SearchFiltersCategory';
 export { default as SearchFiltersMobile } from './SearchFiltersMobile/SearchFiltersMobile';
 export { default as SearchFiltersPanel } from './SearchFiltersPanel/SearchFiltersPanel';
 export { default as SearchMap } from './SearchMap/SearchMap';

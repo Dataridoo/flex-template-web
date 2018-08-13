@@ -20,7 +20,7 @@ import {
   Footer,
   SearchMap, 
   ModalInMobile,
-  RangeSlider,
+  //RangeSlider,
 } from '../../components';
 
 import {
@@ -36,7 +36,7 @@ import { getListingsById } from '../../ducks/marketplaceData.duck';
 import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
 import { TopbarContainer } from '../../containers';
 
-import { searchListings, setActiveListing } from './RentalsListPage.duck';
+import { searchListings, searchMapListings, setActiveListing } from './RentalsListPage.duck';
 import {
   pickSearchParamsOnly,
   validURLParamsForExtendedData,
@@ -44,7 +44,10 @@ import {
   createSearchResultSchema,
 } from './RentalsListPage.helpers';
 import MainPanel from './MainPanel';
-import MainPanelTwo from './MainPanelTwo';
+//import MainPanelCategory from './MainPanelCategory';
+//import MainPanelBrand from './MainPanelBrand';
+//import MainPanelFineSetUp from './MainPanelFineSetUp';
+
 
 import rentalsImage from '../RentalsListPage/rentals.jpg';
 import css from './RentalsListPage.css';
@@ -71,9 +74,9 @@ export class SearchPageComponent extends Component {
     // So, if the search comes from location search input (this.viewportBounds == null),
     // we need to by pass extra searches created by Google Map's 'indle' event.
     // This is done by keeping track of map's viewport bounds (which differ from location bounds)
-    /* this.viewportBounds = null;
+     this.viewportBounds = null;
     this.modalOpenedBoundsChange = false;
-    this.searchMapListingsInProgress = false; */
+    this.searchMapListingsInProgress = false; 
 
     this.filters = this.filters.bind(this);
     this.onIdle = debounce(this.onIdle.bind(this), SEARCH_WITH_MAP_DEBOUNCE);
@@ -93,6 +96,7 @@ export class SearchPageComponent extends Component {
         paramName: 'pub_amenities',
         options: amenities,
       },
+       
     };
   }
 
@@ -233,46 +237,17 @@ export class SearchPageComponent extends Component {
           </LayoutWrapperTopbar>
          <LayoutWrapperMain>
             <div className={css.heroContainer}>
-              <img src={rentalsImage} alt="rentals"/>
+              <img src={rentalsImage} alt="rentals" />
+              <div className={css.heroContainerHeader}>Rentals Header</div>
+               <div className={css.heroContainerSubHeader}>Rentals Sub-header</div>
             </div>   
        
           
-            <div class="ui stackable two column grid">
-              <div class="four wide column">
-                <div className={css.CategoryFilterOpen}>
-                  <MainPanelTwo            
-                    urlQueryParams={validQueryParams}
-                    //listings={listings}
-                    searchInProgress={searchInProgress}
-                    searchListingsError={searchListingsError}
-                    searchParamsAreInSync={searchParamsAreInSync}
-                    onActivateListing={onActivateListing}
-                    onManageDisableScrolling={onManageDisableScrolling}
-                    onOpenModal={this.onOpenMobileModal}
-                    onCloseModal={this.onCloseMobileModal}
-                    onMapIconClick={onMapIconClick}
-                    pagination={pagination}
-                    searchParamsForPagination={parse(location.search)}
-                    showAsModalMaxWidth={MODAL_BREAKPOINT}
-                    primaryFilters={{
-                      categoryFilter: filters.categoryFilter,
-                      amenitiesFilter: filters.amenitiesFilter,
-                    }}
-                  />
-                 </div>
-                 <div className={css.priceSlider}>
-                   <p className={css.price}>Price</p><hr />
-                    <RangeSlider />
-                    <p className={css.updateView}> 
-                        <button className={css.updateViewBtn}> Update View</button>
-                    </p> 
-                 </div>
-               
-              </div>
-                 
-              <div class="twelve wide column">
+            <div className="ui stackable grid">
+              
+              <div className="sixteen wide column">
                 <div className={css.MainSearchContainer}>
-                  <MainPanel            
+                   <MainPanel   
                     urlQueryParams={validQueryParams}
                     listings={listings}
                     searchInProgress={searchInProgress}
@@ -289,6 +264,8 @@ export class SearchPageComponent extends Component {
                     primaryFilters={{
                       categoryFilter: filters.categoryFilter,
                       amenitiesFilter: filters.amenitiesFilter,
+                      //fineSetUpFilter: filters.fineSetUpFilter,
+                      
                     }}
                   />
                   <ModalInMobile
@@ -342,6 +319,7 @@ SearchPageComponent.defaultProps = {
   tab: 'listings',
   categories: config.custom.categories,
   amenities: config.custom.amenities,
+  //fineSetUp: config.custom.fineSetUp,
   activeListingId: null,
 };
 
@@ -361,7 +339,7 @@ SearchPageComponent.propTypes = {
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
   categories: array,
   amenities: array,
-
+ //fineSetUp: array,
   // from withRouter
   history: shape({
     push: func.isRequired,
@@ -404,7 +382,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   onManageDisableScrolling: (componentId, disableScrolling) =>
     dispatch(manageDisableScrolling(componentId, disableScrolling)),
-  //onSearchMapListings: searchParams => dispatch(searchMapListings(searchParams)),
+  onSearchMapListings: searchParams => dispatch(searchMapListings(searchParams)),
   onActivateListing: listingId => dispatch(setActiveListing(listingId)),
 });
 

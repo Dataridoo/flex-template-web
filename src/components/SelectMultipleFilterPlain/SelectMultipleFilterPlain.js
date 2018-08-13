@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { array, bool, func, string } from 'prop-types';
 import classNames from 'classnames';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 
 import { SelectMultipleFilterPlainForm } from '../../forms';
 
@@ -71,21 +71,22 @@ class SelectMultipleFilterPlainComponent extends Component {
           <button type="button" className={css.labelButton} onClick={this.toggleIsOpen}>
             <span className={labelClass}>{labelText}</span>
           </button>
-          <button type="button" className={css.clearButton} onClick={this.handleClear}>
-            <FormattedMessage id={'SelectMultipleFilterPlainForm.clear'} />
-          </button>
+          
         </div>
-        <SelectMultipleFilterPlainForm
-          form={`SelectMultipleFilterPlainForm.${id ? id : name}`}
-          className={optionsContainerClass}
-          name={name}
-          options={options}
-          initialValues={namedInitialValues}
-          onChange={this.handleSelect}
-          twoColumns={twoColumns}
-          enableReinitialize
-          keepDirtyOnReinitialize
-        />
+        <div className={css.selectForm}>
+          <SelectMultipleFilterPlainForm
+            form={`SelectMultipleFilterPlainForm.${id ? id : name}`}
+            className={optionsContainerClass}
+            name={name}
+            options={options}
+            initialValues={namedInitialValues}
+            onChange={this.handleSelect}
+            twoColumns={twoColumns}
+            enableReinitialize
+            keepDirtyOnReinitialize
+          />
+        </div>
+         
       </div>
     );
   }

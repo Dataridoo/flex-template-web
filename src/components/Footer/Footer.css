@@ -27,7 +27,8 @@
   border-top-color: var(--matterColorNegative);
 
   width: 100%;
-  padding: 24px 24px 42px 24px;
+  padding: 24px 24px 42px 100px;
+ 
  
 }
 /* Wrapper to limit the top border in desktop
@@ -113,7 +114,6 @@
 
 /* Desktop and Mobile: links to more information */
 .infoLinks {
-  margin-bottom: 10px;
   @media (--viewportMedium) {
     padding-top: 2px;
     margin-right: 12px;

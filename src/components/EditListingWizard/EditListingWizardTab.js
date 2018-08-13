@@ -149,6 +149,9 @@ const EditListingWizardTab = props => {
         />
       );
     }
+
+   
+    
     case LOCATION: {
       const submitButtonTranslationKey = isNew
         ? 'EditListingWizard.saveNewLocation'

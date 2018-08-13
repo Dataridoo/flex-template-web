@@ -31,11 +31,43 @@
   }
 
   @media (--viewportLarge) {
-    margin-top: 20px;
+    margin-top: -90px;
   }
 }
 
 
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  max-height: 300px;
+  padding: 0;
+  
+
+  @media (--viewportMedium) {
+    min-height: 300px;   
+    max-height: none;
+  }
+
+  @media (--viewportLarge) {
+    min-height: 400px;   
+  }
+}
+
+.heroContainerHeader{
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  color:white;
+  font-size: 50px 
+}
+.heroContainerSubHeader{
+   position: absolute;
+  top: 40%;
+  left: 40%;
+  color:white;
+  font-size: 35px 
+}
 .error {
   color: var(--failColor);
 }

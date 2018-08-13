@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: column;
   min-height: 200px;
- 
   max-height: 300px;
   padding: 0;
+  
 
   @media (--viewportMedium) {
     min-height: 300px;   
@@ -19,13 +19,23 @@
   }
 }
 
+.heroContainerHeader{
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  color:white;
+  font-size: 50px 
+}
+.heroContainerSubHeader{
+   position: absolute;
+  top: 40%;
+  left: 40%;
+  color:white;
+  font-size: 35px 
+}
 .CategoryFilterOpen{
-  height: 300px;
-  
-  margin-top: 20px;
-
   @media (--viewportMedium) {
-    margin-top: -10px;
+     margin-top: 20px;
   
   }
 
@@ -33,16 +43,39 @@
     margin-top: -90px;
   }
 }
+
+.allCategories{
+   margin-left: 30px;
+}
+.CategoriesList{
+  padding-top:0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+ @apply --marketplaceH4FontStyles;
+}
+.CategoriesHeader{
+  padding-top:0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+ @apply --marketplaceH3FontStyles;
+}
 .priceSlider{
-  margin-left: 30px;
+  margin-top: 10px;
+}
+.bikeBrand {
+
+}
+.bikeFineSetUp{
+   margin-top: -90px;
 }
 .updateView{
   padding-top: 20px;
-  text-align: center;
 }
 .price{
-   padding-top: 20px;
    padding-bottom: 0;
+   padding-top: 10px;
 }
 
 .updateViewBtn{
@@ -58,17 +91,18 @@
 }
 .MainSearchContainer{
   margin-right: 30px;
-  
-  
-  margin-top: 20px;
+   margin-left: 30px;
+ 
 
   @media (--viewportMedium) {
-    margin-top: -10px;
+   margin-right: 10px;
+   margin-left: 10px;
   
   }
 
   @media (--viewportLarge) {
     margin-top: -90px;
+     
   }
 }
 
@@ -88,7 +122,6 @@
   @media (--viewportMedium) {
     display: flex;
     padding: 0 24px;
-    margin-bottom: 21px;
   }
 
   @media (--viewportLarge) {

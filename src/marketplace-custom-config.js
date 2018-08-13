@@ -4,30 +4,67 @@
 
 export const amenities = [
   {
-    key: 'frame',
-    label: 'Frame',
+    key: '7S',
+    label: '7S',
   },
   {
-    key: 'fork',
-    label: 'Fork',
+    key: 'AshtonSurfDesign',
+    label: 'Ashton Surf Design',
   },
   {
-    key: 'drivetrain',
-    label: 'Drive Train',
+    key: 'BalinSurfborads',
+    label: 'Balin Surfborads',
   },
   {
-    key: 'components',
-    label: 'Components',
+    key: 'BillJohnson',
+    label: 'Bill Johnson',
   },
   {
-    key: 'accessories',
-    label: 'Accessories',
+    key: 'BingSurfboards',
+    label: 'Bing Surfboards',
+  },
+  {
+    key: 'Blacktip',
+    label: 'Blacktip',
+  },
+  {
+    key: 'Blue',
+    label: 'Blue',
   }
 ];
 
+
+export const fineSetUp = [
+  {
+    key: 'SingleFine',
+    label: 'Single Fine',
+  },
+  {
+    key: 'Twin',
+    label: 'Twin',
+  },
+  {
+    key: 'TriThruster',
+    label: 'Tri/Thruster',
+  },
+  {
+    key: 'Quad',
+    label: 'Quad',
+  },
+  {
+    key: '5FinConvert',
+    label: '5 Fin Convert',
+  },
+  {
+    key: 'Other',
+    label: 'Other',
+  }
+];
+
+
 export const categories = [
-  { key: 'CityBikes', label: 'CITY BIKES' },
-  { key: 'RoadBikes', label: 'ROAD BIKES' },
-  { key: 'MountainBike', label: 'MOUNTAIN BIKES' },
-  { key: 'E-Bike', label: 'E-BIKES' },
+  { key: 'CityBikes', label: 'City Bike' },
+  { key: 'RoadBikes', label: 'Road Bike' },
+  { key: 'MountainBike', label: 'Mountain Bike' },
+  { key: 'E-Bike', label: 'E-Bike' },
 ];

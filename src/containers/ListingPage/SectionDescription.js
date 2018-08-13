@@ -9,15 +9,13 @@ const SectionDescription = props => {
   const { description} = props;
   return (
     <div className={css.sectionDescription}>  
-    <p className={css.descriptionTitleheader}>
-       
         <span className={css.description}>
           {richText(description, {
             longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
             longWordClass: css.longWord,
           })}
         </span>
-      </p> 
+      
       
       
     </div>

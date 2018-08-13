@@ -17,13 +17,13 @@ const SectionHeading = props => {
     <div className={css.sectionHeading}>
       <div className={css.desktopPriceContainer}>
         <div className={css.desktopPriceValue} title={priceTitle}>
-          {formattedPrice}  
+          {formattedPrice} <span className={css.formatedPriceUnit}> <FormattedMessage id="ListingPage.perUnit" /></span>
         </div>       
       </div>
       <div className={css.heading}>
-        <h1 className={css.title}>{richTitle}</h1>
+        <h1 className={css.title}>{richTitle} &nbsp; <span>   {category}</span> </h1>
         <div className={css.author}>
-          {category}
+       
           
           {showContactUser ? (
             <p className={css.contactWrapper}>              

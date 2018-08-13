@@ -68,7 +68,7 @@ export class SearchPageComponent extends Component {
   }
 
   filters() {
-    const { categories, amenities } = this.props;
+    const { categories, amenities, fineSetUp} = this.props;
 
     return {
       categoryFilter: {
@@ -78,6 +78,10 @@ export class SearchPageComponent extends Component {
       amenitiesFilter: {
         paramName: 'pub_amenities',
         options: amenities,
+      },
+       fineSetUpFilter: {
+        paramName: 'pub_fineSetUp',
+        options: fineSetUp,
       },
     };
   }
@@ -242,7 +246,9 @@ export class SearchPageComponent extends Component {
             primaryFilters={{
               categoryFilter: filters.categoryFilter,
               amenitiesFilter: filters.amenitiesFilter,
+              fineSetUpFilter: filters.fineSetUpFilter,
             }}
+           
           />
           <ModalInMobile
             className={css.mapPanel}
@@ -285,6 +291,7 @@ SearchPageComponent.defaultProps = {
   tab: 'listings',
   categories: config.custom.categories,
   amenities: config.custom.amenities,
+  fineSetUp: config.custom.fineSetUp,
   activeListingId: null,
 };
 
@@ -304,6 +311,7 @@ SearchPageComponent.propTypes = {
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
   categories: array,
   amenities: array,
+  fineSetUp: array,
 
   // from withRouter
   history: shape({

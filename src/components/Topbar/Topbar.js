@@ -259,7 +259,7 @@ class TopbarComponent extends Component {
         <ModalMissingInformation
           id="MissingInformationReminder"
           containerClassName={css.missingInformationModal}
-          currentUser={currentUser}
+          //currentUser={currentUser}
           currentUserHasListings={currentUserHasListings}
           currentUserHasOrders={currentUserHasOrders}
           location={location}

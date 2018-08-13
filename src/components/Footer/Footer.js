@@ -77,9 +77,9 @@ const Footer = props => {
 
   return (
     //<div className={classes}>
-     <div className={css.footerBackground}>
-     <div class="ui stackable grid">
-        <div class="two wide column">
+    <div className={css.footerBackground}>
+      <div className="ui stackable grid">
+        <div className="two wide column">
           <div className={css.infoLinks}>
             <NamedLink name="AboutPage" className={css.link}>
                 <FormattedMessage id="Footer.toAboutPage" />
@@ -87,7 +87,7 @@ const Footer = props => {
           </div>
         </div>
         
-        <div class="two wide column">
+        <div className="two wide column">
           <div className={css.infoLinks}>
              <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
                 <FormattedMessage id="Footer.privacyPolicy" />
@@ -95,7 +95,7 @@ const Footer = props => {
           </div>
         </div>
         
-        <div class="two wide column">
+        <div className="two wide column">
           <div className={css.infoLinks}>
              <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                 <FormattedMessage id="Footer.termsOfUse" />
@@ -103,7 +103,7 @@ const Footer = props => {
           </div>
         </div>
         
-        <div class="two wide column">
+        <div className="two wide column">
           <div className={css.infoLinks}>
              <NamedLink name="ContactUsPage" className={css.legalLink}>
                 <FormattedMessage id="Footer.toContactUsPage" />
@@ -111,17 +111,17 @@ const Footer = props => {
           </div>
         </div>
         
-        <div class="two wide column">
+        <div className="two wide column">
           <div className={css.infoLinks}>
              <NamedLink name="LandingPage" className={css.legalLink}>
                 <img src={logo} alt="" className={css.logo}/>
               </NamedLink>
           </div>
         </div>
-         <div class="two wide column">
+         <div className="two wide column">
          </div>
       
-        <div class="four wide column">
+        <div className="four wide column">
           <div className={css.infoLinks}>
                {socialMediaLinks}
           </div>

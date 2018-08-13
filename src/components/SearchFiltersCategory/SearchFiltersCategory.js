@@ -5,11 +5,11 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
 
-import { SelectSingleFilter, SelectMultipleFilter, NamedLink} from '../../components';
+import { SelectSingleFilter} from '../../components';
 import routeConfiguration from '../../routeConfiguration';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
-import css from './SearchFilters.css';
+import css from './SearchFiltersCategory.css';
 
 // Dropdown container can have a positional offset (in pixels)
 const FILTER_DROPDOWN_OFFSET = -22;
@@ -20,12 +20,6 @@ const initialValue = (queryParams, paramName) => {
 };
 
 
-
-// resolve initial values for a multi value filter
-const initialValues = (queryParams, paramName) => {
-  return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
-};
-
 const SearchFiltersComponent = props => {
   const {
     urlQueryParams,
@@ -33,7 +27,6 @@ const SearchFiltersComponent = props => {
     resultsCount,
     searchInProgress,
     categoryFilter,
-     amenitiesFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
     searchFiltersPanelSelectedCount,
@@ -73,36 +66,6 @@ const SearchFiltersComponent = props => {
     
     ) : null;
   
-  const amenitiesLabel = intl.formatMessage({
-    id: 'SearchFilters.amenitiesLabel',
-  });
-
-  const initialAmenities = initialValues(urlQueryParams, amenitiesFilter.paramName);
-  const handleSelectOptions = (urlParam, options) => {
-    const queryParams =
-      options && options.length > 0
-        ? { ...urlQueryParams, [urlParam]: options.join(',') }
-        : omit(urlQueryParams, urlParam);
-
-    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
-  };
-
-
- 
-  const amenitiesFilterElement = amenitiesFilter ? (
-    <SelectMultipleFilter
-      id={'SearchFilters.amenitiesFilter'}
-      name="amenities"
-      urlParam={amenitiesFilter.paramName}
-      label={amenitiesLabel}
-      onSelect={handleSelectOptions}
-      options={amenitiesFilter.options}
-      initialValues={initialAmenities}
-      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-    />
-  ) : null;
-
-
   
   const toggleSearchFiltersPanelButtonClasses =
     isSearchFiltersPanelOpen || searchFiltersPanelSelectedCount > 0
@@ -121,41 +84,16 @@ const SearchFiltersComponent = props => {
       />
     </button>
   ) : null;
-  
-  const searchMap = (
-      <NamedLink name="SearchMapPage">
-        <span className={css.searchMap}>Map</span>
-      </NamedLink>
-    )
-
-    const searchGrid = (
-      <NamedLink name="RentalsListPage">
-        <span className={css.searchGrid} >Grid</span>
-      </NamedLink>
-    )
   return (
     <div className={css.MainSearchContainer}>      
-      <div className="ui secondary pointing menu">      
-            <div className="left menu">  
-               {categoryFilterElement}  
-               {amenitiesFilterElement}
-               {toggleSearchFiltersPanelButton} 
-            </div>
-            
-            <div className="right menu">  
-            <button className={css.gridBtn}><i className="icon th"></i>{searchGrid}</button>
-            <button className={css.mapBtn}><i className="icon anchor black"></i>{searchMap}</button>
-            </div>          
-        </div> 
+       <div className="ui secondary pointing menu">         
+        <div className="left menu">  
+          {categoryFilterElement}  
+         {toggleSearchFiltersPanelButton} 
+        </div>     
+      </div> 
      
 
-      {listingsAreLoaded && resultsCount > 0 ? (
-        <div className={css.searchResultSummary}>
-          <span className={css.resultsFound}>
-            <FormattedMessage id="SearchFilters.foundResults" values={{ count: resultsCount }} />
-          </span>
-        </div>
-      ) : null}
 
       {hasNoResult ? (
         <div className={css.noSearchResults}>
@@ -165,6 +103,7 @@ const SearchFiltersComponent = props => {
 
       {searchInProgress ? (
         <div className={css.loadingResults}>
+        
         </div>
       ) : null}
     </div>
@@ -204,6 +143,6 @@ SearchFiltersComponent.propTypes = {
   intl: intlShape.isRequired,
 };
 
-const SearchFilters = compose(withRouter, injectIntl)(SearchFiltersComponent);
+const SearchFiltersCategory = compose(withRouter, injectIntl)(SearchFiltersComponent);
 
-export default SearchFilters;
+export default SearchFiltersCategory;

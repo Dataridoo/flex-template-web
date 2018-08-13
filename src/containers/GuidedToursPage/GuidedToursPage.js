@@ -43,7 +43,7 @@ import {
   createSearchResultSchema,
 } from './GuidedToursPage.helpers';
 import MainPanel from './MainPanel';
-
+import rentalsImage from './rentals.jpg'
 import css from './GuidedToursPage.css';
 
 // Pagination page size might need to be dynamic on responsive page layouts
@@ -229,9 +229,11 @@ export class SearchPageComponent extends Component {
              <TopbarContainer /> 
           </LayoutWrapperTopbar>
          <LayoutWrapperMain>
-            <div className={css.heroContainer}>
-              
-            </div>   
+           <div className={css.heroContainer}>
+              <img src={rentalsImage} alt="rentals" />
+              <div className={css.heroContainerHeader}>Rentals Header</div>
+               <div className={css.heroContainerSubHeader}>Rentals Sub-header</div>
+            </div>    
           
           <div className={css.MainSearchContainer}>
             <MainPanel            

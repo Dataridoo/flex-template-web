@@ -12,7 +12,7 @@
 
   /* Layout */
   margin-top: 7px;
-  padding: 15px 40px 20px 30px;
+  padding: 15px 20px 20px 30px;
 
   /* Borders */
   background-color: var(--matterColorLight);
@@ -27,6 +27,7 @@
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+  
 }
 
 .fieldGroup {

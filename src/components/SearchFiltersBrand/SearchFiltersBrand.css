@@ -7,8 +7,8 @@
   position: relative;
 }
 
-.searchGrid{
-  color:white;
+.searchList{
+  color:black;
 }
 .searchMap{
   color:black;
@@ -58,6 +58,16 @@
   font-size: 16px; 
 }
 
+.listBtn{
+  background-color:lightgray;  
+  font: bold;
+  height: 40px;
+  border: none;
+  text-decoration: none;
+  font-size: 16px; 
+ 
+}
+
 .mapBtn{
   background-color:lightgray;
   color: white;
@@ -67,20 +77,6 @@
   text-decoration: none;
   font-size: 16px; 
  
-}
-
-.MainSearchContainer{
-  margin-top: 20px;
-
-  @media (--viewportMedium) {
-    margin-top: -10px;
-   
-  
-  }
-
-  @media (--viewportLarge) {
-   
-  }
 }
 
 

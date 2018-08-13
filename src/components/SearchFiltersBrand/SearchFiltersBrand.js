@@ -5,19 +5,15 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
 
-import { SelectSingleFilter, SelectMultipleFilter, NamedLink} from '../../components';
+import {  SelectMultipleFilter} from '../../components';
 import routeConfiguration from '../../routeConfiguration';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
-import css from './SearchFilters.css';
+import css from './SearchFiltersBrand.css';
 
 // Dropdown container can have a positional offset (in pixels)
-const FILTER_DROPDOWN_OFFSET = -22;
 
-// resolve initial value for a single value filter
-const initialValue = (queryParams, paramName) => {
-  return queryParams[paramName];
-};
+const FILTER_DROPDOWN_OFFSET = -22;
 
 
 
@@ -32,47 +28,13 @@ const SearchFiltersComponent = props => {
     listingsAreLoaded,
     resultsCount,
     searchInProgress,
-    categoryFilter,
-     amenitiesFilter,
-    isSearchFiltersPanelOpen,
-    toggleSearchFiltersPanel,
-    searchFiltersPanelSelectedCount,
+    amenitiesFilter,
     history,
     intl,
   } = props;
 
   const hasNoResult = listingsAreLoaded && resultsCount === 0;
- 
-  const categoryLabel = intl.formatMessage({
-    id: 'SearchFilters.categoryLabel',
-  });
 
-  
-  const initialCategory = initialValue(urlQueryParams, categoryFilter.paramName);
-
-  const handleSelectOption = (urlParam, option) => {
-    // query parameters after selecting the option
-    // if no option is passed, clear the selection for the filter
-    const queryParams = option
-      ? { ...urlQueryParams, [urlParam]: option }
-      : omit(urlQueryParams, urlParam);
-
-    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
-  };
-
-
-  const categoryFilterElement = categoryFilter ? (
-    <SelectSingleFilter
-      urlParam={categoryFilter.paramName}
-      label={categoryLabel}
-      onSelect={handleSelectOption}
-      options={categoryFilter.options}
-      initialValue={initialCategory}
-      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-    />
-    
-    ) : null;
-  
   const amenitiesLabel = intl.formatMessage({
     id: 'SearchFilters.amenitiesLabel',
   });
@@ -104,50 +66,9 @@ const SearchFiltersComponent = props => {
 
 
   
-  const toggleSearchFiltersPanelButtonClasses =
-    isSearchFiltersPanelOpen || searchFiltersPanelSelectedCount > 0
-      ? css.searchFiltersPanelOpen
-      : css.searchFiltersPanelClosed;
-  const toggleSearchFiltersPanelButton = toggleSearchFiltersPanel ? (
-    <button
-      className={toggleSearchFiltersPanelButtonClasses}
-      onClick={() => {
-        toggleSearchFiltersPanel(!isSearchFiltersPanelOpen);
-      }}
-    >
-      <FormattedMessage
-        id="SearchFilters.moreFiltersButton"
-        values={{ count: searchFiltersPanelSelectedCount }}
-      />
-    </button>
-  ) : null;
-  
-  const searchMap = (
-      <NamedLink name="SearchMapPage">
-        <span className={css.searchMap}>Map</span>
-      </NamedLink>
-    )
-
-    const searchGrid = (
-      <NamedLink name="RentalsListPage">
-        <span className={css.searchGrid} >Grid</span>
-      </NamedLink>
-    )
   return (
-    <div className={css.MainSearchContainer}>      
-      <div className="ui secondary pointing menu">      
-            <div className="left menu">  
-               {categoryFilterElement}  
-               {amenitiesFilterElement}
-               {toggleSearchFiltersPanelButton} 
-            </div>
-            
-            <div className="right menu">  
-            <button className={css.gridBtn}><i className="icon th"></i>{searchGrid}</button>
-            <button className={css.mapBtn}><i className="icon anchor black"></i>{searchMap}</button>
-            </div>          
-        </div> 
-     
+    <div >  
+          {amenitiesFilterElement} 
 
       {listingsAreLoaded && resultsCount > 0 ? (
         <div className={css.searchResultSummary}>
@@ -204,6 +125,6 @@ SearchFiltersComponent.propTypes = {
   intl: intlShape.isRequired,
 };
 
-const SearchFilters = compose(withRouter, injectIntl)(SearchFiltersComponent);
+const SearchFiltersBrand = compose(withRouter, injectIntl)(SearchFiltersComponent);
 
-export default SearchFilters;
+export default SearchFiltersBrand;

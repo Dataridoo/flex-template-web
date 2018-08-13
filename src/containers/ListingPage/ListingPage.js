@@ -31,11 +31,10 @@ import {
   TwitterShareButton,
 } from 'react-share';
 
-import SectionLikeCounter from './SectionLikeCounter';
+import SectionLikeCounter from './SectionLikeCounter/SectionLikeCounter';
 
 import { sendEnquiry, loadData, setInitialValues } from './ListingPage.duck';
 import SectionImages from './SectionImages';
-import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
 import SectionReviews from './SectionReviews';
 import SectionHost from './SectionHost';
@@ -43,6 +42,8 @@ import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
 import SectionFeatures from './SectionFeatures';
 import SectionBooking from './SectionBooking';
+import SectionDescription from './SectionDescription';
+//import SectionFineSetUp from './SectionFineSetUp';
 import css from './ListingPage.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
@@ -94,10 +95,10 @@ const closeBookModal = (history, listing) => {
   );
 };
 
-/* const categoryLabel = (categories, key) => {
+const categoryLabel = (categories, key) => {
   const cat = categories.find(c => c.key === key);
   return cat ? cat.label : key;
-}; */
+}; 
 
 export class ListingPageComponent extends Component {
   constructor(props) {
@@ -201,7 +202,9 @@ export class ListingPageComponent extends Component {
       fetchReviewsError,
       sendEnquiryInProgress,
       sendEnquiryError,
+      categoriesConfig,
       amenitiesConfig,
+     //fineSetUpConfig,
     } = this.props;
 
     const isBook = !!parse(location.search).book;
@@ -314,8 +317,6 @@ export class ListingPageComponent extends Component {
     const isOwnListing =
       userAndListingAuthorAvailable && currentListing.author.id.uuid === currentUser.id.uuid;
     const isClosed = currentListing.attributes.state === LISTING_STATE_CLOSED;
-    const showContactUser = !currentUser || (currentUser && !isOwnListing);
-
     const currentAuthor = authorAvailable ? currentListing.author : null;
     const ensuredAuthor = ensureUser(currentAuthor);
 
@@ -375,6 +376,7 @@ export class ListingPageComponent extends Component {
     
     const shareUrl = "http://pedal.world";
  
+  
     const hostLinkHeader = (
       <NamedLink
         className={css.authorNameLinkHeader}
@@ -386,25 +388,24 @@ export class ListingPageComponent extends Component {
       </NamedLink>
     );
     
-    const hostLinkSidebar = (
-      <NamedLink
-        className={css.authorNameLinkSidebar}
-        name="ListingPage"
-        params={params}
-        to={{ hash: '#host' }}
-      >
-        {authorDisplayName}
-      </NamedLink>
-    );
+    // const hostLinkSidebar = (
+    //   <NamedLink
+    //     className={css.authorNameLinkSidebar}
+    //     name="ListingPage"
+    //     params={params}
+    //     to={{ hash: '#host' }}
+    //   >
+    //     {authorDisplayName}
+    //   </NamedLink>
+    // );
     
-/*
+
     const category =
       publicData && publicData.category ? (
         <span>
           {categoryLabel(categoriesConfig, publicData.category)}
-          <span className={css.separator}>•</span>
         </span>
-      ) : null; */
+      ) : null; 
 
     return (
       <Page
@@ -455,21 +456,21 @@ export class ListingPageComponent extends Component {
                     onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
                     handleViewPhotosClick={handleViewPhotosClick}
                     onManageDisableScrolling={onManageDisableScrolling}
+                  /> <br />
+                   <SectionHeading
+                     priceTitle={priceTitle}
+                    formattedPrice={formattedPrice}
+                    category={category}
                   />
                   
                 </div>              
                 <div className="six wide column">  
-                   <div className={css.formatedPriceAndUnit}> 
-                      <div  className={css.formatedPrice}> 
-                        <SectionHeading   
-                          formattedPrice={formattedPrice} 
-                          /> 
-                      </div>
-                      <div className={css.formatedPriceUnit}> 
-                        <FormattedMessage id="ListingPage.perUnit" />
-                      </div>
-                    </div> <br/>
-                  
+                  <div  className={css.formatedPrice}> 
+                    <SectionHeading   
+                      formattedPrice={formattedPrice} 
+                      /> 
+                  </div>
+                     
                     <SectionBooking
                       listing={currentListing}
                       isOwnListing={isOwnListing}
@@ -485,40 +486,51 @@ export class ListingPageComponent extends Component {
                       handleBookButtonClick={handleBookButtonClick}
                       handleMobileBookModalClose={handleMobileBookModalClose}
                       onManageDisableScrolling={onManageDisableScrolling}
-                    />
-                 
-                    <hr/>
-                  <div className={css.mainDiv}> 
-                    <div  className={css.avatarContainer} > 
-                      <SectionAvatar                         
-                          user={currentAuthor} 
-                          params={params} 
-                        />
-                    </div>
-                    <div className={css.avatarTitle} > 
-                         {hostLinkSidebar}
-                           <SectionHeading 
-                              showContactUser={showContactUser}
-                              onContactUser={this.onContactUser}
-                            />  
-                    </div>             
-                  </div>  <hr/>                    
+                    /> <hr/>
+                    
+                       <SectionHost
+                        listing={currentListing}
+                        isOwnListing={isOwnListing}
+                        authorDisplayName={authorDisplayName}
+                        onContactUser={this.onContactUser}
+                        isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
+                        onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
+                        sendEnquiryError={sendEnquiryError}
+                        sendEnquiryInProgress={sendEnquiryInProgress}
+                        onSubmitEnquiry={this.onSubmitEnquiry}
+                        currentUser={currentUser}
+                        onManageDisableScrolling={onManageDisableScrolling}
+                      /> 
+                               
+                  <hr/>                    
                 </div>
               </div>
+              <div className={css.gridMarginTop}>
               <div className="ui stackable sixteen column grid">             
                 <div className="ten wide column">
                   <div className={css.SectionHeadingNew}>
-                   {richTitle}
+                  <h2> <FormattedMessage id="ListingPage.descriptionTitle" /> <span className={css.richTitleFormat}> {richTitle} :</span></h2>
+                   <SectionDescription description={description}  />
                   </div>
-                   <SectionRulesMaybe publicData={publicData} />
-                   <SectionFeatures
-                      options={amenitiesConfig}
-                      selectedOptions={publicData.amenities}
-                    />
+                   <div>
+                     <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresDescription" /></h3>
+                     <SectionRulesMaybe publicData={publicData} />
+                    </div>
+                   <div>
+                   <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresTitle" /></h3>
+                     <SectionFeatures
+                        options={amenitiesConfig}
+                        selectedOptions={publicData.amenities}
+                      />
+                    </div>
                   
-                  <div className={css.SectionLikeCounter}>       
+                  
+                  <div className={css.SectionLikeCounter}>
+                  <ul className={css.UnOrderdedListCounter}>
+                  <li className={css.ListCounter}>
                     <SectionLikeCounter />
-                    
+                    </li>
+                    <li className={css.ListCounter}>
                     <button className={css.fbShareBtn}>
                       <FacebookShareButton
                         url={shareUrl}
@@ -527,6 +539,8 @@ export class ListingPageComponent extends Component {
                         Share
                       </FacebookShareButton>
                     </button>
+                     </li>
+                    <li className={css.ListCounter}>
                     <button className={css.twitterShareBtn}>
                       <TwitterShareButton
                         url={shareUrl}
@@ -535,23 +549,11 @@ export class ListingPageComponent extends Component {
                           <i className="twitter icon"></i>Tweet
                       </TwitterShareButton> 
                     </button>
+                    </li>
+                    </ul>
                   </div> 
                   
                   <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
-                    <SectionHost
-                      quote={title}
-                      listing={currentListing}
-                      isOwnListing={isOwnListing}
-                      authorDisplayName={authorDisplayName}
-                      onContactUser={this.onContactUser}
-                      isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
-                      onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
-                      sendEnquiryError={sendEnquiryError}
-                      sendEnquiryInProgress={sendEnquiryInProgress}
-                      onSubmitEnquiry={this.onSubmitEnquiry}
-                      currentUser={currentUser}
-                      onManageDisableScrolling={onManageDisableScrolling}
-                    /> 
                 </div>  
                 <div className="six wide column">
                   <SectionMapMaybe
@@ -560,6 +562,7 @@ export class ListingPageComponent extends Component {
                     listingId={currentListing.id}
                   /> 
                 </div>
+              </div>
               </div>
           </div>
           </LayoutWrapperMain>
@@ -582,6 +585,7 @@ ListingPageComponent.defaultProps = {
   sendEnquiryError: null,
   categoriesConfig: config.custom.categories,
   amenitiesConfig: config.custom.amenities,
+  //fineSetUpConfig: config.custom.fineSetUp,
 };
 
 ListingPageComponent.propTypes = {
@@ -620,6 +624,7 @@ ListingPageComponent.propTypes = {
 
   categoriesConfig: array,
   amenitiesConfig: array,
+  //fineSetUpConfig: array,
 };
 
 const mapStateToProps = state => {

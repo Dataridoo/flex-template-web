@@ -33,7 +33,7 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelPolicy';
   } else if (tab === FEATURES) {
     key = 'EditListingWizard.tabLabelFeatures';
-  } else if (tab === LOCATION) {
+  }  else if (tab === LOCATION) {
     key = 'EditListingWizard.tabLabelLocation';
   } else if (tab === PRICING) {
     key = 'EditListingWizard.tabLabelPricing';
@@ -61,6 +61,7 @@ const tabCompleted = (tab, listing) => {
       return !!(description && title);
     case FEATURES:
       return !!(publicData && publicData.amenities);
+      
     case POLICY:
       return !!(publicData && typeof publicData.frame !== 'undefined' 
               && publicData && typeof publicData.fork !== 'undefined'

@@ -9,10 +9,14 @@ import {
   LayoutWrapperFooter,
   Footer,
   ExternalLink,
+  NamedLink
 } from '../../components';
 
 import css from './AboutPage.css';
-import image from './background-1440.jpg';
+
+
+      
+   
 
 const AboutPage = () => {
   const { siteTwitterHandle, siteFacebookPage } = config;
@@ -35,27 +39,46 @@ const AboutPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h1 className={css.pageTitle}>About us</h1>
-          <img className={css.coverImage} src={image} alt="My first ice cream." />
+          <h1 className={css.pageTitle}>  Pedal.world launching August 30th</h1>
 
           <div className={css.contentWrapper}>
             <div className={css.contentSide}>
-              
+              <p>
+                Pedal.world is developed by Dataridoo Oy. We are based in Helsinki, Finland.
+              </p>
+            
             </div>
 
             <div className={css.contentMain}>
-              
+              <p> 
+                Pedal.world is your online destination for planning a cycling or biking holiday in Europe.
+              </p>
+               <p> 
+                We offer an overview and online booking options for bike guide services, rentals and accommodation.
+               </p>
+                <p>
+                  We promote all disciplines ranging from road cycling over mountainbiking to e-bikes and fat bikes for beginners to enthusiasts alike. 
+                 </p>
+                <p>
+                Read user reviews, contact professionals offering services, view booking options in realtime and pay your holiday online in a trusted environment.
+              </p>
 
-              <h3 className={css.subtitle}>pedalworld</h3>
+              <h3 className={css.subtitle}>Interested?</h3>
+              <p>
+               Leave us your e-maila ddress and we’ll keep you up to date.
+               </p>
+               <p>
+               <NamedLink name="SignupPage">signup here</NamedLink>
+              </p>
+              
+              <p>
+                A professional offering services listed above and interested in featuring on pedal.world?
+              </p>
 
               
               <h3 id="contact" className={css.subtitle}>
-               Welcome to pedalworld
+              Contact us  <ExternalLink href="/"> maarten@dataridoo.com</ExternalLink>. 
               </h3>
-              <p>
-               
-                <ExternalLink href="/">pedalworld</ExternalLink>. 
-              </p>
               <p>
                 You can also checkout our{' '}
                 <ExternalLink href={siteFacebookPage}>Facebook</ExternalLink> and{' '}

@@ -12,23 +12,35 @@
   background-color: #00aced;
   color: white;
   font: bold;
-  height: 30px;
+  height: 25px;
   border: none;
   text-decoration: none;
-  font-size: 16px;
-  margin: 5px;
+  font-size: 12px;
+  margin: 3px;
+}
+.UnOrderdedListCounter{
+  list-style-type: none;
+  
+  overflow: hidden;
+}
+.ListCounter{
+  float: left;
 }
 
 .fbShareBtn{
   background-color:#3b5998;
   color: white;
   font: bold;
-  height: 30px;
+  height: 25px;
   border: none;
   text-decoration: none;
-  font-size: 16px;
-  margin: 5px;
+  font-size: 12px;
+  margin: 3px;
  
+}
+.gridMarginTop{
+  margin-top: 0;
+  padding-top: 0;
 }
 .authorNameLinkHeader{
   color: white;
@@ -68,24 +80,16 @@
 }
 
 
-.formatedPriceAndUnit{
-  width: 150px;
-  height: 40px;
-}
-
-.formatedPrice {
-  padding-top: 30px;  
-  height: 32px;
-   width: 80px;
+.formatedPrice {  
+   padding-top: 0;
+  margin-top: 0;
+  
 }
 
 .formatedPriceUnit{ 
-  padding-top: 0;
-  width: 70px;
-  margin-left: 80px;
   color: darkgray;
-  height: 40px;
-}
+  size: 14px;
+ }
 
 
 .loadingText {
@@ -471,14 +475,20 @@
 }
 
 .sectionDescription {
-  padding: 0 24px;
+  padding: 0;
+  font-size: 16px;
 
   @media (--viewportMedium) {
     padding: 0;
-    margin-bottom: 22px;
+    font-size: 16px;
+   
   }
 }
 
+
+.richTitleFormat{
+  color:dodgerblue;
+}
 .descriptionTitleHeader{
   /* Font */
   @apply --marketplaceH2FontStyles;
@@ -658,7 +668,7 @@
 
 .map {
   /* Dimensions: Map takes all available space from viewport (excludes action button and section title) */
-  height: 150px;
+  height: 300px;
   width: 100%;
   background-color: #eee;
 
@@ -667,12 +677,14 @@
   }
 
   @media (--viewportLarge) {
-    height: 200px;
+    height: 350px;
   }
 }
 
 .SectionLikeCounter{
   margin-bottom: 20px;
+  padding-top: 0;
+  margin-top: 0;
 }
 .openBookingForm {
   /* Ensure that mobile button is over Footer too */
