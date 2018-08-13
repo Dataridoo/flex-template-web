@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -238,8 +238,16 @@ export class SearchPageComponent extends Component {
          <LayoutWrapperMain>
             <div className={css.heroContainer}>
               <img src={rentalsImage} alt="rentals" />
-              <div className={css.heroContainerHeader}>Rentals Header</div>
-               <div className={css.heroContainerSubHeader}>Rentals Sub-header</div>
+              <div className={css.heroContainerHeader}>
+                <FormattedMessage
+                  id="RentalsListPage.ImageHeader"
+                />
+              </div>
+               <div className={css.heroContainerSubHeader}>
+                <FormattedMessage
+                  id="RentalsListPage.ImageSubHeader"
+                />
+               </div>
             </div>   
        
           

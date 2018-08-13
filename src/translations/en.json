@@ -237,6 +237,11 @@
   "EditListingWizard.tabLabelDescription": "Description",
   "EditListingWizard.tabLabelFineSetUp": "Fin Set-up",
   "EditListingFeaturesPanel.title": "Brand",
+  "GuidedTourPage.ImageHeader":"Guided Tour Header",
+  "GuidedTourPage.ImageSubHeader":"Guided Tour sub-header",
+  "RentalsListPage.ImageHeader":"Rentals page Header",
+  "RentalsListPage.ImageSubHeader":"Rentals page sub-header",
+
   "ListingPage.featuresTitle": "Bike brands:",
   "ListingPage.fineSetUpTitle": "Bike Fin-Setup",
   "ListingPage.featuresDescription" :"Bike features descriptions:",

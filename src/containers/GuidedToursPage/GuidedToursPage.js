@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -43,7 +43,7 @@ import {
   createSearchResultSchema,
 } from './GuidedToursPage.helpers';
 import MainPanel from './MainPanel';
-import rentalsImage from './rentals.jpg'
+import tourguide from './tourguide.jpg'
 import css from './GuidedToursPage.css';
 
 // Pagination page size might need to be dynamic on responsive page layouts
@@ -230,9 +230,17 @@ export class SearchPageComponent extends Component {
           </LayoutWrapperTopbar>
          <LayoutWrapperMain>
            <div className={css.heroContainer}>
-              <img src={rentalsImage} alt="rentals" />
-              <div className={css.heroContainerHeader}>Rentals Header</div>
-               <div className={css.heroContainerSubHeader}>Rentals Sub-header</div>
+              <img src={tourguide} alt="rentals" />
+              <div className={css.heroContainerHeader}>
+                <FormattedMessage
+                  id="GuidedTourPage.ImageHeader"
+                />
+              </div>
+               <div className={css.heroContainerSubHeader}>
+                <FormattedMessage
+                  id="GuidedTourPage.ImageSubHeader"
+                />
+               </div>
             </div>    
           
           <div className={css.MainSearchContainer}>
