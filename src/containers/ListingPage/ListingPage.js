@@ -43,7 +43,7 @@ import SectionMapMaybe from './SectionMapMaybe';
 import SectionFeatures from './SectionFeatures';
 import SectionBooking from './SectionBooking';
 import SectionDescription from './SectionDescription';
-//import SectionFineSetUp from './SectionFineSetUp';
+import SectionBikeSize from './SectionBikeSize';
 import css from './ListingPage.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
@@ -204,7 +204,7 @@ export class ListingPageComponent extends Component {
       sendEnquiryError,
       categoriesConfig,
       amenitiesConfig,
-     //fineSetUpConfig,
+     bikeSizeConfig,
     } = this.props;
 
     const isBook = !!parse(location.search).book;
@@ -469,6 +469,10 @@ export class ListingPageComponent extends Component {
                     <SectionHeading   
                       formattedPrice={formattedPrice} 
                       /> 
+                       <SectionBikeSize
+                        options={bikeSizeConfig}
+                        handleSelectBikeSizeOptions={publicData.bikeSize}
+                      />
                   </div>
                      
                     <SectionBooking
@@ -585,7 +589,7 @@ ListingPageComponent.defaultProps = {
   sendEnquiryError: null,
   categoriesConfig: config.custom.categories,
   amenitiesConfig: config.custom.amenities,
-  //fineSetUpConfig: config.custom.fineSetUp,
+  bikeSizeConfig: config.custom.bikeSize,
 };
 
 ListingPageComponent.propTypes = {
@@ -624,7 +628,7 @@ ListingPageComponent.propTypes = {
 
   categoriesConfig: array,
   amenitiesConfig: array,
-  //fineSetUpConfig: array,
+  bikeSizeConfig: array,
 };
 
 const mapStateToProps = state => {

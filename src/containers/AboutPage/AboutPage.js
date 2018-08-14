@@ -46,8 +46,16 @@ const AboutPage = () => {
               <p>
                 Pedal.world is developed by Dataridoo Oy. We are based in Helsinki, Finland.
               </p>
-            
+            <h3 id="contact" className={css.subtitle}>
+                  Contact us  <ExternalLink href="/"> maarten@dataridoo.com</ExternalLink>. 
+              </h3>
+              <p>
+                You can also checkout our{' '}
+                <ExternalLink href={siteFacebookPage}>Facebook</ExternalLink> and{' '}
+                <ExternalLink href={siteTwitterPage}>Twitter</ExternalLink>.
+              </p>
             </div>
+           
 
             <div className={css.contentMain}>
               <p> 
@@ -65,7 +73,7 @@ const AboutPage = () => {
 
               <h3 className={css.subtitle}>Interested?</h3>
               <p>
-               Leave us your e-maila ddress and we’ll keep you up to date.
+               Leave us your e-maila address and we’ll keep you up to date.
                </p>
                <p>
                <NamedLink name="SignupPage">signup here</NamedLink>
@@ -76,14 +84,7 @@ const AboutPage = () => {
               </p>
 
               
-              <h3 id="contact" className={css.subtitle}>
-              Contact us  <ExternalLink href="/"> maarten@dataridoo.com</ExternalLink>. 
-              </h3>
-              <p>
-                You can also checkout our{' '}
-                <ExternalLink href={siteFacebookPage}>Facebook</ExternalLink> and{' '}
-                <ExternalLink href={siteTwitterPage}>Twitter</ExternalLink>.
-              </p>
+              
             </div>
           </div>
         </LayoutWrapperMain>

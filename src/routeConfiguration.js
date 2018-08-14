@@ -12,6 +12,7 @@ import {
   GuidedToursPage,
   InboxPage,
   LandingPage,
+  MerchantPage,
   ListingPage,
   ManageListingsPage,
   NotFoundPage,
@@ -54,6 +55,11 @@ const routeConfiguration = () => {
       path: '/',
       name: 'LandingPage',
       component: props => <LandingPage {...props} />,
+    },
+    {
+      path: '/service',
+      name: 'MerchantPage',
+      component: props => <MerchantPage {...props} />,
     },
    
     {

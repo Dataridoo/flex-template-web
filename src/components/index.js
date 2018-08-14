@@ -17,8 +17,8 @@ export {
   default as EditListingFeaturesPanel,
 } from './EditListingFeaturesPanel/EditListingFeaturesPanel';
 export {
-  default as EditListingFineSetUpPanel,
-} from './EditListingFineSetUpPanel/EditListingFineSetUpPanel';
+  default as EditListingBikeSizePanel,
+} from './EditListingBikeSizePanel/EditListingBikeSizePanel';
 export {
   default as EditListingLocationPanel,
 } from './EditListingLocationPanel/EditListingLocationPanel';
@@ -128,8 +128,11 @@ export { default as SearchResultsPanel } from './SearchResultsPanel/SearchResult
 export { default as SectionHero } from './SectionHero/SectionHero';
 export { default as SectionHowItWorks } from './SectionHowItWorks/SectionHowItWorks';
 export { default as SectionLocations } from './SectionLocations/SectionLocations';
+export { default as SectionLocationsMerchant } from './SectionLocationsMerchant/SectionLocationsMerchant';
 export { default as SectionLocationsBottom } from './SectionLocationsBottom/SectionLocationsBottom';
 export { default as SectionLocationCenter } from './SectionLocationCenter/SectionLocationCenter';
+export { default as SectionLocationCenterMerchant } from './SectionLocationCenterMerchant/SectionLocationCenterMerchant';
+
 export { default as SectionThumbnailLinks } from './SectionThumbnailLinks/SectionThumbnailLinks';
 export { default as SelectMultipleFilter } from './SelectMultipleFilter/SelectMultipleFilter';
 export {

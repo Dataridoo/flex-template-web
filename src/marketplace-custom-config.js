@@ -4,61 +4,170 @@
 
 export const amenities = [
   {
-    key: '7S',
-    label: '7S',
+    key: 'Argon18',
+    label: 'Argon 18',
   },
   {
-    key: 'AshtonSurfDesign',
-    label: 'Ashton Surf Design',
+    key: 'BH',
+    label: 'BH',
   },
   {
-    key: 'BalinSurfborads',
-    label: 'Balin Surfborads',
+    key: 'Bianchi',
+    label: 'Bianchi',
   },
   {
-    key: 'BillJohnson',
-    label: 'Bill Johnson',
+    key: 'BMC',
+    label: 'BMC',
   },
   {
-    key: 'BingSurfboards',
-    label: 'Bing Surfboards',
+    key: 'BromptonBicycle',
+    label: 'Brompton Bicycle',
   },
   {
-    key: 'Blacktip',
-    label: 'Blacktip',
+    key: 'Cannondale',
+    label: 'Cannondale',
   },
   {
-    key: 'Blue',
-    label: 'Blue',
-  }
+    key: 'Canyon',
+    label: 'Canyon',
+  },
+   {
+    key: 'Cervélo',
+    label: 'Cervélo',
+  },
+  {
+    key: 'Colnago',
+    label: 'Colnago',
+  },
+  {
+    key: 'Cube',
+    label: 'Cube',
+  },
+  {
+    key: 'DeRosa',
+    label: 'De Rosa',
+  },
+  {
+    key: 'EddyMerckx',
+    label: 'Eddy Merckx',
+  },
+  {
+    key: 'Felt',
+    label: 'Felt',
+  },
+  {
+    key: 'Focus',
+    label: 'Focus',
+  },
+  {
+    key: 'Genesis',
+    label: 'Genesis',
+  },
+  {
+    key: 'Ibis',
+    label: 'Ibis',
+  },
+  {
+    key: 'Kona',
+    label: 'Kona',
+  },
+  {
+    key: 'Kross',
+    label: 'Kross',
+  },
+   {
+    key: 'KTM',
+    label: 'KTM',
+  },
+   {
+    key: 'Lapierre',
+    label: 'Lapierre',
+  },
+   {
+    key: 'Look',
+    label: 'Look',
+  },
+   {
+    key: 'Merida',
+    label: 'Merida',
+  },
+   {
+    key: 'Mondraker',
+    label: 'Mondraker',
+  },
+   {
+    key: 'Niner',
+    label: 'Niner',
+  },
+   {
+    key: 'Olmo',
+    label: 'Olmo',
+  },
+   {
+    key: 'Orbea',
+    label: 'Orbea',
+  },
+   {
+    key: 'Pinarello',
+    label: 'Pinarello',
+  },
+  {
+    key: 'Pivot',
+    label: 'Pivot',
+  },
+  {
+    key: 'Ridley',
+    label: 'Ridley',
+  },
+  {
+    key: 'RockyMountain',
+    label: 'Rocky Mountain',
+  },
+   {
+    key: 'SantaCruz',
+    label: 'Santa Cruz',
+  },
+   {
+    key: 'Scott',
+    label: 'Scott',
+  },
+   {
+    key: 'Specialized',
+    label: 'Specialized',
+  },
+  {
+    key: 'Trek',
+    label: 'Trek',
+  },
+  {
+    key: 'YT',
+    label: 'YT',
+  },
+  {
+    key: 'Willier',
+    label: 'Willier',
+  },
 ];
 
 
-export const fineSetUp = [
+export const bikeSize = [
   {
-    key: 'SingleFine',
-    label: 'Single Fine',
+    key: 'XS',
+    label: 'XS',
   },
   {
-    key: 'Twin',
-    label: 'Twin',
+    key: 'SM',
+    label: 'SM',
   },
   {
-    key: 'TriThruster',
-    label: 'Tri/Thruster',
+    key: 'MD',
+    label: 'MD',
   },
   {
-    key: 'Quad',
-    label: 'Quad',
+    key: 'LG',
+    label: 'LG',
   },
-  {
-    key: '5FinConvert',
-    label: '5 Fin Convert',
-  },
-  {
-    key: 'Other',
-    label: 'Other',
-  }
+ 
 ];
 
 
@@ -67,4 +176,6 @@ export const categories = [
   { key: 'RoadBikes', label: 'Road Bike' },
   { key: 'MountainBike', label: 'Mountain Bike' },
   { key: 'E-Bike', label: 'E-Bike' },
+  { key: 'Fatbikes', label: 'Fatbikes' },
+  { key: 'Cargobikes', label: 'Cargobikes' },
 ];

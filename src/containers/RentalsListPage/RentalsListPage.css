@@ -22,14 +22,16 @@
 .heroContainerHeader{
   position: absolute;
   top: 30%;
-  left: 40%;
+ left: 30%;
+ padding-bottom: 10px;
   color:white;
   font-size: 50px 
 }
 .heroContainerSubHeader{
    position: absolute;
   top: 40%;
-  left: 40%;
+  left: 30%;
+   padding-bottom: 10px;
   color:white;
   font-size: 35px 
 }
@@ -95,13 +97,12 @@
  
 
   @media (--viewportMedium) {
-   margin-right: 10px;
-   margin-left: 10px;
+   margin-top: 20px;
   
   }
 
   @media (--viewportLarge) {
-    margin-top: -90px;
+    margin-top: -50px;
      
   }
 }

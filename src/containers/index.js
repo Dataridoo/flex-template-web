@@ -10,6 +10,8 @@ export { default as EventsPage } from './EventsPage/EventsPage';
 export { default as GuidedToursPage } from './GuidedToursPage/GuidedToursPage';
 export { default as InboxPage } from './InboxPage/InboxPage';
 export { default as LandingPage } from './LandingPage/LandingPage';
+
+export { default as MerchantPage } from './MerchantPage/MerchantPage';
 export { default as ListingPage } from './ListingPage/ListingPage';
 export { default as ManageListingsPage } from './ManageListingsPage/ManageListingsPage';
 export { default as NotFoundPage } from './NotFoundPage/NotFoundPage';

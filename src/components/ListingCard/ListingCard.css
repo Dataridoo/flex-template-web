@@ -12,7 +12,7 @@
 }
 .container {
   position: relative;
-  text-align: center;
+ 
 }
 .priceValueTwo{
   width: auto;
@@ -21,7 +21,7 @@
   background-color: lightgray;
   top: 0;
   right: 3px;
-  font-size: 10px;
+  font-size: 18px;
   padding: 0;
   border: none;
   text-decoration: none;
@@ -30,12 +30,19 @@
   position: absolute;
   bottom:8px;
   left: 30px;
-  color: white;
+  color: #3539ff;
   @apply --marketplaceH3FontStyles;
 }
 .authorName{
   margin-left: 20px;
   padding-top: 10px;
+}
+.titleThree{
+  bottom:8px;
+  margin-left: 0;
+  padding-left: 0;
+  color: #3539ff;
+  @apply --marketplaceH3FontStyles;
 }
 
 .threeToTwoWrapper {

@@ -34,6 +34,7 @@ const SearchFiltersComponent = props => {
     searchInProgress,
     categoryFilter,
      amenitiesFilter,
+     bikeSizeFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
     searchFiltersPanelSelectedCount,
@@ -101,6 +102,36 @@ const SearchFiltersComponent = props => {
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
   ) : null;
+  
+  
+  const bikeSizeLabel = intl.formatMessage({
+    id: 'SearchFilters.bikeSizeLabel',
+  });
+
+ const initialBikeSize = initialValues(urlQueryParams, bikeSizeFilter.paramName);
+  const handleSelectBikeSizeOptions = (urlParam, options) => {
+    const queryParams =
+      options && options.length > 0
+        ? { ...urlQueryParams, [urlParam]: options.join(',') }
+        : omit(urlQueryParams, urlParam);
+
+    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
+  };
+
+
+ 
+  const bikeSizeFilterFilterElement = bikeSizeFilter ? (
+    <SelectMultipleFilter
+      id={'SearchFilters.bikeSizeFilter'}
+      name="bikeSize"
+      urlParam={bikeSizeFilter.paramName}
+      label={bikeSizeLabel}
+      onSelect={handleSelectBikeSizeOptions}
+      options={bikeSizeFilter.options}
+      initialValues={initialBikeSize}
+      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+    />
+  ) : null;
 
 
   
@@ -140,6 +171,7 @@ const SearchFiltersComponent = props => {
                {categoryFilterElement}  
                {amenitiesFilterElement}
                {toggleSearchFiltersPanelButton} 
+               {bikeSizeFilterFilterElement}
             </div>
             
             <div className="right menu">  

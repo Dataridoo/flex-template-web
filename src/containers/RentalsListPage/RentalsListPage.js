@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -85,7 +85,7 @@ export class SearchPageComponent extends Component {
   }
 
   filters() {
-    const { categories, amenities } = this.props;
+    const { categories, amenities, bikeSize } = this.props;
 
     return {
       categoryFilter: {
@@ -95,6 +95,10 @@ export class SearchPageComponent extends Component {
       amenitiesFilter: {
         paramName: 'pub_amenities',
         options: amenities,
+      },
+       bikeSizeFilter: {
+        paramName: 'pub_bikeSize',
+        options: bikeSize,
       },
        
     };
@@ -238,16 +242,8 @@ export class SearchPageComponent extends Component {
          <LayoutWrapperMain>
             <div className={css.heroContainer}>
               <img src={rentalsImage} alt="rentals" />
-              <div className={css.heroContainerHeader}>
-                <FormattedMessage
-                  id="RentalsListPage.ImageHeader"
-                />
-              </div>
-               <div className={css.heroContainerSubHeader}>
-                <FormattedMessage
-                  id="RentalsListPage.ImageSubHeader"
-                />
-               </div>
+              <div className={css.heroContainerHeader}>Rentals Header</div>
+               <div className={css.heroContainerSubHeader}>Rentals Sub-header</div>
             </div>   
        
           
@@ -272,7 +268,7 @@ export class SearchPageComponent extends Component {
                     primaryFilters={{
                       categoryFilter: filters.categoryFilter,
                       amenitiesFilter: filters.amenitiesFilter,
-                      //fineSetUpFilter: filters.fineSetUpFilter,
+                      bikeSizeFilter: filters.bikeSizeFilter,
                       
                     }}
                   />
@@ -308,7 +304,7 @@ export class SearchPageComponent extends Component {
             </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
-          <Footer />
+         
         </LayoutWrapperFooter>
       </LayoutSingleColumn>
     </Page>
@@ -327,7 +323,7 @@ SearchPageComponent.defaultProps = {
   tab: 'listings',
   categories: config.custom.categories,
   amenities: config.custom.amenities,
-  //fineSetUp: config.custom.fineSetUp,
+  bikeSize: config.custom.bikeSize,
   activeListingId: null,
 };
 
@@ -347,7 +343,7 @@ SearchPageComponent.propTypes = {
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
   categories: array,
   amenities: array,
- //fineSetUp: array,
+  bikeSize: array,
   // from withRouter
   history: shape({
     push: func.isRequired,
