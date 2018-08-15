@@ -79,7 +79,7 @@ export class SearchPageComponent extends Component {
   }
 
   filters() {
-    const { categories, amenities } = this.props;
+    const { categories, amenities, bikeSize } = this.props;
 
     return {
       categoryFilter: {
@@ -89,6 +89,10 @@ export class SearchPageComponent extends Component {
       amenitiesFilter: {
         paramName: 'pub_amenities',
         options: amenities,
+      },
+       bikeSizeFilter: {
+        paramName: 'pub_bikeSize',
+        options: bikeSize,
       },
     };
   }
@@ -261,6 +265,7 @@ export class SearchPageComponent extends Component {
               primaryFilters={{
                 categoryFilter: filters.categoryFilter,
                 amenitiesFilter: filters.amenitiesFilter,
+                bikeSizeFilter: filters.bikeSizeFilter,
               }}
             />
             <ModalInMobile
@@ -312,6 +317,7 @@ SearchPageComponent.defaultProps = {
   tab: 'listings',
   categories: config.custom.categories,
   amenities: config.custom.amenities,
+   bikeSize: config.custom.bikeSize,
   activeListingId: null,
 };
 
@@ -331,6 +337,7 @@ SearchPageComponent.propTypes = {
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
   categories: array,
   amenities: array,
+   bikeSize: array,
 
   // from withRouter
   history: shape({

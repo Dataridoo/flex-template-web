@@ -206,7 +206,7 @@ const TopbarDesktop = props => {
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
-      {merchantPage}
+    
      {rentalsPage} 
     
      {guidedToursPage}

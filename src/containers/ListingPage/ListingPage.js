@@ -441,7 +441,7 @@ export class ListingPageComponent extends Component {
             </div>
             <div className={css.mainContainer}>
               <div className="ui stackable sixteen column grid">             
-                <div className="ten wide column">
+                <div className="nine wide column">
                   <SectionImages
                     title={title}
                     listing={currentListing}
@@ -464,18 +464,21 @@ export class ListingPageComponent extends Component {
                   />
                   
                 </div>              
-                <div className="six wide column">  
+                <div className="seven wide column">  
                   <div  className={css.formatedPrice}> 
                     <SectionHeading   
                       formattedPrice={formattedPrice} 
                       /> 
+                      <h3> <FormattedMessage id="ListingPage.bikeSizeTitle" /></h3>
                        <SectionBikeSize
+                       className={css.bikeSize}
                         options={bikeSizeConfig}
                         handleSelectBikeSizeOptions={publicData.bikeSize}
                       />
-                  </div>
-                     
+                  </div> <hr />
+                    <h3> <FormattedMessage id="ListingPage.BookingTitle" /></h3> 
                     <SectionBooking
+                     className={css.sectionBooking}
                       listing={currentListing}
                       isOwnListing={isOwnListing}
                       isClosed={isClosed}
@@ -490,44 +493,51 @@ export class ListingPageComponent extends Component {
                       handleBookButtonClick={handleBookButtonClick}
                       handleMobileBookModalClose={handleMobileBookModalClose}
                       onManageDisableScrolling={onManageDisableScrolling}
-                    /> <hr/>
-                    
-                       <SectionHost
-                        listing={currentListing}
-                        isOwnListing={isOwnListing}
-                        authorDisplayName={authorDisplayName}
-                        onContactUser={this.onContactUser}
-                        isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
-                        onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
-                        sendEnquiryError={sendEnquiryError}
-                        sendEnquiryInProgress={sendEnquiryInProgress}
-                        onSubmitEnquiry={this.onSubmitEnquiry}
-                        currentUser={currentUser}
-                        onManageDisableScrolling={onManageDisableScrolling}
-                      /> 
-                               
-                  <hr/>                    
+                    /> <hr/>              
                 </div>
               </div>
+                  
+                <div className={css.gridMarginTop}>
+                  <div className="ui stackable sixteen column grid">             
+                    <div className="nine wide column">
+                      <div className={css.SectionHeadingNew}>
+                          <h2> <FormattedMessage id="ListingPage.descriptionTitle" /> <span className={css.richTitleFormat}> {richTitle} :</span></h2>
+                      
+                      </div>
+                     <div>
+                       <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresDescription" /></h3>
+                       <SectionRulesMaybe publicData={publicData} />
+                      </div>
+                     
+                    
+                    </div>
+                     <div className="seven wide column">
+                       <SectionHost
+                          listing={currentListing}
+                          isOwnListing={isOwnListing}
+                          authorDisplayName={authorDisplayName}
+                          onContactUser={this.onContactUser}
+                          isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
+                          onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
+                          sendEnquiryError={sendEnquiryError}
+                          sendEnquiryInProgress={sendEnquiryInProgress}
+                          onSubmitEnquiry={this.onSubmitEnquiry}
+                          currentUser={currentUser}
+                          onManageDisableScrolling={onManageDisableScrolling}
+                        /> 
+                    </div>
+                  </div>
+                </div>
               <div className={css.gridMarginTop}>
               <div className="ui stackable sixteen column grid">             
-                <div className="ten wide column">
-                  <div className={css.SectionHeadingNew}>
-                  <h2> <FormattedMessage id="ListingPage.descriptionTitle" /> <span className={css.richTitleFormat}> {richTitle} :</span></h2>
-                   <SectionDescription description={description}  />
-                  </div>
-                   <div>
-                     <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresDescription" /></h3>
-                     <SectionRulesMaybe publicData={publicData} />
-                    </div>
-                   <div>
+                <div className="nine wide column">
+                  <div>
                    <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresTitle" /></h3>
                      <SectionFeatures
                         options={amenitiesConfig}
                         selectedOptions={publicData.amenities}
                       />
-                    </div>
-                  
+                  </div>
                   
                   <div className={css.SectionLikeCounter}>
                   <ul className={css.UnOrderdedListCounter}>
@@ -559,7 +569,7 @@ export class ListingPageComponent extends Component {
                   
                   <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
                 </div>  
-                <div className="six wide column">
+                <div className="seven wide column">
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}

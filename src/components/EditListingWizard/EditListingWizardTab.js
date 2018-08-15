@@ -255,7 +255,6 @@ EditListingWizardTab.propTypes = {
   listing: shape({
     attributes: shape({
       publicData: object,
-      description: string,
       geolocation: object,
       pricing: object,
       title: string,

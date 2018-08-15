@@ -167,7 +167,58 @@ export const bikeSize = [
     key: 'LG',
     label: 'LG',
   },
- 
+   {
+    key: 'XL',
+    label: 'XL',
+  },
+ {
+    key: 'XXL',
+    label: 'XXL',
+  },
+ {
+    key: '48',
+    label: '48',
+  },
+  {
+    key: '50',
+    label: '50',
+  },
+  {
+    key: '52',
+    label: '52',
+  },
+  {
+    key: '53',
+    label: '53',
+  },
+  {
+    key: '54',
+    label: '54',
+  },
+  {
+    key: '55',
+    label: '55',
+  },
+  {
+    key: '56',
+    label: '56',
+  },
+  {
+    key: '58',
+    label: '58',
+  },
+  {
+    key: '59',
+    label: '59',
+  },
+  {
+    key: '60',
+    label: '60',
+  },
+  {
+    key: '61',
+    label: '61',
+  },
 ];
 
 

@@ -229,7 +229,7 @@
   "EditListingWizard.saveEditPhotos": "Save photos",
   "EditListingWizard.saveEditPolicies": "Save components",
   "EditListingWizard.saveEditPricing": "Save pricing",
-  
+  "ListingPage.bikeSizeTitle":"Bike Size",
   "EditListingWizard.saveEditBikeSize": "Save bike size",
   "EditListingWizard.saveNewDescription": "Next: Bike Components",
   "EditListingWizard.saveNewLocation": "Next: Pricing",
@@ -245,10 +245,10 @@
   "GuidedTourPage.ImageSubHeader":"Guided Tour sub-header",
   "RentalsListPage.ImageHeader":"Rentals",
   "RentalsListPage.ImageSubHeader":"Rentals sub-header",
-
+  "ListingPage.BookingTitle":"Select date to rent",
   "ListingPage.featuresTitle": "Bike brands:",
   "EditListingBikeSizePanel.title": "Bike Size",
-  "ListingPage.featuresDescription" :"Bike features descriptions:",
+  "ListingPage.featuresDescription" :"Bike features:",
   "EditListingWizard.tabLabelLocation": "Location",
   "EditListingWizard.tabLabelPhotos": "Photos",
   "EditListingWizard.tabLabelPolicy": "Bike components",

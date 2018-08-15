@@ -6,7 +6,7 @@ import css from './ListingPage.css';
 const SectionBikeSize = props => {
   const { options, handleSelectBikeSizeOptions } = props;
   return (
-    <div className={css.sectionFeatures}>
+    <div className={css.sectionBikeSize}>
       <PropertyGroup
         id="ListingPage.fineSetUp"
         options={options}
