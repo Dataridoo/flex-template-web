@@ -235,8 +235,7 @@
   "EditListingWizard.saveNewLocation": "Next: Pricing",
   "EditListingWizard.saveNewPhotos": "Publish listing",
   "EditListingWizard.saveNewPolicies": "Next: Location",
-  "EditListingWizard.saveNewPricing": "Next: Photos",
-  
+  "EditListingWizard.saveNewPricing": "Next: Photos",  
   "EditListingWizard.saveNewBikeSize": "Next: Bike Size",
   "EditListingWizard.tabLabelDescription": "Description",
   "EditListingWizard.tabLabelBikeSize": "Bike Size",
@@ -402,6 +401,12 @@
   "ManageListingsPage.youHaveListings": "You have {count} {count, plural, one {listing} other {listings}}",
   "ManageListingsPage.yourListings": "Your listings",
   "MapPriceMarker.unsupportedPrice": "({currency})",
+  "MerchantPageSectionTop.SpecialWeekPackage":"Special weekpackage",
+  "MerchantPageSectionTop.BeNeLuxPackage":"BeNeLux package",
+  "MerchantPageSectionTop.StartingFrom":"Starting from",
+  "MerchantPageSectionTop.SpecialWeekPackageDescription":"Mountain bike week program in Syöte National Park",
+  "MerchantPageSectionTop.Currency" :"€1350 p.p.",
+
   "Modal.close": "CLOSE",
   "Modal.closeModal": "Close modal",
   "ModalMissingInformation.checkInbox": "Please check your inbox and verify your email address {email}",
@@ -418,6 +423,16 @@
   "ModalMissingInformation.sendingEmail": "Sending verification email…",
   "ModalMissingInformation.verifyEmailText": "We are currently unable to send you email notifications if other Pedalworld users contact you because you haven't verified your email address.",
   "ModalMissingInformation.verifyEmailTitle": "Please verify your email address",
+
+  "MerchantPageAboutSection.AboutContent":"Pedal.world is your online destination for planning a cycling or biking holiday in Europe. We offer an overview and online booking options for bike guide services, rentals and accommodation. We promote all disciplines ranging from road cycling over mountainbiking to e-bikes and fat bikes for beginners to enthusiasts alike.",
+  "MerchantPageAboutSection.AboutHeader" :"About",
+  "MerchantPageNewsSection.MainHeader":"News",
+  "MerchantPageNewsSection.NewsDate":"June 30, 2018",
+  "MerchantPageNewsSection.NewsHeader":"Pedal.world",
+  "MerchantPageNewsSection.NewsContent":"Pedal.world is your online destination for planning a cycling or biking holiday in Europe.",
+  "MerchantPageNewsSection.readMore":"Read more ->",
+  
+  
   "NotFoundPage.description": "We can't find the page or bike you're looking for. Make sure you've typed in the URL correctly.",
   "NotFoundPage.heading": "Sorry, we couldn't find that page.",
   "NotFoundPage.title": "Page not found",
@@ -629,7 +644,7 @@
   "SearchResultsPanel.previousPage": "Previous page",
   "SectionHero.mobileSearchButtonText": "Search ",
   "SectionHero.subTitle": "The largest online community to rent bikes in Finland.",
-  "SectionHero.title": "Pedalworld is coming soon...",
+  "SectionHero.title": "We offer an overview and online booking options for bike guide services, rentals, events and accommodation.",
   "SectionHowItWorks.createListingLink": "PS. You can also become a Pedalworld host in just a few clicks.",
   "SectionHowItWorks.part1Text": "Start by searching for a location. Once you find a bike you like, simply check the availability, book it, and make a secure payment right away.",
   "SectionHowItWorks.part1Title": "1. Browse and book",
@@ -801,5 +816,7 @@
   "UserCard.contactUser": "Contact",
   "UserCard.heading": "{name}",
   "UserCard.showFullBioLink": "more",
-  "UserCard.viewProfileLink": "View profile"
+  "UserCard.viewProfileLink": "View profile",
+  "MerchantPageVideoSection.VideoDescription":"Video description"
+
 }

@@ -56,9 +56,13 @@ const routeConfiguration = () => {
       name: 'LandingPage',
       component: props => <LandingPage {...props} />,
     },
+    
+   
     {
       path: '/service',
       name: 'MerchantPage',
+      auth: true,
+      authPage: 'LoginPage',
       component: props => <MerchantPage {...props} />,
     },
    

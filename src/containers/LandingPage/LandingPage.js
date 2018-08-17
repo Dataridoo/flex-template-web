@@ -29,9 +29,6 @@ import './LandingPage.css';
 export const LandingPageComponent = props => {
   const { history, intl, location, scrollingDisabled } = props;
 
-  // Schema for search engines (helps them to understand what this page is about)
-  // http://schema.org
-  // We are using JSON-LD format
   const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'LandingPage.schemaTitle' }, { siteTitle });
   const schemaDescription = intl.formatMessage({ id: 'LandingPage.schemaDescription' });

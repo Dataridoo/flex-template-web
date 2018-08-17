@@ -48,7 +48,7 @@ const EditListingBikeSizeFormComponent = props => (
             className={css.features}
             id={name}
             name={name}
-            options={config.custom.amenities}
+            options={config.custom.bikeSize}
           />
 
           <Button

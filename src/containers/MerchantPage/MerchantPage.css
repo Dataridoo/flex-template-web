@@ -22,7 +22,19 @@
 }
 .sectionVideo{
   background-color: lightgray;
-  height: 600px;
+  padding: 30px;
+ 
+}
+
+.videoCenter{
+  margin: auto;
+  width: 50%;
+}
+.videoDescription{
+ color: dodgerblue;
+  background-color: #fff;
+  margin-right: -89px;
+  padding: 10px;
 }
 .AboutSection{
   background-color: #82c3ff;
@@ -46,29 +58,28 @@
   padding: 10px;
  
 }
-.News{
-  padding: 20px;
-  margin-left: 20px;
-}
 .NewsDate{
   color:black;
   font-style: italic;
   font-size: 14px;
   line-height: 12px;
 }
-.MainHeader{
-  color:black;
+.MainContainer{
+  background-color: #fff;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
  
 }
 .NewsHeader{
   color:#82c3ff;
   line-height: 12px;
 }
-.NewsBody{
-  
+.NewsBody{  
   color:black;
   text-align: justify;
-  line-height: 12px;
+  line-height: 10px;
+  padding-bottom: 20px;
   
 }
 .readMore{
@@ -78,9 +89,6 @@
 .MapSection{
   background-color: lightgray;
   height: 200px;
-}
-.PromotionBackground{
-  background-color: #82c3ff;
 }
 .recently {
   color: black;
@@ -184,4 +192,21 @@
   @media (--viewportLarge) {
     top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
   }
+}
+
+
+.PromotionBackground{
+  background-color: lightgray;
+  
+}
+.PromotionMargin{
+  margin: 30px;
+}
+
+.PromotionContent{
+  background-color: #fff;
+  width: 600px;
+  color: dodgerblue;
+  padding: 10px;
+  
 }

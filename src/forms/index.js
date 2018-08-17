@@ -3,6 +3,9 @@ export { default as ContactDetailsForm } from './ContactDetailsForm/ContactDetai
 export { default as EditListingDescriptionForm } from './EditListingDescriptionForm/EditListingDescriptionForm';
 export { default as EditListingFeaturesForm } from './EditListingFeaturesForm/EditListingFeaturesForm';
 
+
+export { default as EditEventSignUpForm } from './EditEventSignUpForm/EditEventSignUpForm';
+
 export { default as EditListingBikeSizeForm } from './EditListingBikeSizeForm/EditListingBikeSizeForm';
 export { default as EditListingLocationForm } from './EditListingLocationForm/EditListingLocationForm';
 export { default as EditListingPhotosForm } from './EditListingPhotosForm/EditListingPhotosForm';

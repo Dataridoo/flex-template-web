@@ -1,0 +1,28 @@
+@import '../../../marketplace.css';
+.PromotionImagePaddingLeft{
+  padding-left: 0;
+}
+
+.PromotionBackground{
+  background-color:white;
+  
+}
+.PromotionMargin{
+  margin: 70px;
+}
+
+.PromotionContent{
+  background-color: #fff;
+  margin-right: 10px;
+}
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: var(--boxShadowSectionLocationHover);
+  }
+}

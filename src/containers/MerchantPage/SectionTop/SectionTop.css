@@ -1,0 +1,49 @@
+@import '../../../marketplace.css';
+
+.highlights{  
+  text-align: center;
+  color:white;
+  padding-top: 20px;
+ 
+}
+.PromotionBackground{
+  background-color: #82c3ff;
+  
+}
+.PromotionMargin{
+  margin: 50px;
+  padding: 20px;
+}
+
+.PromotionContent{
+  background-color: #fff;  
+  width: 530px;
+  padding: 10px;
+}
+.StartingFrom{
+  float: right;
+  color: darkgray;
+  font-style: italic;
+  font-size: 12px;
+}
+.SpecialWeekPackageContent{ 
+  padding-bottom: 20px;
+}
+
+.StartingFromCurrency{
+  float: right;
+  color: dodgerblue;
+}
+
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: var(--boxShadowSectionLocationHover);
+  }
+}

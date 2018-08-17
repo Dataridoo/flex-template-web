@@ -10,9 +10,15 @@ export {
 } from './Button/Button';
 export { default as CookieConsent } from './CookieConsent/CookieConsent';
 export { default as Discussion } from './Discussion/Discussion';
+
+export {
+  default as EditEventDescriptionPanel,
+} from './EditEventDescriptionPanel/EditEventDescriptionPanel';
+
 export {
   default as EditListingDescriptionPanel,
 } from './EditListingDescriptionPanel/EditListingDescriptionPanel';
+
 export {
   default as EditListingFeaturesPanel,
 } from './EditListingFeaturesPanel/EditListingFeaturesPanel';
@@ -128,10 +134,10 @@ export { default as SearchResultsPanel } from './SearchResultsPanel/SearchResult
 export { default as SectionHero } from './SectionHero/SectionHero';
 export { default as SectionHowItWorks } from './SectionHowItWorks/SectionHowItWorks';
 export { default as SectionLocations } from './SectionLocations/SectionLocations';
-export { default as SectionLocationsMerchant } from './SectionLocationsMerchant/SectionLocationsMerchant';
+
 export { default as SectionLocationsBottom } from './SectionLocationsBottom/SectionLocationsBottom';
 export { default as SectionLocationCenter } from './SectionLocationCenter/SectionLocationCenter';
-export { default as SectionLocationCenterMerchant } from './SectionLocationCenterMerchant/SectionLocationCenterMerchant';
+
 
 export { default as SectionThumbnailLinks } from './SectionThumbnailLinks/SectionThumbnailLinks';
 export { default as SelectMultipleFilter } from './SelectMultipleFilter/SelectMultipleFilter';
@@ -158,4 +164,3 @@ export { default as UserNav } from './UserNav/UserNav';
 export { default as ValidationError } from './ValidationError/ValidationError';
 export { default as RangeSlider } from './RangeSlider/RangeSlider';
 export { default as FollowUsPage } from './FollowUsPage/FollowUsPage';
-

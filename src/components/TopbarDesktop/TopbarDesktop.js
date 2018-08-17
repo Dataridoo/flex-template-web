@@ -128,7 +128,7 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
    
-  )
+  );
  
   const guidedToursPage = (
     <NamedLink name="GuidedToursPage" className={css.guidedToursPage}>
@@ -177,6 +177,8 @@ const TopbarDesktop = props => {
     </NamedLink>    
   )
   
+  
+  
     
               
  
@@ -208,7 +210,7 @@ const TopbarDesktop = props => {
       </NamedLink>
     
      {rentalsPage} 
-    
+    {merchantPage}
      {guidedToursPage}
      {eventsPage}
      {aboutPage}

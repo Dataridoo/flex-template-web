@@ -39,7 +39,7 @@ const SectionHero = props => {
         <IconSearch rootClassName={css.searchIcon} />
         <FormattedMessage id="SectionHero.mobileSearchButtonText" />
       </Button>
-      <LocationSearchForm className={css.desktopSearchForm} onSubmit={handleSearchSubmit} />
+     
     </div>
   );
 };

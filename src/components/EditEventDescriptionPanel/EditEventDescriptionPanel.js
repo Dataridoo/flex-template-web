@@ -2,19 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-
-import { ensureListing } from '../../util/data';
-import { EditListingBikeSizeForm } from '../../forms';
+import { ensureOwnListing } from '../../util/data';
 import { ListingLink } from '../../components';
+import { EditEventSignUpForm } from '../../forms';
+import config from '../../config';
 
-import css from './EditListingBikeSizePanel.css';
+import css from './EditEventDescriptionPanel.css';
 
-const FEATURES_NAME = 'fineSetUp';
-
-const EditListingBikeSizePanel = props => {
+const EditEventDescriptionPanel = props => {
   const {
-    rootClassName,
     className,
+    rootClassName,
     listing,
     onSubmit,
     onChange,
@@ -25,57 +23,57 @@ const EditListingBikeSizePanel = props => {
   } = props;
 
   const classes = classNames(rootClassName || css.root, className);
-  const currentListing = ensureListing(listing);
-  const { publicData } = currentListing.attributes;
+  const currentListing = ensureOwnListing(listing);
+  const { title, publicData } = currentListing.attributes;
 
   const panelTitle = currentListing.id ? (
     <FormattedMessage
-      id="EditListingBikeSizePanel.title"
+      id="EditEventDescriptionPanel.title"
       values={{ listingTitle: <ListingLink listing={listing} /> }}
     />
   ) : (
-    <FormattedMessage id="EditListingFineSetUpPanel.createListingTitle" />
+    <FormattedMessage id="EditEventDescriptionPanel.createListingTitle" />
   );
-
-  const fineSetUp = publicData && publicData.amenities;
-  const initialValues = { fineSetUp };
 
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
-      <EditListingBikeSizeForm
+      <EditEventSignUpForm
         className={css.form}
-        name={FEATURES_NAME}
-        initialValues={initialValues}
+        initialValues={{ title, category: publicData.category }}
+        saveActionMsg={submitButtonText}
         onSubmit={values => {
-          const { fineSetUp = [] } = values;
-
-          const updatedValues = {
-            publicData: { fineSetUp },
+          const { title, category } = values;
+          const updateValues = {
+            title: title.trim(),
+           
+           
+            publicData: { category },
           };
-          onSubmit(updatedValues);
+
+          onSubmit(updateValues);
         }}
         onChange={onChange}
-        saveActionMsg={submitButtonText}
         updated={panelUpdated}
         updateError={errors.updateListingError}
         updateInProgress={updateInProgress}
+        categories={config.custom.categories}
       />
     </div>
   );
 };
 
-EditListingBikeSizePanel.defaultProps = {
-  rootClassName: null,
+const { func, object, string, bool } = PropTypes;
+
+EditEventDescriptionPanel.defaultProps = {
   className: null,
+  rootClassName: null,
   listing: null,
 };
 
-const { bool, func, object, string } = PropTypes;
-
-EditListingBikeSizePanel.propTypes = {
-  rootClassName: string,
+EditEventDescriptionPanel.propTypes = {
   className: string,
+  rootClassName: string,
 
   // We cannot use propTypes.listing since the listing might be a draft.
   listing: object,
@@ -88,4 +86,4 @@ EditListingBikeSizePanel.propTypes = {
   errors: object.isRequired,
 };
 
-export default EditListingBikeSizePanel;
+export default EditEventDescriptionPanel;
