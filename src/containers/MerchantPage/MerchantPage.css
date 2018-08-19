@@ -87,8 +87,7 @@
   line-height: 12px;
 }
 .MapSection{
-  background-color: lightgray;
-  height: 200px;
+  
 }
 .recently {
   color: black;
@@ -209,4 +208,9 @@
   color: dodgerblue;
   padding: 10px;
   
+}
+
+.AboutSectionContainer{
+  margin: 20px;
+  padding-bottom: 20px;
 }
