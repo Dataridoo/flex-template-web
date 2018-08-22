@@ -10,67 +10,88 @@ import ImageTwo from './images/bhc5.jpg';
 import ImageThree from './images/bhc6.jpg';
 import ImageFour from './images/bhc7.jpg';
 
-
-const bikeRentals = (
-  <div className={css.imageWrapper}>
-    <NamedLink name="RentalsListPage">
-      <img src={ImageOne} alt="bhc image"/> 
+const bikeRentals = (name, image, searchQuery) => {
+  return (
+    <NamedLink name="RentalsListPage" to={{ search: searchQuery }} className={css.location}>
+      <div className={css.imageWrapper}>
+        <div className={css.aspectWrapper}>
+          <img src={image} alt={name} className={css.locationImage} />
+        </div>
+      </div>
+     
     </NamedLink>
-  </div>
-)
+  );
+};
 
-const guidedTourPage = (
-  <div className={css.imageWrapper}>
-    <NamedLink name="GuidedToursPage">
-      <img src={ImageTwo} alt="bhc image"/>  
+
+const guidedTourPage = (name, image, searchQuery) => {
+  return (
+    <NamedLink name="GuidedToursPage" to={{ search: searchQuery }} className={css.location}>
+      <div className={css.imageWrapper}>
+        <div className={css.aspectWrapper}>
+          <img src={image} alt={name} className={css.locationImage} />
+        </div>
+      </div>
+     
     </NamedLink>
-  </div>
-)
+  );
+};
 
-
-const eventsPage = (
-  <div className={css.imageWrapper}>
-    <NamedLink name="EventsPage">
-     <img src={ImageFour} alt="bhc image"/> 
+const eventsPage = (name, image, searchQuery) => {
+  return (
+    <NamedLink name="EventsPage" to={{ search: searchQuery }} className={css.location}>
+      <div className={css.imageWrapper}>
+        <div className={css.aspectWrapper}>
+          <img src={image} alt={name} className={css.locationImage} />
+        </div>
+      </div>
+     
     </NamedLink>
-  </div>
-)
+  );
+};
 
-const accomodationPage = (
-  <div className={css.imageWrapper}>
-    <NamedLink name="EventsPage">
-      <img src={ImageThree} alt="bhc image"/>   
+
+const accomodationPage = (name, image, searchQuery) => {
+  return (
+    <NamedLink name="EventsPage" to={{ search: searchQuery }} className={css.location}>
+      <div className={css.imageWrapper}>
+        <div className={css.aspectWrapper}>
+          <img src={image} alt={name} className={css.locationImage} />
+        </div>
+      </div>
+     
     </NamedLink>
-  </div>
-)
+  );
+};
 
 const SectionCenter = () => {
+  
   return (
-    <div className={css.PromotionBackground}>     
-      <div className={css.PromotionMargin}>     
-        <div className="ui stackable grid">      
-          <div className="ui four wide column">
-            <div className={css.PromotionImagePaddingLeft} >
-              {bikeRentals}             
-            </div>
-          </div>
-          <div className="ui four wide column">
-            <div className={css.PromotionImagePaddingLeft} >
-                {guidedTourPage}    
-            </div>
-          </div>  
-          <div className="ui four wide column">
-            <div className={css.PromotionImagePaddingLeft} >
-                {accomodationPage}   
-            </div>
-          </div>  
-          <div className="ui four wide column">
-            <div className={css.PromotionImagePaddingLeft} >
-              {eventsPage}       
-            </div>
-          </div>        
-        </div>
-     </div>
+    <div className={css.PromotionMargin}>
+      
+      <div className={css.locations}>
+        {bikeRentals(
+          '',
+          ImageOne
+          
+        )}
+        {guidedTourPage(
+          '',
+          ImageTwo,
+          
+        )}
+       
+        {eventsPage(
+          '',
+          ImageThree,
+          
+        )}
+        {accomodationPage(
+          '',
+          ImageFour,
+          
+        )}
+      </div>
     </div>
   );
 };

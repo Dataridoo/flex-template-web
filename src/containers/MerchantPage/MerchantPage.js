@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -87,7 +87,7 @@ export const MerchantPageComponent = props => {
   );
 };
 
-const { bool, object } = PropTypes;
+const { bool } = PropTypes;
 
 MerchantPageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,

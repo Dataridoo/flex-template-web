@@ -10,13 +10,14 @@ import { Modal, NamedRedirect, Tabs } from '../../components';
 
 import EditEventListingWizardTab, {
   DESCRIPTION,
-  
+  EVENTTYPE,
+  EVENTPROGRAM,  
 } from './EditEventListingWizardTab';
 import css from './EditEventListingWizard.css';
 
 // TODO: PHOTOS panel needs to be the last one since it currently contains PayoutDetailsForm modal
 // All the other panels can be reordered.
-export const TABS = [DESCRIPTION];
+export const TABS = [DESCRIPTION,  EVENTTYPE, EVENTPROGRAM];
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
@@ -24,8 +25,12 @@ const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
 const tabLabel = (intl, tab) => {
   let key = null;
   if (tab === DESCRIPTION) {
-    key = 'EditListingWizard.tabLabelDescription';
-  }
+    key = 'EditEventListingWizard.tabLabelDescription';
+  } else if (tab === EVENTTYPE) {
+    key = 'EditEventListingWizard.tabLabelEventType';
+  } else if (tab === EVENTPROGRAM) {
+    key = 'EditListingWizard.tabLabelEventProgram';
+  }  
 
   return intl.formatMessage({ id: key });
 };
@@ -39,12 +44,17 @@ const tabLabel = (intl, tab) => {
  * @return true if tab / step is completed.
  */
 const tabCompleted = (tab, listing) => {
-  const { geolocation, price, title, publicData } = listing.attributes;
-  const images = listing.images;
+  const {title, publicData } = listing.attributes;
+ 
 
   switch (tab) {
     case DESCRIPTION:
       return !!(title);
+    case EVENTTYPE:
+      return !!(publicData && publicData.eventType);
+      
+    case EVENTPROGRAM:
+      return !!(publicData && typeof eventProgram !== 'undefined' );
     
     default:
       return false;
@@ -158,7 +168,7 @@ class EditEventListingWizard extends Component {
 
     // If selectedTab is not active, redirect to the beginning of wizard
     if (!tabsStatus[selectedTab]) {
-      return <NamedRedirect name="EditListingPage" params={{ ...params, tab: TABS[0] }} />;
+      return <NamedRedirect name="EditEventsPage" params={{ ...params, tab: TABS[0] }} />;
     }
 
     const { width } = viewport;
@@ -178,7 +188,7 @@ class EditEventListingWizard extends Component {
     }
 
     const tabLink = tab => {
-      return { name: 'EditListingPage', params: { ...params, tab } };
+      return { name: 'EditEventsPage', params: { ...params, tab } };
     };
 
     return (

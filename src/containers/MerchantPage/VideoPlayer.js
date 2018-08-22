@@ -10,25 +10,22 @@ class VideoPlayer extends Component {
 
       <div className={css.PromotionBackground}>       
         <div className={css.PromotionMargin}>     
-          <div className="ui stackable grid">   
-            <div className="ui three wide column">                
-            </div>      
-            <div className="ui ten wide column">                         
-              <ReactPlayer       
-                url='https://www.youtube.com/watch?v=Fwkq6lqRW3w'
-                className='react-player'
-                playing 
-                width="600px"       
-              />
-              <div className={css.PromotionContent}>
-                <h2 >          
-                  <FormattedMessage id="MerchantPageVideoSection.VideoDescription" />
-                </h2>
-              </div>
+          <div className="ui stackable grid"> 
+            <div className="ui sixteen wide column"> 
+              <div className={css.VideoCenter}>                        
+                <ReactPlayer       
+                  url='https://www.youtube.com/watch?v=Fwkq6lqRW3w'
+                  className='react-player'
+                  playing 
+                  width="600px"       
+                />
+                <div className={css.PromotionContent}>
+                  <h2 >          
+                    <FormattedMessage id="MerchantPageVideoSection.VideoDescription" />
+                  </h2>
+                </div>
+              </div>                
             </div>
-            <div className="ui three wide column">
-              
-            </div>        
           </div>
       </div>
     </div>

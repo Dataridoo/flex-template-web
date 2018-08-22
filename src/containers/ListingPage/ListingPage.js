@@ -42,7 +42,6 @@ import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
 import SectionFeatures from './SectionFeatures';
 import SectionBooking from './SectionBooking';
-import SectionDescription from './SectionDescription';
 import SectionBikeSize from './SectionBikeSize';
 import css from './ListingPage.css';
 
@@ -204,7 +203,7 @@ export class ListingPageComponent extends Component {
       sendEnquiryError,
       categoriesConfig,
       amenitiesConfig,
-     bikeSizeConfig,
+      bikeSizeConfig,
     } = this.props;
 
     const isBook = !!parse(location.search).book;
@@ -388,16 +387,7 @@ export class ListingPageComponent extends Component {
       </NamedLink>
     );
     
-    // const hostLinkSidebar = (
-    //   <NamedLink
-    //     className={css.authorNameLinkSidebar}
-    //     name="ListingPage"
-    //     params={params}
-    //     to={{ hash: '#host' }}
-    //   >
-    //     {authorDisplayName}
-    //   </NamedLink>
-    // );
+   
     
 
     const category =
@@ -471,9 +461,9 @@ export class ListingPageComponent extends Component {
                       /> 
                       <h3> <FormattedMessage id="ListingPage.bikeSizeTitle" /></h3>
                        <SectionBikeSize
-                       className={css.bikeSize}
-                        options={bikeSizeConfig}
-                        handleSelectBikeSizeOptions={publicData.bikeSize}
+                         className={css.bikeSize}
+                          options={bikeSizeConfig}
+                          handleSelectBikeSizeOptions={publicData.bikeSize}
                       />
                   </div> <hr />
                     <h3> <FormattedMessage id="ListingPage.BookingTitle" /></h3> 

@@ -18,49 +18,53 @@ class SectionTop extends Component {
   return (
     <div className={css.PromotionBackground}> 
       <h1 className={css.highlights}>Promotions title</h1> 
-      <div className={css.PromotionMargin}>     
-        <div className="ui stackable grid">      
-          <div className="ui eight wide column">
-            <div className={css.imageWrapper}>           
-              <img src={bhc2} alt="bhc image"/>
-              <div className={css.PromotionContent}>
+      <div className={css.PromotionMargin}> 
+        <div class="ui stackable two column grid">
+          <div class="column">
+            <div class="ui fluid card">
+              <div class="image">
+              <img src={bhc2} alt="bhcimage" className={css.imageWrapper}/>
+              </div>
+              <div class="content">                
                 <h3>
                   <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackage" />
                   <span className={css.StartingFrom}>
                       <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
                   </span>
-                 </h3>
-                 <div className={css.SpecialWeekPackageContent}>
+                </h3>
+                <div className={css.SpecialWeekPackageContent}>
                   <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
                   <span className={css.StartingFromCurrency}>
                     <FormattedMessage id="MerchantPageSectionTop.Currency" />
-                 </span>
-                 
-                 </div>
+                </span>
+                </div>               
               </div>
-           </div>
+            </div>
           </div>
-          <div className="ui eight wide column">
-            <div className={css.imageWrapper}>  
-              <img src={bhc3} alt="bhc image"/>
-              <div className={css.PromotionContent}>
-                 <h3>
-                  <FormattedMessage id="MerchantPageSectionTop.BeNeLuxPackage" />
-                  <span className={css.StartingFrom}>
-                        <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
-                  </span>
-                </h3>
-                 <div className={css.SpecialWeekPackageContent}>
+          <div class="column">
+            <div class="ui fluid card">
+              <div class="image">
+                <img src={bhc3} alt="bhcimage" className={css.imageWrapper}/>
+              </div>
+              <div class="content">
+                  <h3>
+                    <FormattedMessage id="MerchantPageSectionTop.BeNeLuxPackage" />
+                    <span className={css.StartingFrom}>
+                          <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
+                    </span>
+                  </h3>
+                  <div className={css.SpecialWeekPackageContent}>
                     <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
                     <span className={css.StartingFromCurrency}>
                       <FormattedMessage id="MerchantPageSectionTop.Currency" />
                   </span>
-                 </div>
-                 <Reviews reviews={reviews} />
+                  </div>
+                  <Reviews reviews={reviews} />
               </div>
             </div>
-          </div>        
-        </div>
+          </div>       
+      </div>    
+        
      </div>
     </div>
   );

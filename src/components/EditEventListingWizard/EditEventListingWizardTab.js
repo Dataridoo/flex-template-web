@@ -6,15 +6,19 @@ import { ensureListing } from '../../util/data';
 import { createResourceLocatorString } from '../../util/routes';
 import {
   EditEventDescriptionPanel,
+  EditEventTypePanel,
+  EditEventProgramPanel,
 } from '../../components';
 
 import css from './EditEventListingWizard.css';
 
 export const DESCRIPTION = 'description';
+export const EVENTTYPE = 'eventType';
+export const EVENTPROGRAM = 'eventProgram';
 
 
 // EditListingWizardTab component supports these tabs
-export const SUPPORTED_TABS = [DESCRIPTION];
+export const SUPPORTED_TABS = [DESCRIPTION, EVENTTYPE, EVENTPROGRAM];
 
 const pathParamsToNextTab = (params, tab, marketplaceTabs) => {
   const nextTabIndex = marketplaceTabs.findIndex(s => s === tab) + 1;
@@ -31,18 +35,15 @@ const EditEventListingWizardTab = props => {
     marketplaceTabs,
     params,
     errors,
-    fetchInProgress,
-    newListingCreated,
+    
     history,
-    images,
+   
     listing,
     handleCreateFlowTabScrolling,
     handleCreateListing,
     onUpdateListing,
     onCreateListingDraft,
-    onImageUpload,
-    onUpdateImageOrder,
-    onRemoveImage,
+   
     onUpdateListingDraft,
     onChange,
     updatedTab,
@@ -68,7 +69,7 @@ const EditEventListingWizardTab = props => {
         // Redirect to next tab
         const pathParams = pathParamsToNextTab(params, tab, marketplaceTabs);
         history.push(
-          createResourceLocatorString('EditListingPage', routeConfiguration(), pathParams, {})
+          createResourceLocatorString('EditEventsPage', routeConfiguration(), pathParams, {})
         );
       } else {
         // Normalize images for API call
@@ -98,10 +99,10 @@ const EditEventListingWizardTab = props => {
   switch (tab) {
     case DESCRIPTION: {
       const submitButtonTranslationKey = isNew
-        ? 'EditListingWizard.saveNewDescription'
-        : 'EditListingWizard.saveEditDescription';
+        ? 'EditEventListingWizard.saveNewDescription'
+        : 'EditEventListingWizard.saveEditDescription';
       return (
-        <EditListingDescriptionPanel
+        <EditEventDescriptionPanel
           {...panelProps(DESCRIPTION)}
           submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
           onSubmit={values => {
@@ -110,9 +111,37 @@ const EditEventListingWizardTab = props => {
         />
       );
     }
+
+    case EVENTTYPE: {
+      const submitButtonTranslationKey = isNew
+        ? 'EditEventListingWizard.saveNewEventTypes'
+        : 'EditEventListingWizard.saveEditEventType';
+      return (
+        <EditEventTypePanel
+          {...panelProps(EVENTTYPE)}
+          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+          onSubmit={values => {
+            onCompleteEditListingWizardTab(tab, values);
+          }}
+        />
+      );
+    }
     
+    case EVENTPROGRAM: {
+      const submitButtonTranslationKey = isNew
+        ? 'EditListingWizard.saveNewEventProgram'
+        : 'EditListingWizard.saveEditEventProgram';
+      return (
+        <EditEventProgramPanel
+          {...panelProps(EVENTPROGRAM)}
+          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+          onSubmit={values => {
+            onCompleteEditListingWizardTab(tab, values);
+          }}
+        />
+      );
+    }
    
-    
     default:
       return null;
   }

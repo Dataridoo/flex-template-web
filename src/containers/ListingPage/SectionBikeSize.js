@@ -8,7 +8,7 @@ const SectionBikeSize = props => {
   return (
     <div className={css.sectionBikeSize}>
       <PropertyGroup
-        id="ListingPage.fineSetUp"
+        id="ListingPage.bikeSize"
         options={options}
         selectedOptions={handleSelectBikeSizeOptions}
         twoColumns={true}

@@ -21,12 +21,12 @@ class AboutSection extends Component{
         <div className="ui stackable grid">
         <div className="ui eight wide column">
           <div className={css.AboutSection}>
-          <div className={css.About}> 
-            <p className={css.AboutHeader}>  
-                <FormattedMessage id="MerchantPageAboutSection.AboutHeader" /> 
-            </p>
-              {about}
-          </div>
+            <div className={css.About}> 
+              <p className={css.AboutHeader}>  
+                  <FormattedMessage id="MerchantPageAboutSection.AboutHeader" /> 
+              </p>
+                {about}
+            </div>
           </div>
         </div>
       <div className="ui eight wide column">

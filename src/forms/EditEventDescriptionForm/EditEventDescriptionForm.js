@@ -6,24 +6,22 @@ import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import { maxLength, required, composeValidators } from '../../util/validators';
-import { Form, Button, FieldTextInput } from '../../components';
-import CustomCategorySelectFieldMaybe from './CustomCategorySelectFieldMaybe';
+import { Form, Button, FieldTextInput} from '../../components';
 
-import css from './EditEventSignUpForm.css';
+import css from './EditEventDescriptionForm.css';
 
 const TITLE_MAX_LENGTH = 60;
 
-const EditEventSignUpFormComponent = props => (
+const EditEventDescriptionFormComponent = props => (
   <FinalForm
     {...props}
     render={fieldRenderProps => {
       const {
-        categories,
         className,
         disabled,
         handleSubmit,
         intl,
-        invalid,
+        invalid,       
         pristine,
         saveActionMsg,
         updated,
@@ -31,12 +29,12 @@ const EditEventSignUpFormComponent = props => (
         updateInProgress,
       } = fieldRenderProps;
 
-      const titleMessage = intl.formatMessage({ id: 'EditListingDescriptionForm.title' });
+      const titleMessage = intl.formatMessage({ id: "EditEventDescriptionForm.title" });
       const titlePlaceholderMessage = intl.formatMessage({
-        id: 'EditListingDescriptionForm.titlePlaceholder',
+        id:  "EditEventDescriptionForm.titlePlaceholder",
       });
       const titleRequiredMessage = intl.formatMessage({
-        id: 'EditListingDescriptionForm.titleRequired',
+        id: "EditEventDescriptionForm.titleRequired",
       });
 
       const maxLengthMessage = intl.formatMessage(
@@ -75,12 +73,7 @@ const EditEventSignUpFormComponent = props => (
             validate={composeValidators(required(titleRequiredMessage), maxLength60Message)}
           />
 
-      <CustomCategorySelectFieldMaybe
-        id="category"
-        name="category"
-        categories={categories}
-        intl={intl}
-      />
+       
 
           <Button
             className={css.submitButton}
@@ -97,9 +90,9 @@ const EditEventSignUpFormComponent = props => (
   />
 );
 
-EditEventSignUpFormComponent.defaultProps = { className: null, updateError: null };
+EditEventDescriptionFormComponent.defaultProps = { className: null, updateError: null };
 
-EditEventSignUpFormComponent.propTypes = {
+EditEventDescriptionFormComponent.propTypes = {
   className: string,
   intl: intlShape.isRequired,
   onSubmit: func.isRequired,
@@ -115,4 +108,4 @@ EditEventSignUpFormComponent.propTypes = {
   ),
 };
 
-export default compose(injectIntl)(EditEventSignUpFormComponent);
+export default compose(injectIntl)(EditEventDescriptionFormComponent);

@@ -3986,6 +3986,10 @@ inquirer@3.3.0, inquirer@^3.0.6, inquirer@^3.3.0:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
+instafeed.js@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/instafeed.js/-/instafeed.js-1.4.1.tgz#c29d7914563c11722b36cd921a91de2521f9cdaa"
+
 internal-ip@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/internal-ip/-/internal-ip-1.2.0.tgz#ae9fbf93b984878785d50a8de1b356956058cf5c"
@@ -6870,6 +6874,13 @@ react-image-fallback@^7.1.0:
   dependencies:
     filter-invalid-dom-props "1.0.0"
     prop-types "^15.5.10"
+
+react-instafeed@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-instafeed/-/react-instafeed-0.4.0.tgz#09520f40932200081cbed7790972f4f377645bec"
+  dependencies:
+    instafeed.js "1.4.1"
+    prop-types "^15.6.0"
 
 react-intl@^2.4.0:
   version "2.4.0"

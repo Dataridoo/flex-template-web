@@ -13,6 +13,19 @@
   --LandingPage_sectionMarginTop: 0px;
   --LandingPage_sectionMarginTopMedium: 4px;
   --LandingPage_sectionMarginTopLarge: 4px;
+
+  --SectionHero_desktopTitleMaxWidth: 1000px;
+  --SectionHero_animation: {
+    animation-name: animationTitle;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
+
+   
+    opacity: 1;
+   
+  }
+  
 }
 .highlights{  
   text-align: center;
@@ -30,23 +43,36 @@
 .heroContainer {
   display: flex;
   flex-direction: column;
-  min-height: 300px;
-  height: 67.5vh;
-  max-height: 600px;
-  padding: 0;
+  
 
   @media (--viewportMedium) {
-    min-height: 500px;
-    height: 80vh;
-    max-height: none;
+  
+   
   }
 
   @media (--viewportLarge) {
-    min-height: 600px;
-    height: calc(100vh - var(--topbarHeightDesktop));
+  
   }
 }
 
+.heroContainerTwo{
+  display: flex;
+  flex-direction: column;
+  background-color:##f7f4f4;
+  padding: 30px;
+  margin-bottom: 20px;
+
+
+  @media (--viewportMedium) {
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+  @media (--viewportLarge) {
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+}
 .latestReview {
   margin-left: 50px;
   margin-right: 50px;
@@ -123,5 +149,24 @@
 
   @media (--viewportLarge) {
     top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
+  }
+}
+
+
+.heroMainTitle {
+ 
+  @apply --marketplaceH1FontStyles;
+  color: var(--matterColorLight);
+  @apply --SectionHero_animation;
+  animation-delay: 0.5s; 
+  position: absolute;    
+    margin: 8%;
+  
+  
+
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+    position: absolute;
+    margin: 8%;
   }
 }

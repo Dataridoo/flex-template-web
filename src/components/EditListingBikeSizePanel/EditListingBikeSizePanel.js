@@ -9,7 +9,7 @@ import { ListingLink } from '../../components';
 
 import css from './EditListingBikeSizePanel.css';
 
-const FEATURES_NAME = 'fineSetUp';
+const FEATURES_NAME = 'bikeSize';
 
 const EditListingBikeSizePanel = props => {
   const {
@@ -37,8 +37,8 @@ const EditListingBikeSizePanel = props => {
     <FormattedMessage id="EditListingFineSetUpPanel.createListingTitle" />
   );
 
-  const fineSetUp = publicData && publicData.amenities;
-  const initialValues = { fineSetUp };
+  const bikeSize = publicData && publicData.amenities;
+  const initialValues = { bikeSize };
 
   return (
     <div className={classes}>
@@ -48,10 +48,10 @@ const EditListingBikeSizePanel = props => {
         name={FEATURES_NAME}
         initialValues={initialValues}
         onSubmit={values => {
-          const { fineSetUp = [] } = values;
+          const { bikeSize = [] } = values;
 
           const updatedValues = {
-            publicData: { fineSetUp },
+            publicData: { bikeSize },
           };
           onSubmit(updatedValues);
         }}

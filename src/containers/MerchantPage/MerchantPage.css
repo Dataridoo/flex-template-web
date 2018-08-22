@@ -193,13 +193,19 @@
   }
 }
 
+.VideoCenter{
+  margin: 0 auto;
+  max-width: 600px;
+  
+}
 
 .PromotionBackground{
   background-color: lightgray;
   
 }
 .PromotionMargin{
-  margin: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .PromotionContent{

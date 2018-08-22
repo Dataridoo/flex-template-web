@@ -1,6 +1,6 @@
 import EditListingBikeSizeForm from './EditListingBikeSizeForm';
 
-const NAME = 'fineSetUp';
+const NAME = 'bikeSize';
 
 const initialValueArray = ['frame', 'fork', 'accessories'];
 const initialValues = { [NAME]: initialValueArray };
@@ -11,7 +11,7 @@ export const FineSetUp = {
     name: NAME,
     onSubmit: values => console.log('EditListingBikeSizeForm submit:', values),
     initialValues: initialValues,
-    saveActionMsg: 'Save fineSetUp',
+    saveActionMsg: 'Save bikeSize',
     updated: false,
     updateInProgress: false,
   },

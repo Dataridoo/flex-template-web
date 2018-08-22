@@ -15,11 +15,6 @@
   padding: 20px;
 }
 
-.PromotionContent{
-  background-color: #fff;  
-  width: 530px;
-  padding: 10px;
-}
 .StartingFrom{
   float: right;
   color: darkgray;
@@ -36,14 +31,10 @@
 }
 
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  border-radius: 4px;
-  transition: var(--transitionStyleButton);
+.imageWrapper {  
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: var(--boxShadowSectionLocationHover);
+    transform: scale(1.01);
+   
   }
 }

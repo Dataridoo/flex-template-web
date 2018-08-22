@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { ensureOwnListing } from '../../util/data';
 import { ListingLink } from '../../components';
-import { EditEventSignUpForm } from '../../forms';
+import { EditEventDescriptionForm } from '../../forms';
 import config from '../../config';
 
 import css from './EditEventDescriptionPanel.css';
@@ -38,7 +38,7 @@ const EditEventDescriptionPanel = props => {
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
-      <EditEventSignUpForm
+      <EditEventDescriptionForm
         className={css.form}
         initialValues={{ title, category: publicData.category }}
         saveActionMsg={submitButtonText}
