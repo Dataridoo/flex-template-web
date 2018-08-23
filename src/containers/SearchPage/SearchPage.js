@@ -68,7 +68,11 @@ export class SearchPageComponent extends Component {
   }
 
   filters() {
+<<<<<<< HEAD
     const { categories, amenities, bikeSize } = this.props;
+=======
+    const { categories, amenities, bikeSize} = this.props;
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
 
     return {
       categoryFilter: {

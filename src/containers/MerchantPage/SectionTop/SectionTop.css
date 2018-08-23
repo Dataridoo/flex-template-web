@@ -20,7 +20,10 @@
   color: darkgray;
   font-style: italic;
   font-size: 12px;
+<<<<<<< HEAD
   padding-left: 30px; 
+=======
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
 }
 .SpecialWeekPackageContent{ 
   padding-bottom: 20px;
@@ -29,7 +32,10 @@
 .StartingFromCurrency{
   float: right;
   color: dodgerblue;
+<<<<<<< HEAD
   padding-left: 30px; 
+=======
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
 }
 
 

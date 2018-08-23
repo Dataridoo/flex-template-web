@@ -4,8 +4,18 @@ export { default as EditListingDescriptionForm } from './EditListingDescriptionF
 export { default as EditListingFeaturesForm } from './EditListingFeaturesForm/EditListingFeaturesForm';
 
 
+<<<<<<< HEAD
 
 export { default as EditListingFineSetUpForm } from './EditListingFineSetUpForm/EditListingFineSetUpForm';
+=======
+export { default as EditEventDescriptionForm } from './EditEventDescriptionForm/EditEventDescriptionForm';
+
+export { default as EditEventTypeForm } from './EditEventTypeForm/EditEventTypeForm';
+
+export { default as EditEventProgramForm } from './EditEventProgramForm/EditEventProgramForm';
+
+export { default as EditListingBikeSizeForm } from './EditListingBikeSizeForm/EditListingBikeSizeForm';
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
 export { default as EditListingLocationForm } from './EditListingLocationForm/EditListingLocationForm';
 export { default as EditListingPhotosForm } from './EditListingPhotosForm/EditListingPhotosForm';
 export { default as EditListingPoliciesForm } from './EditListingPoliciesForm/EditListingPoliciesForm';

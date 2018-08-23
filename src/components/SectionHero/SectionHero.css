@@ -59,10 +59,14 @@
 }
 
 .heroMainTitle {
-  @apply --marketplaceHeroTitleFontStyles;
+ 
+  @apply --marketplaceH1FontStyles;
   color: var(--matterColorLight);
   @apply --SectionHero_animation;
   animation-delay: 0.5s;
+ 
+  margin-right: 10%;
+  
 
   @media (--viewportMedium) {
     max-width: var(--SectionHero_desktopTitleMaxWidth);

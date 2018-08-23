@@ -59,12 +59,8 @@ export const EditListingPoliciesFormComponent = props => (
       const componentsPlaceholderMessage = intl.formatMessage({
         id: 'EditListingPoliciesForm.componentsPlaceholder',
       });
-      const sizeLabelMessage = intl.formatMessage({
-        id: 'EditListingPoliciesForm.sizeLabel',
-      });
-      const sizePlaceholderMessage = intl.formatMessage({
-        id: 'EditListingPoliciesForm.sizePlaceholder',
-      });
+     
+     
       const weightLabelMessage = intl.formatMessage({
         id: 'EditListingPoliciesForm.weightLabel',
       });
@@ -120,14 +116,7 @@ export const EditListingPoliciesFormComponent = props => (
             label={accessoriesLabelMessage}
             placeholder={accessoriesPlaceholderMessage}
           />
-           <FieldTextInput
-            id="size"
-            name="size"
-            className={css.policy}
-            type="text"
-            label={sizeLabelMessage}
-            placeholder={sizePlaceholderMessage}
-          />
+           
            <FieldTextInput
             id="components"
             name="components"

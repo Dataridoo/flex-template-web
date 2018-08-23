@@ -73,6 +73,7 @@
 
 .notSelectedLabel {
   color: var(--matterColorNegative);
+ 
   position: relative;
 
   /* line-through */

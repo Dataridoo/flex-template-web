@@ -151,6 +151,7 @@ export const amenities = [
 
 
 export const bikeSize = [
+<<<<<<< HEAD
   {
     key: 'XS',
     label: 'XS',
@@ -196,6 +197,53 @@ export const bikeSize = [
     label: '54',
   },
   {
+=======
+  {
+    key: 'XS',
+    label: 'XS',
+  },
+  {
+    key: 'SM',
+    label: 'SM',
+  },
+  {
+    key: 'MD',
+    label: 'MD',
+  },
+  {
+    key: 'LG',
+    label: 'LG',
+  },
+   {
+    key: 'XL',
+    label: 'XL',
+  },
+ {
+    key: 'XXL',
+    label: 'XXL',
+  },
+ {
+    key: '48',
+    label: '48',
+  },
+  {
+    key: '50',
+    label: '50',
+  },
+  {
+    key: '52',
+    label: '52',
+  },
+  {
+    key: '53',
+    label: '53',
+  },
+  {
+    key: '54',
+    label: '54',
+  },
+  {
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
     key: '55',
     label: '55',
   },
@@ -229,4 +277,15 @@ export const categories = [
   { key: 'E-Bike', label: 'E-Bike' },
   { key: 'Fatbikes', label: 'Fatbikes' },
   { key: 'Cargobikes', label: 'Cargobikes' },
+<<<<<<< HEAD
+=======
+];
+
+export const eventType = [
+  { key: 'onedayevent', label: 'one day event' },
+  { key: 'multidayevent', label: 'multi-day event' },
+  { key: 'roadbikeevent', label: 'road bike event' },
+  { key: 'mtbevent', label: 'mtb event' },
+  { key: 'gravelbikeevent', label: 'gravel bike event' },
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
 ];

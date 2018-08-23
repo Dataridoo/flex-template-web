@@ -5,11 +5,15 @@ export { default as CheckoutPage } from './CheckoutPage/CheckoutPage';
 export { default as ContactDetailsPage } from './ContactDetailsPage/ContactDetailsPage';
 export { default as ContactUsPage } from './ContactUsPage/ContactUsPage';
 export { default as EditListingPage } from './EditListingPage/EditListingPage';
+
+export { default as EditEventsPage } from './EditEventsPage/EditEventsPage';
 export { default as EmailVerificationPage } from './EmailVerificationPage/EmailVerificationPage';
 export { default as EventsPage } from './EventsPage/EventsPage';
 export { default as GuidedToursPage } from './GuidedToursPage/GuidedToursPage';
 export { default as InboxPage } from './InboxPage/InboxPage';
 export { default as LandingPage } from './LandingPage/LandingPage';
+
+export { default as MerchantPage } from './MerchantPage/MerchantPage';
 export { default as ListingPage } from './ListingPage/ListingPage';
 export { default as ManageListingsPage } from './ManageListingsPage/ManageListingsPage';
 export { default as NotFoundPage } from './NotFoundPage/NotFoundPage';

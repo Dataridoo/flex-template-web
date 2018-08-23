@@ -46,18 +46,7 @@ const EditListingDescriptionFormComponent = props => (
         }
       );
   
-  const descriptionMessage = intl.formatMessage({
-        id: 'EditListingDescriptionForm.description',
-      });
-      const descriptionPlaceholderMessage = intl.formatMessage({
-        id: 'EditListingDescriptionForm.descriptionPlaceholder',
-      });
-    
-      const descriptionRequiredMessage = intl.formatMessage({
-        id: 'EditListingDescriptionForm.descriptionRequired',
-      });
-      
-      
+  
 
       const maxLength60Message = maxLength(maxLengthMessage, TITLE_MAX_LENGTH);
 
@@ -87,16 +76,6 @@ const EditListingDescriptionFormComponent = props => (
           />
 
 
-          <FieldTextInput
-            id="description"
-            name="description"
-            className={css.description}
-            type="textarea"
-            label={descriptionMessage}
-            placeholder={descriptionPlaceholderMessage}
-            validate={composeValidators(required(descriptionRequiredMessage))}
-          />
-         
           
 
       <CustomCategorySelectFieldMaybe

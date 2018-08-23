@@ -121,6 +121,14 @@ const TopbarDesktop = props => {
     </NamedLink>
    
   )
+   const merchantPage = (
+    <NamedLink name="MerchantPage" className={css.merchantPage}>
+      <span className={css.merchant}>
+        <FormattedMessage id="TopbarDesktop.merchant" />
+      </span>
+    </NamedLink>
+   
+  );
  
   const guidedToursPage = (
     <NamedLink name="GuidedToursPage" className={css.guidedToursPage}>
@@ -177,6 +185,8 @@ const TopbarDesktop = props => {
     </NamedLink>    
   )
   
+  
+  
     
               
  
@@ -206,13 +216,18 @@ const TopbarDesktop = props => {
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
-     {rentalsPage} 
     
+     {rentalsPage} 
+    {merchantPage}
      {guidedToursPage}
      {eventsPage}
      {aboutPage}
+<<<<<<< HEAD
     {merchantPage}
      
+=======
+    
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
       {search}
       {addBike}
       {inboxLink}

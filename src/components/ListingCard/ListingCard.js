@@ -52,11 +52,18 @@ export const ListingCardComponent = props => {
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>
       <div className={css.container}> 
+        <div className={css.titleThree}>
+              {richText(title, {
+                longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
+                longWordClass: css.longWord,
+              })}
+          </div> 
         <div
             className={css.threeToTwoWrapper}
             onMouseEnter={() => setActiveListing(currentListing.id)}
             onMouseLeave={() => setActiveListing(null)}
           >
+          
             <div className={css.aspectWrapper}>
               <ResponsiveImage
                 rootClassName={css.rootForImage}
@@ -64,18 +71,14 @@ export const ListingCardComponent = props => {
                 image={firstImage}
                 variants={['landscape-crop', 'landscape-crop2x']}
                 sizes={renderSizes}            
-              />    
-            </div>               
-          </div>
-          <button className={css.priceValueTwo} title={priceTitle}>
+              /> 
+              <button className={css.priceValueTwo} title={priceTitle}>
             {formattedPrice}  <FormattedMessage id="ListingCard.perUnit" />
           </button> 
-          <div className={css.titleTwo}>
-            {richText(title, {
-              longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
-              longWordClass: css.longWord,
-            })}
-          </div> 
+            </div>               
+          </div>
+          
+          
       </div>
       <button className={css.info}>  
         <AvatarMedium  user={author}  disableProfileLink />

@@ -781,7 +781,11 @@
   "TopbarDesktop.blog":"Blog",
   "TopbarDesktop.contactUs":"Contact Us",
   "TopbarDesktop.guidedTours":"Guided Tours",
+<<<<<<< HEAD
   "TopbarDesktop.merchant":"Service",
+=======
+  "TopbarDesktop.merchant":"MerchantPage",
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
   "TopbarDesktop.yourListingsLink": "Your listings",
   "TopbarMobileMenu.accountSettingsLink": "Account settings",
   "TopbarMobileMenu.greeting": "Hello {displayName}",

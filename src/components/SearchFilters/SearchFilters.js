@@ -110,7 +110,18 @@ const SearchFiltersComponent = props => {
   });
 
  const initialBikeSize = initialValues(urlQueryParams, bikeSizeFilter.paramName);
+<<<<<<< HEAD
  
+=======
+  const handleSelectBikeSizeOptions = (urlParam, options) => {
+    const queryParams =
+      options && options.length > 0
+        ? { ...urlQueryParams, [urlParam]: options.join(',') }
+        : omit(urlQueryParams, urlParam);
+
+    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
+  };
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
 
 
  
@@ -120,7 +131,11 @@ const SearchFiltersComponent = props => {
       name="bikeSize"
       urlParam={bikeSizeFilter.paramName}
       label={bikeSizeLabel}
+<<<<<<< HEAD
       onSelect={handleSelectOptions}
+=======
+      onSelect={handleSelectBikeSizeOptions}
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
       options={bikeSizeFilter.options}
       initialValues={initialBikeSize}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}

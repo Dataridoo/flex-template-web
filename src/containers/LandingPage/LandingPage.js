@@ -29,7 +29,11 @@ import city from './city.jpg';
 import ebike from './e-bike.jpg';
 import road from './road.jpg';
 import mtb from './mtb.jpg';
+<<<<<<< HEAD
 import InstagramFeed from './InstagramFeed';
+=======
+
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
 import './LandingPage.css';
 
 export const LandingPageComponent = props => {
@@ -69,8 +73,29 @@ export const LandingPageComponent = props => {
             <h2 className={css.heroMainTitle}>
               <FormattedMessage id="SectionHero.title" />
             </h2> 
+<<<<<<< HEAD
           </div> <br />
           
+=======
+          </div> 
+          <div className={css.heroContainerTwo}>   
+          <div className="ui stackable grid">
+              <div className="four wide column">
+                 <img src={city} alt="city"/>
+              </div>
+              <div className="four wide column">
+                 <img src={road} alt="road"/>
+              </div>
+              <div className="four wide column">
+                <img src={mtb} alt="mountainbike"/>
+              </div>
+              <div className="four wide column">
+               <img src={ebike} alt="e-bike"/>
+              </div>
+           </div> 
+           </div>  
+                   
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
            
                   
           <ul className={css.sections}>

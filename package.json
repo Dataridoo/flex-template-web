@@ -43,6 +43,7 @@
     "react-image-fallback": "^7.1.0",
     "react-instafeed": "^0.4.0",
     "react-intl": "^2.4.0",
+    "react-mailchimp-subscribe": "^2.0.2",
     "react-moment-proptypes": "^1.5.0",
     "react-player": "^1.6.4",
     "react-rangeslider": "^2.2.0",

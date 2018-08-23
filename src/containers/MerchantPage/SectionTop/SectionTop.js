@@ -19,6 +19,7 @@ class SectionTop extends Component {
     <div className={css.PromotionBackground}> 
       <h1 className={css.highlights}>Promotions title</h1> 
       <div className={css.PromotionMargin}> 
+<<<<<<< HEAD
         <div className="ui stackable two column grid">
           <div className="column">
             <div className="ui fluid card">
@@ -75,6 +76,54 @@ class SectionTop extends Component {
             </div>
           </div>       
       </div>  
+=======
+        <div class="ui stackable two column grid">
+          <div class="column">
+            <div class="ui fluid card">
+              <div class="image">
+              <img src={bhc2} alt="bhcimage" className={css.imageWrapper}/>
+              </div>
+              <div class="content">                
+                <h3>
+                  <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackage" />
+                  <span className={css.StartingFrom}>
+                      <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
+                  </span>
+                </h3>
+                <div className={css.SpecialWeekPackageContent}>
+                  <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
+                  <span className={css.StartingFromCurrency}>
+                    <FormattedMessage id="MerchantPageSectionTop.Currency" />
+                </span>
+                </div>               
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui fluid card">
+              <div class="image">
+                <img src={bhc3} alt="bhcimage" className={css.imageWrapper}/>
+              </div>
+              <div class="content">
+                  <h3>
+                    <FormattedMessage id="MerchantPageSectionTop.BeNeLuxPackage" />
+                    <span className={css.StartingFrom}>
+                          <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
+                    </span>
+                  </h3>
+                  <div className={css.SpecialWeekPackageContent}>
+                    <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
+                    <span className={css.StartingFromCurrency}>
+                      <FormattedMessage id="MerchantPageSectionTop.Currency" />
+                  </span>
+                  </div>
+                  <Reviews reviews={reviews} />
+              </div>
+            </div>
+          </div>       
+      </div>    
+        
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
      </div>
     </div>
   );

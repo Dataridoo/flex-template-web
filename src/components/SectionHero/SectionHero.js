@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { stringify } from '../../util/urlHelpers';
-import { createResourceLocatorString } from '../../util/routes';
-import routeConfiguration from '../../routeConfiguration';
 import { IconSearch, Button } from '../../components';
-import { LocationSearchForm } from '../../forms';
-import config from '../../config';
 
 import css from './SectionHero.css';
 
@@ -20,13 +16,6 @@ const SectionHero = props => {
     history.push(path);
   };
 
-  const handleSearchSubmit = values => {
-    const { search, selectedPlace } = values.location;
-    const { origin, bounds, country } = selectedPlace;
-    const originMaybe = config.sortSearchByDistance ? { origin } : {};
-    const searchParams = { ...originMaybe, address: search, bounds, country };
-    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, searchParams));
-  };
 
   const classes = classNames(rootClassName || css.root, className);
 
@@ -39,7 +28,7 @@ const SectionHero = props => {
         <IconSearch rootClassName={css.searchIcon} />
         <FormattedMessage id="SectionHero.mobileSearchButtonText" />
       </Button>
-      <LocationSearchForm className={css.desktopSearchForm} onSubmit={handleSearchSubmit} />
+     
     </div>
   );
 };

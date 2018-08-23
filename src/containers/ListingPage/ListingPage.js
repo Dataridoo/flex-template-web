@@ -463,7 +463,11 @@ export class ListingPageComponent extends Component {
                        <SectionBikeSize
                          className={css.bikeSize}
                           options={bikeSizeConfig}
+<<<<<<< HEAD
                           selectedOptions={publicData.bikeSize}
+=======
+                          handleSelectBikeSizeOptions={publicData.bikeSize}
+>>>>>>> 8cf0c81213824515c2f02551a3b18cf344427886
                       />
                   </div> <hr />
                     <h3> <FormattedMessage id="ListingPage.BookingTitle" /></h3> 

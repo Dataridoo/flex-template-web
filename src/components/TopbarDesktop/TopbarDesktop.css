@@ -237,6 +237,7 @@
   min-width: 276px;
   padding-top: 20px;
 }
+.merchantPage,
 .aboutPage,
 .newListingPage,
 .searchPage,
@@ -293,6 +294,7 @@
 .merchant,
 .about,
 .rentals,
+.merchant,
 .guidedTours,
 .login {
   @apply --marketplaceH4FontStyles;
