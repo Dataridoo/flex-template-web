@@ -68,7 +68,7 @@ export class SearchPageComponent extends Component {
   }
 
   filters() {
-    const { categories, amenities, fineSetUp} = this.props;
+    const { categories, amenities, bikeSize } = this.props;
 
     return {
       categoryFilter: {
@@ -79,9 +79,9 @@ export class SearchPageComponent extends Component {
         paramName: 'pub_amenities',
         options: amenities,
       },
-       fineSetUpFilter: {
-        paramName: 'pub_fineSetUp',
-        options: fineSetUp,
+       bikeSizeFilter: {
+        paramName: 'pub_bikeSize',
+        options: bikeSize,
       },
     };
   }
@@ -246,8 +246,9 @@ export class SearchPageComponent extends Component {
             primaryFilters={{
               categoryFilter: filters.categoryFilter,
               amenitiesFilter: filters.amenitiesFilter,
-              fineSetUpFilter: filters.fineSetUpFilter,
+              bikeSizeFilter: filters.bikeSizeFilter,
             }}
+            
            
           />
           <ModalInMobile
@@ -291,7 +292,7 @@ SearchPageComponent.defaultProps = {
   tab: 'listings',
   categories: config.custom.categories,
   amenities: config.custom.amenities,
-  fineSetUp: config.custom.fineSetUp,
+  bikeSize: config.custom.bikeSize,
   activeListingId: null,
 };
 
@@ -311,7 +312,7 @@ SearchPageComponent.propTypes = {
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
   categories: array,
   amenities: array,
-  fineSetUp: array,
+  bikeSize: array,
 
   // from withRouter
   history: shape({
@@ -360,12 +361,7 @@ const mapDispatchToProps = dispatch => ({
   onActivateListing: listingId => dispatch(setActiveListing(listingId)),
 });
 
-// Note: it is important that the withRouter HOC is **outside** the
-// connect HOC, otherwise React Router won't rerender any Route
-// components since connect implements a shouldComponentUpdate
-// lifecycle hook.
-//
-// See: https://github.com/ReactTraining/react-router/issues/4671
+
 const SearchPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps), injectIntl)(
   SearchPageComponent
 );

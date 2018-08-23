@@ -3,6 +3,8 @@ export { default as ContactDetailsForm } from './ContactDetailsForm/ContactDetai
 export { default as EditListingDescriptionForm } from './EditListingDescriptionForm/EditListingDescriptionForm';
 export { default as EditListingFeaturesForm } from './EditListingFeaturesForm/EditListingFeaturesForm';
 
+
+
 export { default as EditListingFineSetUpForm } from './EditListingFineSetUpForm/EditListingFineSetUpForm';
 export { default as EditListingLocationForm } from './EditListingLocationForm/EditListingLocationForm';
 export { default as EditListingPhotosForm } from './EditListingPhotosForm/EditListingPhotosForm';
@@ -24,3 +26,6 @@ export { default as SelectMultipleFilterPlainForm } from './SelectMultipleFilter
 export { default as SignupForm } from './SignupForm/SignupForm';
 export { default as StripePaymentForm } from './StripePaymentForm/StripePaymentForm';
 export { default as TopbarSearchForm } from './TopbarSearchForm/TopbarSearchForm';
+
+
+export { default as EditListingBikeSizeForm } from './EditListingBikeSizeForm/EditListingBikeSizeForm';

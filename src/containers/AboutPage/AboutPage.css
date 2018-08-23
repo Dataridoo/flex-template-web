@@ -34,6 +34,7 @@
 
 .contentSide {
   font-style: italic;
+  
 
   @media (--viewportMedium) {
     width: 193px;
@@ -44,6 +45,7 @@
 
 .contentMain {
   width: 90%;
+  text-align:justify;
 
   @media (--viewportMedium) {
     max-width: 650px;

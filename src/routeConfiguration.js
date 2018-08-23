@@ -13,6 +13,7 @@ import {
   InboxPage,
   LandingPage,
   ListingPage,
+  MerchantPage,
   ManageListingsPage,
   NotFoundPage,
   PasswordChangePage,
@@ -77,6 +78,11 @@ const routeConfiguration = () => {
       path: '/blog',
       name: 'BlogPage',
       component: BlogPage,
+    },
+    {
+      path: '/service',
+      name: 'MerchantPage',
+      component: MerchantPage,
     },
 
     

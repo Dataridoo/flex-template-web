@@ -42,8 +42,7 @@ import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
 import SectionFeatures from './SectionFeatures';
 import SectionBooking from './SectionBooking';
-import SectionDescription from './SectionDescription';
-//import SectionFineSetUp from './SectionFineSetUp';
+import SectionBikeSize from './SectionBikeSize';
 import css from './ListingPage.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
@@ -204,7 +203,7 @@ export class ListingPageComponent extends Component {
       sendEnquiryError,
       categoriesConfig,
       amenitiesConfig,
-     //fineSetUpConfig,
+      bikeSizeConfig,
     } = this.props;
 
     const isBook = !!parse(location.search).book;
@@ -388,16 +387,7 @@ export class ListingPageComponent extends Component {
       </NamedLink>
     );
     
-    // const hostLinkSidebar = (
-    //   <NamedLink
-    //     className={css.authorNameLinkSidebar}
-    //     name="ListingPage"
-    //     params={params}
-    //     to={{ hash: '#host' }}
-    //   >
-    //     {authorDisplayName}
-    //   </NamedLink>
-    // );
+   
     
 
     const category =
@@ -441,7 +431,7 @@ export class ListingPageComponent extends Component {
             </div>
             <div className={css.mainContainer}>
               <div className="ui stackable sixteen column grid">             
-                <div className="ten wide column">
+                <div className="nine wide column">
                   <SectionImages
                     title={title}
                     listing={currentListing}
@@ -464,14 +454,21 @@ export class ListingPageComponent extends Component {
                   />
                   
                 </div>              
-                <div className="six wide column">  
+                <div className="seven wide column">  
                   <div  className={css.formatedPrice}> 
                     <SectionHeading   
                       formattedPrice={formattedPrice} 
                       /> 
-                  </div>
-                     
+                      <h3> <FormattedMessage id="ListingPage.bikeSizeTitle" /></h3>
+                       <SectionBikeSize
+                         className={css.bikeSize}
+                          options={bikeSizeConfig}
+                          selectedOptions={publicData.bikeSize}
+                      />
+                  </div> <hr />
+                    <h3> <FormattedMessage id="ListingPage.BookingTitle" /></h3> 
                     <SectionBooking
+                     className={css.sectionBooking}
                       listing={currentListing}
                       isOwnListing={isOwnListing}
                       isClosed={isClosed}
@@ -486,44 +483,51 @@ export class ListingPageComponent extends Component {
                       handleBookButtonClick={handleBookButtonClick}
                       handleMobileBookModalClose={handleMobileBookModalClose}
                       onManageDisableScrolling={onManageDisableScrolling}
-                    /> <hr/>
-                    
-                       <SectionHost
-                        listing={currentListing}
-                        isOwnListing={isOwnListing}
-                        authorDisplayName={authorDisplayName}
-                        onContactUser={this.onContactUser}
-                        isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
-                        onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
-                        sendEnquiryError={sendEnquiryError}
-                        sendEnquiryInProgress={sendEnquiryInProgress}
-                        onSubmitEnquiry={this.onSubmitEnquiry}
-                        currentUser={currentUser}
-                        onManageDisableScrolling={onManageDisableScrolling}
-                      /> 
-                               
-                  <hr/>                    
+                    /> <hr/>              
                 </div>
               </div>
+                  
+                <div className={css.gridMarginTop}>
+                  <div className="ui stackable sixteen column grid">             
+                    <div className="nine wide column">
+                      <div className={css.SectionHeadingNew}>
+                          <h2> <FormattedMessage id="ListingPage.descriptionTitle" /> <span className={css.richTitleFormat}> {richTitle} :</span></h2>
+                      
+                      </div>
+                     <div>
+                       <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresDescription" /></h3>
+                       <SectionRulesMaybe publicData={publicData} />
+                      </div>
+                     
+                    
+                    </div>
+                     <div className="seven wide column">
+                       <SectionHost
+                          listing={currentListing}
+                          isOwnListing={isOwnListing}
+                          authorDisplayName={authorDisplayName}
+                          onContactUser={this.onContactUser}
+                          isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
+                          onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
+                          sendEnquiryError={sendEnquiryError}
+                          sendEnquiryInProgress={sendEnquiryInProgress}
+                          onSubmitEnquiry={this.onSubmitEnquiry}
+                          currentUser={currentUser}
+                          onManageDisableScrolling={onManageDisableScrolling}
+                        /> 
+                    </div>
+                  </div>
+                </div>
               <div className={css.gridMarginTop}>
               <div className="ui stackable sixteen column grid">             
-                <div className="ten wide column">
-                  <div className={css.SectionHeadingNew}>
-                  <h2> <FormattedMessage id="ListingPage.descriptionTitle" /> <span className={css.richTitleFormat}> {richTitle} :</span></h2>
-                   <SectionDescription description={description}  />
-                  </div>
-                   <div>
-                     <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresDescription" /></h3>
-                     <SectionRulesMaybe publicData={publicData} />
-                    </div>
-                   <div>
+                <div className="nine wide column">
+                  <div>
                    <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresTitle" /></h3>
                      <SectionFeatures
                         options={amenitiesConfig}
                         selectedOptions={publicData.amenities}
                       />
-                    </div>
-                  
+                  </div>
                   
                   <div className={css.SectionLikeCounter}>
                   <ul className={css.UnOrderdedListCounter}>
@@ -555,7 +559,7 @@ export class ListingPageComponent extends Component {
                   
                   <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
                 </div>  
-                <div className="six wide column">
+                <div className="seven wide column">
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
@@ -585,7 +589,7 @@ ListingPageComponent.defaultProps = {
   sendEnquiryError: null,
   categoriesConfig: config.custom.categories,
   amenitiesConfig: config.custom.amenities,
-  //fineSetUpConfig: config.custom.fineSetUp,
+  bikeSizeConfig: config.custom.bikeSize,
 };
 
 ListingPageComponent.propTypes = {
@@ -624,7 +628,7 @@ ListingPageComponent.propTypes = {
 
   categoriesConfig: array,
   amenitiesConfig: array,
-  //fineSetUpConfig: array,
+  bikeSizeConfig: array,
 };
 
 const mapStateToProps = state => {

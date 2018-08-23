@@ -1,0 +1,42 @@
+@import '../../../marketplace.css';
+
+.highlights{  
+  text-align: center;
+  color:white;
+  padding-top: 20px;
+ 
+}
+.PromotionBackground{
+  background-color: #82c3ff;
+  
+}
+.PromotionMargin{
+  margin: 50px;
+  padding: 20px;
+}
+
+.StartingFrom{
+  float: right;
+  color: darkgray;
+  font-style: italic;
+  font-size: 12px;
+  padding-left: 30px; 
+}
+.SpecialWeekPackageContent{ 
+  padding-bottom: 20px;
+}
+
+.StartingFromCurrency{
+  float: right;
+  color: dodgerblue;
+  padding-left: 30px; 
+}
+
+
+.imageWrapper {  
+
+  &:hover {
+    transform: scale(1.01);
+   
+  }
+}

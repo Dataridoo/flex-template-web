@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import config from '../../config';
 import {
   Page,
-  SectionHero,
   SectionLocations,
   SectionLocationCenter,
   SectionLocationsBottom,
@@ -21,17 +20,21 @@ import {
 } from '../../components';
 import { TopbarContainer } from '../../containers';
 
+
 import facebookImage from '../../assets/pedalworldFacebook-1200x630.jpg';
 import twitterImage from '../../assets/pedalworldTwitter-600x314.jpg';
 import css from './LandingPage.css';
+import rentals from './rentals.jpg';
+import city from './city.jpg';
+import ebike from './e-bike.jpg';
+import road from './road.jpg';
+import mtb from './mtb.jpg';
+import InstagramFeed from './InstagramFeed';
 import './LandingPage.css';
 
 export const LandingPageComponent = props => {
-  const { history, intl, location, scrollingDisabled } = props;
+  const { intl, scrollingDisabled } = props;
 
-  // Schema for search engines (helps them to understand what this page is about)
-  // http://schema.org
-  // We are using JSON-LD format
   const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'LandingPage.schemaTitle' }, { siteTitle });
   const schemaDescription = intl.formatMessage({ id: 'LandingPage.schemaDescription' });
@@ -61,9 +64,14 @@ export const LandingPageComponent = props => {
           <TopbarContainer /> 
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-          <div className={css.heroContainer}>
-            <SectionHero className={css.hero} history={history} location={location} />
-          </div>         
+          <div className={css.heroContainer}>           
+            <img src={rentals} alt="rentals"/>
+            <h2 className={css.heroMainTitle}>
+              <FormattedMessage id="SectionHero.title" />
+            </h2> 
+          </div> <br />
+          
+           
                   
           <ul className={css.sections}>
             <h1 className={css.highlights}>Highlights</h1>
@@ -95,6 +103,9 @@ export const LandingPageComponent = props => {
               </div>
             </li>
           </ul>
+          <div id ="instafeedTarget">
+           <InstagramFeed />
+          </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
         <Footer />

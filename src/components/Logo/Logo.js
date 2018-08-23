@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 import config from '../../config';
-import LogoImage from './pedalworld-logo.png';
+import LogoImage from './pedalworld-logo.jpg';
 
 const Logo = props => {
   const { className, format, ...rest } = props;

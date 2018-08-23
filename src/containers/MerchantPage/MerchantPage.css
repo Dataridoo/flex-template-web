@@ -1,0 +1,229 @@
+@import '../../marketplace.css';
+
+:root {
+  /*
+    These variables are available in global scope through ":root"
+    element (<html> tag). Variables with the same names are going to
+    overwrite each other if CSS Properties' (PostCSS plugin)
+    configuration "preserve: true" is used - meaning that variables
+    are left to CSS bundle. We are planning to enable it in the future
+    since browsers support CSS Properties already.
+ */
+
+  --LandingPage_sectionMarginTop: 0px;
+  --LandingPage_sectionMarginTopMedium: 4px;
+  --LandingPage_sectionMarginTopLarge: 4px;
+}
+.highlights{  
+  text-align: center;
+  color:white;
+  padding-top: 20px;
+ 
+}
+.sectionVideo{
+  background-color: lightgray;
+  padding: 30px;
+ 
+}
+
+.videoCenter{
+  margin: auto;
+  width: 50%;
+}
+.videoDescription{
+ color: dodgerblue;
+  background-color: #fff;
+  margin-right: -89px;
+  padding: 10px;
+}
+.AboutSection{
+  background-color: #82c3ff;
+ 
+}
+.About{
+  padding: 20px;
+}
+.AboutHeader{
+  color:white;
+  @apply --marketplaceH3FontStyles;
+}
+.AboutBody{
+  color:black;
+  text-align: justify;
+   padding: 10px;
+   margin-bottom: 20px;
+}
+.NewsSection{
+  background-color: white;
+  padding: 10px;
+ 
+}
+.NewsDate{
+  color:black;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 12px;
+}
+.MainContainer{
+  background-color: #fff;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+ 
+}
+.NewsHeader{
+  color:#82c3ff;
+  line-height: 12px;
+}
+.NewsBody{  
+  color:black;
+  text-align: justify;
+  line-height: 10px;
+  padding-bottom: 20px;
+  
+}
+.readMore{
+  color:#82c3ff;
+  line-height: 12px;
+}
+.MapSection{
+  
+}
+.recently {
+  color: black;
+  text-align: center;
+  padding-top: 20px;
+}
+/* heroContainer gives the height for SectionHero */
+/* Safari has a bug with vw padding inside flexbox. Therefore we need an extra div (container) */
+/* If you've lot of content for the hero, multiple lines of text, make sure to adjust min-heights for each media breakpoint accordingly */
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+ 
+  padding: 0;
+
+  @media (--viewportMedium) {
+
+    max-height: none;
+  }
+
+  @media (--viewportLarge) {
+   
+   
+  }
+}
+
+.latestReview {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.hero {
+  flex-grow: 1;
+  justify-content: flex-end;
+  
+  @media (--viewportMedium) {
+    padding-bottom: 83px;
+  }
+
+  @media (--viewportLarge) {
+    justify-content: center;
+    padding-top: 60px;
+  }
+}
+
+.sections {
+  margin: 0;
+  padding-top: 1px;
+}
+
+.section {
+  overflow: auto;
+}
+
+/* Square corners for the last section if it's even */
+.section:nth-of-type(2n):last-of-type {
+  @media (--viewportMedium) {
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+/* Every other section has a light background */
+.section:nth-of-type(2n) {
+  background-color: var(--matterColorLight);
+  @media (--viewportMedium) {
+    border-radius: 4px;
+  }
+}
+
+.sectionContent {
+  margin: var(--LandingPage_sectionMarginTop) 4px 11px 4px;
+
+  @media (--viewportMedium) {
+    margin: var(--LandingPage_sectionMarginTopMedium) 7.5vw 40px 7.5vw;
+  }
+
+  @media (--viewportLarge) {
+    max-width: calc(1052px + 36px + 36px);
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 43px auto;
+    padding: 0 36px 0 36px;
+  }
+}
+
+/* A bar on top of light sections */
+.section:nth-of-type(2n) .sectionContent:before {
+  background: var(--marketplaceColor);
+  content: '';
+  display: block;
+  width: 109px;
+  height: 6px;
+
+  /* Place the bar on top of .sectionContent top margin */
+  position: relative;
+  top: calc(-1 * var(--LandingPage_sectionMarginTop));
+
+  @media (--viewportMedium) {
+    width: 192px;
+    height: 8px;
+    top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
+  }
+
+  @media (--viewportLarge) {
+    top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
+  }
+}
+
+.VideoCenter{
+  margin: 0 auto;
+  max-width: 400px;
+
+ @media (--viewportMedium) {
+     max-width: 600px;
+      margin: 0 auto;
+  }
+
+  @media (--viewportLarge) {
+     max-width: 800px;
+      margin: 0 auto;
+  }
+  
+}
+
+.PromotionBackground{
+  background-color: lightgray;
+  
+}
+.PromotionMargin{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.PromotionContent{
+  background-color: #fff;
+  color: dodgerblue;
+}
+
+.AboutSectionContainer{
+  margin: 20px;
+  padding-bottom: 20px;
+}

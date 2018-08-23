@@ -26,6 +26,7 @@ const initialValues = (queryParams, paramName) => {
   return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
 };
 
+
 const SearchFiltersComponent = props => {
   const {
     urlQueryParams,
@@ -34,6 +35,7 @@ const SearchFiltersComponent = props => {
     searchInProgress,
     categoryFilter,
      amenitiesFilter,
+     bikeSizeFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
     searchFiltersPanelSelectedCount,
@@ -101,6 +103,29 @@ const SearchFiltersComponent = props => {
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
   ) : null;
+  
+  
+  const bikeSizeLabel = intl.formatMessage({
+    id: 'SearchFilters.bikeSizeLabel',
+  });
+
+ const initialBikeSize = initialValues(urlQueryParams, bikeSizeFilter.paramName);
+ 
+
+
+ 
+  const bikeSizeFilterFilterElement = bikeSizeFilter ? (
+    <SelectMultipleFilter
+      id={'SearchFilters.bikeSizeFilter'}
+      name="bikeSize"
+      urlParam={bikeSizeFilter.paramName}
+      label={bikeSizeLabel}
+      onSelect={handleSelectOptions}
+      options={bikeSizeFilter.options}
+      initialValues={initialBikeSize}
+      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+    />
+  ) : null;
 
 
   
@@ -138,7 +163,8 @@ const SearchFiltersComponent = props => {
       <div className="ui secondary pointing menu">      
             <div className="left menu">  
                {categoryFilterElement}  
-               {amenitiesFilterElement}
+               {amenitiesFilterElement}             
+               {bikeSizeFilterFilterElement}
                {toggleSearchFiltersPanelButton} 
             </div>
             

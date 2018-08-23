@@ -13,6 +13,7 @@ import EditListingWizardTab, {
   POLICY,
   FEATURES,
   LOCATION,
+  BIKESIZE,
   PRICING,
   PHOTOS,
 } from './EditListingWizardTab';
@@ -20,7 +21,7 @@ import css from './EditListingWizard.css';
 
 // TODO: PHOTOS panel needs to be the last one since it currently contains PayoutDetailsForm modal
 // All the other panels can be reordered.
-export const TABS = [DESCRIPTION, POLICY, FEATURES, LOCATION, PRICING, PHOTOS];
+export const TABS = [DESCRIPTION, POLICY, FEATURES, LOCATION, BIKESIZE, PRICING, PHOTOS];
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
@@ -35,6 +36,8 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelFeatures';
   }  else if (tab === LOCATION) {
     key = 'EditListingWizard.tabLabelLocation';
+  }else if (tab === BIKESIZE) {
+    key = 'EditListingWizard.tabLabelBikeSize';
   } else if (tab === PRICING) {
     key = 'EditListingWizard.tabLabelPricing';
   } else if (tab === PHOTOS) {
@@ -53,12 +56,12 @@ const tabLabel = (intl, tab) => {
  * @return true if tab / step is completed.
  */
 const tabCompleted = (tab, listing) => {
-  const { description,  geolocation, price, title, publicData } = listing.attributes;
+  const { geolocation, price, title, publicData } = listing.attributes;
   const images = listing.images;
 
   switch (tab) {
     case DESCRIPTION:
-      return !!(description && title);
+      return !!(title);
     case FEATURES:
       return !!(publicData && publicData.amenities);
       
@@ -67,11 +70,12 @@ const tabCompleted = (tab, listing) => {
               && publicData && typeof publicData.fork !== 'undefined'
               && publicData && typeof publicData.components !== 'undefined'
               && publicData && typeof publicData.accessories !== 'undefined'
-              && publicData && typeof publicData.size !== 'undefined'
               && publicData && typeof publicData.weight !== 'undefined'
               && publicData && typeof publicData.wheelset !== 'undefined'
               && publicData && typeof publicData.drivetrain !== 'undefined'
             );
+    case BIKESIZE:
+      return !!(publicData && publicData.bikeSize);
     case LOCATION:
       return !!(geolocation && publicData && publicData.location && publicData.location.address);
     case PRICING:
@@ -297,7 +301,6 @@ EditListingWizard.propTypes = {
       geolocation: object,
       pricing: object,
       title: string,
-      description: string,
     }),
     images: array,
   }),

@@ -156,3 +156,7 @@ export { default as ValidationError } from './ValidationError/ValidationError';
 export { default as RangeSlider } from './RangeSlider/RangeSlider';
 export { default as FollowUsPage } from './FollowUsPage/FollowUsPage';
 
+
+export {
+  default as EditListingBikeSizePanel,
+} from './EditListingBikeSizePanel/EditListingBikeSizePanel';

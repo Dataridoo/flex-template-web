@@ -105,7 +105,7 @@ const Footer = props => {
         
         <div className="two wide column">
           <div className={css.infoLinks}>
-             <NamedLink name="ContactUsPage" className={css.legalLink}>
+             <NamedLink name="AboutPage" className={css.legalLink}>
                 <FormattedMessage id="Footer.toContactUsPage" />
               </NamedLink>
           </div>
