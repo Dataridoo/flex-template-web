@@ -24,9 +24,18 @@ import SectionTopLinks from './SectionTopLinks';
 import facebookImage from '../../assets/pedalworldFacebook-1200x630.jpg';
 import twitterImage from '../../assets/pedalworldTwitter-600x314.jpg';
 import css from './LandingPage.css';
+
 import rentals from './images/rentals.jpg';
 
+/* 
+import rentals from './rentals.jpg';
+import city from './city.jpg';
+import ebike from './e-bike.jpg';
+import road from './road.jpg';
+import mtb from './mtb.jpg';
+ */
 import InstagramFeed from './InstagramFeed';
+
 import './LandingPage.css';
 
 export const LandingPageComponent = props => {
@@ -66,6 +75,7 @@ export const LandingPageComponent = props => {
             <h2 className={css.heroMainTitle}>
               <FormattedMessage id="SectionHero.title" />
             </h2> 
+
           </div> <br />
           <SectionTopLinks />
            

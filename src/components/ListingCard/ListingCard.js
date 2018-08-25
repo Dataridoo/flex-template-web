@@ -52,11 +52,18 @@ export const ListingCardComponent = props => {
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>
       <div className={css.container}> 
+        <div className={css.titleThree}>
+              {richText(title, {
+                longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
+                longWordClass: css.longWord,
+              })}
+          </div> 
         <div
             className={css.threeToTwoWrapper}
             onMouseEnter={() => setActiveListing(currentListing.id)}
             onMouseLeave={() => setActiveListing(null)}
           >
+          
             <div className={css.aspectWrapper}>
               <ResponsiveImage
                 rootClassName={css.rootForImage}

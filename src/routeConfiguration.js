@@ -8,6 +8,7 @@ import {
   ContactDetailsPage,
   ContactUsPage,
   EditListingPage,
+  EditEventsPage,
   EmailVerificationPage,
   EventsPage,
   GuidedToursPage,
@@ -46,6 +47,7 @@ export const ACCOUNT_SETTINGS_PAGES = [
 const draftId = '00000000-0000-0000-0000-000000000000';
 const draftSlug = 'draft';
 
+
 const RedirectToLandingPage = () => <NamedRedirect name="LandingPage" />;
 
 // Our routes are exact by default.
@@ -69,12 +71,7 @@ const routeConfiguration = () => {
       component: props => <GuidedToursPage {...props} tab="listings" />,
       loadData: GuidedToursPage.loadData,
     },
-    {
-      path: '/event',
-      name: 'EventsPage',
-      component: EventsPage,
-    },
-   
+    
     {
       path: '/about',
       name: 'AboutPage',
@@ -139,12 +136,18 @@ const routeConfiguration = () => {
       loadData: ListingPage.loadData,
     }, 
     {
-      path: '/l/:slug/:id/checkout',
-      name: 'CheckoutPage',
-      auth: true,
-      component: props => <CheckoutPage {...props} />,
-      setInitialValues: CheckoutPage.setInitialValues,
+      path: '/event',
+      name: 'EventsPage',
+      component: EventsPage,
     },
+   
+    {
+      path: '/event/:slug/:id',
+      name: 'EventsPage',
+      component: props => <EventsPage {...props} />,
+      loadData: EventsPage.loadData,
+    }, 
+   
     {
       path: '/l/:slug/:id/:variant',
       name: 'ListingPageVariant',
@@ -152,6 +155,21 @@ const routeConfiguration = () => {
       authPage: 'LoginPage',
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
+    },
+    {
+      path: '/event/:slug/:id/:variant',
+      name: 'EventsPageVariant',
+      auth: true,
+      authPage: 'LoginPage',
+      component: props => <EventsPage {...props} />,
+      loadData: EventsPage.loadData,
+    },
+    {
+      path: '/l/:slug/:id/checkout',
+      name: 'CheckoutPage',
+      auth: true,
+      component: props => <CheckoutPage {...props} />,
+      setInitialValues: CheckoutPage.setInitialValues,
     },
     {
       path: '/l/new',
@@ -163,6 +181,24 @@ const routeConfiguration = () => {
           params={{ slug: draftSlug, id: draftId, type: 'new', tab: 'description' }}
         />
       ),
+    },
+    {
+      path: '/event/new',
+      name: 'NewEventsPage',
+      auth: true,
+      component: () => (
+        <NamedRedirect
+          name="EditEventsPage"
+          params={{ slug: draftSlug, id: draftId, type: 'new', tab: 'description' }}
+        />
+      ),
+    },
+    {
+      path: '/event/:slug/:id/:type/:tab',
+      name: 'EditEventsPage',
+      auth: true,
+      component: props => <EditEventsPage {...props} />,
+      loadData: EditEventsPage.loadData,
     },
     {
       path: '/l/:slug/:id/:type/:tab',
@@ -179,6 +215,12 @@ const routeConfiguration = () => {
       name: 'ListingPageCanonical',
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
+    },
+    {
+      path: '/event/:id',
+      name: 'EventsPageCanonical',
+      component: props => <EventsPage {...props} />,
+      loadData: EventsPage.loadData,
     },
     {
       path: '/u',

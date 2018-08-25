@@ -33,6 +33,13 @@
   color:black;
  
 }
+.titleThree{
+  bottom:8px;
+  margin-left: 0;
+  padding-left: 0;
+  color: #3539ff;
+  @apply --marketplaceH3FontStyles;
+}
 
 .threeToTwoWrapper {
   /* Layout */

@@ -45,18 +45,16 @@ const EditListingPoliciesPanel = props => {
                       fork: publicData.fork, 
                       drivetrain: publicData.drivetain, 
                       components: publicData.components, 
-                      size: publicData.size,
                       accessories: publicData.accessories,
                       weight: publicData.weight,
                        wheelset: publicData.wheelset,
                 }}
         onSubmit={values => {
-          const { frame = '', fork = '', size = '', weight = '', components = '', drivetrain = '', accessories = '', wheelset = '' } = values;
+          const { frame = '', fork = '', weight = '', components = '', drivetrain = '', accessories = '', wheelset = '' } = values;
           const updateValues = {
             publicData: {
               frame,
               fork,
-              size,
               weight,
               components,
               accessories,
