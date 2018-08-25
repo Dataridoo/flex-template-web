@@ -19,16 +19,13 @@ import {
   FollowUsPage
 } from '../../components';
 import { TopbarContainer } from '../../containers';
-
+import SectionTopLinks from './SectionTopLinks';
 
 import facebookImage from '../../assets/pedalworldFacebook-1200x630.jpg';
 import twitterImage from '../../assets/pedalworldTwitter-600x314.jpg';
 import css from './LandingPage.css';
-import rentals from './rentals.jpg';
-import city from './city.jpg';
-import ebike from './e-bike.jpg';
-import road from './road.jpg';
-import mtb from './mtb.jpg';
+import rentals from './images/rentals.jpg';
+
 import InstagramFeed from './InstagramFeed';
 import './LandingPage.css';
 
@@ -70,17 +67,18 @@ export const LandingPageComponent = props => {
               <FormattedMessage id="SectionHero.title" />
             </h2> 
           </div> <br />
-          
+          <SectionTopLinks />
            
-                  
-          <ul className={css.sections}>
-            <h1 className={css.highlights}>Highlights</h1>
-            <li className={css.section}>
-              <div className={css.sectionContent}>
-               <SectionLocations />
-              </div>
-            </li>
-          </ul>
+          <div className={css.sectionLocationBackground}>                 
+            <ul className={css.sections}>
+                <h1 className={css.highlights}>Highlights</h1>
+                <li className={css.section}>
+                  <div className={css.sectionContent}>              
+                    <SectionLocations /> 
+                  </div>
+                </li>
+            </ul>
+          </div> 
          
           <ul className={css.sections}>
             <h1 className={css.highlights}>Explore categories</h1>
@@ -104,8 +102,9 @@ export const LandingPageComponent = props => {
             </li>
           </ul>
           <div id ="instafeedTarget">
-           <InstagramFeed />
+           <InstagramFeed />  
           </div>
+         
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
         <Footer />
@@ -134,12 +133,6 @@ const mapStateToProps = state => {
   };
 };
 
-// Note: it is important that the withRouter HOC is **outside** the
-// connect HOC, otherwise React Router won't rerender any Route
-// components since connect implements a shouldComponentUpdate
-// lifecycle hook.
-//
-// See: https://github.com/ReactTraining/react-router/issues/4671
 const LandingPage = compose(withRouter, connect(mapStateToProps), injectIntl)(LandingPageComponent);
 
 export default LandingPage;

@@ -67,23 +67,31 @@ export const ListingCardComponent = props => {
               />    
             </div>               
           </div>
-          <button className={css.priceValueTwo} title={priceTitle}>
-            {formattedPrice}  <FormattedMessage id="ListingCard.perUnit" />
-          </button> 
-          <div className={css.titleTwo}>
-            {richText(title, {
-              longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
-              longWordClass: css.longWord,
-            })}
-          </div> 
-      </div>
-      <button className={css.info}>  
-        <AvatarMedium  user={author}  disableProfileLink />
-        <span  className={css.authorName}><FormattedMessage         
-          id="ListingCard.hostedBy"
-          values={{ authorName }}
-        /> </span>
-      </button>
+          <div> 
+            <div className={css.cardTitle}>
+              {richText(title, {
+                longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
+                longWordClass: css.longWord,
+              })}
+            </div> 
+            <div className={css.cardPricediv}>  
+              <div className={css.cardPrice} title={priceTitle}>                 
+                  <span className={css.priceUnitLeft}>
+                      {formattedPrice}  
+                     <FormattedMessage id="ListingCard.perUnit" />
+                  </span>
+                  <span className={css.authorName}>
+                    <FormattedMessage         
+                      id="ListingCard.hostedBy"
+                      values={{ authorName }}
+                    /> 
+                  </span>
+              </div>               
+              
+            </div> 
+          </div>         
+      </div>      
+      
     </NamedLink>
   );
 };

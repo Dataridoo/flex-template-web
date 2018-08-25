@@ -162,9 +162,9 @@ const SearchFiltersComponent = props => {
     <div className={css.MainSearchContainer}>      
       <div className="ui secondary pointing menu">      
             <div className="left menu">  
-               {categoryFilterElement}  
-               {amenitiesFilterElement}             
-               {bikeSizeFilterFilterElement}
+             <span className={css.marginRight}> {categoryFilterElement} </span>
+             <span className={css.marginRight}> {amenitiesFilterElement} </span>            
+             <span className={css.marginRight}> {bikeSizeFilterFilterElement}</span>
                {toggleSearchFiltersPanelButton} 
             </div>
             

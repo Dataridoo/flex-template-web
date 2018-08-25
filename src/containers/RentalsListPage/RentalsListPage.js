@@ -242,17 +242,11 @@ export class SearchPageComponent extends Component {
          <LayoutWrapperMain>
             <div className={css.heroContainer}>
               <img src={rentalsImage} alt="rentals" />
-              <div className={css.heroContainerHeader}>
-                <FormattedMessage id="RentalsListPage.ImageHeader" />
-                </div>
-               <div className={css.heroContainerSubHeader}>
-                 <FormattedMessage id="RentalsListPage.ImageSubHeader" />
-               </div>
+              
             </div>   
        
           
-            <div className="ui stackable grid">
-              
+            <div className="ui stackable grid">              
               <div className="sixteen wide column">
                 <div className={css.MainSearchContainer}>
                    <MainPanel   

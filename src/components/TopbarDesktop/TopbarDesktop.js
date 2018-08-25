@@ -167,16 +167,25 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
   )
-
+  
   
   const addBike = (
-    <NamedLink name="NewListingPage" className={css.newListingPage}>
+    <NamedLink name="AddServicePage" className={css.newListingPage}>
       <span className={css.newListing}> <i className="ui plus icon"></i>
-        <FormattedMessage id="Footer.toNewListingPage" />
+        <FormattedMessage id="TopBarDesktop.toAddServicePage" />
        </span>
     </NamedLink>    
   )
-  
+
+  /* 
+  const addBike = (
+    <NamedLink name="NewListingPage" className={css.newListingPage}>
+      <span className={css.newListing}> <i className="ui plus icon"></i>
+        <FormattedMessage id="TopBarDesktop.toNewListingPage" />
+       </span>
+    </NamedLink>    
+  )
+   */
     
               
  

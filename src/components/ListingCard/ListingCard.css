@@ -10,32 +10,28 @@
     text-decoration: none;
   }
 }
-.container {
-  position: relative;
-  text-align: center;
-}
-.priceValueTwo{
-  width: auto;
-  position: absolute;
-  color:black;
+.container { 
   background-color: lightgray;
-  top: 0;
-  right: 3px;
-  font-size: 10px;
-  padding: 0;
-  border: none;
-  text-decoration: none;
 }
-.titleTwo{
-  position: absolute;
-  bottom:8px;
-  left: 30px;
+.cardTitle{ 
+  color:black;
+  font-size: 18px;
+  padding: 5px;
+}
+.priceUnitLeft{
+  background-color: black;
   color: white;
-  @apply --marketplaceH3FontStyles;
+  padding: 3px;
 }
+
+.cardPricediv{
+  padding: 5px; 
+  }
+
 .authorName{
-  margin-left: 20px;
-  padding-top: 10px;
+  padding: 5px;
+  color:black;
+ 
 }
 
 .threeToTwoWrapper {
@@ -66,88 +62,6 @@
   right: 0;
   width: 100%;
   border-radius: var(--borderRadius);
-}
-
-.info {
-  /* Layout */
-  display: flex;
-  flex-direction: row;
-  background-color:white;
-  color: dodgerblue;  
-  @apply --marketplaceH3FontStyles;
-  border: none;
-  text-decoration: none;
-  padding-top: 0;
-  margin-top: 4px;
-  
-}
-
-.price {
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  margin-right: 18px;
-}
-
-.priceValue {
-  /* Font */
-  @apply --marketplaceH3FontStyles;
-
-  /* Remove default margins from font */
-  margin-top: 0;
-  margin-bottom: 0;
-
-  @media (--viewportMedium) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-.perUnit {
-  /* Font */
-  @apply --marketplaceTinyFontStyles;
-  color: var(--matterColor);
-
-  /* Remove default margins from font */
-  margin-top: 0;
-  margin-bottom: 0;
-
-  @media (--viewportMedium) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-
-.title {
-  /* Font */
-  @apply --marketplaceH3FontStyles;
-  color: var(--matterColor);
-
-  /* Remove default margins from font */
-  margin-top: 0;
-  margin-bottom: 0;
-
-  @media (--viewportMedium) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-.authorbutton{
-  width: 200px;
-  padding: 10px;
-}
-.authorInfo {
-  
-  margin-top: 0;
-  margin-bottom: 0;
-
-  @media (--viewportMedium) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 .longWord {

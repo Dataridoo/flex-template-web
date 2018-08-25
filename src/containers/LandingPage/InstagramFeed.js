@@ -34,12 +34,23 @@ const template = `<div class="ui stackable four column grid">
               sortBy='most-recent'
               target={instafeedTarget}
               template={template}
-              userId='5757941462'
-              clientId='4ef4f2477f864171b6d9960cd395ac02'
-              accessToken='5757941462.4ef4f24.d5733cb0f9fb458aa14a32f945c9a8a7'
+              userId='8194614893'
+              clientId='	775d14e6be244d159e81ccdb5ad83ed4'
+              accessToken='8194614893.775d14e.acf2b4a38e524186af2bbf0c04923fba'
             />
           </div>
         )
       }
 }
+
+/* CLIENT INFO
+
+
+https://instagram.com/oauth/authorize/?client_id=0444b51dd57a4470a8e92aad12237e41&redirect_uri=http://instafeedjs.com&response_type=token&scope=public_content
+userId: 8194614893
+accessToken: 8194614893.775d14e.acf2b4a38e524186af2bbf0c04923fba
+http://instafeedjs.com/#access_token=8194614893.775d14e.acf2b4a38e524186af2bbf0c04923fba
+https://www.npmjs.com/package/react-instafeed
+*/
+
 export default InstagramFeed;

@@ -375,7 +375,7 @@ export class ListingPageComponent extends Component {
     
     const shareUrl = "http://pedal.world";
  
-  
+  /* 
     const hostLinkHeader = (
       <NamedLink
         className={css.authorNameLinkHeader}
@@ -385,7 +385,7 @@ export class ListingPageComponent extends Component {
       >
         {authorDisplayName}
       </NamedLink>
-    );
+    ); */
     
    
     
@@ -422,17 +422,16 @@ export class ListingPageComponent extends Component {
             <div  className="sixteen wide column">             
                <div className={css.SectionTitle} >  
                  <div className={css.SectionTitleHeader}> 
-                  {hostLinkHeader}
-                    
-                  </div>
-                  <div className={css.SectionTitleRentals}>RENTALS</div>
+                    <SectionHeading
+                        richTitle={richTitle}
+                      />                                       
+                  </div>                 
               </div>
-             
             </div>
             <div className={css.mainContainer}>
               <div className="ui stackable sixteen column grid">             
                 <div className="nine wide column">
-                  <SectionImages
+                  <SectionImages                 
                     title={title}
                     listing={currentListing}
                     isOwnListing={isOwnListing}
@@ -446,60 +445,65 @@ export class ListingPageComponent extends Component {
                     onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
                     handleViewPhotosClick={handleViewPhotosClick}
                     onManageDisableScrolling={onManageDisableScrolling}
-                  /> <br />
-                   <SectionHeading
-                     priceTitle={priceTitle}
-                    formattedPrice={formattedPrice}
-                    category={category}
-                  />
-                  
+                  /> 
                 </div>              
                 <div className="seven wide column">  
                   <div  className={css.formatedPrice}> 
-                    <SectionHeading   
-                      formattedPrice={formattedPrice} 
+                    <div className={css.formatedPriceDescription} > 
+                      <SectionHeading                       
+                        formattedPrice={formattedPrice} 
                       /> 
-                      <h3> <FormattedMessage id="ListingPage.bikeSizeTitle" /></h3>
+                      </div>
+                      <div className={css.formatedPriceUnit}> 
+                        <FormattedMessage id="ListingPage.perUnit" />
+                      </div>                      
+                  </div>
+                  <h3> <FormattedMessage id="ListingPage.bikeSizeTitle" /></h3>
                        <SectionBikeSize
                          className={css.bikeSize}
                           options={bikeSizeConfig}
                           selectedOptions={publicData.bikeSize}
                       />
-                  </div> <hr />
-                    <h3> <FormattedMessage id="ListingPage.BookingTitle" /></h3> 
-                    <SectionBooking
-                     className={css.sectionBooking}
-                      listing={currentListing}
-                      isOwnListing={isOwnListing}
-                      isClosed={isClosed}
-                      isBook={isBook}
-                      unitType={unitType}
-                      price={price}
-                      formattedPrice={formattedPrice}
-                      priceTitle={priceTitle}
-                      handleBookingSubmit={handleBookingSubmit}
-                      richTitle={richTitle}
-                      authorDisplayName={authorDisplayName}
-                      handleBookButtonClick={handleBookButtonClick}
-                      handleMobileBookModalClose={handleMobileBookModalClose}
-                      onManageDisableScrolling={onManageDisableScrolling}
-                    /> <hr/>              
+                  <div className={css.borderTopBottom}> 
+                      <SectionBooking
+                      className={css.sectionBooking}
+                        listing={currentListing}
+                        isOwnListing={isOwnListing}
+                        isClosed={isClosed}
+                        isBook={isBook}
+                        unitType={unitType}
+                        price={price}
+                        formattedPrice={formattedPrice}
+                        priceTitle={priceTitle}
+                        handleBookingSubmit={handleBookingSubmit}
+                        richTitle={richTitle}
+                        authorDisplayName={authorDisplayName}
+                        handleBookButtonClick={handleBookButtonClick}
+                        handleMobileBookModalClose={handleMobileBookModalClose}
+                        onManageDisableScrolling={onManageDisableScrolling}
+                      /> <br/>
+                    </div>             
                 </div>
               </div>
                   
                 <div className={css.gridMarginTop}>
                   <div className="ui stackable sixteen column grid">             
-                    <div className="nine wide column">
-                      <div className={css.SectionHeadingNew}>
-                          <h2> <FormattedMessage id="ListingPage.descriptionTitle" /> <span className={css.richTitleFormat}> {richTitle} :</span></h2>
-                      
-                      </div>
+                    <div className="nine wide column">                      
                      <div>
-                       <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresDescription" /></h3>
-                       <SectionRulesMaybe publicData={publicData} />
+                       <h3 className={css.richTitleFormat}> 
+                          <FormattedMessage id="ListingPage.featuresDescription" />
+                        </h3>
+                           <SectionRulesMaybe publicData={publicData} />
+                        <div>
+                          <h3 className={css.richTitleFormat}> 
+                            <FormattedMessage id="ListingPage.featuresTitle" />
+                          </h3>
+                          <SectionFeatures
+                              options={amenitiesConfig}
+                              selectedOptions={publicData.amenities}
+                            />
+                        </div>                        
                       </div>
-                     
-                    
                     </div>
                      <div className="seven wide column">
                        <SectionHost
@@ -515,60 +519,49 @@ export class ListingPageComponent extends Component {
                           currentUser={currentUser}
                           onManageDisableScrolling={onManageDisableScrolling}
                         /> 
+                        <SectionMapMaybe
+                          geolocation={geolocation}
+                          publicData={publicData}
+                          listingId={currentListing.id}
+                        /> 
                     </div>
                   </div>
                 </div>
               <div className={css.gridMarginTop}>
-              <div className="ui stackable sixteen column grid">             
-                <div className="nine wide column">
-                  <div>
-                   <h3 className={css.richTitleFormat}> <FormattedMessage id="ListingPage.featuresTitle" /></h3>
-                     <SectionFeatures
-                        options={amenitiesConfig}
-                        selectedOptions={publicData.amenities}
-                      />
-                  </div>
-                  
-                  <div className={css.SectionLikeCounter}>
-                  <ul className={css.UnOrderdedListCounter}>
-                  <li className={css.ListCounter}>
-                    <SectionLikeCounter />
-                    </li>
-                    <li className={css.ListCounter}>
-                    <button className={css.fbShareBtn}>
-                      <FacebookShareButton
-                        url={shareUrl}
-                        quote={schemaTitle}
-                        >  <i className="facebook icon"></i>
-                        Share
-                      </FacebookShareButton>
-                    </button>
-                     </li>
-                    <li className={css.ListCounter}>
-                    <button className={css.twitterShareBtn}>
-                      <TwitterShareButton
-                        url={shareUrl}
-                        title={schemaTitle}
-                        >
-                          <i className="twitter icon"></i>Tweet
-                      </TwitterShareButton> 
-                    </button>
-                    </li>
-                    </ul>
-                  </div> 
-                  
-                  <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
-                </div>  
-                <div className="seven wide column">
-                  <SectionMapMaybe
-                    geolocation={geolocation}
-                    publicData={publicData}
-                    listingId={currentListing.id}
-                  /> 
+                <div className="ui stackable sixteen column grid">             
+                  <div className="sixteen wide column">
+                    <div className={css.SectionLikeCounter}>
+                      <ul className={css.UnOrderdedListCounter}>
+                        <li className={css.ListCounter}>
+                          <SectionLikeCounter />
+                        </li>
+                        <li className={css.ListCounter}>
+                          <button className={css.fbShareBtn}>
+                            <FacebookShareButton
+                              url={shareUrl}
+                              quote={schemaTitle}
+                              >  <i className="facebook icon"></i>
+                              Share
+                            </FacebookShareButton>
+                          </button>
+                        </li>
+                        <li className={css.ListCounter}>
+                          <button className={css.twitterShareBtn}>
+                            <TwitterShareButton
+                              url={shareUrl}
+                              title={schemaTitle}
+                              >
+                                <i className="twitter icon"></i>Tweet
+                            </TwitterShareButton> 
+                          </button>
+                        </li>
+                        </ul>
+                    </div> 
+                    <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
+                  </div>                  
                 </div>
               </div>
-              </div>
-          </div>
+            </div>
           </LayoutWrapperMain>
           <LayoutWrapperFooter>
             <Footer />

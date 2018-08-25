@@ -32,3 +32,7 @@ export { default as TransactionPage } from './TransactionPage/TransactionPage';
 
 export { default as MerchantPage } from './MerchantPage/MerchantPage';
 
+
+export { default as AddServicePage } from './AddServicePage/AddServicePage';
+
+

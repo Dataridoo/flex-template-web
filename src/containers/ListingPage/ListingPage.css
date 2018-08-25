@@ -5,7 +5,7 @@
   @apply --marketplaceH4FontStyles;
 }
 .SectionTitle{ 
-  background-color:lightblue;
+  background-color:#00aced;  
 }
 
 .twitterShareBtn{
@@ -41,10 +41,10 @@
 .gridMarginTop{
   margin-top: 0;
   padding-top: 0;
+  line-height: normal;
 }
 .authorNameLinkHeader{
-  color: white;
-  padding-bottom: 20px;
+  color: black;
 }
 .authorNameLinkSidebar{
   color: dodgerblue;
@@ -54,8 +54,7 @@
 .SectionTitleHeader {
   margin-left: 50px;
   @apply --marketplaceH2FontStyles;
-  padding-top: 10px;
-  color: white;
+  padding: 10px;
 
 }
 .SectionTitleRentals{
@@ -81,14 +80,21 @@
 
 
 .formatedPrice {  
-   padding-top: 0;
-  margin-top: 0;
-  
+  width: 120px;
+  height: 30px;
+    
+}
+.formatedPriceDescription{
+  width: 60px;
+  height: 30px;
+  float: left;
 }
 
 .formatedPriceUnit{ 
   color: darkgray;
   size: 14px;
+  margin-left: 70px;
+  height: 30px;
  }
 
 
@@ -115,28 +121,8 @@
   }
 
   @media (--viewportLarge) {
-   
+    padding: 36px 36px 0 36px;
   }
-}
-.mainDiv { 
-  width: 300px;
-  margin-left: 0;
-  margin-right: 30px;
-  margin-bottom: 5px;
-  height: 120px;
-}
-.avatarContainer    {
-  width: 70px;
-  height: 120px;
-  float: left;
-}
-
-.avatarTitle {
-  margin-left: 100px;
-  width: 230px;
-  height: 120px;
-  color: dodgerblue;
-  @apply --marketplaceH3FontStyles;
 }
 .bookingSection{
   padding-left: 0;
@@ -146,7 +132,7 @@
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
   position: relative; /* allow positioning own listing action bar */
-  padding-bottom:66.66%; /* 3:2 Aspect Ratio */
+  padding-bottom:66.6667%; /* 3:2 Aspect Ratio */
   background-color: var(--matterColorNegative); /* Loading BG color */
 
   /* Image carousel can be opened from the image, therefore we should show a pointer */
@@ -480,14 +466,13 @@
 
   @media (--viewportMedium) {
     padding: 0;
-    font-size: 16px;
-   
+    font-size: 16px;   
   }
 }
 
 
 .richTitleFormat{
-  color:dodgerblue;
+  color:black;
 }
 .descriptionTitleHeader{
   /* Font */
@@ -668,7 +653,7 @@
 
 .map {
   /* Dimensions: Map takes all available space from viewport (excludes action button and section title) */
-  height: 300px;
+  height: 250px;
   width: 100%;
   background-color: #eee;
 
@@ -677,7 +662,7 @@
   }
 
   @media (--viewportLarge) {
-    height: 350px;
+    height: 300px;
   }
 }
 
@@ -882,4 +867,18 @@
   /* use break-word if available */
   word-break: break-word;
   hyphens: auto;
+}
+
+.borderTopBottom{
+  
+
+  
+  @media (--viewportMedium) {
+   
+  }
+
+  @media (--viewportLarge) {
+    border-bottom: 2px solid grey;
+    border-top: 2px solid grey;
+  }
 }

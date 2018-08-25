@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   AboutPage,
+  AddServicePage,
   AuthenticationPage,
   BlogPage,
   CheckoutPage,
@@ -56,7 +57,12 @@ const routeConfiguration = () => {
       name: 'LandingPage',
       component: props => <LandingPage {...props} />,
     },
-   
+    {
+      path: '/add',
+      name: 'AddServicePage',
+      component: props => <AddServicePage {...props} />,
+    },
+    
     {
       path: '/guide',
       name: 'GuidedToursPage',
