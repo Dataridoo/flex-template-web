@@ -220,8 +220,8 @@
   "EditListingPoliciesForm.weightPlaceholder": "Describe your bike's weight",
   
   "EditListingPoliciesForm.updateFailed": "Failed to update listing. Please try again.",
-  "EditListingPoliciesPanel.createListingTitle": "Set some rules for the bike.",
-  "EditListingPoliciesPanel.title": "Edit the components of {listingTitle}",
+  "EditListingBikeSpecificationsPanel.createListingTitle": "Set specifications for the bike.",
+  "EditListingBikeSpecificationsPanel.title": "Edit the components of {listingTitle}",
   "EditListingPricingForm.priceInputPlaceholder": "Set your price…",
   "EditListingPricingForm.pricePerUnit": "Price per day in euros",
   "EditListingPricingForm.priceRequired": "You need to add a valid price.",

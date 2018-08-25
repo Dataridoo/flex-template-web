@@ -38,7 +38,7 @@ import SectionImages from './SectionImages';
 import SectionHeading from './SectionHeading';
 import SectionReviews from './SectionReviews';
 import SectionHost from './SectionHost';
-import SectionRulesMaybe from './SectionRulesMaybe';
+import SectionBikeSpecifications from './SectionBikeSpecifications';
 import SectionMapMaybe from './SectionMapMaybe';
 import SectionFeatures from './SectionFeatures';
 import SectionBooking from './SectionBooking';
@@ -493,7 +493,7 @@ export class ListingPageComponent extends Component {
                        <h3 className={css.richTitleFormat}> 
                           <FormattedMessage id="ListingPage.featuresDescription" />
                         </h3>
-                           <SectionRulesMaybe publicData={publicData} />
+                           <SectionBikeSpecifications publicData={publicData} />
                         <div>
                           <h3 className={css.richTitleFormat}> 
                             <FormattedMessage id="ListingPage.featuresTitle" />

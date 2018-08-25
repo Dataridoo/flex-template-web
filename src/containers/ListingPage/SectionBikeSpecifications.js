@@ -2,12 +2,12 @@ import React from 'react';
 import { shape, string } from 'prop-types';
 import classNames from 'classnames';
 
-import css from './SectionRulesMaybe.css';
+import css from './SectionBikeSpecifications.css';
 
-const SectionRulesMaybe = props => {
+const SectionBikeSpecifications = props => {
   const { className, rootClassName, publicData } = props;
   const classes = classNames(rootClassName || css.root, className);
-  return publicData.frame && publicData.fork && publicData.drivetrain && publicData.components && publicData.accessories && publicData.wheelset && publicData.size && publicData.weight ? (
+  return publicData.frame && publicData.fork && publicData.drivetrain && publicData.components && publicData.accessories && publicData.wheelset && publicData.weight ? (
     <div className={classes}>
       <p className={css.rules}><strong>Frame: </strong>{publicData.frame}</p>
       <p className={css.rules}><strong>Fork: </strong>{publicData.fork}</p>
@@ -15,15 +15,14 @@ const SectionRulesMaybe = props => {
       <p className={css.rules}><strong>Components: </strong>{publicData.components}</p>
       <p className={css.rules}><strong>wheelset: </strong>{publicData.wheelset}</p>
       <p className={css.rules}><strong>Accessories: </strong>{publicData.accessories}</p>
-      <p className={css.rules}><strong>Size: </strong>{publicData.size}</p>
       <p className={css.rules}><strong>Weight: </strong>{publicData.weight}</p>
     </div>
   ) : null;
 };
 
-SectionRulesMaybe.defaultProps = { className: null, rootClassName: null };
+SectionBikeSpecifications.defaultProps = { className: null, rootClassName: null };
 
-SectionRulesMaybe.propTypes = {
+SectionBikeSpecifications.propTypes = {
   className: string,
   rootClassName: string,
   publicData: shape({
@@ -38,4 +37,4 @@ SectionRulesMaybe.propTypes = {
   }).isRequired,
 };
 
-export default SectionRulesMaybe;
+export default SectionBikeSpecifications;

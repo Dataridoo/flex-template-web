@@ -9,7 +9,7 @@ import {
   EditListingLocationPanel,
   EditListingPhotosPanel,
   EditListingFeaturesPanel,
-  EditListingPoliciesPanel,
+  EditListingBikeSpecificationsPanel,
   EditListingBikeSizePanel,
   EditListingPricingPanel,
 } from '../../components';
@@ -127,7 +127,7 @@ const EditListingWizardTab = props => {
         ? 'EditListingWizard.saveNewPolicies'
         : 'EditListingWizard.saveEditPolicies';
       return (
-        <EditListingPoliciesPanel
+        <EditListingBikeSpecificationsPanel
           {...panelProps(POLICY)}
           submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
           onSubmit={values => {

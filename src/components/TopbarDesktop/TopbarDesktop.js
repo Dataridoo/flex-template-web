@@ -221,7 +221,7 @@ const TopbarDesktop = props => {
       {guidedToursPage}
      
       {aboutPage}
-      {merchantPage}
+     
      
       {search}
       {addBike}

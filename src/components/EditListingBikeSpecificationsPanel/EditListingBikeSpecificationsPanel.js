@@ -6,9 +6,9 @@ import { ensureOwnListing } from '../../util/data';
 import { ListingLink } from '../../components';
 import { EditListingPoliciesForm } from '../../forms';
 
-import css from './EditListingPoliciesPanel.css';
+import css from './EditListingBikeSpecificationsPanel.css';
 
-const EditListingPoliciesPanel = props => {
+const EditListingBikeSpecificationsPanel = props => {
   const {
     className,
     rootClassName,
@@ -27,11 +27,11 @@ const EditListingPoliciesPanel = props => {
 
   const panelTitle = currentListing.id ? (
     <FormattedMessage
-      id="EditListingPoliciesPanel.title"
+      id="EditListingBikeSpecificationsPanel.title"
       values={{ listingTitle: <ListingLink listing={listing} /> }}
     />
   ) : (
-    <FormattedMessage id="EditListingPoliciesPanel.createListingTitle" />
+    <FormattedMessage id="EditListingBikeSpecificationsPanel.createListingTitle" />
   );
 
   return (
@@ -43,7 +43,7 @@ const EditListingPoliciesPanel = props => {
         initialValues={{ 
                       frame: publicData.frame, 
                       fork: publicData.fork, 
-                      drivetrain: publicData.drivetain, 
+                      drivetrain: publicData.drivetrain, 
                       components: publicData.components, 
                       accessories: publicData.accessories,
                       weight: publicData.weight,
@@ -76,13 +76,13 @@ const EditListingPoliciesPanel = props => {
 
 const { func, object, string, bool } = PropTypes;
 
-EditListingPoliciesPanel.defaultProps = {
+EditListingBikeSpecificationsPanel.defaultProps = {
   className: null,
   rootClassName: null,
   listing: null,
 };
 
-EditListingPoliciesPanel.propTypes = {
+EditListingBikeSpecificationsPanel.propTypes = {
   className: string,
   rootClassName: string,
 
@@ -97,4 +97,4 @@ EditListingPoliciesPanel.propTypes = {
   errors: object.isRequired,
 };
 
-export default EditListingPoliciesPanel;
+export default EditListingBikeSpecificationsPanel;

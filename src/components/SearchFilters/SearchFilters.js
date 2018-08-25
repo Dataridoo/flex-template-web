@@ -25,7 +25,10 @@ const initialValue = (queryParams, paramName) => {
 const initialValues = (queryParams, paramName) => {
   return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
 };
-
+// resolve initial values for a multi value filter
+const initialBikeValues = (queryParams, paramName) => {
+  return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
+};
 
 const SearchFiltersComponent = props => {
   const {
@@ -109,9 +112,8 @@ const SearchFiltersComponent = props => {
     id: 'SearchFilters.bikeSizeLabel',
   });
 
- const initialBikeSize = initialValues(urlQueryParams, bikeSizeFilter.paramName);
- 
-
+ const initialBikeSize = initialBikeValues(urlQueryParams, bikeSizeFilter.paramName);
+  
 
  
   const bikeSizeFilterFilterElement = bikeSizeFilter ? (
@@ -122,7 +124,7 @@ const SearchFiltersComponent = props => {
       label={bikeSizeLabel}
       onSelect={handleSelectOptions}
       options={bikeSizeFilter.options}
-      initialValues={initialBikeSize}
+      initialBikeValues={initialBikeSize}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
   ) : null;

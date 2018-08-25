@@ -26,8 +26,8 @@ export {
 } from './EditListingLocationPanel/EditListingLocationPanel';
 export { default as EditListingPhotosPanel } from './EditListingPhotosPanel/EditListingPhotosPanel';
 export {
-  default as EditListingPoliciesPanel,
-} from './EditListingPoliciesPanel/EditListingPoliciesPanel';
+  default as EditListingBikeSpecificationsPanel,
+} from './EditListingBikeSpecificationsPanel/EditListingBikeSpecificationsPanel';
 
 export {
   default as EditListingPricingPanel,
