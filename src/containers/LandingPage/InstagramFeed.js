@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import Instafeed from 'react-instafeed';
 

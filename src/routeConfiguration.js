@@ -9,6 +9,7 @@ import {
   ContactUsPage,
   EditListingPage,
   EmailVerificationPage,
+  EventsPage,
   GuidedToursPage,
   InboxPage,
   LandingPage,
@@ -45,7 +46,6 @@ export const ACCOUNT_SETTINGS_PAGES = [
 const draftId = '00000000-0000-0000-0000-000000000000';
 const draftSlug = 'draft';
 
-
 const RedirectToLandingPage = () => <NamedRedirect name="LandingPage" />;
 
 // Our routes are exact by default.
@@ -69,7 +69,12 @@ const routeConfiguration = () => {
       component: props => <GuidedToursPage {...props} tab="listings" />,
       loadData: GuidedToursPage.loadData,
     },
-    
+    {
+      path: '/event',
+      name: 'EventsPage',
+      component: EventsPage,
+    },
+   
     {
       path: '/about',
       name: 'AboutPage',
@@ -133,7 +138,13 @@ const routeConfiguration = () => {
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
     }, 
-   
+    {
+      path: '/l/:slug/:id/checkout',
+      name: 'CheckoutPage',
+      auth: true,
+      component: props => <CheckoutPage {...props} />,
+      setInitialValues: CheckoutPage.setInitialValues,
+    },
     {
       path: '/l/:slug/:id/:variant',
       name: 'ListingPageVariant',
@@ -141,13 +152,6 @@ const routeConfiguration = () => {
       authPage: 'LoginPage',
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
-    },
-    {
-      path: '/l/:slug/:id/checkout',
-      name: 'CheckoutPage',
-      auth: true,
-      component: props => <CheckoutPage {...props} />,
-      setInitialValues: CheckoutPage.setInitialValues,
     },
     {
       path: '/l/new',
@@ -160,7 +164,6 @@ const routeConfiguration = () => {
         />
       ),
     },
-   
     {
       path: '/l/:slug/:id/:type/:tab',
       name: 'EditListingPage',
@@ -177,7 +180,6 @@ const routeConfiguration = () => {
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
     },
-    
     {
       path: '/u',
       name: 'ProfileBasePage',
