@@ -32,11 +32,3 @@ export { default as TopbarSearchForm } from './TopbarSearchForm/TopbarSearchForm
 export { default as EditListingBikeSizeForm } from './EditListingBikeSizeForm/EditListingBikeSizeForm';
 
 
-export { default as EditEventTypeForm } from './EditEventTypeForm/EditEventTypeForm';
-
-
-
-
-export { default as EditEventProgramForm } from './EditEventProgramForm/EditEventProgramForm';
-
-export { default as EditEventDescriptionForm } from './EditEventDescriptionForm/EditEventDescriptionForm';

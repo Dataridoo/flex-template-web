@@ -8,9 +8,7 @@ import {
   ContactDetailsPage,
   ContactUsPage,
   EditListingPage,
-  EditEventsPage,
   EmailVerificationPage,
-  EventsPage,
   GuidedToursPage,
   InboxPage,
   LandingPage,
@@ -135,18 +133,6 @@ const routeConfiguration = () => {
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
     }, 
-    {
-      path: '/event',
-      name: 'EventsPage',
-      component: EventsPage,
-    },
-   
-    {
-      path: '/event/:slug/:id',
-      name: 'EventsPage',
-      component: props => <EventsPage {...props} />,
-      loadData: EventsPage.loadData,
-    }, 
    
     {
       path: '/l/:slug/:id/:variant',
@@ -155,14 +141,6 @@ const routeConfiguration = () => {
       authPage: 'LoginPage',
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
-    },
-    {
-      path: '/event/:slug/:id/:variant',
-      name: 'EventsPageVariant',
-      auth: true,
-      authPage: 'LoginPage',
-      component: props => <EventsPage {...props} />,
-      loadData: EventsPage.loadData,
     },
     {
       path: '/l/:slug/:id/checkout',
@@ -182,24 +160,7 @@ const routeConfiguration = () => {
         />
       ),
     },
-    {
-      path: '/event/new',
-      name: 'NewEventsPage',
-      auth: true,
-      component: () => (
-        <NamedRedirect
-          name="EditEventsPage"
-          params={{ slug: draftSlug, id: draftId, type: 'new', tab: 'description' }}
-        />
-      ),
-    },
-    {
-      path: '/event/:slug/:id/:type/:tab',
-      name: 'EditEventsPage',
-      auth: true,
-      component: props => <EditEventsPage {...props} />,
-      loadData: EditEventsPage.loadData,
-    },
+   
     {
       path: '/l/:slug/:id/:type/:tab',
       name: 'EditListingPage',
@@ -216,12 +177,7 @@ const routeConfiguration = () => {
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
     },
-    {
-      path: '/event/:id',
-      name: 'EventsPageCanonical',
-      component: props => <EventsPage {...props} />,
-      loadData: EventsPage.loadData,
-    },
+    
     {
       path: '/u',
       name: 'ProfileBasePage',
