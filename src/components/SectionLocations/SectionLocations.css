@@ -71,4 +71,5 @@
   height: 100%;
   border-radius: 4px;
   object-fit: cover;
+  padding-bottom: 20px;
 }

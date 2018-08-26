@@ -80,22 +80,7 @@ class MainPanel extends Component {
           {...searchFiltersPanelProps}
           {...primaryFilters}
         />
-        <SearchFiltersMobile
-          className={css.searchFiltersMobile}
-          urlQueryParams={urlQueryParams}
-          listingsAreLoaded={listingsAreLoaded}
-          searchInProgress={searchInProgress}
-          searchListingsError={searchListingsError}
-          showAsModalMaxWidth={showAsModalMaxWidth}
-          onMapIconClick={onMapIconClick}
-          onManageDisableScrolling={onManageDisableScrolling}
-          onOpenModal={onOpenModal}
-          onCloseModal={onCloseModal}
-          filterParamNames={filterParamNames}
-          selectedFiltersCount={selectedFiltersCount}
-          {...primaryFilters}
-          {...secondaryFilters}
-        />
+        
         {isSearchFiltersPanelOpen ? (
           <div 
           className={classNames(css.searchFiltersPanel)}

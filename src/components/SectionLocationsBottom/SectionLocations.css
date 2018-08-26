@@ -58,6 +58,8 @@
   @media (--viewportMedium) {
     padding-bottom: calc(3 / 2 * 100%); /* 3:2 Aspect Ratio */
   }
+ 
+  
 }
 
 .locationImage {
@@ -71,4 +73,6 @@
   height: 100%;
   border-radius: 4px;
   object-fit: cover;
+  padding-bottom: 20px;
+   
 }

@@ -121,6 +121,7 @@ class SearchFiltersMobileComponent extends Component {
       selectedFiltersCount,
       categoryFilter,
       amenitiesFilter,
+      bikeSizeFilter,
       intl,
     } = this.props;
 
@@ -167,8 +168,10 @@ class SearchFiltersMobileComponent extends Component {
     ) : null;
 
     const amenitiesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.amenitiesLabel' });
+    const bikeSizeLabel = intl.formatMessage({ id: 'SearchFiltersMobile.bikeSizeLabel' });
 
     const initialAmenities = this.initialValues(amenitiesFilter.paramName);
+    const initialBikeSize = this.initialValues(bikeSizeFilter.paramName);
 
     const amenitiesFilterElement = amenitiesFilter ? (
       <SelectMultipleFilterPlain
@@ -181,6 +184,19 @@ class SearchFiltersMobileComponent extends Component {
         initialValues={initialAmenities}
       />
     ) : null;
+
+    const bikeSizeFilterElement = bikeSizeFilter ? (
+      <SelectMultipleFilterPlain
+        id="SearchFiltersMobile.bikeSizeFilter"
+        name="bikeSize"
+        urlParam={bikeSizeFilter.paramName}
+        label={bikeSizeLabel}
+        onSelect={this.handleSelectMultiple}
+        options={bikeSizeFilter.options}
+        initialValues={initialBikeSize}
+      />
+    ) : null;
+
 
     return (
       <div className={classes}>
@@ -213,6 +229,7 @@ class SearchFiltersMobileComponent extends Component {
           <div className={css.filtersWrapper}>
             {categoryFilterElement}
             {amenitiesFilterElement}
+            {bikeSizeFilterElement}
           </div>
           <div className={css.showListingsContainer}>
             <Button className={css.showListingsButton} onClick={this.closeFilters}>
@@ -234,6 +251,7 @@ SearchFiltersMobileComponent.defaultProps = {
   filterParamNames: [],
   categoryFilter: null,
   amenitiesFilter: null,
+  bikeSizeFilter: null,
 };
 
 SearchFiltersMobileComponent.propTypes = {
@@ -252,6 +270,7 @@ SearchFiltersMobileComponent.propTypes = {
   filterParamNames: array,
   categoriesFilter: propTypes.filterConfig,
   amenitiesFilter: propTypes.filterConfig,
+  bikeSizeFilter: propTypes.filterConfig,
 
   // from injectIntl
   intl: intlShape.isRequired,

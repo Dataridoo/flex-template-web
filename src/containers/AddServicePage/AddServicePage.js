@@ -89,6 +89,7 @@ const AddServicePage = () => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
         <div className={css.PromotionMargin}>
+          <div className={css.addServicesTitle}><h1 className={css.addServiceHeader}>SELECT SERVICE</h1></div>
           <div className={css.locations}>
             {addBikeRentals(
               '',
