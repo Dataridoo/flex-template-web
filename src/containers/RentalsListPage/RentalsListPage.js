@@ -242,8 +242,7 @@ export class SearchPageComponent extends Component {
          <LayoutWrapperMain>
             <div className={css.heroContainer}>
               <img src={rentalsImage} alt="rentals" />
-              
-            </div>   
+            
        
           
             <div className="ui stackable grid">              
@@ -301,6 +300,7 @@ export class SearchPageComponent extends Component {
                 </div>
               </div>
             </div>
+            </div>  
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
          

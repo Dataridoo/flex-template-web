@@ -171,6 +171,7 @@ const TopbarMobileMenu = props => {
         
        <AvatarLarge className={css.avatar} user={currentUser} />
       <div className={css.content}>
+        
         <span className={css.greeting}>
           <FormattedMessage id="TopbarMobileMenu.greeting" values={{ displayName }} />
         </span>

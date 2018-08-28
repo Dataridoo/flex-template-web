@@ -13,6 +13,7 @@
 
 .location {
   width: 100%;
+  margin-bottom: 20px;
   
 
   /* Remove link's hover effect */
@@ -22,13 +23,14 @@
 
   @media (--viewportMedium) {
     margin-top: 0;
+    margin-bottom: 20px;
   }
 }
 
 .location {
   @media (--viewportMedium) {
     margin-right: 30px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -53,13 +55,11 @@
 
 /* An image wrapper that defines the images aspect ratio */
 .aspectWrapper {
-  padding-bottom: calc(6 / 4 * 100%); /* 13:6 Aspect Ratio */
+  padding-bottom: calc(6 / 13 * 100%); /* 13:6 Aspect Ratio */
 
   @media (--viewportMedium) {
-    padding-bottom: calc(3 / 2 * 100%); /* 3:2 Aspect Ratio */
+    padding-bottom: calc(2 / 3 * 100%); /* 3:2 Aspect Ratio */
   }
- 
-  
 }
 
 .locationImage {
@@ -73,6 +73,5 @@
   height: 100%;
   border-radius: 4px;
   object-fit: cover;
-  padding-bottom: 20px;
    
 }

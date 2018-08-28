@@ -92,17 +92,16 @@
   
 }
 .MainSearchContainer{
-  margin-right: 30px;
-   margin-left: 30px;
- 
+  margin-top: 20px;
 
   @media (--viewportMedium) {
-   margin-top: 20px;
+  
+   
   
   }
 
   @media (--viewportLarge) {
-    margin-top: -50px;
+   
      
   }
 }

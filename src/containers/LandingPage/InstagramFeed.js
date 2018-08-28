@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import Instafeed from 'react-instafeed';
+import css from './LandingPage.css';
 
 const instafeedTarget = 'instafeed';
-const template = `<div class="ui stackable four column grid">
-                    <div class="column">
-                      <div class="ui fluid card">           
-                        <div class="image">
-                          <a href='{{link}}' target='_blank' class='instafeed__item'>
-                            <img src='{{image}}' />
-                          </a>
-                        </div>
-                      </div>
+const template = `<div class=${css.mainContainer}
+                    <div class="image">
+                      <a href='{{link}}' target='_blank' class='instafeed__item'>
+                         <img src='{{image}}' class=${css.ImageSize} />
+                      </a>
                     </div>
-                  </div> `;
+                  </div>`;
 
   class InstagramFeed extends Component {
 

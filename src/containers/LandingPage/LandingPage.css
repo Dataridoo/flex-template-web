@@ -29,7 +29,8 @@
 }
 .highlights{  
   text-align: center;
-  color:rgb(0, 89, 255);
+  color:dodgerblue;
+  padding-top: 10px;
  
 }
 .recently {
@@ -176,3 +177,22 @@
 .sectionLocationBackground{
   background-color:whitesmoke;
 }
+
+.ImageSize{
+   max-width: 300px;
+   max-height: 250px;
+   padding-right: 30px;
+   padding-bottom: 30px;
+   float: left;
+   
+   @media (--viewportMedium) {
+   
+  }
+
+  @media (--viewportLarge) {
+   
+    
+  }
+}
+
+

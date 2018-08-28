@@ -63,15 +63,20 @@ export const LandingPageComponent = props => {
         <LayoutWrapperMain>
           <div className={css.heroContainer}>           
             <img src={rentals} alt="rentals"/>
-            <h2 className={css.heroMainTitle}>
+            <h1 className={css.heroMainTitle}>
               <FormattedMessage id="SectionHero.title" />
-            </h2> 
+            </h1> 
           </div> <br />
-          <SectionTopLinks />
+          
+          <div className={css.sections}>               
+              <div className={css.sectionContent}>              
+                <SectionTopLinks />
+              </div>
+            </div>
            
           <div className={css.sectionLocationBackground}>                 
             <ul className={css.sections}>
-                <h1 className={css.highlights}>Highlights</h1>
+                <h1 className={css.highlights}><FormattedMessage id="SectionHero.highlights" /></h1>
                 <li className={css.section}>
                   <div className={css.sectionContent}>              
                     <SectionLocations /> 
@@ -81,7 +86,9 @@ export const LandingPageComponent = props => {
           </div> 
          
           <ul className={css.sections}>
-            <h1 className={css.highlights}>Explore categories</h1>
+            <h1 className={css.highlights}>
+              <FormattedMessage id= "SectionHero.explorCategory" />
+            </h1>
             <li className={css.section}>
               <div className={css.sectionContent}>
                 <SectionLocationCenter />
@@ -101,9 +108,15 @@ export const LandingPageComponent = props => {
               </div>
             </li>
           </ul>
-          <div id ="instafeedTarget">
-           <InstagramFeed />  
-          </div>
+          <ul className={css.sections}>
+          <li className={css.section}>
+            <div className={css.sectionContent}>
+              <div id ="instafeedTarget">
+                 <InstagramFeed />  
+                </div>
+            </div>
+          </li>
+        </ul>
          
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
