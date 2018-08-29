@@ -116,11 +116,7 @@ export { default as ReviewRating } from './ReviewRating/ReviewRating';
 export { default as Reviews } from './Reviews/Reviews';
 export { default as SearchFilters } from './SearchFilters/SearchFilters';
 
-export { default as SearchFiltersBrand } from './SearchFiltersBrand/SearchFiltersBrand';
 
-export { default as SearchFiltersFineSetUp } from './SearchFiltersFineSetUp/SearchFiltersFineSetUp';
-
-export { default as SearchFiltersCategory } from './SearchFiltersCategory/SearchFiltersCategory';
 export { default as SearchFiltersMobile } from './SearchFiltersMobile/SearchFiltersMobile';
 export { default as SearchFiltersPanel } from './SearchFiltersPanel/SearchFiltersPanel';
 export { default as SearchMap } from './SearchMap/SearchMap';
@@ -161,4 +157,16 @@ export { default as UserNav } from './UserNav/UserNav';
 export { default as ValidationError } from './ValidationError/ValidationError';
 export { default as RangeSlider } from './RangeSlider/RangeSlider';
 export { default as FollowUsPage } from './FollowUsPage/FollowUsPage';
+
+export { default as EditEventListingWizard } from './EditEventListingWizard/EditEventListingWizard';
+
+
+
+
+export { default as EditEventTypePanel } from './EditEventTypePanel/EditEventTypePanel';
+
+export { default as EditEventProgramPanel } from './EditEventProgramPanel/EditEventProgramPanel';
+
+export { default as EditEventDescriptionPanel } from './EditEventDescriptionPanel/EditEventDescriptionPanel';
+
 

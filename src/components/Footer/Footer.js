@@ -12,7 +12,7 @@ import {
 } from '../../components';
 
 import youtube from './Images/youtube.jpg';
-import logo from './Images/logo.png';
+import logo from './Images/logo.jpg';
 
 import css from './Footer.css';
 

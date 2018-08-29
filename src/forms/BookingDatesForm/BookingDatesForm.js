@@ -9,7 +9,7 @@ import { required, bookingDatesRequired, composeValidators } from '../../util/va
 import { START_DATE, END_DATE } from '../../util/dates';
 import { propTypes } from '../../util/types';
 import config from '../../config';
-import { Form,PrimaryButton , FieldDateRangeInput } from '../../components';
+import { Form, PrimaryButton , FieldDateRangeInput } from '../../components';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
 import css from './BookingDatesForm.css';

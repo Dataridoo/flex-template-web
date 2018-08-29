@@ -23,7 +23,7 @@ import {
   removeListingImage,
   loadData,
   clearUpdatedTab,
-} from './EditListingPage.duck';
+} from './EditListingPageTwo.duck';
 
 import css from './EditListingPage.css';
 
@@ -130,8 +130,8 @@ export const EditListingPageComponent = props => {
           desktopClassName={css.desktopTopbar}
           mobileClassName={css.mobileTopbar}
         />
-        <EditListingWizard
-          id="EditListingWizard"
+        <EditEventListingWizard
+          id="EditEventListingWizard"
           className={css.wizard}
           params={params}
           disabled={disableForm}
@@ -253,10 +253,10 @@ const mapDispatchToProps = dispatch => ({
   onChange: () => dispatch(clearUpdatedTab()),
 });
 
-const EditListingPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(
+const EditListingPageTwo = compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(
   injectIntl(EditListingPageComponent)
 );
 
-EditListingPage.loadData = loadData;
+EditListingPageTwo.loadData = loadData;
 
-export default EditListingPage;
+export default EditListingPageTwo;

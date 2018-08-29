@@ -44,9 +44,6 @@ import {
   createSearchResultSchema,
 } from './RentalsListPage.helpers';
 import MainPanel from './MainPanel';
-//import MainPanelCategory from './MainPanelCategory';
-//import MainPanelBrand from './MainPanelBrand';
-//import MainPanelFineSetUp from './MainPanelFineSetUp';
 
 
 import rentalsImage from '../RentalsListPage/rentals.jpg';

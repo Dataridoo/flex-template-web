@@ -230,3 +230,12 @@ export const categories = [
   { key: 'Fatbikes', label: 'Fatbikes' },
   { key: 'Cargobikes', label: 'Cargobikes' },
 ];
+
+export const eventType = [
+  { key: 'OnedayEvent', label: 'One day event' },
+  { key: 'MultiDayEvent', label: 'Multi-day event' },
+  { key: 'RoadBikeEvent', label: 'Road bike event' },
+  { key: 'MtbEvent', label: 'Mtb event' },
+  { key: 'GravelBikeEvent', label: 'Gravel bike event' },
+];
+

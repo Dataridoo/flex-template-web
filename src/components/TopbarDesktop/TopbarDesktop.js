@@ -135,8 +135,8 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
   )
-/* 
-  const eventsPage = (
+
+  /* const eventsPage = (
     <NamedLink name="EventsPage" className={css.eventsPage}>
       <span className={css.events}>
         <FormattedMessage id="TopbarDesktop.events" />

@@ -4,8 +4,6 @@ export { default as EditListingDescriptionForm } from './EditListingDescriptionF
 export { default as EditListingFeaturesForm } from './EditListingFeaturesForm/EditListingFeaturesForm';
 
 
-
-export { default as EditListingFineSetUpForm } from './EditListingFineSetUpForm/EditListingFineSetUpForm';
 export { default as EditListingLocationForm } from './EditListingLocationForm/EditListingLocationForm';
 export { default as EditListingPhotosForm } from './EditListingPhotosForm/EditListingPhotosForm';
 export { default as EditListingPoliciesForm } from './EditListingPoliciesForm/EditListingPoliciesForm';
@@ -30,5 +28,14 @@ export { default as TopbarSearchForm } from './TopbarSearchForm/TopbarSearchForm
 
 
 export { default as EditListingBikeSizeForm } from './EditListingBikeSizeForm/EditListingBikeSizeForm';
+
+export { default as EditEventDescriptionForm } from './EditEventDescriptionForm/EditEventDescriptionForm';
+
+
+export { default as EditEventProgramForm } from './EditEventProgramForm/EditEventProgramForm';
+
+
+
+export { default as EditEventTypeForm } from './EditEventTypeForm/EditEventTypeForm';
 
 

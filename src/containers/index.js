@@ -36,3 +36,6 @@ export { default as MerchantPage } from './MerchantPage/MerchantPage';
 export { default as AddServicePage } from './AddServicePage/AddServicePage';
 
 
+export { default as EditEventsPage } from './EditEventsPage/EditEventsPage';
+
+export { default as EditListingPageTwo } from './EditListingPageTwo/EditListingPageTwo';

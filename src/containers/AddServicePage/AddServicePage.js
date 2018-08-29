@@ -14,10 +14,11 @@ import {
 } from '../../components';
 import css from './AddServicePage.css';
 
-import ImageOne from './images/bhc4.jpg';
-import ImageTwo from './images/bhc5.jpg';
-import ImageThree from './images/bhc6.jpg';
-import ImageFour from './images/bhc7.jpg';
+import ImageOne from './images/rentals.jpg';
+import ImageTwo from './images/guidedTours.jpg';
+import ImageThree from './images/events.jpg';
+import ImageFour from './images/accommodation.jpg';
+
 
 const addBikeRentals = (name, image, searchQuery) => {
   return (
@@ -46,7 +47,7 @@ const guidedTourPage = (name, image, searchQuery) => {
 
 const eventsPage = (name, image, searchQuery) => {
   return (
-    <NamedLink name="NewListingPage" to={{ search: searchQuery }} className={css.location}>
+    <NamedLink name="NewEventsListingPage" to={{ search: searchQuery }} className={css.location}>
       <div className={css.imageWrapper}>
         <div className={css.aspectWrapper}>
           <img src={image} alt={name} className={css.locationImage} />
@@ -55,6 +56,7 @@ const eventsPage = (name, image, searchQuery) => {
     </NamedLink>
   );
 };
+
 
 
 const accomodationPage = (name, image, searchQuery) => {
@@ -89,7 +91,10 @@ const AddServicePage = () => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
         <div className={css.PromotionMargin}>
-          <div className={css.addServicesTitle}><h1 className={css.addServiceHeader}>SELECT SERVICE</h1></div>
+          <div className={css.addServicesTitle}>
+            <h1 className={css.addServiceHeader}>SELECT SERVICE</h1>
+          </div>
+         
           <div className={css.locations}>
             {addBikeRentals(
               '',

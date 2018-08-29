@@ -10,7 +10,7 @@ import { LISTING_STATE_PENDING_APPROVAL, propTypes } from '../../util/types';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
 import { stripeAccountClearError, createStripeAccount } from '../../ducks/user.duck';
-import { EditListingWizard, EditEventListingWizard, NamedRedirect, Page } from '../../components';
+import { EditEventListingWizard, NamedRedirect, Page } from '../../components';
 import { TopbarContainer } from '../../containers';
 
 import {
@@ -23,9 +23,9 @@ import {
   removeListingImage,
   loadData,
   clearUpdatedTab,
-} from './EditListingPage.duck';
+} from './EditEventsPage.duck';
 
-import css from './EditListingPage.css';
+import css from './EditEventsPage.css';
 
 const { UUID } = sdkTypes;
 
@@ -130,7 +130,7 @@ export const EditListingPageComponent = props => {
           desktopClassName={css.desktopTopbar}
           mobileClassName={css.mobileTopbar}
         />
-        <EditListingWizard
+        <EditEventListingWizard
           id="EditListingWizard"
           className={css.wizard}
           params={params}
@@ -156,7 +156,6 @@ export const EditListingPageComponent = props => {
           updatedTab={page.updatedTab}
           updateInProgress={page.updateInProgress || page.createListingInProgress}
         />
-        
       </Page>
     );
   } else {
@@ -253,10 +252,10 @@ const mapDispatchToProps = dispatch => ({
   onChange: () => dispatch(clearUpdatedTab()),
 });
 
-const EditListingPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(
+const EditEventsPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(
   injectIntl(EditListingPageComponent)
 );
 
-EditListingPage.loadData = loadData;
+EditEventsPage.loadData = loadData;
 
-export default EditListingPage;
+export default EditEventsPage;

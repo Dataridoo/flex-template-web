@@ -1,0 +1,36 @@
+@import '../../marketplace.css';
+
+.root {
+  padding: 0 4px;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 22px;
+  @media (--viewportMedium) {
+    padding: 0;
+    margin-bottom: 22px;
+  }
+}
+
+.title {
+  /* Font */
+ 
+
+  margin-top: 0;
+  @media (--viewportMedium) {
+    margin-top: 0;
+  }
+}
+
+.rules {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  /* Preserve newlines, but collapse other whitespace */
+ 
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+     font-size: 14px;
+  }
+}
