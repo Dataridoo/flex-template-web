@@ -6,7 +6,7 @@ export { default as ContactDetailsPage } from './ContactDetailsPage/ContactDetai
 export { default as ContactUsPage } from './ContactUsPage/ContactUsPage';
 export { default as EditListingPage } from './EditListingPage/EditListingPage';
 export { default as EmailVerificationPage } from './EmailVerificationPage/EmailVerificationPage';
-export { default as EventsPage } from './EventsPage/EventsPage';
+
 export { default as GuidedToursPage } from './GuidedToursPage/GuidedToursPage';
 export { default as InboxPage } from './InboxPage/InboxPage';
 export { default as LandingPage } from './LandingPage/LandingPage';
@@ -38,4 +38,8 @@ export { default as AddServicePage } from './AddServicePage/AddServicePage';
 
 export { default as EditEventsPage } from './EditEventsPage/EditEventsPage';
 
-export { default as EditListingPageTwo } from './EditListingPageTwo/EditListingPageTwo';
+export { default as EventsListingPage } from './EventsListingPage/EventsListingPage';
+
+export { default as EventsSearchPage } from './EventsSearchPage/EventsSearchPage';
+
+export { default as ManageEventListingsPage } from './ManageEventListingsPage/ManageEventListingsPage';

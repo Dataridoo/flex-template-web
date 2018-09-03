@@ -1,11 +1,13 @@
 import React from 'react';
+import { PropertyGroup } from '../../components';
 import { richText } from '../../util/richText';
 
-import css from './ListingPage.css';
+import css from './BookingDatesForm.css';
+
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION = 20;
 
-const SectionDescription = props => {
+const SectionBikeSize = props => {
   const { description} = props;
   return (
     <div className={css.sectionDescription}>  
@@ -22,4 +24,5 @@ const SectionDescription = props => {
   );
 };
 
-export default SectionDescription;
+export default SectionBikeSize;
+

@@ -7,36 +7,32 @@ import css from './MerchantPage.css';
 class VideoPlayer extends Component {
   render() {
     return (
-
-      <div className={css.PromotionBackground}>       
-        <div className={css.PromotionMargin}>     
-          <div className="ui stackable grid"> 
-            <div className="sixteen wide column"> 
-              <div className={css.VideoCenter}>  
-                 <div className="ui fluid card">
-                   <div className="image">
-                        <ReactPlayer       
-                          url='https://www.youtube.com/watch?v=Fwkq6lqRW3w'
-                          className='react-player'
-                          playing 
-                          width="auto"       
-                        />
-                    </div>
-                     <div className="content"> 
-                        <div className="header">
-                            <span className={css.PromotionContent}>
-                                 <FormattedMessage id="MerchantPageVideoSection.VideoDescription" />
-                            </span>
-                        </div>
-                      </div>
+      <div className="container" > 
+        <div className={css.PromotionBackground}> 
+          <div className="row" >  
+            <div className="col-md-12"> 
+            <div className={css.VideoCenter}>         
+              <div className="card" > 
+                  <ReactPlayer       
+                    url='https://www.youtube.com/watch?v=Fwkq6lqRW3w'
+                    className='react-player'
+                    playing 
+                    width="auto"
+                       
+                  />
+                <div className="card-body" className={css.cardBody}>
+                  <h4 className="card-title">                   
+                    <span className={css.PromotionContent}>
+                      <FormattedMessage id="MerchantPageVideoSection.VideoDescription" />
+                  </span>
+                  </h4>                            
                   </div>
-              </div>                
+                  </div>
+                </div>     
+              </div>
             </div>
           </div>
-      </div>
-    </div>    
-        
-      
+        </div>      
     );
   }
 }

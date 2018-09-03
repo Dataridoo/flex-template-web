@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Reviews } from '../../components';
 
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
 const SectionReviews = props => {
   const { reviews, fetchReviewsError } = props;

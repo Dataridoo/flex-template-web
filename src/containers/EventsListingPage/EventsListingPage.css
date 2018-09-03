@@ -107,8 +107,6 @@
   margin: 24px;
 }
 
-.sectionImages {
-}
 
 .threeToTwoWrapper {
   /* Layout */
@@ -121,7 +119,7 @@
   }
 
   @media (--viewportLarge) {
-    padding: 36px 36px 0 36px;
+   
   }
 }
 .bookingSection{
@@ -147,9 +145,9 @@
   position: absolute;
   display: flex;
   justify-content: space-between;
-  top: 13px;
-  left: 13px;
-  width: calc(100% - 26px);
+  top: 3px;
+  right: 3px;
+  width: calc(30% - 26px);
   color: var(--matterColorNegative);
   background-color: var(--matterColor);
   z-index: 1; /* bring on top of mobile image */
@@ -187,7 +185,6 @@
 
 .editListingLink {
   @apply --marketplaceH4FontStyles;
-  flex-shrink: 0;
   margin: 0;
   padding: 14px 24px 11px 12px;
   color: var(--matterColorNegative);
@@ -201,7 +198,11 @@
 
   @media (--viewportMedium) {
     margin: 0;
-    padding: 25px 24px 22px 12px;
+    padding: 14px 24px 11px 12px;
+  }
+  @media (--viewportLarge) {
+    margin: 0;
+    padding: 14px 24px 11px 12px;
   }
 }
 
@@ -502,26 +503,6 @@
 }
 
 .sectionFeatures {
-  padding: 0 24px;
-  margin-bottom: 32px;
-
-  @media (--viewportMedium) {
-    padding: 0;
-    margin-bottom: 52px;
-  }
-}
-
-.featuresTitle {
-  /* Font */
-  @apply --marketplaceH4FontStyles;
-  color: var(--matterColorAnti);
-
-  margin-top: 0;
-  margin-bottom: 16px;
-  @media (--viewportMedium) {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
 }
 
 .description {
@@ -880,5 +861,31 @@
   @media (--viewportLarge) {
     border-bottom: 2px solid grey;
     border-top: 2px solid grey;
+  }
+}
+
+.PromotionBackground{
+  margin: 20px;
+  padding-bottom: 10px;
+}
+.highlights{  
+  text-align: left;
+  color:black;
+  padding-top: 10px;
+ 
+}
+
+.thumbnailHeader{
+  color: black;
+  font-size: 18px;
+  padding-bottom: 20px;
+  
+  padding-top: 10px;
+}
+
+.imageWrapper {  
+  &:hover {
+    transform: scale(1.01);
+   
   }
 }

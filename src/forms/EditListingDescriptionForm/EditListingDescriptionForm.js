@@ -63,7 +63,7 @@ const EditListingDescriptionFormComponent = props => (
 
       const errorMessage = updateError ? (
         <p className={css.error}>
-          <FormattedMessage id="EditListingDescriptionForm.updateFailed" />
+          <FormattedMessage id="EditEventDescriptionForm.updateFailed" />
         </p>
       ) : null;
 

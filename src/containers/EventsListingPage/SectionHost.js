@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { NamedLink, UserCard, Modal } from '../../components';
 import { EnquiryForm } from '../../forms';
 
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
 const SectionHost = props => {
   const {

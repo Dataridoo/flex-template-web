@@ -8,74 +8,62 @@ import {  propTypes } from '../../../util/types';
 
 import css from './SectionTop.css';
 
-import bhc2 from './images/bhc2.JPG';
-import bhc3 from './images/bhc3.JPG';
+import bhc2 from './images/bhc2.jpg';
+import bhc3 from './images/bhc3.jpg';
 
 
 class SectionTop extends Component {
   render(){ 
     const { reviews} = this.props;
-  return (
-    <div className={css.PromotionBackground}> 
-      <h1 className={css.highlights}>Promotions title</h1> 
-      <div className={css.PromotionMargin}> 
-        <div className="ui stackable two column grid">
-          <div className="column">
-            <div className="ui fluid card">
-              <div className="image">
-                <img src={bhc2} alt="bhcimage" className={css.imageWrapper}/>
+  return (   
+    <div className="container" > 
+          <div className={css.PromotionBackground}>        
+            <h1 className={css.highlights}>Promotions title</h1> 
+          <div className="row" >  
+            <div className="col-md-6">
+            <div className={css.colMarginBottom}>             
+              <div className="card" >        
+                <img className="card-img-top" src={bhc2} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
+                <div className="card-body" className={css.cardBody}>
+                  <h4 className="card-title">                   
+                    <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackage" /> 
+                    <span className={css.StartingFrom}>
+                        <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
+                      </span>
+                  </h4>
+                    <div className="card-text">                    
+                      <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
+                      <span className={css.StartingFromCurrency}>
+                        <FormattedMessage id="MerchantPageSectionTop.Currency"  />
+                      </span>
+                    </div>              
+                  </div>
+                </div>     
               </div>
-              <div className="content"> 
-                <div className="header">
-                    <span>
-                         <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackage" />
-                    </span>
-                     <span className="right floated">
-                       <span className={css.StartingFrom}>
-                            <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
-                        </span>
-                    </span>
-                </div>
-                <div className="description">
-                  <span>
-                       <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
-                    </span>
-                     <span className="right floated">
-                      <span className={css.StartingFromCurrency}> <FormattedMessage id="MerchantPageSectionTop.Currency"  /></span>
-                    </span>
-                </div>
               </div>
-            </div>
-          </div>
-          <div className="column">
-            <div className="ui fluid card">
-              <div className="image">
-                <img src={bhc3} alt="bhcimage" className={css.imageWrapper}/>
-              </div>
-              <div className="content"> 
-                <div className="header">
-                    <span>
+              <div className="col-md-6">
+              <div className={css.colMarginBottom}>      
+                <div className="card" >        
+                  <img className="card-img-top" src={bhc3} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
+                  <div className="card-body" className={css.cardBody} >
+                    <h4 className="card-title">
                         <FormattedMessage id="MerchantPageSectionTop.BeNeLuxPackage" />
-                    </span>
-                     <span className="right floated">
-                       <span className={css.StartingFrom}>
-                            <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
+                      <span className={css.StartingFrom}>
+                        <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
+                      </span>
+                    </h4>
+                    <div className="card-text" >
+                        <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
+                        <span className={css.StartingFromCurrency}>
+                            <FormattedMessage id="MerchantPageSectionTop.Currency"  />
                         </span>
-                    </span>
-                </div>
-                <div className="description">
-                  <span>
-                       <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
-                    </span>
-                     <span className="right floated">
-                      <span className={css.StartingFromCurrency}> <FormattedMessage id="MerchantPageSectionTop.Currency"  /></span>
-                    </span>
-                </div>
+                    </div>              
+                  </div>
+                </div>     
               </div>
-            </div>
-          </div>       
-      </div>  
-     </div>
+              </div>
+          </div>
+      </div>
     </div>
   );
 };

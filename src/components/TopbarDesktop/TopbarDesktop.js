@@ -136,13 +136,13 @@ const TopbarDesktop = props => {
     </NamedLink>
   )
 
-  /* const eventsPage = (
-    <NamedLink name="EventsPage" className={css.eventsPage}>
+  const eventsPage = (
+    <NamedLink name="EventsSearchPage" className={css.eventsPage}>
       <span className={css.events}>
         <FormattedMessage id="TopbarDesktop.events" />
       </span>
     </NamedLink>
-  ) */
+  )
   const aboutPage = (
     <NamedLink name="AboutPage" className={css.aboutPage}>
       <span className={css.about}>
@@ -205,6 +205,70 @@ const TopbarDesktop = props => {
   );
 
   return (
+
+    /* <nav className="navbar navbar-default navbar-fixed-top">
+          <div className="container">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+              
+                <NamedLink classNameName="navbar-brand" name="LandingPage">      
+                <Logo
+                  format="desktop"
+                  classNameName={css.logo}
+                  alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
+                />
+              </NamedLink>
+            </div>
+            <div id="navbar" className="navbar-collapse collapse">
+              <ul className="nav navbar-nav">
+                <li className="active">
+                   {rentalsPage} 
+               
+                </li>
+                <li className="active">
+                   {merchantPage}
+                
+                </li>
+                <li className="active">
+                    {guidedToursPage}
+                
+                </li>
+                <li className="active">
+                   {eventsPage}
+               
+                </li>
+                <li className="active">              
+                   {aboutPage}
+                </li>
+                <li className="active">              
+                {search}
+             </li>               
+              
+             
+                <li>
+                {addBike}
+               
+                </li>
+                <li>
+                {inboxLink}
+                     
+               
+               
+                </li>
+                <li>{profileMenu}</li>
+                <li> {signupLink}</li>
+                <li> {loginLink}</li>
+               </ul>
+            
+           
+            </div>
+          </div>
+        </nav> */
     <nav className={classes}>
       <NamedLink className={css.logoLink} name="LandingPage">      
         <Logo
@@ -217,7 +281,7 @@ const TopbarDesktop = props => {
       {rentalsPage} 
       {merchantPage}
       {guidedToursPage}
-     
+       {eventsPage}
       {aboutPage}
      
      

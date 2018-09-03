@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
 class Counter extends React.Component {
   handleCounterClick = () => {

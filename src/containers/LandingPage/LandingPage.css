@@ -154,24 +154,19 @@
 }
 
 
-.heroMainTitle {
- 
-  @apply --marketplaceH1FontStyles;
-  color: var(--matterColorLight);
+
+
+
+.heroMainTitle{
   @apply --SectionHero_animation;
   animation-delay: 0.5s; 
-  position: absolute;    
-    margin: 8%;
-  
-  
-
-  @media (--viewportMedium) {
-    max-width: var(--SectionHero_desktopTitleMaxWidth);
-    position: absolute;
-    margin: 8%;
-  }
+  position: absolute;
+  color: var(--matterColorLight);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @apply --marketplaceH1FontStyles;
 }
-
 
 
 .sectionLocationBackground{
@@ -196,3 +191,9 @@
 }
 
 
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}

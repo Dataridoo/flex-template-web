@@ -17,25 +17,27 @@ const about = (
 class AboutSection extends Component{
   render(){
     return (  
-      <div className={css.AboutSectionContainer}>
-        <div className="ui stackable grid">
-        <div className="ui eight wide column">
-          <div className={css.AboutSection}>
-            <div className={css.About}> 
-              <p className={css.AboutHeader}>  
-                  <FormattedMessage id="MerchantPageAboutSection.AboutHeader" /> 
-              </p>
-                {about}
+      <div className="container"> 
+        <div className={css.AboutSectionContainer}>
+          <div className="row">
+            <div className="col-md-6">
+              <div className={css.AboutSection}>
+                <div className={css.About}> 
+                  <p className={css.AboutHeader}>  
+                      <FormattedMessage id="MerchantPageAboutSection.AboutHeader" /> 
+                  </p>
+                    {about}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      <div className="ui eight wide column">
-        <div className={css.MapSection}>
-        <SectionMap />
-        </div>
+            <div className="col-md-6">
+              <div className={css.MapSection}>
+                <SectionMap />
+                </div>
+              </div>
+            </div>        
+        </div>          
       </div>
-    </div>
-  </div>
     )
   }
 }

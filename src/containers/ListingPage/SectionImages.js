@@ -52,6 +52,7 @@ const SectionImages = props => {
               'landscape-crop4x',
               'landscape-crop6x',
             ]}
+            style={{ display: 'block', maxWidth: '100%', width:'100%',   height: 'auto'}}
           />
           {viewPhotosButton}
         </div>

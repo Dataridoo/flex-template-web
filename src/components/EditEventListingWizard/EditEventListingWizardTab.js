@@ -6,27 +6,20 @@ import { ensureListing } from '../../util/data';
 import { createResourceLocatorString } from '../../util/routes';
 import {
   EditEventDescriptionPanel,
-  EditListingLocationPanel,
   EditEventTypePanel, 
   EditEventProgramPanel, 
   EditListingPhotosPanel,
-  EditListingFeaturesPanel,
-  EditListingBikeSpecificationsPanel,
-  EditListingBikeSizePanel,
-  EditListingPricingPanel,
 } from '../../components';
 
 import css from './EditEventListingWizard.css';
 
 export const DESCRIPTION = 'description';
 export const PROGRAM ='program';
-export const LOCATION = 'location';
-export const PRICING = 'pricing';
 export const PHOTOS = 'photos';
 export const FEATURES = 'features';
 
 // EditListingWizardTab component supports these tabs
-export const SUPPORTED_TABS = [DESCRIPTION,PROGRAM, FEATURES, LOCATION, PRICING, PHOTOS];
+export const SUPPORTED_TABS = [DESCRIPTION,  PROGRAM, FEATURES, PHOTOS];
 
 const pathParamsToNextTab = (params, tab, marketplaceTabs) => {
   const nextTabIndex = marketplaceTabs.findIndex(s => s === tab) + 1;
@@ -80,7 +73,7 @@ const EditEventListingWizardTab = props => {
         // Redirect to next tab
         const pathParams = pathParamsToNextTab(params, tab, marketplaceTabs);
         history.push(
-          createResourceLocatorString('EditListingPageTwo', routeConfiguration(), pathParams, {})
+          createResourceLocatorString('EditEventsPage', routeConfiguration(), pathParams, {})
         );
       } else {
         // Normalize images for API call
@@ -122,7 +115,7 @@ const EditEventListingWizardTab = props => {
         />
       );
     }
-    
+   
     case FEATURES: {
       const submitButtonTranslationKey = isNew
         ? 'EditEventListingWizard.saveNewFeatures'
@@ -138,24 +131,10 @@ const EditEventListingWizardTab = props => {
       );
     }
 
-    /* case PROGRAM: {
-      const submitButtonTranslationKey = isNew
-        ? 'EditListingWizard.saveNewDescription'
-        : 'EditListingWizard.saveEditDescription';
-      return (
-        <EditEventProgramPanel
-          {...panelProps(PROGRAM)}
-          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
-          onSubmit={values => {
-            onCompleteEditListingWizardTab(tab, values);
-          }}
-        />
-      );
-    } */
-
+   
     case PROGRAM: {
       const submitButtonTranslationKey = isNew
-        ? 'EditListingWizard.saveNewProgram'
+        ? 'EditEventListingWizard.saveNewProgram'
         : 'EditListingWizard.saveEditProgram';
       return (
         <EditEventProgramPanel
@@ -168,38 +147,10 @@ const EditEventListingWizardTab = props => {
       );
     }
    
-    
-    case LOCATION: {
+        
+    case PHOTOS: {
       const submitButtonTranslationKey = isNew
-        ? 'EditListingWizard.saveNewLocation'
-        : 'EditListingWizard.saveEditLocation';
-      return (
-        <EditListingLocationPanel
-          {...panelProps(LOCATION)}
-          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
-          onSubmit={values => {
-            onCompleteEditListingWizardTab(tab, values);
-          }}
-        />
-      );
-    }
-    case PRICING: {
-      const submitButtonTranslationKey = isNew
-        ? 'EditListingWizard.saveNewPricing'
-        : 'EditListingWizard.saveEditPricing';
-      return (
-        <EditListingPricingPanel
-          {...panelProps(PRICING)}
-          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
-          onSubmit={values => {
-            onCompleteEditListingWizardTab(tab, values);
-          }}
-        />
-      );
-    }
-    /* case PHOTOS: {
-      const submitButtonTranslationKey = isNew
-        ? 'EditListingWizard.saveNewPhotos'
+        ? 'EditEventListingWizard.saveNewPhotos'
         : 'EditListingWizard.saveEditPhotos';
 
       // newListingCreated and fetchInProgress are flags for the last wizard tab
@@ -218,7 +169,7 @@ const EditEventListingWizardTab = props => {
           onUpdateImageOrder={onUpdateImageOrder}
         />
       );
-    } */
+    }
     default:
       return null;
   }

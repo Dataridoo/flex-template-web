@@ -11,6 +11,7 @@ const template = `<div class=${css.mainContainer}
                     </div>
                   </div>`;
 
+                 
   class InstagramFeed extends Component {
 
     componentDidMount() {

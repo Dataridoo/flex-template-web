@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { ResponsiveImage, Modal, ImageCarousel } from '../../components';
 import ActionBarMaybe from './ActionBarMaybe';
 
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
 const SectionImages = props => {
   const {

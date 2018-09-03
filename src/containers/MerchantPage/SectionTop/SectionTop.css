@@ -8,35 +8,26 @@
 }
 .PromotionBackground{
   background-color: #82c3ff;
-  
-}
-.PromotionMargin{
-  margin: 50px;
   padding: 20px;
+  
 }
 
 .StartingFrom{
-  float: right;
   color: darkgray;
   font-style: italic;
   font-size: 12px;
-  padding-left: 30px; 
-}
-.SpecialWeekPackageContent{ 
-  padding-bottom: 20px;
+  float: right;
 }
 
 .StartingFromCurrency{
-  float: right;
   color: dodgerblue;
-  padding-left: 30px; 
+  float: right;
 }
 
-
-.imageWrapper {  
-
-  &:hover {
-    transform: scale(1.01);
-   
-  }
+.cardBody{
+  background-color: #fff;
+  padding: 10px;
+}
+.colMarginBottom{
+  padding-bottom: 20px;
 }

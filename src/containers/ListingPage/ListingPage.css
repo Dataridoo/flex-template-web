@@ -52,7 +52,7 @@
   padding-bottom: 0;
 }
 .SectionTitleHeader {
-  margin-left: 50px;
+  margin: auto;
   @apply --marketplaceH2FontStyles;
   padding: 10px;
 
@@ -71,17 +71,11 @@
   margin-bottom: 20px;
   padding-bottom: 0;
 }
-.pageRoot {
-  display: flex;
-  @media (--viewportLarge) {
-    padding-bottom: 0;
-  }
-}
-
 
 .formatedPrice {  
   width: 120px;
   height: 30px;
+  padding-top: 10px;
     
 }
 .formatedPriceDescription{
@@ -107,9 +101,6 @@
   margin: 24px;
 }
 
-.sectionImages {
-}
-
 .threeToTwoWrapper {
   /* Layout */
   display: block;
@@ -124,15 +115,9 @@
     padding: 36px 36px 0 36px;
   }
 }
-.bookingSection{
-  padding-left: 0;
-  margin-left: 0;
-
-}
-/* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
   position: relative; /* allow positioning own listing action bar */
-  padding-bottom:66.6667%; /* 3:2 Aspect Ratio */
+  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
   background-color: var(--matterColorNegative); /* Loading BG color */
 
   /* Image carousel can be opened from the image, therefore we should show a pointer */
@@ -149,7 +134,7 @@
   justify-content: space-between;
   top: 13px;
   left: 13px;
-  width: calc(100% - 26px);
+  width: calc(40% - 26px);
   color: var(--matterColorNegative);
   background-color: var(--matterColor);
   z-index: 1; /* bring on top of mobile image */
@@ -226,8 +211,6 @@
     bottom: auto;
     left: auto;
     right: auto;
-    height: calc(0.41 * 100vw);
-    max-height: 50vh;
     object-fit: cover;
     border-radius: var(--borderRadius);
 
@@ -280,6 +263,7 @@
   height: 100%;
 }
 
+
 .contentContainer {
   @media (--viewportMedium) {
     max-width: 1280px;
@@ -314,11 +298,22 @@
 }
 
 .sectionAvatar {
-   
+  /* Position (over the listing image)*/
+  margin-left: 24px;
+  margin-top: -31px;
+
+  /* Rendering context to the same lavel as listing image */
+  position: relative;
+
+  /* Flex would give too much width by default. */
+  width: 60px;
+
   @media (--viewportMedium) {
+    position: absolute;
+    left: 60px;
+    top: -49px;
     margin-left: 0;
     margin-top: 0;
-    margin-bottom: 0;
   }
 }
 
@@ -332,13 +327,11 @@
 
 .avatarDesktop {
   display: none; /* Hide the large avatar from the smaller screens */
-   margin-bottom: 0;
-   margin-top: 0;
+  
 
   @media (--viewportMedium) {
     display: flex;
-    margin-bottom: 0;
-    margin-top: 0;
+    
   }
 }
 .placeholderButton{
@@ -393,14 +386,14 @@
 }
 
 .heading {
-  padding: 0 14px;
+  margin-bottom: 33px;
+  padding: 0 24px;
 
   @media (--viewportMedium) {
     margin-bottom: 0;
     padding: 0;
   }
 }
-
 .title {
   /* Font */
   @apply --marketplaceH3FontStyles;
@@ -433,17 +426,11 @@
 
 .contactWrapper {
   display: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  
 
   @media (--viewportMedium) {
     display: inline;
-    margin-bottom: 0;
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+    
   }
 }
 
@@ -454,10 +441,8 @@
 .contactLink {
   @apply --marketplaceH4FontStyles;
   background-color: lightgray;
-  color: black;
-  width: 230px;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
+ 
 }
 
 .sectionDescription {
@@ -870,9 +855,6 @@
 }
 
 .borderTopBottom{
-  
-
-  
   @media (--viewportMedium) {
    
   }
@@ -881,4 +863,9 @@
     border-bottom: 2px solid grey;
     border-top: 2px solid grey;
   }
+}
+
+.paddingBottom{
+  padding-bottom: 20px;
+  margin-bottom: 30px;
 }

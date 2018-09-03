@@ -1,0 +1,182 @@
+@import '../../marketplace.css';
+
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  max-height: 300px;
+  padding: 0;
+  
+
+  @media (--viewportMedium) {
+    min-height: 300px;   
+    max-height: none;
+  }
+
+  @media (--viewportLarge) {
+    min-height: 400px;   
+  }
+}
+
+.heroContainerHeader{
+  position: absolute;
+  top: 30%;
+ left: 30%;
+ padding-bottom: 10px;
+  color:white;
+  font-size: 50px 
+}
+.heroContainerSubHeader{
+   position: absolute;
+  top: 40%;
+  left: 30%;
+   padding-bottom: 10px;
+  color:white;
+  font-size: 35px 
+}
+.CategoryFilterOpen{
+  @media (--viewportMedium) {
+     margin-top: 20px;
+  
+  }
+
+  @media (--viewportLarge) {
+    margin-top: -90px;
+  }
+}
+
+.allCategories{
+   margin-left: 30px;
+}
+.CategoriesList{
+  padding-top:0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+ @apply --marketplaceH4FontStyles;
+}
+.CategoriesHeader{
+  padding-top:0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+ @apply --marketplaceH3FontStyles;
+}
+.priceSlider{
+  margin-top: 10px;
+}
+.bikeBrand {
+
+}
+.bikeFineSetUp{
+   margin-top: -90px;
+}
+.updateView{
+  padding-top: 20px;
+}
+.price{
+   padding-bottom: 0;
+   padding-top: 10px;
+}
+
+.updateViewBtn{
+  background-color: #00aced;
+  color: white;
+  font: bold;
+  height: 40px;
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  
+}
+.MainSearchContainer{
+  margin-top: 20px;
+
+  @media (--viewportMedium) {
+  
+   
+  
+  }
+
+  @media (--viewportLarge) {
+   
+     
+  }
+}
+
+
+.error {
+  color: var(--failColor);
+}
+
+.searchString {
+  /* Search string should not break on white spaces - i.e. line-break should happen before. */
+  white-space: nowrap;
+}
+
+.searchFilters {
+  display: none;
+
+  @media (--viewportMedium) {
+    display: flex;
+    padding: 0 24px;
+  }
+
+  @media (--viewportLarge) {
+    padding: 0 36px;
+  }
+}
+
+.searchFiltersMobile {
+  padding: 16px 24px;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.searchFiltersPanel {
+  flex-grow: 1;
+  display: flex;
+  padding: 0 24px 24px 24px;
+
+  @media (--viewportLarge) {
+    padding: 0 36px 36px 36px;
+  }
+}
+
+.listings {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.newSearchInProgress {
+  opacity: 0.1;
+}
+
+.searchListingsPanel {
+  flex-grow: 1;
+}
+
+.mapPanel {
+  @media (--viewportMedium) {
+    /**
+     * .container is using flexbox,
+     * This specifies that mapPanel is taking 34% from the viewport width
+     */
+    flex-basis: 50%;
+
+    /* Own layout settings */
+    display: flex;
+    height: 100%;
+  }
+
+  @media (--viewportLarge) {
+    flex-basis: 37.5%;
+  }
+}
+

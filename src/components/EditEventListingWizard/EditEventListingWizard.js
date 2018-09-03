@@ -9,17 +9,16 @@ import { PayoutDetailsForm } from '../../forms';
 import { Modal, NamedRedirect, Tabs } from '../../components';
 
 import EditEventListingWizardTab, {
-  DESCRIPTION,
+  DESCRIPTION,  
   FEATURES,
-  LOCATION, 
-  PRICING,
   PROGRAM,
+  PHOTOS,
 } from './EditEventListingWizardTab';
 import css from './EditEventListingWizard.css';
 
 // TODO: PHOTOS panel needs to be the last one since it currently contains PayoutDetailsForm modal
 // All the other panels can be reordered.
-export const TABS = [DESCRIPTION, FEATURES, PROGRAM, LOCATION, PRICING];
+export const TABS = [DESCRIPTION,  FEATURES, PROGRAM, PHOTOS];
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
@@ -32,11 +31,9 @@ const tabLabel = (intl, tab) => {
     key = 'EditEventListingWizard.tabLabelFeatures';
   } else if (tab === PROGRAM) {
     key = 'EditEventListingWizard.tabLabelProgram';
-  } else if (tab === LOCATION) {
-    key = 'EditListingWizard.tabLabelLocation';
-  }  else if (tab === PRICING) {
-    key = 'EditListingWizard.tabLabelPricing';
-  } 
+  }  else if (tab === PHOTOS) {
+    key = 'EditListingWizard.tabLabelPhotos';
+  }
   return intl.formatMessage({ id: key });
 };
 
@@ -49,23 +46,21 @@ const tabLabel = (intl, tab) => {
  * @return true if tab / step is completed.
  */
 const tabCompleted = (tab, listing) => {
-  const { geolocation, price, title, publicData } = listing.attributes;
+  const { geolocation, title, description, publicData } = listing.attributes;
   const images = listing.images;
 
   switch (tab) {
     case DESCRIPTION:
-      return !!(title);
-
+    return !!(title && description && publicData && publicData.eventDate);
+   
     case FEATURES:
       return !!(publicData && publicData.eventType);
       
     case PROGRAM:
-      return !!(publicData && typeof publicData.program !== 'undefined' 
-             );
-    case LOCATION:
-      return !!(geolocation && publicData && publicData.location && publicData.location.address);
-    case PRICING:
-      return !!price;
+      return !!(publicData && publicData.program);
+   
+    case PHOTOS:
+      return images && images.length > 0;
     
     default:
       return false;
@@ -179,7 +174,7 @@ class EditEventListingWizard extends Component {
 
     // If selectedTab is not active, redirect to the beginning of wizard
     if (!tabsStatus[selectedTab]) {
-      return <NamedRedirect name="EditListingPageTwo" params={{ ...params, tab: TABS[0] }} />;
+      return <NamedRedirect name="EditEventsPage" params={{ ...params, tab: TABS[0] }} />;
     }
 
     const { width } = viewport;
@@ -199,7 +194,7 @@ class EditEventListingWizard extends Component {
     }
 
     const tabLink = tab => {
-      return { name: 'EditListingPageTwo', params: { ...params, tab } };
+      return { name: 'EditEventsPage', params: { ...params, tab } };
     };
 
     return (

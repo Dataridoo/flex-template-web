@@ -169,4 +169,11 @@ export { default as EditEventProgramPanel } from './EditEventProgramPanel/EditEv
 
 export { default as EditEventDescriptionPanel } from './EditEventDescriptionPanel/EditEventDescriptionPanel';
 
+export { default as ListingCardEvent } from './ListingCardEvent/ListingCardEvent';
+
+export { default as ManageListingCardEvent } from './ManageListingCardEvent/ManageListingCardEvent';
+
+
+
+
 

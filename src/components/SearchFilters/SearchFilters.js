@@ -113,9 +113,7 @@ const SearchFiltersComponent = props => {
   });
 
  const initialBikeSize = initialBikeValues(urlQueryParams, bikeSizeFilter.paramName);
-  
-
- 
+   
   const bikeSizeFilterFilterElement = bikeSizeFilter ? (
     <SelectMultipleFilter
       id={'SearchFilters.bikeSizeFilter'}
@@ -129,8 +127,6 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-
-  
   const toggleSearchFiltersPanelButtonClasses =
     isSearchFiltersPanelOpen || searchFiltersPanelSelectedCount > 0
       ? css.searchFiltersPanelOpen

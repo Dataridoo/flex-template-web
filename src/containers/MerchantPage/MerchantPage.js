@@ -64,20 +64,17 @@ export const MerchantPageComponent = props => {
         <LayoutWrapperTopbar>
           <TopbarContainer /> 
         </LayoutWrapperTopbar>
-        <LayoutWrapperMain>
-          <div className={css.heroContainer}>
-             <img src={bhcImage} alt="rentals" />
-          </div>  
-          
-          <SectionTop />
-          <SectionCenter />
-           <VideoPlayer />
-          
-           
-           <NewsSection />
-           <AboutSection />
+        <LayoutWrapperMain>       
+
+          <div className="container">
+            <img src={bhcImage} alt="rentals" style={{ display: 'block', marginTop:'20px', maxWidth: '100%', width:'100%',   height: 'auto'}}/>               
+          </div>
          
-         
+           <SectionTop />
+           <SectionCenter /> 
+             <VideoPlayer />
+            <NewsSection />
+            <AboutSection />         
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
         <Footer />

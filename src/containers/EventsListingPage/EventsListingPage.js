@@ -33,17 +33,18 @@ import {
 
 import SectionLikeCounter from './SectionLikeCounter/SectionLikeCounter';
 
-import { sendEnquiry, loadData, setInitialValues } from './EventsPage.duck';
+import { sendEnquiry, loadData, setInitialValues } from './EventsListingPage.duck';
 import SectionImages from './SectionImages';
 import SectionHeading from './SectionHeading';
 import SectionReviews from './SectionReviews';
 import SectionHost from './SectionHost';
-import SectionBikeSpecifications from './SectionBikeSpecifications';
+import SectionEventProgram from './SectionEventProgram';
 import SectionMapMaybe from './SectionMapMaybe';
-import SectionFeatures from './SectionFeatures';
-import SectionBooking from './SectionBooking';
-import SectionBikeSize from './SectionBikeSize';
-import css from './ListingPage.css';
+import SectionEventType from './SectionEventType';
+import SectionDate from './SectionDate';
+import SectionDescription from './SectionDescription';
+import css from './EventsListingPage.css';
+
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
@@ -70,7 +71,7 @@ const openBookModal = (history, listing) => {
   const routes = routeConfiguration();
   history.push(
     createResourceLocatorString(
-      'ListingPage',
+      'EventsListingPage',
       routes,
       { id: listing.id.uuid, slug: createSlug(listing.attributes.title) },
       { book: true }
@@ -86,7 +87,7 @@ const closeBookModal = (history, listing) => {
   const routes = routeConfiguration();
   history.push(
     createResourceLocatorString(
-      'ListingPage',
+      'EventsListingPage',
       routes,
       { id: listing.id.uuid, slug: createSlug(listing.attributes.title) },
       {}
@@ -99,7 +100,7 @@ const categoryLabel = (categories, key) => {
   return cat ? cat.label : key;
 }; 
 
-export class EventsPageComponent extends Component {
+export class EventsListingPageComponent extends Component {
   constructor(props) {
     super(props);
     const { enquiryModalOpenForListingId, params } = props;
@@ -202,7 +203,7 @@ export class EventsPageComponent extends Component {
       sendEnquiryInProgress,
       sendEnquiryError,
       categoriesConfig,
-      amenitiesConfig,
+      eventTypeConfig,
       bikeSizeConfig,
     } = this.props;
 
@@ -221,17 +222,13 @@ export class EventsPageComponent extends Component {
 
     const pendingIsApproved = isPendingApprovalVariant && isApproved;
 
-    // If a /pending-approval URL is shared, the UI requires
-    // authentication and attempts to fetch the listing from own
-    // listings. This will fail with 403 Forbidden if the author is
-    // another user. We use this information to try to fetch the
-    // public listing.
+    
     const pendingOtherUsersListing =
       isPendingApprovalVariant && showListingError && showListingError.status === 403;
     const shouldShowPublicListingPage = pendingIsApproved || pendingOtherUsersListing;
 
     if (shouldShowPublicListingPage) {
-      return <NamedRedirect name="ListingPage" params={params} search={location.search} />;
+      return <NamedRedirect name="EventsListingPage" params={params} search={location.search} />;
     }
 
     const {
@@ -374,9 +371,7 @@ export class EventsPageComponent extends Component {
     
     
     const shareUrl = "http://pedal.world";
- 
-     
-
+    
     const category =
       publicData && publicData.category ? (
         <span>
@@ -406,152 +401,51 @@ export class EventsPageComponent extends Component {
         <LayoutSingleColumn className={css.pageRoot}>
           <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
           <LayoutWrapperMain>
-            <div  className="sixteen wide column">             
-               <div className={css.SectionTitle} >  
-                 <div className={css.SectionTitleHeader}> 
-                    <SectionHeading
-                        richTitle={richTitle}
-                      />                                       
-                  </div>                 
-              </div>
-            </div>
-            <div className={css.mainContainer}>
-              <div className="ui stackable sixteen column grid">             
-                <div className="nine wide column">
-                  <SectionImages                 
-                    title={title}
-                    listing={currentListing}
-                    isOwnListing={isOwnListing}
-                    editParams={{
-                      id: listingId.uuid,
-                      slug: listingSlug,
-                      type: 'edit',
-                      tab: 'description',
-                    }}
-                    imageCarouselOpen={this.state.imageCarouselOpen}
-                    onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
-                    handleViewPhotosClick={handleViewPhotosClick}
-                    onManageDisableScrolling={onManageDisableScrolling}
-                  /> 
-                </div>              
-                <div className="seven wide column">  
-                  <div  className={css.formatedPrice}> 
-                    <div className={css.formatedPriceDescription} > 
-                      <SectionHeading                       
-                        formattedPrice={formattedPrice} 
-                      /> 
+          <div className={css.PromotionBackground}> 
+              <h3 className={css.highlights}>
+                 All
+              </h3>       
+              <div className="ui stackable two column grid">
+                <div className="column">
+                    <div className={css.thumbnailContent}> 
+                      <div className={css.thumbnailHeader}>
+                        <SectionHeading
+                          richTitle={richTitle} 
+                        /> 
                       </div>
-                      <div className={css.formatedPriceUnit}> 
-                        <FormattedMessage id="ListingPage.perUnit" />
-                      </div>                      
-                  </div>
-                  <h3> <FormattedMessage id="ListingPage.bikeSizeTitle" /></h3>
-                       <SectionBikeSize
-                         className={css.bikeSize}
-                          options={bikeSizeConfig}
-                          selectedOptions={publicData.bikeSize}
-                      />
-                  <div className={css.borderTopBottom}> 
-                      <SectionBooking
-                      className={css.sectionBooking}
-                        listing={currentListing}
-                        isOwnListing={isOwnListing}
-                        isClosed={isClosed}
-                        isBook={isBook}
-                        unitType={unitType}
-                        price={price}
-                        formattedPrice={formattedPrice}
-                        priceTitle={priceTitle}
-                        handleBookingSubmit={handleBookingSubmit}
-                        richTitle={richTitle}
-                        authorDisplayName={authorDisplayName}
-                        handleBookButtonClick={handleBookButtonClick}
-                        handleMobileBookModalClose={handleMobileBookModalClose}
-                        onManageDisableScrolling={onManageDisableScrolling}
-                      /> <br/>
-                    </div>             
-                </div>
-              </div>
-                  
-                <div className={css.gridMarginTop}>
-                  <div className="ui stackable sixteen column grid">             
-                    <div className="nine wide column">                      
-                     <div>
-                       <h3 className={css.richTitleFormat}> 
-                          <FormattedMessage id="ListingPage.featuresDescription" />
-                        </h3>
-                           <SectionBikeSpecifications publicData={publicData} />
-                        <div>
-                          <h3 className={css.richTitleFormat}> 
-                            <FormattedMessage id="ListingPage.featuresTitle" />
-                          </h3>
-                          <SectionFeatures
-                              options={amenitiesConfig}
-                              selectedOptions={publicData.amenities}
-                            />
-                        </div>                        
+                      <div className={css.thumbnailDescription}>
+                        <SectionEventType
+                          options={eventTypeConfig}
+                          selectedOptions={publicData.eventType}
+                        /> 
+                        <SectionDescription publicData={publicData}/>
+                        <SectionEventProgram publicData={publicData}/> 
                       </div>
                     </div>
-                     <div className="seven wide column">
-                       <SectionHost
-                          listing={currentListing}
-                          isOwnListing={isOwnListing}
-                          authorDisplayName={authorDisplayName}
-                          onContactUser={this.onContactUser}
-                          isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
-                          onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
-                          sendEnquiryError={sendEnquiryError}
-                          sendEnquiryInProgress={sendEnquiryInProgress}
-                          onSubmitEnquiry={this.onSubmitEnquiry}
-                          currentUser={currentUser}
-                          onManageDisableScrolling={onManageDisableScrolling}
-                        /> 
-                        <SectionMapMaybe
-                          geolocation={geolocation}
-                          publicData={publicData}
-                          listingId={currentListing.id}
-                        /> 
-                    </div>
-                  </div>
-                </div>
-              <div className={css.gridMarginTop}>
-                <div className="ui stackable sixteen column grid">             
-                  <div className="sixteen wide column">
-                    <div className={css.SectionLikeCounter}>
-                      <ul className={css.UnOrderdedListCounter}>
-                        <li className={css.ListCounter}>
-                          <SectionLikeCounter />
-                        </li>
-                        <li className={css.ListCounter}>
-                          <button className={css.fbShareBtn}>
-                            <FacebookShareButton
-                              url={shareUrl}
-                              quote={schemaTitle}
-                              >  <i className="facebook icon"></i>
-                              Share
-                            </FacebookShareButton>
-                          </button>
-                        </li>
-                        <li className={css.ListCounter}>
-                          <button className={css.twitterShareBtn}>
-                            <TwitterShareButton
-                              url={shareUrl}
-                              title={schemaTitle}
-                              >
-                                <i className="twitter icon"></i>Tweet
-                            </TwitterShareButton> 
-                          </button>
-                        </li>
-                        </ul>
-                    </div> 
-                    <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
-                  </div>                  
-                </div>
-              </div>
+                </div> 
+               
+                <div className="column">
+                    <SectionImages                 
+                      title={title}
+                      listing={currentListing}
+                      isOwnListing={isOwnListing}
+                      editParams={{
+                        id: listingId.uuid,
+                        slug: listingSlug,
+                        type: 'edit',
+                        tab: 'description',
+                      }}
+                      imageCarouselOpen={this.state.imageCarouselOpen}
+                      onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
+                      handleViewPhotosClick={handleViewPhotosClick}
+                      onManageDisableScrolling={onManageDisableScrolling}
+                    />                  
+                </div> 
+              </div>  <br/><hr/>
             </div>
           </LayoutWrapperMain>
           <LayoutWrapperFooter>
-            <Footer />
+           <Footer />
           </LayoutWrapperFooter>
         </LayoutSingleColumn>
       </Page>
@@ -559,7 +453,7 @@ export class EventsPageComponent extends Component {
   }
 }
 
-EventsPageComponent.defaultProps = {
+EventsListingPageComponent.defaultProps = {
   unitType: config.bookingUnitType,
   currentUser: null,
   enquiryModalOpenForListingId: null,
@@ -568,11 +462,11 @@ EventsPageComponent.defaultProps = {
   fetchReviewsError: null,
   sendEnquiryError: null,
   categoriesConfig: config.custom.categories,
-  amenitiesConfig: config.custom.amenities,
+  eventTypeConfig: config.custom.eventType,
   bikeSizeConfig: config.custom.bikeSize,
 };
 
-EventsPageComponent.propTypes = {
+EventsListingPageComponent.propTypes = {
   // from withRouter
   history: shape({
     push: func.isRequired,
@@ -607,7 +501,7 @@ EventsPageComponent.propTypes = {
   onSendEnquiry: func.isRequired,
 
   categoriesConfig: array,
-  amenitiesConfig: array,
+  eventTypeConfig: array,
   bikeSizeConfig: array,
 };
 
@@ -620,7 +514,7 @@ const mapStateToProps = state => {
     sendEnquiryInProgress,
     sendEnquiryError,
     enquiryModalOpenForListingId,
-  } = state.ListingPage;
+  } = state.EventsListingPage;
   const { currentUser } = state.user;
 
   const getListing = id => {
@@ -657,17 +551,12 @@ const mapDispatchToProps = dispatch => ({
   onSendEnquiry: (listingId, message) => dispatch(sendEnquiry(listingId, message)),
 });
 
-// Note: it is important that the withRouter HOC is **outside** the
-// connect HOC, otherwise React Router won't rerender any Route
-// components since connect implements a shouldComponentUpdate
-// lifecycle hook.
-//
-// See: https://github.com/ReactTraining/react-router/issues/4671
-const EventsPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps), injectIntl)(
-  EventsPageComponent
+
+const EventsListingPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps), injectIntl)(
+  EventsListingPageComponent
 );
 
-EventsPage.setInitialValues = initialValues => setInitialValues(initialValues);
-EventsPage.loadData = loadData;
+EventsListingPage.setInitialValues = initialValues => setInitialValues(initialValues);
+EventsListingPage.loadData = loadData;
 
-export default EventsPage;
+export default EventsListingPage;

@@ -24,7 +24,8 @@ const EditEventDescriptionPanel = props => {
 
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureOwnListing(listing);
-  const { description, title } = currentListing.attributes;
+  const { title, description, publicData } = currentListing.attributes;
+
 
   const panelTitle = currentListing.id ? (
     <FormattedMessage
@@ -40,21 +41,23 @@ const EditEventDescriptionPanel = props => {
       <h1 className={css.title}>{panelTitle}</h1>
       <EditEventDescriptionForm
         className={css.form}
-        initialValues={{ description, title }}
+        initialValues={{ description, title, eventDate: publicData.eventDate }}
         saveActionMsg={submitButtonText}
         onSubmit={values => {
-          const { description, title } = values;
+          const { description, title, eventDate } = values;
           const updateValues = {
             title: title.trim(),
             description,
+            publicData: {eventDate}
+          
           };
-
           onSubmit(updateValues);
         }}
         onChange={onChange}
+        saveActionMsg={submitButtonText}
         updated={panelUpdated}
         updateError={errors.updateListingError}
-        updateInProgress={updateInProgress}       
+        updateInProgress={updateInProgress}
       />
     </div>
   );

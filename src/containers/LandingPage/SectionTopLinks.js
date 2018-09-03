@@ -12,64 +12,78 @@ import bikerentals from './images/bikerentals.jpg';
 import accommodation from './images/accommodation.jpg';
 import guidedTours from './images/guidedTours.jpg';
 import events from './images/events.jpg';
+import { NamedLink } from '../../examples';
+import EventsListingPage from '../EventsListingPage/EventsListingPage';
 
 
 
 class SectionTopLinks extends Component {
   render(){ 
+   
     const { reviews} = this.props;
-  return (
-    <div className={css.PromotionBackground}> 
+  return (    
+    <div className="container">
       <h1 className={css.highlights}>
        <FormattedMessage id="LandingPagesectionTop.bikeRentalsOurService" />
-      </h1>       
-      <div className="ui stackable four column grid">
-        <div className="column">
-            <img className="ui fluid small image" src={bikerentals} alt="bhcimage" />
-            <div className={css.thumbnailContent}> 
-              <div className={css.thumbnailHeader}>
+      </h1>
+      <div className="row">
+        <div className="col-md-3">
+          <div className="card" >        
+              <img className="card-img-top" src={bikerentals} alt="bhcimage" className={css.imgPadding}/>
+              <div className="card-body">
+                <h4 className="card-title">
                   <FormattedMessage id="LandingPagesectionTop.bikeRentals" />
-              </div>
-              <div className={css.thumbnailDescription}>
+                </h4>
+                <p className="card-text" className={css.cardText}>
                 <FormattedMessage id="LandingPagesectionTop.bikeRentalsContents" />
+                </p>
+              
               </div>
-            </div>
-        </div>
-        <div className="column">
-          <img className="ui fluid small image" src={guidedTours} alt="bhcimage" />
-          <div className={css.thumbnailContent}> 
-              <div className={css.thumbnailHeader}>
-                <FormattedMessage id="LandingPagesectionTop.guidedTours" />
-              </div>
-              <div className={css.thumbnailDescription}>
-              <FormattedMessage id="LandingPagesectionTop.guidedToursContents" />
-              </div>
-            </div>
-        </div>         
-        <div className="column">
-          <img className="ui fluid small image" src={events} alt="bhcimage" />
-          <div className={css.thumbnailContent}> 
-            <div className={css.thumbnailHeader}>
-                <FormattedMessage id="LandingPagesectionTop.events" />
-            </div>
-            <div className={css.thumbnailDescription}>
-              <FormattedMessage id="LandingPagesectionTop.eventsContent" />
-            </div>
+            </div>     
           </div>
-        </div>
-        <div className="column">
-          <img className="ui fluid small image" src={accommodation} alt="bhcimage" />
-          <div className={css.thumbnailContent}> 
-              <div className={css.thumbnailHeader}>
-              <FormattedMessage id="LandingPagesectionTop.accommodation" />
-            </div>
-            <div className={css.thumbnailDescription}>
-              <FormattedMessage id="LandingPagesectionTop.accommodationContents" />
-            </div>
+          <div className="col-md-3">
+            <div className="card" >        
+                <img className="card-img-top" src={guidedTours} alt="bhcimage" className={css.imgPadding} />
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <FormattedMessage id="LandingPagesectionTop.guidedTours" />
+                  </h4>
+                  <p className="card-text" className={css.cardText}>
+                    <FormattedMessage id="LandingPagesectionTop.guidedToursContents" className={css.FormattedMessage}/>
+                  </p>
+              </div>
+            </div>     
           </div>
-      </div>
-      </div> 
+          <div className="col-md-3">
+            <div className="card" >        
+                <img className="card-img-top" src={events} alt="bhcimage" className={css.imgPadding} />
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <FormattedMessage id="LandingPagesectionTop.events" />
+                  </h4>
+                  <p className="card-text" className={css.cardText}>
+                  <FormattedMessage id="LandingPagesectionTop.eventsContent" />
+                  </p> 
+              </div>
+            </div>     
+          </div>
+
+        
+          <div className="col-md-3">
+            <div className="card" >        
+                <img className="card-img-top" src={accommodation} alt="accommodation" className={css.imgPadding} />
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <FormattedMessage id="LandingPagesectionTop.accommodation" />
+                  </h4>
+                  <p className="card-text" className={css.cardText}>
+                    <FormattedMessage id="LandingPagesectionTop.accommodationContents" />
+                  </p>
+              </div>
+            </div>     
+          </div>      
     </div>
+  </div>
   );
 };
 }

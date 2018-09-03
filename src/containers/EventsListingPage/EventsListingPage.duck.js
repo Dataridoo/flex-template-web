@@ -12,18 +12,18 @@ const { UUID } = sdkTypes;
 
 // ================ Action types ================ //
 
-export const SET_INITAL_VALUES = 'app/EventsPage/SET_INITIAL_VALUES';
+export const SET_INITAL_VALUES = 'app/EventsListingPage/SET_INITIAL_VALUES';
 
-export const SHOW_LISTING_REQUEST = 'app/EventsPage/SHOW_LISTING_REQUEST';
-export const SHOW_LISTING_ERROR = 'app/EventsPage/SHOW_LISTING_ERROR';
+export const SHOW_LISTING_REQUEST = 'app/EventsListingPage/SHOW_LISTING_REQUEST';
+export const SHOW_LISTING_ERROR = 'app/EventsListingPage/SHOW_LISTING_ERROR';
 
-export const FETCH_REVIEWS_REQUEST = 'app/EventsPage/FETCH_REVIEWS_REQUEST';
-export const FETCH_REVIEWS_SUCCESS = 'app/EventsPage/FETCH_REVIEWS_SUCCESS';
-export const FETCH_REVIEWS_ERROR = 'app/EventsPage/FETCH_REVIEWS_ERROR';
+export const FETCH_REVIEWS_REQUEST = 'app/EventsListingPage/FETCH_REVIEWS_REQUEST';
+export const FETCH_REVIEWS_SUCCESS = 'app/EventsListingPage/FETCH_REVIEWS_SUCCESS';
+export const FETCH_REVIEWS_ERROR = 'app/EventsListingPage/FETCH_REVIEWS_ERROR';
 
-export const SEND_ENQUIRY_REQUEST = 'app/EventsPage/SEND_ENQUIRY_REQUEST';
-export const SEND_ENQUIRY_SUCCESS = 'app/EventsPage/SEND_ENQUIRY_SUCCESS';
-export const SEND_ENQUIRY_ERROR = 'app/EventsPage/SEND_ENQUIRY_ERROR';
+export const SEND_ENQUIRY_REQUEST = 'app/EventsListingPage/SEND_ENQUIRY_REQUEST';
+export const SEND_ENQUIRY_SUCCESS = 'app/EventsListingPage/SEND_ENQUIRY_SUCCESS';
+export const SEND_ENQUIRY_ERROR = 'app/EventsListingPage/SEND_ENQUIRY_ERROR';
 
 // ================ Reducer ================ //
 
@@ -37,7 +37,7 @@ const initialState = {
   enquiryModalOpenForListingId: null,
 };
 
-const listingPageReducer = (state = initialState, action = {}) => {
+const listingPagReducer = (state = initialState, action = {}) => {
   const { type, payload } = action;
   switch (type) {
     case SET_INITAL_VALUES:
@@ -67,7 +67,7 @@ const listingPageReducer = (state = initialState, action = {}) => {
   }
 };
 
-export default listingPageReducer;
+export default listingPagReducer;
 
 // ================ Action creators ================ //
 

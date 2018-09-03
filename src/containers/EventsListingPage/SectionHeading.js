@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { PrimaryButton } from '../../components';
 
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
 const SectionHeading = props => {
   const {
@@ -14,17 +14,10 @@ const SectionHeading = props => {
     onContactUser,
   } = props;
   return (
-    <div className={css.sectionHeading}>
-      <div className={css.desktopPriceContainer}>
-        <div className={css.desktopPriceValue} title={priceTitle}>
-          {formattedPrice} 
-        </div>       
-      </div>
-      <div className={css.heading}>
-        <h1 className={css.title}>{richTitle} &nbsp; <span>   {category}</span> </h1>
+    <div >
+      <div >
+         {richTitle} 
         <div className={css.author}>
-       
-          
           {showContactUser ? (
             <p className={css.contactWrapper}>              
               <PrimaryButton className={css.contactLink} onClick={onContactUser}>

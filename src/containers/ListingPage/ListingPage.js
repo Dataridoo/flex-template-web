@@ -374,20 +374,7 @@ export class ListingPageComponent extends Component {
     
     
     const shareUrl = "http://pedal.world";
- 
-  /* 
-    const hostLinkHeader = (
-      <NamedLink
-        className={css.authorNameLinkHeader}
-        name="ListingPage"
-        params={params}
-        to={{ hash: '#host' }}
-      >
-        {authorDisplayName}
-      </NamedLink>
-    ); */
     
-   
     
 
     const category =
@@ -419,117 +406,121 @@ export class ListingPageComponent extends Component {
         <LayoutSingleColumn className={css.pageRoot}>
           <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
           <LayoutWrapperMain>
-            <div  className="sixteen wide column">             
-               <div className={css.SectionTitle} >  
-                 <div className={css.SectionTitleHeader}> 
-                    <SectionHeading
-                        richTitle={richTitle}
-                      />                                       
-                  </div>                 
+            <div className="container">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className={css.SectionTitle} >  
+                    <div className={css.SectionTitleHeader}> 
+                        <SectionHeading richTitle={richTitle} />                                       
+                      </div>                 
+                  </div>
+                </div>
               </div>
             </div>
-            <div className={css.mainContainer}>
-              <div className="ui stackable sixteen column grid">             
-                <div className="nine wide column">
-                  <SectionImages                 
-                    title={title}
-                    listing={currentListing}
-                    isOwnListing={isOwnListing}
-                    editParams={{
-                      id: listingId.uuid,
-                      slug: listingSlug,
-                      type: 'edit',
-                      tab: 'description',
-                    }}
-                    imageCarouselOpen={this.state.imageCarouselOpen}
-                    onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
-                    handleViewPhotosClick={handleViewPhotosClick}
-                    onManageDisableScrolling={onManageDisableScrolling}
-                  /> 
-                </div>              
-                <div className="seven wide column">  
-                  <div  className={css.formatedPrice}> 
-                    <div className={css.formatedPriceDescription} > 
-                      <SectionHeading                       
-                        formattedPrice={formattedPrice} 
-                      /> 
+            <div className="container">
+              <div className={css.paddingBottom}>  
+                <div className="row">
+                  <div className="col-md-8">
+                    <SectionImages                 
+                      title={title}
+                      listing={currentListing}
+                      isOwnListing={isOwnListing}
+                      editParams={{
+                        id: listingId.uuid,
+                        slug: listingSlug,
+                        type: 'edit',
+                        tab: 'description',
+                      }}
+                      imageCarouselOpen={this.state.imageCarouselOpen}
+                      onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
+                      handleViewPhotosClick={handleViewPhotosClick}
+                      onManageDisableScrolling={onManageDisableScrolling}
+                    /> 
+                  </div>
+                  <div className="col-md-4">
+                    <div  className={css.formatedPrice}> 
+                      <div className={css.formatedPriceDescription} > 
+                        <SectionHeading                       
+                          formattedPrice={formattedPrice} 
+                        /> 
                       </div>
                       <div className={css.formatedPriceUnit}> 
                         <FormattedMessage id="ListingPage.perUnit" />
                       </div>                      
-                  </div>
-                  <h3> <FormattedMessage id="ListingPage.bikeSizeTitle" /></h3>
-                       <SectionBikeSize
-                         className={css.bikeSize}
-                          options={bikeSizeConfig}
-                          selectedOptions={publicData.bikeSize}
-                      />
-                  <div className={css.borderTopBottom}> 
-                      <SectionBooking
-                      className={css.sectionBooking}
-                        listing={currentListing}
-                        isOwnListing={isOwnListing}
-                        isClosed={isClosed}
-                        isBook={isBook}
-                        unitType={unitType}
-                        price={price}
-                        formattedPrice={formattedPrice}
-                        priceTitle={priceTitle}
-                        handleBookingSubmit={handleBookingSubmit}
-                        richTitle={richTitle}
-                        authorDisplayName={authorDisplayName}
-                        handleBookButtonClick={handleBookButtonClick}
-                        handleMobileBookModalClose={handleMobileBookModalClose}
-                        onManageDisableScrolling={onManageDisableScrolling}
-                      /> <br/>
-                    </div>             
-                </div>
-              </div>
-                  
-                <div className={css.gridMarginTop}>
-                  <div className="ui stackable sixteen column grid">             
-                    <div className="nine wide column">                      
-                     <div>
-                       <h3 className={css.richTitleFormat}> 
-                          <FormattedMessage id="ListingPage.featuresDescription" />
-                        </h3>
-                           <SectionBikeSpecifications publicData={publicData} />
-                        <div>
-                          <h3 className={css.richTitleFormat}> 
-                            <FormattedMessage id="ListingPage.featuresTitle" />
-                          </h3>
-                          <SectionFeatures
-                              options={amenitiesConfig}
-                              selectedOptions={publicData.amenities}
-                            />
-                        </div>                        
-                      </div>
                     </div>
-                     <div className="seven wide column">
-                       <SectionHost
+                    <h3> <FormattedMessage id="ListingPage.bikeSizeTitle" /></h3>
+                    <SectionBikeSize
+                      className={css.bikeSize}
+                      options={bikeSizeConfig}
+                      selectedOptions={publicData.bikeSize}
+                      />
+                      <div className={css.borderTopBottom}> 
+                        <SectionBooking
                           listing={currentListing}
                           isOwnListing={isOwnListing}
+                          isClosed={isClosed}
+                          isBook={isBook}
+                          unitType={unitType}
+                          price={price}
+                          formattedPrice={formattedPrice}
+                          priceTitle={priceTitle}
+                          handleBookingSubmit={handleBookingSubmit}
+                          richTitle={richTitle}
                           authorDisplayName={authorDisplayName}
-                          onContactUser={this.onContactUser}
-                          isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
-                          onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
-                          sendEnquiryError={sendEnquiryError}
-                          sendEnquiryInProgress={sendEnquiryInProgress}
-                          onSubmitEnquiry={this.onSubmitEnquiry}
-                          currentUser={currentUser}
+                          handleBookButtonClick={handleBookButtonClick}
+                          handleMobileBookModalClose={handleMobileBookModalClose}
                           onManageDisableScrolling={onManageDisableScrolling}
-                        /> 
-                        <SectionMapMaybe
-                          geolocation={geolocation}
-                          publicData={publicData}
-                          listingId={currentListing.id}
-                        /> 
-                    </div>
+                        /> <br />
+                      </div>  
                   </div>
                 </div>
-              <div className={css.gridMarginTop}>
-                <div className="ui stackable sixteen column grid">             
-                  <div className="sixteen wide column">
+              </div>
+            </div>
+            <div className="container">
+               <div className={css.paddingBottom}>  
+                  <div className="row">
+                    <div className="col-md-8">
+                      <h3 className={css.richTitleFormat}> 
+                        <FormattedMessage id="ListingPage.featuresDescription" />
+                      </h3>
+                        <SectionBikeSpecifications publicData={publicData} />
+                      <div>
+                        <h3 className={css.richTitleFormat}> 
+                          <FormattedMessage id="ListingPage.featuresTitle" />
+                        </h3>
+                        <SectionFeatures
+                            options={amenitiesConfig}
+                            selectedOptions={publicData.amenities}
+                          />
+                      </div> 
+                    </div>
+                    <div className="col-md-4">
+                      <SectionHost
+                        listing={currentListing}
+                        isOwnListing={isOwnListing}
+                        authorDisplayName={authorDisplayName}
+                        onContactUser={this.onContactUser}
+                        isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
+                        onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
+                        sendEnquiryError={sendEnquiryError}
+                        sendEnquiryInProgress={sendEnquiryInProgress}
+                        onSubmitEnquiry={this.onSubmitEnquiry}
+                        currentUser={currentUser}
+                        onManageDisableScrolling={onManageDisableScrolling}
+                      /> <br />
+                      <SectionMapMaybe
+                        geolocation={geolocation}
+                        publicData={publicData}
+                        listingId={currentListing.id}
+                      /> 
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div className="container">
+              <div className={css.paddingBottom}>  
+                <div className="row">
+                  <div className="col-md-12">
                     <div className={css.SectionLikeCounter}>
                       <ul className={css.UnOrderdedListCounter}>
                         <li className={css.ListCounter}>
@@ -551,17 +542,17 @@ export class ListingPageComponent extends Component {
                               url={shareUrl}
                               title={schemaTitle}
                               >
-                                <i className="twitter icon"></i>Tweet
+                              <i className="twitter icon"></i>Tweet
                             </TwitterShareButton> 
                           </button>
                         </li>
                         </ul>
                     </div> 
                     <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> 
-                  </div>                  
+                      </div>
                 </div>
               </div>
-            </div>
+              </div>  
           </LayoutWrapperMain>
           <LayoutWrapperFooter>
             <Footer />

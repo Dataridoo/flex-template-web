@@ -5,14 +5,16 @@ import { Form as FinalForm } from 'react-final-form';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import moment from 'moment';
-import { required, bookingDatesRequired, composeValidators } from '../../util/validators';
+import { required, maxLength, bookingDatesRequired, composeValidators } from '../../util/validators';
 import { START_DATE, END_DATE } from '../../util/dates';
 import { propTypes } from '../../util/types';
 import config from '../../config';
-import { Form, PrimaryButton , FieldDateRangeInput } from '../../components';
+import { Form, PrimaryButton , FieldDateRangeInput, FieldTextInput } from '../../components';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
 import css from './BookingDatesForm.css';
+
+const TITLE_MAX_LENGTH = 60;
 
 export class BookingDatesFormComponent extends Component {
   constructor(props) {
@@ -144,9 +146,38 @@ export class BookingDatesFormComponent extends Component {
           const submitButtonClasses = classNames(
             submitButtonWrapperClassName || css.submitButtonWrapper
           );
+         
+
+          const maxLength60Message = maxLength(maxLengthMessage, TITLE_MAX_LENGTH);
+          const titleMessage = intl.formatMessage({ id: 'ChooseBikeSize.title' });
+          const titlePlaceholderMessage = intl.formatMessage({
+            id: 'ChooseBikeSize.titlePlaceholder',
+          });
+          const titleRequiredMessage = intl.formatMessage({
+            id: 'ChooseBikeSize.titleRequired',
+          });
+    
+          const maxLengthMessage = intl.formatMessage(
+            { id: 'EditListingDescriptionForm.maxLength' },
+            {
+              maxLength: TITLE_MAX_LENGTH,
+            }
+          );
+
+         
 
           return (
             <Form onSubmit={handleSubmit} className={classes}>
+                <FieldTextInput
+                id="title"
+                name="title"
+                className={css.title}
+                type="text"
+                label={titleMessage}
+                placeholder={titlePlaceholderMessage}
+                maxLength={TITLE_MAX_LENGTH}
+                validate={composeValidators(required(titleRequiredMessage), maxLength60Message)}
+              />
               <FieldDateRangeInput
                 className={css.bookingDates}
                 name="bookingDates"
@@ -166,6 +197,7 @@ export class BookingDatesFormComponent extends Component {
                   bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
                 )}
               />
+          
               {bookingInfo}
               <p className={css.smallPrint}>
                 <FormattedMessage

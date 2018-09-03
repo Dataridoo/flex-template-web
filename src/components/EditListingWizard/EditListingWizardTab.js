@@ -11,7 +11,7 @@ import {
   EditListingFeaturesPanel,
   EditListingBikeSpecificationsPanel,
   EditListingBikeSizePanel,
-  EditListingPricingPanel,
+  EditListingPricingPanel, 
 } from '../../components';
 
 import css from './EditListingWizard.css';
@@ -182,6 +182,8 @@ const EditListingWizardTab = props => {
         />
       );
     }
+   
+   
     case PRICING: {
       const submitButtonTranslationKey = isNew
         ? 'EditListingWizard.saveNewPricing'

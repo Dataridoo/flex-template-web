@@ -6,7 +6,7 @@ import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes } from 
 import { NamedLink } from '../../components';
 import EditIcon from './EditIcon';
 
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
 export const ActionBarMaybe = props => {
   const { isOwnListing, listing, editParams } = props;
@@ -15,12 +15,12 @@ export const ActionBarMaybe = props => {
   const isClosed = state === LISTING_STATE_CLOSED;
 
   if (isOwnListing) {
-    let ownListingTextTranslationId = 'ListingPage.ownListing';
+    let ownListingTextTranslationId = 'EventsListingPage.ownListing';
 
     if (isPendingApproval) {
-      ownListingTextTranslationId = 'ListingPage.ownListingPendingApproval';
+      ownListingTextTranslationId = 'EventsListingPage.ownListingPendingApproval';
     } else if (isClosed) {
-      ownListingTextTranslationId = 'ListingPage.ownClosedListing';
+      ownListingTextTranslationId = 'EventsListingPage.ownClosedListing';
     }
 
     const ownListingTextClasses = classNames(css.ownListingText, {
@@ -28,11 +28,8 @@ export const ActionBarMaybe = props => {
     });
 
     return (
-      <div className={css.actionBar}>
-        <p className={ownListingTextClasses}>
-          <FormattedMessage id={ownListingTextTranslationId} />
-        </p>
-        <NamedLink className={css.editListingLink} name="EditListingPage" params={editParams}>
+      <div className={css.actionBar}>       
+        <NamedLink className={css.editListingLink} name="EditEventsPage" params={editParams}>
           <EditIcon className={css.editIcon} />
           <FormattedMessage id="ListingPage.editListing" />
         </NamedLink>

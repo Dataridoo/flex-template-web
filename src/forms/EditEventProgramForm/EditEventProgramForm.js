@@ -5,8 +5,8 @@ import { Form as FinalForm } from 'react-final-form';
 import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
-import { Form, Button, FieldTextInput } from '../../components';
-import { maxLength, required, composeValidators } from '../../util/validators';
+import { Form, Button, FieldTextInput} from '../../components';
+import { required, composeValidators } from '../../util/validators';
 
 import css from './EditEventProgramForm.css';
 
@@ -17,6 +17,8 @@ export const EditEventProgramFormComponent = props => (
       const {
         className,
         disabled,
+        endDatePlaceholder,
+        startDatePlaceholder,
         handleSubmit,
         intl,
         invalid,
@@ -44,6 +46,9 @@ export const EditEventProgramFormComponent = props => (
         </p>
       ) : null;
 
+     
+
+     
       const classes = classNames(css.root, className);
       const submitReady = updated && pristine;
       const submitInProgress = updateInProgress;
@@ -63,6 +68,7 @@ export const EditEventProgramFormComponent = props => (
             validate={composeValidators(required(programRequiredMessage))}
           />
          
+          
           <Button
             className={css.submitButton}
             type="submit"

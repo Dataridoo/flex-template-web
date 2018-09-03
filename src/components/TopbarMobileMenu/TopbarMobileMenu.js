@@ -10,13 +10,6 @@ import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
 import { propTypes } from '../../util/types';
 import { ensureCurrentUser } from '../../util/data';
 
-import { stringify } from '../../util/urlHelpers';
-import { createResourceLocatorString } from '../../util/routes';
-import routeConfiguration from '../../routeConfiguration';
-import { IconSearch, Button } from '../../components';
-import { LocationSearchForm } from '../../forms';
-import { TopbarSearchForm } from '../../forms';
-import config from '../../config';
 
 import { AvatarLarge, InlineTextButton, NamedLink, NotificationBadge } from '../../components';
 
@@ -30,10 +23,7 @@ const TopbarMobileMenu = props => {
     currentUser,
     notificationCount,
     onLogout,
-    history, 
-    location,
-    onSearchSubmit,
-    initialSearchFormValues,
+   
   } = props;
 
   const rentalsPage = (
@@ -66,31 +56,8 @@ const TopbarMobileMenu = props => {
       </span>
     </NamedLink>
   )
-/* 
-  const search = (
-    <TopbarSearchForm
-      className={css.searchLink}
-      desktopInputRoot={css.topbarSearchWithLeftPadding}
-      form="TopbarSearchFormDesktop"
-      onSubmit={onSearchSubmit}
-      initialValues={initialSearchFormValues}
-    />
-  ); 
-   */
 
-  const handleMobileSearchClick = () => {
-    const params = { mobilesearch: 'open' };
-    const path = `${location.pathname}?${stringify(params)}`;
-    history.push(path);
-  };
 
-  const handleSearchSubmit = values => {
-    const { search, selectedPlace } = values.location;
-    const { origin, bounds } = selectedPlace;
-    const originMaybe = config.sortSearchByDistance ? { origin } : {};
-    const searchParams = { ...originMaybe, address: search, bounds };
-    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, searchParams));
-  };
 
 
   const user = ensureCurrentUser(currentUser);
@@ -116,14 +83,13 @@ const TopbarMobileMenu = props => {
     );
     return (
       <div className={css.root}>        
-        <div className={css.content}>           
-          <LocationSearchForm className={css.desktopSearchForm} onSubmit={handleSearchSubmit} />
-          <div className={css.borderBottom}>  
-            <button className={css.mobileMenuBtn}> {rentalsPage}</button>          
-            <button className={css.mobileMenuBtn}> {merchantPage}</button>
-            <button className={css.mobileMenuBtn}>{guidedToursPage}</button>
-            <button className={css.mobileMenuBtn}> {aboutPage}</button>
-          </div>          
+        <div className={css.content}> 
+          <div className="ui four item menu">
+            <a class="active item">{rentalsPage}</a>
+            <a class="item">{merchantPage}</a>
+            <a class="item">{guidedToursPage}</a>
+            <a class="item">{aboutPage}</a>
+          </div>        
           <div className={css.authenticationGreeting}>
             <FormattedMessage
               id="TopbarMobileMenu.unauthorizedGreeting"
@@ -158,16 +124,17 @@ const TopbarMobileMenu = props => {
 
 
   return (
-    <div className={css.root}> 
-      <div >  
-      <LocationSearchForm className={css.desktopSearchForm} onSubmit={handleSearchSubmit} />
-        <div className={css.borderBottom}>  
-          <button className={css.mobileMenuBtn}> {rentalsPage}</button>          
-          <button className={css.mobileMenuBtn}> {merchantPage}</button>
-          <button className={css.mobileMenuBtn}>{guidedToursPage}</button>
-          <button className={css.mobileMenuBtn}> {aboutPage}</button>
-        </div>          
-      </div>     
+    <div className={css.root}>
+        <div className={css.borderBottom}>              
+          <div className="ui inverted five item menu">
+            <a className="active blue item">{rentalsPage}</a>
+            <a className=" active blue item">{merchantPage}</a>
+            <a className=" active blue item">{guidedToursPage}</a>
+            <a className=" active blue item">{aboutPage}</a>
+            <a className=" active blue item">{aboutPage}</a>
+          </div>
+        </div>  
+        
         
        <AvatarLarge className={css.avatar} user={currentUser} />
       <div className={css.content}>
@@ -229,8 +196,7 @@ TopbarMobileMenu.propTypes = {
   isAuthenticated: bool.isRequired,
   currentUserHasListings: bool.isRequired,
   currentUser: propTypes.currentUser,
-  currentPage: string,  
-  onSearchSubmit: func.isRequired,
+  currentPage: string,
   initialSearchFormValues: object,
   notificationCount: number,
   onLogout: func.isRequired,

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+
 
 import { NamedLink} from '../../../components';
 import css from './SectionCenter.css';
@@ -10,89 +12,69 @@ import ImageTwo from './images/bhc5.jpg';
 import ImageThree from './images/bhc6.jpg';
 import ImageFour from './images/bhc7.jpg';
 
-const bikeRentals = (name, image, searchQuery) => {
-  return (
-    <NamedLink name="RentalsListPage" to={{ search: searchQuery }} className={css.location}>
-      <div className={css.imageWrapper}>
-        <div className={css.aspectWrapper}>
-          <img src={image} alt={name} className={css.locationImage} />
-        </div>
-      </div>
-     
-    </NamedLink>
-  );
-};
+const rentalsPage = (
+  <NamedLink name="RentalsListPage">
+      <img className="card-img-top" src={ImageOne} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
+  </NamedLink>   
+)
+
+const guidedToursPage = (
+  <NamedLink name="GuidedToursPage">
+  <img className="card-img-top" src={ImageTwo} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
+  </NamedLink>
+)
+
+const eventsPage = (
+  <NamedLink name="EventsSearchPage">
+  <img className="card-img-top" src={ImageThree} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
+  </NamedLink>
+)
 
 
-const guidedTourPage = (name, image, searchQuery) => {
-  return (
-    <NamedLink name="GuidedToursPage" to={{ search: searchQuery }} className={css.location}>
-      <div className={css.imageWrapper}>
-        <div className={css.aspectWrapper}>
-          <img src={image} alt={name} className={css.locationImage} />
-        </div>
-      </div>
-     
-    </NamedLink>
-  );
-};
+const accomodationPage = (
+  <NamedLink name="EventsSearchPage">
+  <img className="card-img-top" src={ImageFour} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
+  </NamedLink>
+)
 
-const eventsPage = (name, image, searchQuery) => {
-  return (
-    <NamedLink name="EventsPage" to={{ search: searchQuery }} className={css.location}>
-      <div className={css.imageWrapper}>
-        <div className={css.aspectWrapper}>
-          <img src={image} alt={name} className={css.locationImage} />
-        </div>
-      </div>
-     
-    </NamedLink>
-  );
-};
-
-
-const accomodationPage = (name, image, searchQuery) => {
-  return (
-    <NamedLink name="EventsPage" to={{ search: searchQuery }} className={css.location}>
-      <div className={css.imageWrapper}>
-        <div className={css.aspectWrapper}>
-          <img src={image} alt={name} className={css.locationImage} />
-        </div>
-      </div>
-     
-    </NamedLink>
-  );
-};
 
 const SectionCenter = () => {
   
   return (
-    <div className={css.PromotionMargin}>
-      
-      <div className={css.locations}>
-        {bikeRentals(
-          '',
-          ImageOne
-          
-        )}
-        {guidedTourPage(
-          '',
-          ImageTwo,
-          
-        )}
-       
-        {eventsPage(
-          '',
-          ImageThree,
-          
-        )}
-        {accomodationPage(
-          '',
-          ImageFour,
-          
-        )}
+    <div className="container">
+     <div className={css.CardPadding}> 
+      <div className="row">
+        <div className="col-md-3">
+         <div className={css.colPadding}>  
+            <div className="card" >        
+              {rentalsPage}
+            </div>
+          </div>     
+        </div>
+        <div className="col-md-3">
+         <div className={css.colPadding}> 
+            <div className="card" >        
+              {guidedToursPage}
+            </div> 
+            </div>    
+        </div>
+        <div className="col-md-3">
+          <div className={css.colPadding}> 
+            <div className="card" >        
+              {eventsPage}
+            </div>  
+          </div>   
+        </div>
+        <div className="col-md-3">
+         <div className={css.colPadding}> 
+          <div className="card" >        
+            {accomodationPage}            
+          </div> 
+          </div>    
+        </div> 
       </div>
     </div>
+  </div>
   );
 };
 

@@ -67,9 +67,6 @@
 .MainContainer{
   background-color: #fff;
   padding: 20px;
-  margin-left: 30px;
-  margin-right: 30px;
- 
 }
 .NewsHeader{
   color:#82c3ff;
@@ -79,12 +76,14 @@
   color:black;
   text-align: justify;
   line-height: 10px;
-  padding-bottom: 20px;
   
+}
+.NewsContent{
+  font-size: 16px;
 }
 .readMore{
   color:#82c3ff;
-  line-height: 12px;
+  font-size: 16px;
 }
 .MapSection{
   
@@ -94,9 +93,7 @@
   text-align: center;
   padding-top: 20px;
 }
-/* heroContainer gives the height for SectionHero */
-/* Safari has a bug with vw padding inside flexbox. Therefore we need an extra div (container) */
-/* If you've lot of content for the hero, multiple lines of text, make sure to adjust min-heights for each media breakpoint accordingly */
+
 .heroContainer {
   display: flex;
   flex-direction: column;
@@ -196,15 +193,18 @@
 .VideoCenter{
   margin: 0 auto;
   max-width: 400px;
+  padding: 20px;
 
  @media (--viewportMedium) {
      max-width: 600px;
       margin: 0 auto;
+      padding: 20px;
   }
 
   @media (--viewportLarge) {
      max-width: 800px;
       margin: 0 auto;
+      padding: 20px;
   }
   
 }
@@ -226,4 +226,10 @@
 .AboutSectionContainer{
   margin: 20px;
   padding-bottom: 20px;
+}
+
+
+.cardBody{
+  background-color: #fff;
+  padding: 10px;
 }

@@ -6,7 +6,7 @@ import { obfuscatedCoordinates } from '../../util/maps';
 import { Map } from '../../components';
 import config from '../../config';
 
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
 const SectionMapMaybe = props => {
   const { className, rootClassName, geolocation, publicData, listingId } = props;

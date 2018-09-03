@@ -56,24 +56,29 @@ export const LandingPageComponent = props => {
         image: [schemaImage],
       }}
     >
+
+      
       <LayoutSingleColumn>
         <LayoutWrapperTopbar>
+        
           <TopbarContainer /> 
         </LayoutWrapperTopbar>
-        <LayoutWrapperMain>
-          <div className={css.heroContainer}>           
-            <img src={rentals} alt="rentals"/>
-            <h1 className={css.heroMainTitle}>
-              <FormattedMessage id="SectionHero.title" />
-            </h1> 
-          </div> <br />
+        <LayoutWrapperMain> 
+
+          <div className="container">
+             <img src={rentals} alt="rentals" style={{ display: 'block', marginTop:'20px', maxWidth: '100%', width:'100%',   height: 'auto'}}/>
+             <h2 className={css.heroMainTitle}>
+             <FormattedMessage id="SectionHero.title" />
+           </h2> 
+          </div>
           
           <div className={css.sections}>               
               <div className={css.sectionContent}>              
                 <SectionTopLinks />
               </div>
             </div>
-           
+           <div className="container">
+          
           <div className={css.sectionLocationBackground}>                 
             <ul className={css.sections}>
                 <h1 className={css.highlights}><FormattedMessage id="SectionHero.highlights" /></h1>
@@ -84,7 +89,8 @@ export const LandingPageComponent = props => {
                 </li>
             </ul>
           </div> 
-         
+          </div>
+          
           <ul className={css.sections}>
             <h1 className={css.highlights}>
               <FormattedMessage id= "SectionHero.explorCategory" />
@@ -101,22 +107,17 @@ export const LandingPageComponent = props => {
                   <FollowUsPage />
               </h3>
             </ul><br/>  
-          <ul className={css.sections}>
+         
+            <ul className={css.sections}>
             <li className={css.section}>
               <div className={css.sectionContent}>
-              <SectionLocationsBottom />
+                <div id ="instafeedTarget">
+                  <InstagramFeed />  
+                  </div>
               </div>
             </li>
           </ul>
-          <ul className={css.sections}>
-          <li className={css.section}>
-            <div className={css.sectionContent}>
-              <div id ="instafeedTarget">
-                 <InstagramFeed />  
-                </div>
-            </div>
-          </li>
-        </ul>
+          
          
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

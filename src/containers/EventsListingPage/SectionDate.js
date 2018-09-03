@@ -1,9 +1,9 @@
 import React from 'react';
 import { PropertyGroup } from '../../components';
 
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
-const SectionBikeSize = props => {
+const SectionDate = props => {
   const { options, selectedOptions } = props;
   return (
     <div className={css.sectionBikeSize}>
@@ -17,4 +17,4 @@ const SectionBikeSize = props => {
   );
 };
 
-export default SectionBikeSize;
+export default SectionDate;

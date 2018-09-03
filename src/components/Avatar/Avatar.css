@@ -49,6 +49,7 @@
   /* Layout */
   width: var(--Avatar_size);
   height: var(--Avatar_size);
+  border-radius: 50%;
 }
 
 .initials {

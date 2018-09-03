@@ -233,69 +233,69 @@ export class SearchPageComponent extends Component {
              <TopbarContainer /> 
           </LayoutWrapperTopbar>
          <LayoutWrapperMain>
-           <div className={css.heroContainer}>
-              <img src={tourguide} alt="rentals" />
+          <div className="container">
+              <img src={tourguide} alt="rentals" style={{ display: 'block', marginTop:'20px', maxWidth: '100%', width:'100%',   height: 'auto'}}/> 
               <div className={css.heroContainerHeader}>
-                <FormattedMessage
-                  id="GuidedTourPage.ImageHeader"
-                />
+                <FormattedMessage  id="GuidedTourPage.ImageHeader" />
               </div>
                <div className={css.heroContainerSubHeader}>
-                <FormattedMessage
-                  id="GuidedTourPage.ImageSubHeader"
-                />
-               </div>
-            
-          
-              <div className={css.MainSearchContainer}>
-                <MainPanel            
-                  urlQueryParams={validQueryParams}
-                  listings={listings}
-                  searchInProgress={searchInProgress}
-                  searchListingsError={searchListingsError}
-                  searchParamsAreInSync={searchParamsAreInSync}
-                  onActivateListing={onActivateListing}
-                  onManageDisableScrolling={onManageDisableScrolling}
-                  onOpenModal={this.onOpenMobileModal}
-                  onCloseModal={this.onCloseMobileModal}
-                  onMapIconClick={onMapIconClick}
-                  pagination={pagination}
-                  searchParamsForPagination={parse(location.search)}
-                  showAsModalMaxWidth={MODAL_BREAKPOINT}
-                  primaryFilters={{
-                    categoryFilter: filters.categoryFilter,
-                    amenitiesFilter: filters.amenitiesFilter,
-                    bikeSizeFilter: filters.bikeSizeFilter,
-                  }}
-                />
-                <ModalInMobile
-                  className={css.mapPanel}
-                  id="SearchPage.map"
-                  isModalOpenOnMobile={this.state.isSearchMapOpenOnMobile}
-                  onClose={() => this.setState({ isSearchMapOpenOnMobile: false })}
-                  showAsModalMaxWidth={MODAL_BREAKPOINT}
-                  onManageDisableScrolling={onManageDisableScrolling}
-                >
-                  <div className={css.mapWrapper}>
-                    {shouldShowSearchMap ? (
-                      <SearchMap
-                        reusableContainerClassName={css.map}
-                        activeListingId={activeListingId}
-                        bounds={bounds}
-                        center={origin}
-                        listings={mapListings || []}
-                        onIdle={this.onIdle}
-                        isOpenOnModal={this.state.isSearchMapOpenOnMobile}
-                        onCloseAsModal={() => {
-                          onManageDisableScrolling('SearchPage.map', false);
-                        }}
-                        useLocationSearchBounds={!this.viewportBounds}
-                      />
-                    ) : null}
-                  </div>
-                </ModalInMobile>        
-               </div>
+                <FormattedMessage  id="GuidedTourPage.ImageSubHeader" />
+               </div>              
+          </div>
+           <div className="container">  
+            <div className="row">
+              <div className="col-md-12">          
+                <div className={css.MainSearchContainer}>
+                  <MainPanel            
+                    urlQueryParams={validQueryParams}
+                    listings={listings}
+                    searchInProgress={searchInProgress}
+                    searchListingsError={searchListingsError}
+                    searchParamsAreInSync={searchParamsAreInSync}
+                    onActivateListing={onActivateListing}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                    onOpenModal={this.onOpenMobileModal}
+                    onCloseModal={this.onCloseMobileModal}
+                    onMapIconClick={onMapIconClick}
+                    pagination={pagination}
+                    searchParamsForPagination={parse(location.search)}
+                    showAsModalMaxWidth={MODAL_BREAKPOINT}
+                    primaryFilters={{
+                      categoryFilter: filters.categoryFilter,
+                      amenitiesFilter: filters.amenitiesFilter,
+                      bikeSizeFilter: filters.bikeSizeFilter,
+                    }}
+                  />
+                  <ModalInMobile
+                    className={css.mapPanel}
+                    id="SearchPage.map"
+                    isModalOpenOnMobile={this.state.isSearchMapOpenOnMobile}
+                    onClose={() => this.setState({ isSearchMapOpenOnMobile: false })}
+                    showAsModalMaxWidth={MODAL_BREAKPOINT}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                  >
+                    <div className={css.mapWrapper}>
+                      {shouldShowSearchMap ? (
+                        <SearchMap
+                          reusableContainerClassName={css.map}
+                          activeListingId={activeListingId}
+                          bounds={bounds}
+                          center={origin}
+                          listings={mapListings || []}
+                          onIdle={this.onIdle}
+                          isOpenOnModal={this.state.isSearchMapOpenOnMobile}
+                          onCloseAsModal={() => {
+                            onManageDisableScrolling('SearchPage.map', false);
+                          }}
+                          useLocationSearchBounds={!this.viewportBounds}
+                        />
+                      ) : null}
+                    </div>
+                  </ModalInMobile>        
+                </div>
+                </div>
               </div>
+            </div>    
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
          

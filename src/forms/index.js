@@ -35,7 +35,6 @@ export { default as EditEventDescriptionForm } from './EditEventDescriptionForm/
 export { default as EditEventProgramForm } from './EditEventProgramForm/EditEventProgramForm';
 
 
-
 export { default as EditEventTypeForm } from './EditEventTypeForm/EditEventTypeForm';
 
 

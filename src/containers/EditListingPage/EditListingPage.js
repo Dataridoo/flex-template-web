@@ -10,7 +10,7 @@ import { LISTING_STATE_PENDING_APPROVAL, propTypes } from '../../util/types';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
 import { stripeAccountClearError, createStripeAccount } from '../../ducks/user.duck';
-import { EditListingWizard, EditEventListingWizard, NamedRedirect, Page } from '../../components';
+import { EditListingWizard, EditEventListingWizard, NamedRedirect, Page, NamedLink } from '../../components';
 import { TopbarContainer } from '../../containers';
 
 import {
@@ -28,6 +28,20 @@ import {
 import css from './EditListingPage.css';
 
 const { UUID } = sdkTypes;
+
+
+const addBikeRentals = (
+    <NamedLink name="NewListingPage" >
+     add rentals
+    </NamedLink>
+  );
+
+  const eventsPage = (
+    <NamedLink name="NewEventsListingPage" >
+     add event
+    </NamedLink>
+  );
+
 
 // N.B. All the presentational content needs to be extracted to their own components
 export const EditListingPageComponent = props => {
@@ -122,6 +136,7 @@ export const EditListingPageComponent = props => {
       ? intl.formatMessage({ id: 'EditListingPage.titleCreateListing' })
       : intl.formatMessage({ id: 'EditListingPage.titleEditListing' });
 
+     
     return (
       <Page title={title} scrollingDisabled={scrollingDisabled}>
         <TopbarContainer
@@ -130,6 +145,7 @@ export const EditListingPageComponent = props => {
           desktopClassName={css.desktopTopbar}
           mobileClassName={css.mobileTopbar}
         />
+        {addBikeRentals ? ( 
         <EditListingWizard
           id="EditListingWizard"
           className={css.wizard}
@@ -156,7 +172,35 @@ export const EditListingPageComponent = props => {
           updatedTab={page.updatedTab}
           updateInProgress={page.updateInProgress || page.createListingInProgress}
         />
-        
+        ) : ( 
+        <EditEventListingWizard
+          id="EditEventListingWizard"
+          className={css.wizard}
+          params={params}
+          disabled={disableForm}
+          errors={errors}
+          fetchInProgress={fetchInProgress}
+          newListingCreated={newListingCreated}
+          history={history}
+          images={images}
+          listing={isNew ? page.listingDraft : currentListing}
+          onCreateListing={onCreateListing}
+          onUpdateListing={onUpdateListing}
+          onCreateListingDraft={onCreateListingDraft}
+          onUpdateListingDraft={onUpdateListingDraft}
+          onPayoutDetailsFormChange={onPayoutDetailsFormChange}
+          onPayoutDetailsSubmit={onPayoutDetailsSubmit}
+          onImageUpload={onImageUpload}
+          onUpdateImageOrder={onUpdateImageOrder}
+          onRemoveImage={onRemoveListingImage}
+          onChange={onChange}
+          currentUser={currentUser}
+          onManageDisableScrolling={onManageDisableScrolling}
+          updatedTab={page.updatedTab}
+          updateInProgress={page.updateInProgress || page.createListingInProgress}
+        />
+        )}
+          
       </Page>
     );
   } else {

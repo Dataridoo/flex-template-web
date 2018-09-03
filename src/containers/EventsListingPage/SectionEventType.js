@@ -1,15 +1,14 @@
 import React from 'react';
 import { PropertyGroup } from '../../components';
 
-import css from './ListingPage.css';
+import css from './EventsListingPage.css';
 
-const SectionFeatures = props => {
+const SectionEventType = props => {
   const { options, selectedOptions } = props;
   return (
-    <div className={css.sectionFeatures}>
-      
+    <div >      
       <PropertyGroup
-        id="ListingPage.amenities"
+        id="ListingPage.eventType"
         options={options}
         selectedOptions={selectedOptions}
         twoColumns={true}
@@ -18,4 +17,4 @@ const SectionFeatures = props => {
   );
 };
 
-export default SectionFeatures;
+export default SectionEventType;

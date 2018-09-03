@@ -41,14 +41,13 @@ const EditEventProgramPanel = props => {
         className={css.form}
         publicData={publicData}
         initialValues={{ 
-          program: publicData.program,                      
+          program: publicData.program,                  
                 }}
         onSubmit={values => {
           const { program = '' } = values;
           const updateValues = {
             publicData: {
-              program,
-              
+              program,             
             },
           };
           onSubmit(updateValues);

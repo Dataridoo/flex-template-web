@@ -30,7 +30,7 @@ import css from './EditEventsPage.css';
 const { UUID } = sdkTypes;
 
 // N.B. All the presentational content needs to be extracted to their own components
-export const EditListingPageComponent = props => {
+export const EditEventsPageComponent = props => {
   const {
     currentUser,
     createStripeAccountError,
@@ -73,7 +73,7 @@ export const EditListingPageComponent = props => {
 
     const redirectProps = isPendingApproval
       ? {
-          name: 'ListingPageVariant',
+          name: 'EventsListingPageVariant',
           params: {
             id: listingId.uuid,
             slug: listingSlug,
@@ -81,7 +81,7 @@ export const EditListingPageComponent = props => {
           },
         }
       : {
-          name: 'ListingPage',
+          name: 'EventsListingPage',
           params: {
             id: listingId.uuid,
             slug: listingSlug,
@@ -131,7 +131,7 @@ export const EditListingPageComponent = props => {
           mobileClassName={css.mobileTopbar}
         />
         <EditEventListingWizard
-          id="EditListingWizard"
+          id="EditEventListingWizard"
           className={css.wizard}
           params={params}
           disabled={disableForm}
@@ -156,6 +156,7 @@ export const EditListingPageComponent = props => {
           updatedTab={page.updatedTab}
           updateInProgress={page.updateInProgress || page.createListingInProgress}
         />
+        
       </Page>
     );
   } else {
@@ -170,7 +171,7 @@ export const EditListingPageComponent = props => {
   }
 };
 
-EditListingPageComponent.defaultProps = {
+EditEventsPageComponent.defaultProps = {
   createStripeAccountError: null,
   currentUser: null,
   currentUserHasOrders: null,
@@ -182,7 +183,7 @@ EditListingPageComponent.defaultProps = {
 
 const { bool, func, object, shape, string, oneOf } = PropTypes;
 
-EditListingPageComponent.propTypes = {
+EditEventsPageComponent.propTypes = {
   createStripeAccountError: propTypes.error,
   currentUser: propTypes.currentUser,
   fetchInProgress: bool.isRequired,
@@ -217,7 +218,7 @@ EditListingPageComponent.propTypes = {
 };
 
 const mapStateToProps = state => {
-  const page = state.EditListingPage;
+  const page = state.EditEventsPage;
   const { createStripeAccountInProgress, createStripeAccountError, currentUser } = state.user;
 
   const fetchInProgress = createStripeAccountInProgress;
@@ -253,7 +254,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const EditEventsPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(
-  injectIntl(EditListingPageComponent)
+  injectIntl(EditEventsPageComponent)
 );
 
 EditEventsPage.loadData = loadData;

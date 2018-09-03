@@ -54,13 +54,24 @@
 }
 
 .submitButton {
-  margin-top: auto;
+  margin-top: 20px;
   margin-bottom: 24px;
   flex-shrink: 0;
 
   @media (--viewportLarge) {
     display: inline-block;
     width: 241px;
-    margin-top: 100px;
+    margin-top: 20px;
   }
+}
+
+.bookingDates {
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  padding-bottom: 20px;
+  max-width: 320px;
+ 
+
+  /* Ensure that calendar dropdown gets some stacking context relative to other form items below */
+  z-index: 1;
 }
