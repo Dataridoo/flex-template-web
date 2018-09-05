@@ -37,7 +37,7 @@ const initialState = {
   enquiryModalOpenForListingId: null,
 };
 
-const listingPagReducer = (state = initialState, action = {}) => {
+const EventslistingPagReducer = (state = initialState, action = {}) => {
   const { type, payload } = action;
   switch (type) {
     case SET_INITAL_VALUES:
@@ -67,7 +67,7 @@ const listingPagReducer = (state = initialState, action = {}) => {
   }
 };
 
-export default listingPagReducer;
+export default EventslistingPagReducer;
 
 // ================ Action creators ================ //
 

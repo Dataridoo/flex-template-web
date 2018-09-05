@@ -11,7 +11,7 @@ import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
 import { stripeAccountClearError, createStripeAccount } from '../../ducks/user.duck';
 import { EditEventListingWizard, NamedRedirect, Page } from '../../components';
-import { TopbarContainer } from '../../containers';
+import { TopbarContainerEvent } from '../../containers';
 
 import {
   createListingDraft,
@@ -124,7 +124,7 @@ export const EditEventsPageComponent = props => {
 
     return (
       <Page title={title} scrollingDisabled={scrollingDisabled}>
-        <TopbarContainer
+        <TopbarContainerEvent
           className={css.topbar}
           mobileRootClassName={css.mobileTopbar}
           desktopClassName={css.desktopTopbar}

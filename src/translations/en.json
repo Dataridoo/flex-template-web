@@ -123,6 +123,7 @@
   "EditListingDescriptionForm.categoryPlaceholder": "Choose the type of your bike…",
   "EditListingDescriptionForm.categoryRequired": "You need to select a category for your bike.",
   "EditListingDescriptionForm.description": "Describe your bike",
+  "EditEventListingDescriptionForm.description":"Event description",
   "EditListingDescriptionForm.descriptionPlaceholder": "What type of bike do you have?",
   "EditListingDescriptionForm.descriptionRequired": "A description is required.",
   "EditListingDescriptionForm.maxLength": "Must be {maxLength} characters or less",
@@ -488,7 +489,7 @@
   "MerchantPageNewsSection.MainHeader":"News",
   "MerchantPageNewsSection.NewsDate":"June 30, 2018",
   "MerchantPageNewsSection.NewsHeader":"Pedal.world",
-  "MerchantPageNewsSection.NewsContent":"Pedal.world is your online destination for planning a cycling or biking holiday in Europe.",
+  "MerchantPageNewsSection.NewsContent":"Pedal.world is your online destination for planning a cycling or biking holiday in Europe. Pedal.world is your online destination for planning a cycling or biking holiday in Europe. ",
   "MerchantPageNewsSection.readMore":"Read more ->",
   
   
@@ -670,7 +671,7 @@
   "ReviewModal.title": "Leave a review for {revieweeName}",
   "Reviews.bannedUserDisplayName": "Banned user",
   "SearchFilters.categoryLabel": "Categories",
-  "SearchFilters.amenitiesLabel": "Brand",
+  "SearchFilters.amenitiesLabel": "Specifications",
   "SearchFilters.bikeSizeLabel": "Size",
   "SearchFiltersMobile.amenitiesLabel": "Brand",
   "SearchFiltersPanel.amenitiesLabel": "Multiselect",

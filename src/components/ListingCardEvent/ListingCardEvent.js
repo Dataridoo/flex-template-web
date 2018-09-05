@@ -21,7 +21,7 @@ export const ListingCardEventComponent = props => {
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);
   const id = currentListing.id.uuid;
-  const { title = '' } = currentListing.attributes;
+  const { title = '', eventDate = '', eventType= '', eventProgram = '' } = currentListing.attributes;
   const slug = createSlug(title);
   const author = ensureUser(listing.author);
   const authorName = author.attributes.profile.displayName;
@@ -30,46 +30,57 @@ export const ListingCardEventComponent = props => {
 
 
   return (
-    <NamedLink className={classes} name="EventsListingPage" params={{ id, slug }}>
-      <div className={css.container}> 
-        <div
-            className={css.threeToTwoWrapper}
-            onMouseEnter={() => setActiveListing(currentListing.id)}
-            onMouseLeave={() => setActiveListing(null)}
-          >
-            <div className={css.aspectWrapper}>
-              <ResponsiveImage
-                rootClassName={css.rootForImage}
-                alt={title}
-                image={firstImage}
-                variants={['landscape-crop', 'landscape-crop2x']}
-                sizes={renderSizes}            
-              />    
-            </div>               
-          </div>
-          <div> 
+    <div className="container">
+      <div className="row">
+          <div className="col-md-8">          
             <div className={css.cardTitle}>
               {richText(title, {
                 longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
                 longWordClass: css.longWord,
               })}
+            </div>
+            <div >
+              {eventDate} &nbsp;| &nbsp;
+              <NamedLink className={classes} name="EventsListingPage" params={{ id, slug }}>
+                <span className={css.authorName}>              
+                  <FormattedMessage         
+                    id="ListingCard.hostedBy"
+                    values={{ authorName }}
+                  /> 
+                </span>
+              </NamedLink>
             </div> 
-            <div className={css.cardPricediv}>  
-              <div className={css.cardPrice} >               
-                  
-                  <span className={css.authorName}>
-                    <FormattedMessage         
-                      id="ListingCard.hostedBy"
-                      values={{ authorName }}
-                    /> 
-                  </span>
-              </div>              
-              
+            <div>
+              {eventType}
             </div> 
-          </div>         
-      </div>      
-      
-    </NamedLink>
+            <div>
+              {eventProgram}
+           </div> 
+          </div>
+          
+          <div className="col-md-4">
+            <NamedLink className={classes} name="EventsListingPage" params={{ id, slug }}>
+              <div className={css.container}> 
+                <div
+                    className={css.threeToTwoWrapper}
+                    onMouseEnter={() => setActiveListing(currentListing.id)}
+                    onMouseLeave={() => setActiveListing(null)}
+                  >
+                    <div className={css.aspectWrapper}>
+                      <ResponsiveImage
+                        rootClassName={css.rootForImage}
+                        alt={title}
+                        image={firstImage}
+                        variants={['landscape-crop', 'landscape-crop2x']}
+                        sizes={renderSizes}            
+                      />    
+                    </div>               
+                  </div>                     
+              </div>
+            </NamedLink> 
+          </div>
+        </div>
+      </div>
   );
 };
 

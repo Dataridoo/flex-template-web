@@ -157,41 +157,38 @@ const SearchFiltersComponent = props => {
       </NamedLink>
     )
   return (
-    <div className={css.MainSearchContainer}>      
-      <div className="ui secondary pointing menu">      
-            <div className="left menu">  
-             <span className={css.marginRight}> {categoryFilterElement} </span>
-             <span className={css.marginRight}> {amenitiesFilterElement} </span>            
-             <span className={css.marginRight}> {bikeSizeFilterFilterElement}</span>
-               {toggleSearchFiltersPanelButton} 
-            </div>
+      <div className={css.SearchContainer}> 
+        <div className={css.MainSearchContainer}> 
+              <span className={css.marginRight}> {categoryFilterElement} </span>
+              <span className={css.marginRight}> {amenitiesFilterElement} </span>            
+              <span className={css.marginRight}> {bikeSizeFilterFilterElement}</span>
+                {toggleSearchFiltersPanelButton} 
             
-            <div className="right menu">  
-            <button className={css.gridBtn}><i className="icon th"></i>{searchGrid}</button>
-            <button className={css.mapBtn}><i className="icon anchor black"></i>{searchMap}</button>
-            </div>          
-        </div> 
-     
-
-      {listingsAreLoaded && resultsCount > 0 ? (
-        <div className={css.searchResultSummary}>
-          <span className={css.resultsFound}>
-            <FormattedMessage id="SearchFilters.foundResults" values={{ count: resultsCount }} />
-          </span>
+             
+                <button className={css.gridBtn}><i className="icon th"></i>{searchGrid}</button>
+                <button className={css.mapBtn}><i className="icon anchor black"></i>{searchMap}</button>
         </div>
-      ) : null}
+      
 
-      {hasNoResult ? (
-        <div className={css.noSearchResults}>
-          <FormattedMessage id="SearchFilters.noResults" />
-        </div>
-      ) : null}
+        {listingsAreLoaded && resultsCount > 0 ? (
+          <div className={css.searchResultSummary}>
+            <span className={css.resultsFound}>
+              <FormattedMessage id="SearchFilters.foundResults" values={{ count: resultsCount }} />
+            </span>
+          </div>
+        ) : null}
 
-      {searchInProgress ? (
-        <div className={css.loadingResults}>
+        {hasNoResult ? (
+          <div className={css.noSearchResults}>
+            <FormattedMessage id="SearchFilters.noResults" />
+          </div>
+        ) : null}
+
+        {searchInProgress ? (
+          <div className={css.loadingResults}>
+          </div>
+        ) : null}
         </div>
-      ) : null}
-    </div>
   );
 };
 

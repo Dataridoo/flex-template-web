@@ -137,7 +137,7 @@ const TopbarDesktop = props => {
   )
 
   const eventsPage = (
-    <NamedLink name="EventsSearchPage" className={css.eventsPage}>
+    <NamedLink name="EventsPage" className={css.eventsPage}>
       <span className={css.events}>
         <FormattedMessage id="TopbarDesktop.events" />
       </span>
@@ -175,16 +175,7 @@ const TopbarDesktop = props => {
     </NamedLink>    
   )
 
-  /* 
-  const addBike = (
-    <NamedLink name="NewListingPage" className={css.newListingPage}>
-      <span className={css.newListing}> <i className="ui plus icon"></i>
-        <FormattedMessage id="TopBarDesktop.toNewListingPage" />
-       </span>
-    </NamedLink>    
-  )
-   */
-    
+  
               
  
 

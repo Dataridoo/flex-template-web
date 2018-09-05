@@ -145,7 +145,7 @@ export default ManageEventListingsPageReducer;
  * @param {Array<UUID>} listingIds listing IDs to select from the store
  */
 export const getOwnListingsById = (state, listingIds) => {
-  const { ownEntities } = state.ManageEventListingsPageReducer;
+  const { ownEntities } = state.ManageEventListingsPage;
   const resources = listingIds.map(id => ({
     id,
     type: 'ownListing',

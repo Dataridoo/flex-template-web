@@ -238,4 +238,3 @@ export const eventType = [
   { key: 'MtbEvent', label: 'Mtb event' },
   { key: 'GravelBikeEvent', label: 'Gravel bike event' },
 ];
-

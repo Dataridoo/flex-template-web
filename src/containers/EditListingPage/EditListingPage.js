@@ -29,7 +29,7 @@ import css from './EditListingPage.css';
 
 const { UUID } = sdkTypes;
 
-
+/* 
 const addBikeRentals = (
     <NamedLink name="NewListingPage" >
      add rentals
@@ -41,7 +41,7 @@ const addBikeRentals = (
      add event
     </NamedLink>
   );
-
+ */
 
 // N.B. All the presentational content needs to be extracted to their own components
 export const EditListingPageComponent = props => {
@@ -145,7 +145,7 @@ export const EditListingPageComponent = props => {
           desktopClassName={css.desktopTopbar}
           mobileClassName={css.mobileTopbar}
         />
-        {addBikeRentals ? ( 
+      
         <EditListingWizard
           id="EditListingWizard"
           className={css.wizard}
@@ -172,35 +172,7 @@ export const EditListingPageComponent = props => {
           updatedTab={page.updatedTab}
           updateInProgress={page.updateInProgress || page.createListingInProgress}
         />
-        ) : ( 
-        <EditEventListingWizard
-          id="EditEventListingWizard"
-          className={css.wizard}
-          params={params}
-          disabled={disableForm}
-          errors={errors}
-          fetchInProgress={fetchInProgress}
-          newListingCreated={newListingCreated}
-          history={history}
-          images={images}
-          listing={isNew ? page.listingDraft : currentListing}
-          onCreateListing={onCreateListing}
-          onUpdateListing={onUpdateListing}
-          onCreateListingDraft={onCreateListingDraft}
-          onUpdateListingDraft={onUpdateListingDraft}
-          onPayoutDetailsFormChange={onPayoutDetailsFormChange}
-          onPayoutDetailsSubmit={onPayoutDetailsSubmit}
-          onImageUpload={onImageUpload}
-          onUpdateImageOrder={onUpdateImageOrder}
-          onRemoveImage={onRemoveListingImage}
-          onChange={onChange}
-          currentUser={currentUser}
-          onManageDisableScrolling={onManageDisableScrolling}
-          updatedTab={page.updatedTab}
-          updateInProgress={page.updateInProgress || page.createListingInProgress}
-        />
-        )}
-          
+        
       </Page>
     );
   } else {

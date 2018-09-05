@@ -4,9 +4,9 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import {
-  SearchResultsPanel,
-  SearchFilters,
-  SearchFiltersPanel,
+  SearchResultsPanelEvents,
+  SearchFiltersEvents,
+  SearchFiltersPanelEvents,
 } from '../../components';
 import { validFilterParams } from './EventsSearchPage.helpers';
 
@@ -61,7 +61,7 @@ class MainPanel extends Component {
 
     return (
       <div >
-        <SearchFilters
+        <SearchFiltersEvents
          className={css.searchFilters}        
           urlQueryParams={urlQueryParams}
           listingsAreLoaded={listingsAreLoaded}
@@ -77,7 +77,7 @@ class MainPanel extends Component {
           className={classNames(css.searchFiltersPanel)}
     
           >
-            <SearchFiltersPanel
+            <SearchFiltersPanelEvents
               urlQueryParams={urlQueryParams}
               listingsAreLoaded={listingsAreLoaded}
               onClosePanel={() => this.setState({ isSearchFiltersPanelOpen: false })}
@@ -96,7 +96,7 @@ class MainPanel extends Component {
                 <FormattedMessage id="SearchPage.searchError" />
               </h2>
             ) : null}
-            <SearchResultsPanel
+            <SearchResultsPanelEvents
               className={css.searchListingsPanel}              
               listings={listings}
               pagination={listingsAreLoaded ? pagination : null}

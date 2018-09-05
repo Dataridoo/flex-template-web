@@ -238,14 +238,14 @@ const canonicalRootURL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 const siteTitle = 'pedal.world';
 
 // Twitter handle is needed in meta tags (twitter:site). Start it with '@' character
-const siteTwitterHandle = '@pedalworld/';
+const siteTwitterHandle = '@pedaldotworld';
 const siteYoutubePage = 'https://www.youtube.com/pedalworld/';
 
 // Instagram page is used in SEO schema (http://schema.org/Organization)
 const siteInstagramPage = 'https://www.instagram.com/pedal.world.europe/';
 
 // Facebook page is used in SEO schema (http://schema.org/Organization)
-const siteFacebookPage = 'https://www.facebook.com/pedalworld/';
+const siteFacebookPage = 'https://www.facebook.com/pedaldotworld/';
 
 // Facebook counts shares with app or page associated by this id
 // Currently it is unset, but you can read more about fb:app_id from

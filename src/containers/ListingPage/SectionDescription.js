@@ -16,8 +16,6 @@ const SectionDescription = props => {
           })}
         </span>
       
-      
-      
     </div>
   );
 };

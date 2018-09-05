@@ -1,19 +1,25 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
 import classNames from 'classnames';
+import moment from 'moment';
 
 import css from './EventsListingPage.css';
 
+
 const SectionDescription = props => {
-  const { className, rootClassName, publicData } = props;
-  const classes = classNames(rootClassName || css.root, className);
-  return publicData.eventName && publicData.eventDate ? (
-    <div className={classes}>
-      {publicData.eventName}
-      {publicData.eventDate}
-    </div>
-  ) : null;
+  const { className, rootClassName, publicData, description } = props; 
+   const myCustomdate = publicData.eventDate;
+   const eventDate = new Date(myCustomdate);  
+   const classes = classNames(rootClassName || css.root, className);
+  return (
+    <span className={classes}>
+       {description}
+       {eventDate.toLocaleDateString()}
+      
+    </span>
+  )
 };
+
 
 SectionDescription.defaultProps = { className: null, rootClassName: null };
 
@@ -21,14 +27,8 @@ SectionDescription.propTypes = {
   className: string,
   rootClassName: string,
   publicData: shape({
-    frame: string,
-    fork: string,
-    drivetrain: string,
-    accessories: string,
-    components: string,
-    size: string,
-    weight: string,
-    wheelset: string,
+    eventDate: string,
+   
   }).isRequired,
 };
 

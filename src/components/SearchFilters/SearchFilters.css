@@ -153,3 +153,19 @@
   }
 }
 
+.MainSearchContainer{
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+}
+
+.SearchContainer{
+  padding-right: 30px;
+}
+.floatLeftCol{
+  padding-left: 0;
+  padding-bottom: 10px;
+}
+.floatRightCol{
+  padding-right: 0;
+  padding-bottom: 10px;
+}

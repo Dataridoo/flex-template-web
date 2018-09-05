@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
+import SectionReadMore from './SectionReadMore';
 import css from './MerchantPage.css';
 
 
 import { FormattedMessage } from 'react-intl';
 
-
-const news = ( 
+const news =  (
   <div className={css.NewsBody}> 
     <p className={css.NewsDate}> 
       <FormattedMessage id="MerchantPageNewsSection.NewsDate" />
@@ -13,12 +13,10 @@ const news = (
     <p className={css.NewsHeader}> 
       <FormattedMessage id="MerchantPageNewsSection.NewsHeader" />
     </p>
-    <p className={css.NewsContent}>
-      <FormattedMessage id="MerchantPageNewsSection.NewsContent" />
+    <p className={css.NewsContent}>     
+      <SectionReadMore bio={ <FormattedMessage id="MerchantPageNewsSection.NewsContent" />} length={30} />
     </p>
-    <p className={css.readMore}>
-      <FormattedMessage id="MerchantPageNewsSection.readMore" />
-    </p>
+   
   </div>  
   
 )
@@ -33,7 +31,7 @@ class NewsSection extends Component{
             </p>  
             <div className="row">            
               <div className="col-md-4">
-                {news}
+              {news}
               </div>
               <div className="col-md-4">
                 {news}

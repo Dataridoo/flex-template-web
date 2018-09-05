@@ -206,6 +206,27 @@
   }
 }
 
+
+.textColorBlue{
+  color: blue;
+}
+.MainEventsContainer{
+  padding-top: 20px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+.borderAll{
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+  
+}
+.descriptionBorder{
+  padding-right:20px ;
+  font-weight: normal;
+}
+
+
 .editIcon {
   margin: -6px 7px 0 0;
 }

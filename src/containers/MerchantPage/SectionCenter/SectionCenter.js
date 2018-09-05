@@ -25,14 +25,14 @@ const guidedToursPage = (
 )
 
 const eventsPage = (
-  <NamedLink name="EventsSearchPage">
+  <NamedLink name="EventsPage">
   <img className="card-img-top" src={ImageThree} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
   </NamedLink>
 )
 
 
 const accomodationPage = (
-  <NamedLink name="EventsSearchPage">
+  <NamedLink name="EventsPage">
   <img className="card-img-top" src={ImageFour} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
   </NamedLink>
 )

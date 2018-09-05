@@ -10,7 +10,7 @@ import {
   ManageListingCardEvent,
   Page,
   PaginationLinks,
-  UserNav,
+  UserNavEvent,
   LayoutSingleColumn,
   LayoutWrapperTopbar,
   LayoutWrapperMain,
@@ -125,7 +125,7 @@ export class ManageEventListingsPageComponent extends Component {
         <LayoutSingleColumn>
           <LayoutWrapperTopbar>
             <TopbarContainer currentPage="ManageEventListingsPage" />
-            <UserNav selectedPageName="ManageEventListingsPage" />
+            <UserNavEvent selectedPageName="ManageEventListingsPage" />
           </LayoutWrapperTopbar>
           <LayoutWrapperMain>
             {queryInProgress ? loadingResults : null}

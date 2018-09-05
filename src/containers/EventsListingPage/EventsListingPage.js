@@ -25,7 +25,7 @@ import {
   LayoutWrapperFooter,
   Footer, NamedLink
 } from '../../components';
-import { TopbarContainer, NotFoundPage } from '../../containers';
+import { TopbarContainerEvent, NotFoundPage } from '../../containers';
 import { 
   FacebookShareButton, 
   TwitterShareButton,
@@ -133,13 +133,13 @@ export class EventsListingPageComponent extends Component {
 
     const routes = routeConfiguration();
     // Customize checkout page state with current listing and selected bookingDates
-    const { setInitialValues } = findRouteByRouteName('CheckoutPage', routes);
+    const { setInitialValues } = findRouteByRouteName('CheckoutPageEvent', routes);
     useInitialValues(setInitialValues, initialValues);
 
     // Redirect to CheckoutPage
     history.push(
       createResourceLocatorString(
-        'CheckoutPage',
+        'CheckoutPageEvent',
         routes,
         { id: listing.id.uuid, slug: createSlug(listing.attributes.title) },
         {}
@@ -248,7 +248,7 @@ export class EventsListingPageComponent extends Component {
       </span>
     );
 
-    const topbar = <TopbarContainer />;
+    const topbar = <TopbarContainerEvent />;
 
     if (showListingError && showListingError.status === 404) {
       // 404 listing not found
@@ -378,7 +378,7 @@ export class EventsListingPageComponent extends Component {
           {categoryLabel(categoriesConfig, publicData.category)}
         </span>
       ) : null; 
-
+     
     return (
       <Page
         title={schemaTitle}
@@ -401,48 +401,52 @@ export class EventsListingPageComponent extends Component {
         <LayoutSingleColumn className={css.pageRoot}>
           <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
           <LayoutWrapperMain>
-          <div className={css.PromotionBackground}> 
-              <h3 className={css.highlights}>
-                 All
-              </h3>       
-              <div className="ui stackable two column grid">
-                <div className="column">
-                    <div className={css.thumbnailContent}> 
-                      <div className={css.thumbnailHeader}>
-                        <SectionHeading
+            <div className="container">
+              <div className={css.MainEventsContainer}>
+                <h1 className={css.borderAll}>ALL</h1>
+                <div className="row">
+                  <div className="col-md-8">
+                    <h2> 
+                      <SectionHeading
                           richTitle={richTitle} 
                         /> 
-                      </div>
-                      <div className={css.thumbnailDescription}>
+                    </h2>
+                    <h3>
+                      <SectionDescription publicData={publicData} /> &nbsp; | &nbsp;
+                      <span className={css.textColorBlue}>
+                        {authorDisplayName}                       
+                      </span>
+                    </h3>
+                    <div className={css.descriptionBorder}>
                         <SectionEventType
                           options={eventTypeConfig}
                           selectedOptions={publicData.eventType}
                         /> 
-                        <SectionDescription publicData={publicData}/>
-                        <SectionEventProgram publicData={publicData}/> 
-                      </div>
+                      <p><SectionEventProgram publicData={publicData}/></p>
                     </div>
-                </div> 
-               
-                <div className="column">
-                    <SectionImages                 
-                      title={title}
-                      listing={currentListing}
-                      isOwnListing={isOwnListing}
-                      editParams={{
-                        id: listingId.uuid,
-                        slug: listingSlug,
-                        type: 'edit',
-                        tab: 'description',
-                      }}
-                      imageCarouselOpen={this.state.imageCarouselOpen}
-                      onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
-                      handleViewPhotosClick={handleViewPhotosClick}
-                      onManageDisableScrolling={onManageDisableScrolling}
-                    />                  
-                </div> 
-              </div>  <br/><hr/>
-            </div>
+                  </div>
+                  <div className="col-md-4">
+                     <div className={css.descriptionBorder}>
+                        <SectionImages                 
+                          title={title}
+                          listing={currentListing}
+                          isOwnListing={isOwnListing}
+                          editParams={{
+                            id: listingId.uuid,
+                            slug: listingSlug,
+                            type: 'edit',
+                            tab: 'description',
+                          }}
+                          imageCarouselOpen={this.state.imageCarouselOpen}
+                          onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
+                          handleViewPhotosClick={handleViewPhotosClick}
+                          onManageDisableScrolling={onManageDisableScrolling}
+                        />    
+                      </div> 
+                    </div>
+                </div>
+              </div>
+            </div>          
           </LayoutWrapperMain>
           <LayoutWrapperFooter>
            <Footer />
