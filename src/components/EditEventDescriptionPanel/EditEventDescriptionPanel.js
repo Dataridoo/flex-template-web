@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import { ensureOwnListing } from '../../util/data';
 import { ListingLink } from '../../components';
 import { EditEventDescriptionForm } from '../../forms';
-import config from '../../config';
 
 import css from './EditEventDescriptionPanel.css';
 
@@ -25,8 +24,7 @@ const EditEventDescriptionPanel = props => {
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureOwnListing(listing);
   const { title, description, publicData } = currentListing.attributes;
-
-
+ 
   const panelTitle = currentListing.id ? (
     <FormattedMessage
       id="EditEventDescriptionPanel.title"
@@ -41,20 +39,22 @@ const EditEventDescriptionPanel = props => {
       <h1 className={css.title}>{panelTitle}</h1>
       <EditEventDescriptionForm
         className={css.form}
-        initialValues={{ description, title, eventDate: publicData.eventDate }}
+        initialValues={{ description, title, eventDate:publicData }}
         saveActionMsg={submitButtonText}
+        
         onSubmit={values => {
-          const { description, title, eventDate } = values;
+          let date = new Date();
+          publicData.customDate = date.getTime();
+          const { description, title} = values;
           const updateValues = {
             title: title.trim(),
             description,
-            publicData: {eventDate}
+            publicData: {eventDate: publicData.customDate}
           
           };
           onSubmit(updateValues);
         }}
-        onChange={onChange}
-        saveActionMsg={submitButtonText}
+        onChange={onChange}       
         updated={panelUpdated}
         updateError={errors.updateListingError}
         updateInProgress={updateInProgress}

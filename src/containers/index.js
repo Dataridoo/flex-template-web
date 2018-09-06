@@ -43,3 +43,4 @@ export { default as EventsListingPage } from './EventsListingPage/EventsListingP
 export { default as EventsSearchPage } from './EventsSearchPage/EventsSearchPage';
 
 export { default as ManageEventListingsPage } from './ManageEventListingsPage/ManageEventListingsPage';
+export { default as EventsPage } from './EventsPage/EventsPage';

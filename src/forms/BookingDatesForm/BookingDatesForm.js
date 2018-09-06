@@ -90,6 +90,24 @@ export class BookingDatesFormComponent extends Component {
           } = fieldRenderProps;
           const { startDate, endDate } = values && values.bookingDates ? values.bookingDates : {};
 
+          const maxLengthMessage = intl.formatMessage(
+            { id: 'EditListingDescriptionForm.maxLength' },
+            {
+              maxLength: TITLE_MAX_LENGTH,
+            }
+          );
+          const maxLength60Message = maxLength(maxLengthMessage, TITLE_MAX_LENGTH);
+          const titleMessage = intl.formatMessage({ id: 'ChooseBikeSize.title' });
+          const titlePlaceholderMessage = intl.formatMessage({
+            id: 'ChooseBikeSize.titlePlaceholder',
+          });
+          const titleRequiredMessage = intl.formatMessage({
+            id: 'ChooseBikeSize.titleRequired',
+          });
+    
+         
+
+         
           const bookingStartLabel = intl.formatMessage({
             id: 'BookingDatesForm.bookingStartTitle',
           });
@@ -148,23 +166,7 @@ export class BookingDatesFormComponent extends Component {
           );
          
 
-          const maxLength60Message = maxLength(maxLengthMessage, TITLE_MAX_LENGTH);
-          const titleMessage = intl.formatMessage({ id: 'ChooseBikeSize.title' });
-          const titlePlaceholderMessage = intl.formatMessage({
-            id: 'ChooseBikeSize.titlePlaceholder',
-          });
-          const titleRequiredMessage = intl.formatMessage({
-            id: 'ChooseBikeSize.titleRequired',
-          });
-    
-          const maxLengthMessage = intl.formatMessage(
-            { id: 'EditListingDescriptionForm.maxLength' },
-            {
-              maxLength: TITLE_MAX_LENGTH,
-            }
-          );
-
-         
+          
 
           return (
             <Form onSubmit={handleSubmit} className={classes}>

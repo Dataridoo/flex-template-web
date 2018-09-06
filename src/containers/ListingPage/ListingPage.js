@@ -23,7 +23,7 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperMain,
   LayoutWrapperFooter,
-  Footer, NamedLink
+  Footer
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 import { 
@@ -94,10 +94,10 @@ const closeBookModal = (history, listing) => {
   );
 };
 
-const categoryLabel = (categories, key) => {
+/* const categoryLabel = (categories, key) => {
   const cat = categories.find(c => c.key === key);
   return cat ? cat.label : key;
-}; 
+};  */
 
 export class ListingPageComponent extends Component {
   constructor(props) {
@@ -201,7 +201,7 @@ export class ListingPageComponent extends Component {
       fetchReviewsError,
       sendEnquiryInProgress,
       sendEnquiryError,
-      categoriesConfig,
+      //categoriesConfig,
       amenitiesConfig,
       bikeSizeConfig,
     } = this.props;
@@ -377,12 +377,12 @@ export class ListingPageComponent extends Component {
     
     
 
-    const category =
+    /* const category =
       publicData && publicData.category ? (
         <span>
           {categoryLabel(categoriesConfig, publicData.category)}
         </span>
-      ) : null; 
+      ) : null;  */
 
     return (
       <Page

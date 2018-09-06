@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
+import SectionReadMore from './SectionReadMore';
 import css from './MerchantPage.css';
 
 
 import { FormattedMessage } from 'react-intl';
+const NewsContent = 'Pedal.world is your online destination for planning a cycling or biking holiday in Europe. Pedal.world is your online destination for planning a cycling or biking holiday in Europe.';
 
-
-const news = ( 
+const news =  (
   <div className={css.NewsBody}> 
     <p className={css.NewsDate}> 
       <FormattedMessage id="MerchantPageNewsSection.NewsDate" />
+     
     </p>
     <p className={css.NewsHeader}> 
       <FormattedMessage id="MerchantPageNewsSection.NewsHeader" />
     </p>
-    <p className={css.NewsContent}>
-      <FormattedMessage id="MerchantPageNewsSection.NewsContent" />
+    <p className={css.NewsContent}>     
+      <SectionReadMore bio={NewsContent}  />
     </p>
-    <p className={css.readMore}>
-      <FormattedMessage id="MerchantPageNewsSection.readMore" />
-    </p>
+   
   </div>  
   
 )
@@ -33,7 +33,7 @@ class NewsSection extends Component{
             </p>  
             <div className="row">            
               <div className="col-md-4">
-                {news}
+              {news}
               </div>
               <div className="col-md-4">
                 {news}

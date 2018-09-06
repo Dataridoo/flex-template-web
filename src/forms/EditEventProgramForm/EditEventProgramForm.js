@@ -16,9 +16,7 @@ export const EditEventProgramFormComponent = props => (
     render={fieldRenderProps => {
       const {
         className,
-        disabled,
-        endDatePlaceholder,
-        startDatePlaceholder,
+        disabled,       
         handleSubmit,
         intl,
         invalid,

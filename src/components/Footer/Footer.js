@@ -134,6 +134,7 @@ const Footer = props => {
              <p className={css.organizationCopyright}>
                <NamedLink name="LandingPage" className={css.copyrightLink}>
                  <FormattedMessage id="Footer.copyright" />
+                 {new Date().getFullYear()}
                </NamedLink>
              </p>
            </div>
@@ -154,88 +155,7 @@ const Footer = props => {
       </div>
     </div>
 
-    //   <div className={css.topBorderWrapper}>
-    //     <div className={css.content}>          
-    //       <div className={css.links}>
-    //         <div className={css.infoLinks}>
-    //           <ul className={css.list}>
-    //             <li className={css.listItem}>
-    //             <NamedLink name="AboutPage" className={css.link}>
-    //               <FormattedMessage id="Footer.toAboutPage" />
-    //             </NamedLink>
-    //             </li>                
-    //           </ul>
-    //         </div>
-    //         <div className={css.infoLinks}>
-    //           <ul className={css.list}>
-    //             <li className={css.listItem}>
-    //             <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
-    //               <FormattedMessage id="Footer.privacyPolicy" />
-    //             </NamedLink>
-    //             </li>                
-    //           </ul>
-    //         </div>
-    //         <div className={css.infoLinks}>
-    //           <ul className={css.list}>
-    //             <li className={css.listItem}>
-    //             <NamedLink name="TermsOfServicePage" className={css.legalLink}>
-    //               <FormattedMessage id="Footer.termsOfUse" />
-    //             </NamedLink>
-    //             </li>                
-    //           </ul>
-    //       </div>
-    //       <div className={css.infoLinks}>
-    //         <ul className={css.list}>
-    //           <li className={css.listItem}>
-    //           <NamedLink name="ContactUsPage" className={css.legalLink}>
-    //           <FormattedMessage id="Footer.toContactUsPage" />
-    //         </NamedLink>
-    //           </li>                
-    //         </ul>
-    //       </div>
-    //       <div className={css.infoLinks}>
-    //         <ul className={css.list}>
-    //           <li className={css.listItem}>
-    //             <NamedLink name="LandingPage" className={css.legalLink}>
-    //               <img src={logo} alt="" className={css.logo}/>
-    //             </NamedLink>
-                 
-    //           </li>                
-    //         </ul>
-    //       </div>
-    //       <div className={css.infoLinks}>
-    //         <ul className={css.list}>
-    //           <li className={css.listItem}>
-    //             {socialMediaLinks}
-    //           </li>                
-    //         </ul>
-    //       </div>  
-    //     </div>
-    //       <div className={css.organization} id="organization">
-    //         <div className={css.organizationInfo}>                
-    //           <p className={css.organizationCopyright}>
-    //             <NamedLink name="LandingPage" className={css.copyrightLink}>
-    //               <FormattedMessage id="Footer.copyright" />
-    //             </NamedLink>
-    //           </p>
-    //         </div>
-    //       </div>
-    //       <div className={css.copyrightAndTermsMobile}>
-    //         <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
-    //           <FormattedMessage id="Footer.copyright" />
-    //         </NamedLink>
-    //         <div className={css.tosAndPrivacyMobile}>
-    //           <NamedLink name="PrivacyPolicyPage" className={css.privacy}>
-    //             <FormattedMessage id="Footer.privacy" />
-    //           </NamedLink>
-    //           <NamedLink name="TermsOfServicePage" className={css.terms}>
-    //             <FormattedMessage id="Footer.terms" />
-    //           </NamedLink>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
+    
   );
 };
 

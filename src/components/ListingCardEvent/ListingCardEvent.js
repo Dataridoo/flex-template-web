@@ -2,13 +2,11 @@ import React from 'react';
 import { string, func } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import { NamedLink, ResponsiveImage, AvatarMedium} from '../../components';
+import { NamedLink, ResponsiveImage} from '../../components';
 import { propTypes } from '../../util/types';
-import { formatMoney } from '../../util/currency';
 import { ensureListing, ensureUser } from '../../util/data';
 import { richText } from '../../util/richText';
 import { createSlug } from '../../util/urlHelpers';
-import config from '../../config';
 
 import css from './ListingCard.css';
 
@@ -17,7 +15,7 @@ const MIN_LENGTH_FOR_LONG_WORDS = 10;
 
 export const ListingCardEventComponent = props => {
   
-  const { className, rootClassName, intl, listing, renderSizes, setActiveListing } = props;
+  const { className, rootClassName, listing, renderSizes, setActiveListing } = props;
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);
   const id = currentListing.id.uuid;

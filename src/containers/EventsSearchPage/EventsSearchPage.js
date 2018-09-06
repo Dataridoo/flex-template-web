@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -44,7 +44,7 @@ import {
 } from './EventsSearchPage.helpers';
 import MainPanel from './MainPanel';
 
-import eventsImage from './events.jpg';
+import eventsImage from './images/events.jpg';
 import css from './EventsSearchPage.css';
 
 // Pagination page size might need to be dynamic on responsive page layouts
@@ -221,7 +221,8 @@ export class EventsSearchPageComponent extends Component {
         description={description}
         title={title}
         schema={schema}
-      >    
+      >  
+        
         <LayoutSingleColumn>
           <LayoutWrapperTopbar>
              <TopbarContainer /> 
@@ -230,14 +231,11 @@ export class EventsSearchPageComponent extends Component {
           <div className="container">
               <img src={eventsImage} alt="rentals" style={{ display: 'block', marginTop:'20px', maxWidth: '100%', width:'100%',   height: 'auto'}}/>                     
           </div>
+                  
+
           <div className="container">
               <div className="row">              
               <div className="col-md-12">
-                
-                    
-
-                <div className="ui stackable grid">              
-                  <div className="sixteen wide column">
                     <div className={css.MainSearchContainer}>
                       <MainPanel   
                         urlQueryParams={validQueryParams}
@@ -263,7 +261,7 @@ export class EventsSearchPageComponent extends Component {
                       />
                       <ModalInMobile
                         className={css.mapPanel}
-                        id="SearchPage.map"
+                        id="EventsSearchPage.map"
                         isModalOpenOnMobile={this.state.isSearchMapOpenOnMobile}
                         onClose={() => this.setState({ isSearchMapOpenOnMobile: false })}
                         showAsModalMaxWidth={MODAL_BREAKPOINT}
@@ -280,17 +278,14 @@ export class EventsSearchPageComponent extends Component {
                               onIdle={this.onIdle}
                               isOpenOnModal={this.state.isSearchMapOpenOnMobile}
                               onCloseAsModal={() => {
-                                onManageDisableScrolling('SearchPage.map', false);
+                                onManageDisableScrolling('EventsSearchPage.map', false);
                               }}
                               useLocationSearchBounds={!this.viewportBounds}
                             />
                           ) : null}
                         </div>
-                      </ModalInMobile>        
-                    
+                      </ModalInMobile>  
                     </div>
-                  </div>
-                </div>
                 </div> 
               </div>
             </div> 

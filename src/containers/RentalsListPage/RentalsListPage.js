@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -293,7 +293,7 @@ export class SearchPageComponent extends Component {
             </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
-         
+         <Footer />
         </LayoutWrapperFooter>
       </LayoutSingleColumn>
     </Page>

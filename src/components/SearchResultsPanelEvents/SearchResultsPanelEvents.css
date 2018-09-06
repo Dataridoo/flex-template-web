@@ -1,0 +1,88 @@
+@import '../../marketplace.css';
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.listingCards {
+  padding: 10px 0 56px 0;
+  margin-top: 30px;
+ 
+
+  @media (--viewportMedium) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+  }
+
+  @media (--viewportLarge) {
+    padding: 10px 0 56px 16px;
+  }
+}
+
+.listingCard {
+  margin-bottom: 26px;
+ flex-basis: 100%;
+   
+  
+ 
+
+  @media (--viewportLarge) {
+    /**
+      * resultPanelWidthRatio = 0.625 aka 62.5%
+
+      resultPanel: 62.5vw from 1024px = 640px
+      panelPaddings: - 2*36px = 72px
+
+      columnCount: 2
+      guttersBetweenColumns: 24px
+
+      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = listingCardWidth
+      ergo => listingCardWidth: 272px
+
+    * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
+    */
+    flex-basis: calc(30.7% - 20px);
+    margin-right: 40px;
+  }
+
+  @media (--viewportXLarge) {
+    /**
+     * resultPanelWidthRatio = 0.625 aka 62.5%
+
+      resultPanel: 62.5vw from 1920px = 1200px
+      panelPaddings: - 2*36px = 72px
+
+      columnCount: 3
+      guttersBetweenColumns: 2*24px = 48px
+
+      (resultPanel - (panelPaddings + guttersBetweenColumns)) / columnCount = listingCardWidth
+      ergo => listingCardWidth: 360px
+
+     * flex-basis: calc((100%/columnCount) - (guttersBetweenColumns / columnCount))
+     */
+
+    flex-basis: calc(50% - 16px);
+    margin-right: 24px;
+  }
+}
+
+/**
+ * Remove margin-right from listingCards on the last column
+ * This is a special case in the world of breakpoints. Nth-of-type effects every nth item.
+ * Here we take margin-right away, but we don't want it affect the next column breakpoint.
+ */
+
+
+.pagination {
+  /* margin-top: auto; pushes pagination to the end of the page. */
+  margin-top: auto;
+  background-color: var(--matterColorLight);
+  padding: 0 24px;
+
+  @media (--viewportLarge) {
+    padding: 0 36px;
+  }
+}

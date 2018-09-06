@@ -46,7 +46,7 @@ const tabLabel = (intl, tab) => {
  * @return true if tab / step is completed.
  */
 const tabCompleted = (tab, listing) => {
-  const { geolocation, title, description, publicData } = listing.attributes;
+  const { title, description, publicData } = listing.attributes;
   const images = listing.images;
 
   switch (tab) {

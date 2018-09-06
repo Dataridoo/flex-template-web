@@ -10,7 +10,6 @@ import {
   Page,
   SectionLocations,
   SectionLocationCenter,
-  SectionLocationsBottom,
   LayoutSingleColumn,
   LayoutWrapperTopbar,
   LayoutWrapperMain,

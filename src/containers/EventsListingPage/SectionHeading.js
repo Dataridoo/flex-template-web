@@ -6,10 +6,7 @@ import css from './EventsListingPage.css';
 
 const SectionHeading = props => {
   const {
-    priceTitle,
-    formattedPrice,
     richTitle,
-    category,
     showContactUser,
     onContactUser,
   } = props;

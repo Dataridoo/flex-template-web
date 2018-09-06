@@ -85,10 +85,10 @@ const TopbarMobileMenu = props => {
       <div className={css.root}>        
         <div className={css.content}> 
           <div className="ui four item menu">
-            <a class="active item">{rentalsPage}</a>
-            <a class="item">{merchantPage}</a>
-            <a class="item">{guidedToursPage}</a>
-            <a class="item">{aboutPage}</a>
+            <span class="active item">{rentalsPage}</span>
+            <span class="item">{merchantPage}</span>
+            <span class="item">{guidedToursPage}</span>
+            <span class="item">{aboutPage}</span>
           </div>        
           <div className={css.authenticationGreeting}>
             <FormattedMessage
@@ -127,11 +127,11 @@ const TopbarMobileMenu = props => {
     <div className={css.root}>
         <div className={css.borderBottom}>              
           <div className="ui inverted five item menu">
-            <a className="active blue item">{rentalsPage}</a>
-            <a className=" active blue item">{merchantPage}</a>
-            <a className=" active blue item">{guidedToursPage}</a>
-            <a className=" active blue item">{aboutPage}</a>
-            <a className=" active blue item">{aboutPage}</a>
+            <span className="active blue item">{rentalsPage}</span>
+            <span className=" active blue item">{merchantPage}</span>
+            <span className=" active blue item">{guidedToursPage}</span>
+            <span className=" active blue item">{aboutPage}</span>
+            <span className=" active blue item">{aboutPage}</span>
           </div>
         </div>  
         

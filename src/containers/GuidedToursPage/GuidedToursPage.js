@@ -298,7 +298,7 @@ export class SearchPageComponent extends Component {
             </div>    
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
-         
+         <Footer />
         </LayoutWrapperFooter>
       </LayoutSingleColumn>
     </Page>

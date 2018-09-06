@@ -137,7 +137,7 @@ const TopbarDesktop = props => {
   )
 
   const eventsPage = (
-    <NamedLink name="EventsSearchPage" className={css.eventsPage}>
+    <NamedLink name="EventsPage" className={css.eventsPage}>
       <span className={css.events}>
         <FormattedMessage id="TopbarDesktop.events" />
       </span>
@@ -151,7 +151,7 @@ const TopbarDesktop = props => {
     </NamedLink>
   )
 
-  const blogPage = (
+ /*  const blogPage = (
     <NamedLink name="BlogPage" className={css.blogPage}>
       <span className={css.blog}>
         <FormattedMessage id="TopbarDesktop.blog" />
@@ -165,7 +165,7 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
   )
-
+ */
   
   const addBike = (
     <NamedLink name="AddServicePage" className={css.newListingPage}>

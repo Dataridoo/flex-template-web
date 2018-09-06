@@ -6,7 +6,6 @@ import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import routeConfiguration from '../../routeConfiguration';
 import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
-import { formatMoney } from '../../util/currency';
 import { ensureOwnListing } from '../../util/data';
 import { LISTING_PAGE_PENDING_APPROVAL_VARIANT, createSlug } from '../../util/urlHelpers';
 import { createResourceLocatorString } from '../../util/routes';
@@ -19,7 +18,6 @@ import {
   IconSpinner,
   ResponsiveImage,
 } from '../../components';
-import config from '../../config';
 
 import MenuIcon from './MenuIcon';
 import css from './ManageListingCard.css';
@@ -82,7 +80,6 @@ export const ManageListingCardEventComponent = props => {
     hasClosingError,
     hasOpeningError,
     history,
-    intl,
     isMenuOpen,
     actionsInProgressListingId,
     listing,
@@ -94,7 +91,7 @@ export const ManageListingCardEventComponent = props => {
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureOwnListing(listing);
   //const id = currentListing.id.uuid;
-  const { title = '', price, state } = currentListing.attributes;
+  const { title = '',  state } = currentListing.attributes;
   const isPendingApproval = state === LISTING_STATE_PENDING_APPROVAL;
   const isClosed = state === LISTING_STATE_CLOSED;
   const firstImage =

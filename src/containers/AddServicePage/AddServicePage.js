@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';/* 
 import config from '../../config';
-import { twitterPageURL } from '../../util/urlHelpers';
+import { twitterPageURL } from '../../util/urlHelpers'; */
 import { StaticPage, TopbarContainer } from '../../containers';
 import {
   LayoutSingleColumn,
@@ -9,7 +9,6 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
-  ExternalLink,
   NamedLink,
 } from '../../components';
 import css from './AddServicePage.css';
@@ -72,8 +71,8 @@ const accomodationPage = (name, image, searchQuery) => {
 };
 
 const AddServicePage = () => {
-  const { siteTwitterHandle, siteFacebookPage } = config;
-  const siteTwitterPage = twitterPageURL(siteTwitterHandle);
+  //const { siteTwitterHandle } = config;
+  /* const siteTwitterPage = twitterPageURL(siteTwitterHandle); */
 
   return (
     <StaticPage

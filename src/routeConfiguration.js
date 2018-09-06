@@ -12,6 +12,7 @@ import {
   EmailVerificationPage,
   EventsSearchPage,
   GuidedToursPage,
+  EventsPage,
   InboxPage,
   LandingPage,
   ListingPage,
@@ -89,13 +90,7 @@ const routeConfiguration = () => {
       component: MerchantPage,
     },
 
-    {
-      path: '/event',
-      name: 'EventsSearchPage',
-      component: props => <EventsSearchPage {...props} tab="listings" />,
-      loadData: EventsSearchPage.loadData,
-    },
-    
+   
     {
       path: '/contactus',
       name: 'ContactUsPage',
@@ -113,21 +108,8 @@ const routeConfiguration = () => {
       component: props => <RentalsListPage {...props} tab="filters" />,
       loadData: RentalsListPage.loadData,
     },
-    {
-      path: '/s/events',
-      name: 'SearchListingsPage',
-      component: props => <EventsSearchPage {...props} tab="listings" />,
-      loadData: EventsSearchPage.loadData,
-    },
 
-    {
-      path: '/s/listings',
-      name: 'SearchEventsPage',
-      component: props => <RentalsListPage {...props} tab="listings" />,
-      loadData: RentalsListPage.loadData,
-    },
-  
-
+    
     {
       path: '/rent',
       name: 'RentalsListPage',
@@ -151,12 +133,7 @@ const routeConfiguration = () => {
       component: props => <ListingPage {...props} />,
       loadData: ListingPage.loadData,
     }, 
-    {
-      path: '/l/:slug/:id',
-      name: 'EventsListingPage',
-      component: props => <EventsListingPage {...props} />,
-      loadData: EventsListingPage.loadData,
-    }, 
+   
     {
       path: '/l/:slug/:id/checkout',
       name: 'CheckoutPage',
@@ -173,14 +150,7 @@ const routeConfiguration = () => {
       loadData: ListingPage.loadData,
     },
 
-    {
-      path: '/event/:slug/:id/:variant',
-      name: 'EventsListingPageVariant',
-      auth: true,
-      authPage: 'LoginPage',
-      component: props => <EventsListingPage {...props} />,
-      loadData: EventsListingPage.loadData,
-    },
+ 
 
     {
       path: '/l/new',
@@ -201,25 +171,53 @@ const routeConfiguration = () => {
       loadData: EditListingPage.loadData,
     },
 
-    
+        
+    // Canonical path should be after the `/l/new` path since they
+    // conflict and `new` is not a valid listing UUID.
+    {
+      path: '/l/:id',
+      name: 'ListingPageCanonical',
+      component: props => <ListingPage {...props} />,
+      loadData: ListingPage.loadData,
+    },
+
+//events page
+    {
+      path: '/event',
+      name: 'EventsPage',
+      component: props => <EventsPage {...props} tab="listings" />,
+      loadData: EventsPage.loadData,
+    },
 
     {
-      path: '/event/:slug/:id',
+      path: '/e',
+      name: 'EventsListingBasePage',
+      component: RedirectToLandingPage,
+    },
+    {
+      path: '/e/:slug/:id',
       name: 'EventsListingPage',
       component: props => <EventsListingPage {...props} />,
       loadData: EventsListingPage.loadData,
-    }, 
+    },
     {
-      path: '/event/:slug/:id/:variant',
+      path: '/e/:slug/:id/checkout',
+      name: 'CheckoutPage',
+      auth: true,
+      component: props => <CheckoutPage {...props} />,
+      setInitialValues: CheckoutPage.setInitialValues,
+    },
+   
+    {
+      path: '/e/:slug/:id/:variant',
       name: 'EventsListingPageVariant',
       auth: true,
       authPage: 'LoginPage',
       component: props => <EventsListingPage {...props} />,
       loadData: EventsListingPage.loadData,
     },
-    
     {
-      path: '/event/new',
+      path: '/e/new',
       name: 'NewEventsListingPage',
       auth: true,
       component: () => (
@@ -230,30 +228,29 @@ const routeConfiguration = () => {
       ),
     },
     {
-      path: '/event/:slug/:id/:type/:tab',
+      path: '/e/:slug/:id/:type/:tab',
       name: 'EditEventsPage',
       auth: true,
       component: props => <EditEventsPage {...props} />,
       loadData: EditEventsPage.loadData,
     },
+
+    // Canonical path should be after the `/l/new` path since they
+    // conflict and `new` is not a valid listing UUID.
     {
-      path: '/event/:id',
+      path: '/e/:id',
       name: 'EventsListingPageCanonical',
       component: props => <EventsListingPage {...props} />,
       loadData: EventsListingPage.loadData,
     },
 
-   
-
-    // Canonical path should be after the `/l/new` path since they
-    // conflict and `new` is not a valid listing UUID.
     {
-      path: '/l/:id',
-      name: 'ListingPageCanonical',
-      component: props => <ListingPage {...props} />,
-      loadData: ListingPage.loadData,
+      path: '/es',
+      name: 'EventsSearchPage',
+      component: props => <EventsSearchPage {...props} />,
+      loadData: EventsSearchPage.loadData,
     },
-
+    //event end
    
     {
       path: '/u',

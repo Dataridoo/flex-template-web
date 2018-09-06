@@ -1,7 +1,6 @@
 import React from 'react';
 import { bool, oneOfType, object } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import classNames from 'classnames';
 import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
 import { NamedLink } from '../../components';
 import EditIcon from './EditIcon';
@@ -22,11 +21,11 @@ export const ActionBarMaybe = props => {
     } else if (isClosed) {
       ownListingTextTranslationId = 'EventsListingPage.ownClosedListing';
     }
-
+/* 
     const ownListingTextClasses = classNames(css.ownListingText, {
       [css.ownListingTextPendingApproval]: isPendingApproval,
     });
-
+ */
     return (
       <div className={css.actionBar}>       
         <NamedLink className={css.editListingLink} name="EditEventsPage" params={editParams}>

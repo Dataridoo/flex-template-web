@@ -123,7 +123,11 @@
   "EditListingDescriptionForm.categoryPlaceholder": "Choose the type of your bike…",
   "EditListingDescriptionForm.categoryRequired": "You need to select a category for your bike.",
   "EditListingDescriptionForm.description": "Describe your bike",
+  "EditEventListingDescriptionForm.description":"Event description",
   "EditListingDescriptionForm.descriptionPlaceholder": "What type of bike do you have?",
+  "EditEventListingDescriptionForm.title":"Event Title",
+  "EditEventListingDescriptionForm.descriptionPlaceholder":"Event description",
+  "EditEventListingDescriptionForm.titlePlaceholder":"Event title",
   "EditListingDescriptionForm.descriptionRequired": "A description is required.",
   "EditListingDescriptionForm.maxLength": "Must be {maxLength} characters or less",
   "EditListingDescriptionForm.title": "The type of your bike",
@@ -333,7 +337,7 @@
   "FieldReviewRating.star3": "OK - 3 stars",
   "FieldReviewRating.star4": "Good - 4 stars",
   "FieldReviewRating.star5": "Awesome - 5 stars",
-  "Footer.copyright": "© pedal.world 2018",
+  "Footer.copyright": "© pedal.world ",
   "Footer.goToFacebook": "Go to Facebook page",
   "Footer.goToInstagram": "Go to Instagram page",
   "Footer.goToYoutube": "Go to Youtube",
@@ -488,7 +492,7 @@
   "MerchantPageNewsSection.MainHeader":"News",
   "MerchantPageNewsSection.NewsDate":"June 30, 2018",
   "MerchantPageNewsSection.NewsHeader":"Pedal.world",
-  "MerchantPageNewsSection.NewsContent":"Pedal.world is your online destination for planning a cycling or biking holiday in Europe.",
+  "MerchantPageNewsSection.NewsContent":"Pedal.world is your online destination for planning a cycling or biking holiday in Europe. Pedal.world is your online destination for planning a cycling or biking holiday in Europe. ",
   "MerchantPageNewsSection.readMore":"Read more ->",
   
   
@@ -670,7 +674,7 @@
   "ReviewModal.title": "Leave a review for {revieweeName}",
   "Reviews.bannedUserDisplayName": "Banned user",
   "SearchFilters.categoryLabel": "Categories",
-  "SearchFilters.amenitiesLabel": "Brand",
+  "SearchFilters.amenitiesLabel": "Specifications",
   "SearchFilters.bikeSizeLabel": "Size",
   "SearchFiltersMobile.amenitiesLabel": "Brand",
   "SearchFiltersPanel.amenitiesLabel": "Multiselect",
@@ -879,7 +883,7 @@
   "TransactionPanel.sendMessagePlaceholder": "Send a message to {name}…",
   "UserCard.contactUser": "Contact",
   "UserCard.heading": "{name}",
-  "UserCard.showFullBioLink": "more",
+  "UserCard.showFullBioLink": "read more",
   "UserCard.viewProfileLink": "View profile",
   "MerchantPageVideoSection.VideoDescription":"Video description"
 

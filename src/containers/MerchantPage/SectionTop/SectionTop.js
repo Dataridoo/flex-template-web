@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import { FormattedMessage } from 'react-intl';
-import { Reviews } from '../../../components';
 
 import {  propTypes } from '../../../util/types';
+import ReviewRating from './ReviewRating';
 
 import css from './SectionTop.css';
 
@@ -14,7 +14,6 @@ import bhc3 from './images/bhc3.jpg';
 
 class SectionTop extends Component {
   render(){ 
-    const { reviews} = this.props;
   return (   
     <div className="container" > 
           <div className={css.PromotionBackground}>        
@@ -24,19 +23,22 @@ class SectionTop extends Component {
             <div className={css.colMarginBottom}>             
               <div className="card" >        
                 <img className="card-img-top" src={bhc2} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
-                <div className="card-body" className={css.cardBody}>
-                  <h4 className="card-title">                   
-                    <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackage" /> 
-                    <span className={css.StartingFrom}>
-                        <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
-                      </span>
-                  </h4>
-                    <div className="card-text">                    
-                      <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
-                      <span className={css.StartingFromCurrency}>
-                        <FormattedMessage id="MerchantPageSectionTop.Currency"  />
-                      </span>
-                    </div>              
+                <div className={css.cardBody}>
+                  <div className="card-body" >
+                    <h4 className="card-title">                   
+                      <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackage" /> 
+                      <span className={css.StartingFrom}>
+                          <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
+                        </span>
+                    </h4>
+                      <div className="card-text">                    
+                        <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
+                        <span className={css.StartingFromCurrency}>
+                          <FormattedMessage id="MerchantPageSectionTop.Currency"  />
+                        </span>
+                      </div> 
+                      <ReviewRating />             
+                    </div>
                   </div>
                 </div>     
               </div>
@@ -45,19 +47,22 @@ class SectionTop extends Component {
               <div className={css.colMarginBottom}>      
                 <div className="card" >        
                   <img className="card-img-top" src={bhc3} alt="bhcimage" style={{ display: 'block',  maxWidth: '100%', width:'100%',   height: 'auto'}}/>
-                  <div className="card-body" className={css.cardBody} >
-                    <h4 className="card-title">
-                        <FormattedMessage id="MerchantPageSectionTop.BeNeLuxPackage" />
-                      <span className={css.StartingFrom}>
-                        <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
-                      </span>
-                    </h4>
-                    <div className="card-text" >
-                        <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
-                        <span className={css.StartingFromCurrency}>
-                            <FormattedMessage id="MerchantPageSectionTop.Currency"  />
+                  <div className={css.cardBody}>
+                    <div className="card-body" >
+                      <h4 className="card-title">
+                          <FormattedMessage id="MerchantPageSectionTop.BeNeLuxPackage" />
+                        <span className={css.StartingFrom}>
+                          <FormattedMessage id="MerchantPageSectionTop.StartingFrom" />
                         </span>
-                    </div>              
+                      </h4>
+                      <div className="card-text" >
+                          <FormattedMessage id="MerchantPageSectionTop.SpecialWeekPackageDescription" />
+                          <span className={css.StartingFromCurrency}>
+                              <FormattedMessage id="MerchantPageSectionTop.Currency"  />
+                          </span>
+                      </div> 
+                        <ReviewRating />                
+                    </div>
                   </div>
                 </div>     
               </div>

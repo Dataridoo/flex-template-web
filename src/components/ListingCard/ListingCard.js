@@ -2,7 +2,7 @@ import React from 'react';
 import { string, func } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import { NamedLink, ResponsiveImage, AvatarMedium} from '../../components';
+import { NamedLink, ResponsiveImage} from '../../components';
 import { propTypes } from '../../util/types';
 import { formatMoney } from '../../util/currency';
 import { ensureListing, ensureUser } from '../../util/data';
