@@ -5,10 +5,10 @@ import classNames from 'classnames';
 import merge from 'lodash/merge';
 import { propTypes } from '../../util/types';
 import {
-  SearchResultsPanelEvents,
-  SearchFiltersEvents,
-  SearchFiltersMobileEvents,
-  SearchFiltersPanelEvents,
+  SearchResultsPanel,
+  SearchFilters,
+  SearchFiltersMobile,
+  SearchFiltersPanel,
 } from '../../components';
 import { validFilterParams } from './SearchPage.helpers';
 
@@ -75,7 +75,7 @@ class MainPanel extends Component {
 
     return (
       <div className={classes}>
-        <SearchFiltersEvents
+        <SearchFilters
           className={css.searchFilters}
           urlQueryParams={urlQueryParams}
           listingsAreLoaded={listingsAreLoaded}
@@ -86,7 +86,7 @@ class MainPanel extends Component {
           {...searchFiltersPanelProps}
           {...primaryFilters}
         />
-        <SearchFiltersMobileEvents
+        <SearchFiltersMobile
           className={css.searchFiltersMobile}
           urlQueryParams={urlQueryParams}
           listingsAreLoaded={listingsAreLoaded}
@@ -105,7 +105,7 @@ class MainPanel extends Component {
         />
         {isSearchFiltersPanelOpen ? (
           <div className={classNames(css.searchFiltersPanel)}>
-            <SearchFiltersPanelEvents
+            <SearchFiltersPanel
               urlQueryParams={urlQueryParams}
               listingsAreLoaded={listingsAreLoaded}
               onClosePanel={() => this.setState({ isSearchFiltersPanelOpen: false })}
@@ -124,7 +124,7 @@ class MainPanel extends Component {
                 <FormattedMessage id="SearchPage.searchError" />
               </h2>
             ) : null}
-            <SearchResultsPanelEvents
+            <SearchResultsPanel
               className={css.searchListingsPanel}
               listings={listings}
               pagination={listingsAreLoaded ? pagination : null}
