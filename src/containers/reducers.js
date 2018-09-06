@@ -24,9 +24,11 @@ import EventsSearchPage from './EventsSearchPage/EventsSearchPage.duck';
 import RentalsListPage from './RentalsListPage/RentalsListPage.duck';
 
 import TransactionPage from './TransactionPage/TransactionPage.duck';
+import CheckoutPageEvent from './CheckoutPageEvent/CheckoutPageEvent.duck';
 
 export {
   CheckoutPage,
+  CheckoutPageEvent,
   ContactDetailsPage,
   EditListingPage,
   EditEventsPage,

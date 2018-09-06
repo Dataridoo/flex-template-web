@@ -128,13 +128,13 @@ export class EventsListingPageComponent extends Component {
 
     const routes = routeConfiguration();
     // Customize checkout page state with current listing and selected bookingDates
-    const { setInitialValues } = findRouteByRouteName('CheckoutPage', routes);
+    const { setInitialValues } = findRouteByRouteName('CheckoutPageEvent', routes);
     useInitialValues(setInitialValues, initialValues);
 
     // Redirect to CheckoutPage
     history.push(
       createResourceLocatorString(
-        'CheckoutPage',
+        'CheckoutPageEvent',
         routes,
         { id: listing.id.uuid, slug: createSlug(listing.attributes.title) },
         {}

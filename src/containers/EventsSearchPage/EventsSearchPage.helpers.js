@@ -108,7 +108,7 @@ export const createSearchResultSchema = (listings, address, intl) => {
 
   const schemaListings = listings.map((l, i) => {
     const title = l.attributes.title;
-    const pathToItem = createResourceLocatorString('ListingPage', routeConfiguration(), {
+    const pathToItem = createResourceLocatorString('EventsListingPage', routeConfiguration(), {
       id: l.id.uuid,
       slug: createSlug(title),
     });

@@ -19,7 +19,7 @@ import { TopbarSearchForm } from '../../forms';
 
 import css from './TopbarDesktop.css';
 
-const TopbarDesktop = props => {
+const TopbarDesktopEvent = props => {
   const {
     className,
     currentUser,
@@ -75,10 +75,10 @@ const TopbarDesktop = props => {
         <Avatar className={css.avatar} user={currentUser} disableProfileLink />
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
-        <MenuItem key="ManageListingsPage">
+        <MenuItem key="ManageEventListingsPage">
           <NamedLink
-            className={classNames(css.yourListingsLink, currentPageClass('ManageListingsPage'))}
-            name="ManageListingsPage"
+            className={classNames(css.yourListingsLink, currentPageClass('ManageEventListingsPage'))}
+            name="ManageEventListingsPage"
           >
             <span className={css.menuItemBorder} />
             <FormattedMessage id="TopbarDesktop.yourListingsLink" />
@@ -151,7 +151,7 @@ const TopbarDesktop = props => {
     </NamedLink>
   )
 
- /*  const blogPage = (
+  /* const blogPage = (
     <NamedLink name="BlogPage" className={css.blogPage}>
       <span className={css.blog}>
         <FormattedMessage id="TopbarDesktop.blog" />
@@ -164,8 +164,8 @@ const TopbarDesktop = props => {
         <FormattedMessage id="TopbarDesktop.contactUs" />
       </span>
     </NamedLink>
-  )
- */
+  ) */
+
   
   const addBike = (
     <NamedLink name="AddServicePage" className={css.newListingPage}>
@@ -175,7 +175,6 @@ const TopbarDesktop = props => {
     </NamedLink>    
   )
 
-  
               
  
 
@@ -197,69 +196,7 @@ const TopbarDesktop = props => {
 
   return (
 
-    /* <nav className="navbar navbar-default navbar-fixed-top">
-          <div className="container">
-            <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              
-                <NamedLink classNameName="navbar-brand" name="LandingPage">      
-                <Logo
-                  format="desktop"
-                  classNameName={css.logo}
-                  alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
-                />
-              </NamedLink>
-            </div>
-            <div id="navbar" className="navbar-collapse collapse">
-              <ul className="nav navbar-nav">
-                <li className="active">
-                   {rentalsPage} 
-               
-                </li>
-                <li className="active">
-                   {merchantPage}
-                
-                </li>
-                <li className="active">
-                    {guidedToursPage}
-                
-                </li>
-                <li className="active">
-                   {eventsPage}
-               
-                </li>
-                <li className="active">              
-                   {aboutPage}
-                </li>
-                <li className="active">              
-                {search}
-             </li>               
-              
-             
-                <li>
-                {addBike}
-               
-                </li>
-                <li>
-                {inboxLink}
-                     
-               
-               
-                </li>
-                <li>{profileMenu}</li>
-                <li> {signupLink}</li>
-                <li> {loginLink}</li>
-               </ul>
-            
-           
-            </div>
-          </div>
-        </nav> */
+    
     <nav className={classes}>
       <NamedLink className={css.logoLink} name="LandingPage">      
         <Logo
@@ -288,7 +225,7 @@ const TopbarDesktop = props => {
 
 const { bool, func, object, number, string } = PropTypes;
 
-TopbarDesktop.defaultProps = {
+TopbarDesktopEvent.defaultProps = {
   rootClassName: null,
   className: null,
   currentUser: null,
@@ -297,7 +234,7 @@ TopbarDesktop.defaultProps = {
   initialSearchFormValues: {},
 };
 
-TopbarDesktop.propTypes = {
+TopbarDesktopEvent.propTypes = {
   rootClassName: string,
   className: string,
   currentUserHasListings: bool.isRequired,
@@ -311,4 +248,4 @@ TopbarDesktop.propTypes = {
   intl: intlShape.isRequired,
 };
 
-export default TopbarDesktop;
+export default TopbarDesktopEvent;

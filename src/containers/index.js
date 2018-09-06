@@ -44,3 +44,9 @@ export { default as EventsSearchPage } from './EventsSearchPage/EventsSearchPage
 
 export { default as ManageEventListingsPage } from './ManageEventListingsPage/ManageEventListingsPage';
 export { default as EventsPage } from './EventsPage/EventsPage';
+
+export { default as TopbarContainerEvent } from './TopbarContainerEvent/TopbarContainerEvent';
+
+export { default as CheckoutPageEvent } from './CheckoutPageEvent/CheckoutPageEvent';
+//export { default as TransactionPageEvent } from './TransactionPageEvent/TransactionPageEvent';
+

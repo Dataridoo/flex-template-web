@@ -18,7 +18,7 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
-  SearchMap, 
+  SearchMapEvent, 
   ModalInMobile,
 } from '../../components';
 
@@ -269,7 +269,7 @@ export class EventsSearchPageComponent extends Component {
                       >
                         <div className={css.mapWrapper}>
                           {shouldShowSearchMap ? (
-                            <SearchMap
+                            <SearchMapEvent
                               reusableContainerClassName={css.map}
                               activeListingId={activeListingId}
                               bounds={bounds}
