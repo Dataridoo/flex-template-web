@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { ensureListing } from '../../util/data';
 import { EditEventTypeForm } from '../../forms';
-import { ListingLink } from '../../components';
+import { ListingLinkEvent } from '../../components';
 
 import css from './EditEventTypePanel.css';
 
@@ -31,7 +31,7 @@ const EditEventTypePanel = props => {
   const panelTitle = currentListing.id ? (
     <FormattedMessage
       id="EditEventFeaturesPanel.title"
-      values={{ listingTitle: <ListingLink listing={listing} /> }}
+      values={{ listingTitle: <ListingLinkEvent listing={listing} /> }}
     />
   ) : (
     <FormattedMessage id="EditEventFeaturesPanel.createListingTitle" />

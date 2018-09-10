@@ -29,19 +29,7 @@ import css from './EditListingPage.css';
 
 const { UUID } = sdkTypes;
 
-/* 
-const addBikeRentals = (
-    <NamedLink name="NewListingPage" >
-     add rentals
-    </NamedLink>
-  ); */
 
-  /* const eventsPage = (
-    <NamedLink name="NewEventsListingPage" >
-     add event
-    </NamedLink>
-  );
- */
 
 // N.B. All the presentational content needs to be extracted to their own components
 export const EditListingPageComponent = props => {
@@ -145,6 +133,7 @@ export const EditListingPageComponent = props => {
           desktopClassName={css.desktopTopbar}
           mobileClassName={css.mobileTopbar}
         />
+     
       
         <EditListingWizard
           id="EditListingWizard"
@@ -172,8 +161,8 @@ export const EditListingPageComponent = props => {
           updatedTab={page.updatedTab}
           updateInProgress={page.updateInProgress || page.createListingInProgress}
         />
-       
-          
+
+        
       </Page>
     );
   } else {

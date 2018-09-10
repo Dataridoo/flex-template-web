@@ -144,6 +144,7 @@
   "EditEventDescriptionPanel.title":"Add Events",
   "EditEventDescriptionForm.titleRequired": "You need to add an event title.",
   "EditListingDescriptionForm.titleRequired": "You need to add a name.",
+  "EditEventListingDescriptionForm.titleRequired":"You need to add title",
   "EditListingDescriptionForm.frame": "Frame type",
   "EditListingDescriptionForm.framePlaceholder": "What's the type of your bike's frame?",
   "EditListingDescriptionForm.frameRequired": "You need to add a frame.",

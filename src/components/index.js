@@ -197,7 +197,9 @@ export { default as SearchMapInfoCardEvent } from './SearchMapInfoCardEvent/Sear
 export { default as SearchMapEvent } from './SearchMapEvent/SearchMapEvent';
 
 
-//export { default as MapPanelEvent } from './MapPanelEvent/MapPanelEvent';
+export { default as MapPanelEvent } from './MapPanelEvent/MapPanelEvent';
+export { default as EditListingPhotosEventPanel } from './EditListingPhotosEventPanel/EditListingPhotosEventPanel';
+
 
 
 

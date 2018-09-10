@@ -29,8 +29,7 @@ import { TopbarContainer, NotFoundPage } from '../../containers';
 /* import { 
   FacebookShareButton, 
   TwitterShareButton,
-} from 'react-share';
- */
+} from 'react-share'; */
 
 import { sendEnquiry, loadData, setInitialValues } from './EventsListingPage.duck';
 import SectionImages from './SectionImages';
@@ -39,7 +38,6 @@ import SectionEventProgram from './SectionEventProgram';
 import SectionEventType from './SectionEventType';
 import SectionDescription from './SectionDescription';
 import css from './EventsListingPage.css';
-
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
@@ -58,7 +56,7 @@ const priceData = (price, intl) => {
   return {};
 };
 
-/* const openBookModal = (history, listing) => {
+/*  const openBookModal = (history, listing) => {
   if (!listing.id) {
     // Listing not fully loaded yet
     return;
@@ -72,7 +70,7 @@ const priceData = (price, intl) => {
       { book: true }
     )
   );
-}; */
+};  */
 
 /* const closeBookModal = (history, listing) => {
   if (!listing.id) {
@@ -88,9 +86,9 @@ const priceData = (price, intl) => {
       {}
     )
   );
-};
+}; */
 
-const categoryLabel = (categories, key) => {
+/* const categoryLabel = (categories, key) => {
   const cat = categories.find(c => c.key === key);
   return cat ? cat.label : key;
 };  */
@@ -181,7 +179,7 @@ export class EventsListingPageComponent extends Component {
 
   render() {
     const {
-      //unitType,
+     // unitType,
       //isAuthenticated,
       currentUser,
       getListing,
@@ -192,17 +190,17 @@ export class EventsListingPageComponent extends Component {
       location,
       scrollingDisabled,
       showListingError,
-      //history,
-      //reviews,
-      //fetchReviewsError,
-      //sendEnquiryInProgress,
-      //sendEnquiryError,
+     // history,
+     // reviews,
+     // fetchReviewsError,
+     // sendEnquiryInProgress,
+     // sendEnquiryError,
       //categoriesConfig,
+      //amenitiesConfig,
       eventTypeConfig,
-      //bikeSizeConfig,
     } = this.props;
 
-    //const isBook = !!parse(location.search).book;
+   // const isBook = !!parse(location.search).book;
     const listingId = new UUID(rawParams.id);
     const isPendingApprovalVariant = rawParams.variant === LISTING_PAGE_PENDING_APPROVAL_VARIANT;
     const currentListing = isPendingApprovalVariant
@@ -217,7 +215,11 @@ export class EventsListingPageComponent extends Component {
 
     const pendingIsApproved = isPendingApprovalVariant && isApproved;
 
-    
+    // If a /pending-approval URL is shared, the UI requires
+    // authentication and attempts to fetch the listing from own
+    // listings. This will fail with 403 Forbidden if the author is
+    // another user. We use this information to try to fetch the
+    // public listing.
     const pendingOtherUsersListing =
       isPendingApprovalVariant && showListingError && showListingError.status === 403;
     const shouldShowPublicListingPage = pendingIsApproved || pendingOtherUsersListing;
@@ -318,7 +320,7 @@ export class EventsListingPageComponent extends Component {
 
     const { formattedPrice } = priceData(price, intl);
 
-   /*  const handleMobileBookModalClose = () => {
+    /* const handleMobileBookModalClose = () => {
       closeBookModal(history, currentListing);
     };
  */
@@ -329,9 +331,9 @@ export class EventsListingPageComponent extends Component {
       } else {
         this.handleSubmit(values);
       }
-    }; */
+    };
 
-    /* const handleBookButtonClick = () => {
+    const handleBookButtonClick = () => {
       const isCurrentlyClosed = currentListing.attributes.state === LISTING_STATE_CLOSED;
       if (isOwnListing || isCurrentlyClosed) {
         window.scrollTo(0, 0);
@@ -367,195 +369,192 @@ export class EventsListingPageComponent extends Component {
     
     //const shareUrl = "http://pedal.world";
     
-   /*  const category =
-      publicData && publicData.category ? (
-        <span>
-          {categoryLabel(categoriesConfig, publicData.category)}
-        </span>
-      ) : null;  */
-     
-    return (
-      <Page
-        title={schemaTitle}
-        scrollingDisabled={scrollingDisabled}
-        author={authorDisplayName}
-        contentType="website"
-        description={description}
-        
-        facebookImages={facebookImages}
-        twitterImages={twitterImages}
-        schema={{
-          '@context': 'http://schema.org',
-          '@type': 'ItemPage',
-          description: description,
-         
-          name: schemaTitle,
-          image: schemaImages,
-        }}
-      >
-        <LayoutSingleColumn className={css.pageRoot}>
-          <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
-          <LayoutWrapperMain>
-            <div className="container">
-              <div className={css.MainEventsContainer}>
-                <h1 className={css.borderAll}>ALL</h1>
-                <div className="row">
-                  <div className="col-md-8">
-                    <h2> 
-                      <SectionHeading
-                          richTitle={richTitle} 
+    
+
+
+      return (
+        <Page
+          title={schemaTitle}
+          scrollingDisabled={scrollingDisabled}
+          author={authorDisplayName}
+          contentType="website"
+          description={description}
+          
+          facebookImages={facebookImages}
+          twitterImages={twitterImages}
+          schema={{
+            '@context': 'http://schema.org',
+            '@type': 'ItemPage',
+            description: description,
+           
+            name: schemaTitle,
+            image: schemaImages,
+          }}
+        >
+          <LayoutSingleColumn className={css.pageRoot}>
+            <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
+            <LayoutWrapperMain>
+              <div className="container">
+                <div className={css.MainEventsContainer}>
+                  <h1 className={css.borderAll}>ALL</h1>
+                  <div className="row">
+                    <div className="col-md-8">
+                      <h2> 
+                        <SectionHeading
+                            richTitle={richTitle} 
+                          /> 
+                      </h2>
+                      <h3>
+                        <SectionDescription publicData={publicData} /> &nbsp; | &nbsp;
+                        <span className={css.textColorBlue}>
+                          {authorDisplayName}                       
+                        </span>
+                      </h3>
+                      <div className={css.descriptionBorder}>
+                          <SectionEventType
+                          options={eventTypeConfig}
+                          selectedOptions={publicData.eventType}
                         /> 
-                    </h2>
-                    <h3>
-                      <SectionDescription publicData={publicData} /> &nbsp; | &nbsp;
-                      <span className={css.textColorBlue}>
-                        {authorDisplayName}                       
-                      </span>
-                    </h3>
-                    <div className={css.descriptionBorder}>
-                        <SectionEventType
-                        options={eventTypeConfig}
-                        selectedOptions={publicData.eventType}
-                      /> 
-                      <p><SectionEventProgram publicData={publicData}/></p>
+                        <p><SectionEventProgram publicData={publicData}/></p>
+                      </div>
                     </div>
+                    <div className="col-md-4">
+                       <div className={css.descriptionBorder}>
+                          <SectionImages                 
+                            title={title}
+                            listing={currentListing}
+                            isOwnListing={isOwnListing}
+                            editParams={{
+                              id: listingId.uuid,
+                              slug: listingSlug,
+                              type: 'edit',
+                              tab: 'description',
+                            }}
+                            imageCarouselOpen={this.state.imageCarouselOpen}
+                            onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
+                            handleViewPhotosClick={handleViewPhotosClick}
+                            onManageDisableScrolling={onManageDisableScrolling}
+                          />    
+                        </div> 
+                      </div>
                   </div>
-                  <div className="col-md-4">
-                     <div className={css.descriptionBorder}>
-                        <SectionImages                 
-                          title={title}
-                          listing={currentListing}
-                          isOwnListing={isOwnListing}
-                          editParams={{
-                            id: listingId.uuid,
-                            slug: listingSlug,
-                            type: 'edit',
-                            tab: 'description',
-                          }}
-                          imageCarouselOpen={this.state.imageCarouselOpen}
-                          onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
-                          handleViewPhotosClick={handleViewPhotosClick}
-                          onManageDisableScrolling={onManageDisableScrolling}
-                        />    
-                      </div> 
-                    </div>
                 </div>
-              </div>
-            </div>          
-          </LayoutWrapperMain>
-          <LayoutWrapperFooter>
-           <Footer />
-          </LayoutWrapperFooter>
-        </LayoutSingleColumn>
-      </Page>
-    );
+              </div>          
+            </LayoutWrapperMain>
+            <LayoutWrapperFooter>
+             <Footer />
+            </LayoutWrapperFooter>
+          </LayoutSingleColumn>
+        </Page>
+      );
+    }
   }
-}
 
-EventsListingPageComponent.defaultProps = {
-  unitType: config.bookingUnitType,
-  currentUser: null,
-  enquiryModalOpenForListingId: null,
-  showListingError: null,
-  reviews: [],
-  fetchReviewsError: null,
-  sendEnquiryError: null,
-  categoriesConfig: config.custom.categories,
-  eventTypeConfig: config.custom.eventType,
-  bikeSizeConfig: config.custom.bikeSize,
-};
-
-EventsListingPageComponent.propTypes = {
-  // from withRouter
-  history: shape({
-    push: func.isRequired,
-  }).isRequired,
-  location: shape({
-    search: string,
-  }).isRequired,
-
-  unitType: propTypes.bookingUnitType,
-  // from injectIntl
-  intl: intlShape.isRequired,
-
-  params: shape({
-    id: string.isRequired,
-    slug: string,
-    variant: oneOf([LISTING_PAGE_PENDING_APPROVAL_VARIANT]),
-  }).isRequired,
-
-  isAuthenticated: bool.isRequired,
-  currentUser: propTypes.currentUser,
-  getListing: func.isRequired,
-  getOwnListing: func.isRequired,
-  onManageDisableScrolling: func.isRequired,
-  scrollingDisabled: bool.isRequired,
-  enquiryModalOpenForListingId: string,
-  showListingError: propTypes.error,
-  useInitialValues: func.isRequired,
-  reviews: arrayOf(propTypes.review),
-  fetchReviewsError: propTypes.error,
-  sendEnquiryInProgress: bool.isRequired,
-  sendEnquiryError: propTypes.error,
-  onSendEnquiry: func.isRequired,
-
-  categoriesConfig: array,
-  eventTypeConfig: array,
-  bikeSizeConfig: array,
-};
-
-const mapStateToProps = state => {
-  const { isAuthenticated } = state.Auth;
-  const {
-    showListingError,
-    reviews,
-    fetchReviewsError,
-    sendEnquiryInProgress,
-    sendEnquiryError,
-    enquiryModalOpenForListingId,
-  } = state.EventsListingPage;
-  const { currentUser } = state.user;
-
-  const getListing = id => {
-    const ref = { id, type: 'listing' };
-    const listings = getMarketplaceEntities(state, [ref]);
-    return listings.length === 1 ? listings[0] : null;
+  EventsListingPageComponent.defaultProps = {
+    unitType: config.bookingUnitType,
+    currentUser: null,
+    enquiryModalOpenForListingId: null,
+    showListingError: null,
+    reviews: [],
+    fetchReviewsError: null,
+    sendEnquiryError: null,
+    categoriesConfig: config.custom.categories,
+    eventTypeConfig: config.custom.eventType,
+    bikeSizeConfig: config.custom.bikeSize,
   };
-
-  const getOwnListing = id => {
-    const ref = { id, type: 'ownListing' };
-    const listings = getMarketplaceEntities(state, [ref]);
-    return listings.length === 1 ? listings[0] : null;
+  
+  EventsListingPageComponent.propTypes = {
+    // from withRouter
+    history: shape({
+      push: func.isRequired,
+    }).isRequired,
+    location: shape({
+      search: string,
+    }).isRequired,
+  
+    unitType: propTypes.bookingUnitType,
+    // from injectIntl
+    intl: intlShape.isRequired,
+  
+    params: shape({
+      id: string.isRequired,
+      slug: string,
+      variant: oneOf([LISTING_PAGE_PENDING_APPROVAL_VARIANT]),
+    }).isRequired,
+  
+    isAuthenticated: bool.isRequired,
+    currentUser: propTypes.currentUser,
+    getListing: func.isRequired,
+    getOwnListing: func.isRequired,
+    onManageDisableScrolling: func.isRequired,
+    scrollingDisabled: bool.isRequired,
+    enquiryModalOpenForListingId: string,
+    showListingError: propTypes.error,
+    useInitialValues: func.isRequired,
+    reviews: arrayOf(propTypes.review),
+    fetchReviewsError: propTypes.error,
+    sendEnquiryInProgress: bool.isRequired,
+    sendEnquiryError: propTypes.error,
+    onSendEnquiry: func.isRequired,
+  
+    categoriesConfig: array,
+    eventTypeConfig: array,
+    bikeSizeConfig: array,
   };
-
-  return {
-    isAuthenticated,
-    currentUser,
-    getListing,
-    getOwnListing,
-    scrollingDisabled: isScrollingDisabled(state),
-    enquiryModalOpenForListingId,
-    showListingError,
-    reviews,
-    fetchReviewsError,
-    sendEnquiryInProgress,
-    sendEnquiryError,
+  
+  const mapStateToProps = state => {
+    const { isAuthenticated } = state.Auth;
+    const {
+      showListingError,
+      reviews,
+      fetchReviewsError,
+      sendEnquiryInProgress,
+      sendEnquiryError,
+      enquiryModalOpenForListingId,
+    } = state.EventsListingPage;
+    const { currentUser } = state.user;
+  
+    const getListing = id => {
+      const ref = { id, type: 'listing' };
+      const listings = getMarketplaceEntities(state, [ref]);
+      return listings.length === 1 ? listings[0] : null;
+    };
+  
+    const getOwnListing = id => {
+      const ref = { id, type: 'ownListing' };
+      const listings = getMarketplaceEntities(state, [ref]);
+      return listings.length === 1 ? listings[0] : null;
+    };
+  
+    return {
+      isAuthenticated,
+      currentUser,
+      getListing,
+      getOwnListing,
+      scrollingDisabled: isScrollingDisabled(state),
+      enquiryModalOpenForListingId,
+      showListingError,
+      reviews,
+      fetchReviewsError,
+      sendEnquiryInProgress,
+      sendEnquiryError,
+    };
   };
-};
-
-const mapDispatchToProps = dispatch => ({
-  onManageDisableScrolling: (componentId, disableScrolling) =>
-    dispatch(manageDisableScrolling(componentId, disableScrolling)),
-  useInitialValues: (setInitialValues, values) => dispatch(setInitialValues(values)),
-  onSendEnquiry: (listingId, message) => dispatch(sendEnquiry(listingId, message)),
-});
-
-
-const EventsListingPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps), injectIntl)(
-  EventsListingPageComponent
-);
-
-EventsListingPage.setInitialValues = initialValues => setInitialValues(initialValues);
-EventsListingPage.loadData = loadData;
-
-export default EventsListingPage;
+  
+  const mapDispatchToProps = dispatch => ({
+    onManageDisableScrolling: (componentId, disableScrolling) =>
+      dispatch(manageDisableScrolling(componentId, disableScrolling)),
+    useInitialValues: (setInitialValues, values) => dispatch(setInitialValues(values)),
+    onSendEnquiry: (listingId, message) => dispatch(sendEnquiry(listingId, message)),
+  });
+  
+  
+  const EventsListingPage = compose(withRouter, connect(mapStateToProps, mapDispatchToProps), injectIntl)(
+    EventsListingPageComponent
+  );
+  
+  EventsListingPage.setInitialValues = initialValues => setInitialValues(initialValues);
+  EventsListingPage.loadData = loadData;
+  
+  export default EventsListingPage;
+  

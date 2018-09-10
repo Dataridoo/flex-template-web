@@ -51,7 +51,7 @@ const tabCompleted = (tab, listing) => {
 
   switch (tab) {
     case DESCRIPTION:
-    return !!(title && description && publicData && publicData.eventDate);
+    return !!(title && description && publicData && publicData.bookingDates);
    
     case FEATURES:
       return !!(publicData && publicData.eventType);

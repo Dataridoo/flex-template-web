@@ -8,8 +8,8 @@ import ReviewRating from './ReviewRating';
 
 import css from './SectionTop.css';
 
-import bhc2 from './images/bhc2.jpg';
-import bhc3 from './images/bhc3.jpg';
+import bhc2 from './images/bhc2.JPG';
+import bhc3 from './images/bhc3.JPG';
 
 
 class SectionTop extends Component {

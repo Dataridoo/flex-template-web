@@ -8,7 +8,7 @@ import {
   EditEventDescriptionPanel,
   EditEventTypePanel, 
   EditEventProgramPanel, 
-  EditListingPhotosPanel,
+  EditListingPhotosEventPanel,
 } from '../../components';
 
 import css from './EditEventListingWizard.css';
@@ -155,7 +155,7 @@ const EditEventListingWizardTab = props => {
 
       // newListingCreated and fetchInProgress are flags for the last wizard tab
       return (
-        <EditListingPhotosPanel
+        <EditListingPhotosEventPanel
           {...panelProps(PHOTOS)}
           submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
           newListingCreated={newListingCreated}

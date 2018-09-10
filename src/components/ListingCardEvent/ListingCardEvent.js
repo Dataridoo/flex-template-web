@@ -19,7 +19,7 @@ export const ListingCardEventComponent = props => {
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);
   const id = currentListing.id.uuid;
-  const { title = '', eventDate = '', eventType= '', eventProgram = '' } = currentListing.attributes;
+  const { title = '', bookingDates = '', eventType= '', eventProgram = '' } = currentListing.attributes;
   const slug = createSlug(title);
   const author = ensureUser(listing.author);
   const authorName = author.attributes.profile.displayName;
@@ -38,7 +38,7 @@ export const ListingCardEventComponent = props => {
               })}
             </div>
             <div >
-              {eventDate} &nbsp;| &nbsp;
+              {bookingDates} &nbsp;| &nbsp;{bookingDates} 
               <NamedLink className={classes} name="EventsListingPage" params={{ id, slug }}>
                 <span className={css.authorName}>              
                   <FormattedMessage         

@@ -54,12 +54,14 @@ export class EditEventDescriptionFormComponent extends Component {
         onSubmit={this.handleFormSubmit}
         render={fieldRenderProps => {
           const {
-            values,
+           // values,
             className,
             disabled,
             endDatePlaceholder,
             startDatePlaceholder,
             handleSubmit,
+            startDate,
+            endDate,
             intl,
             form,
             invalid,
@@ -70,8 +72,7 @@ export class EditEventDescriptionFormComponent extends Component {
             updateError,
             updateInProgress,
           } = fieldRenderProps;
-          const { startDate, endDate } = values && values.bookingDates ? values.bookingDates : {};
-
+          
           const titleMessage = intl.formatMessage({ id: 'EditEventListingDescriptionForm.title' });
           const titlePlaceholderMessage = intl.formatMessage({
             id: 'EditEventListingDescriptionForm.titlePlaceholder',
@@ -177,9 +178,7 @@ export class EditEventDescriptionFormComponent extends Component {
               <FieldDateRangeInput
                 className={css.bookingDates}
                 name="bookingDates"
-                unitType={unitType}
-                startDate={startDate}
-                endDate={endDate}
+                unitType={unitType}               
                 startDateId={`${form}.bookingStartDate`}
                 startDateLabel={bookingStartLabel}
                 startDatePlaceholderText={startDatePlaceholderText}
@@ -189,6 +188,8 @@ export class EditEventDescriptionFormComponent extends Component {
                 focusedInput={this.state.focusedInput}
                 onFocusedInputChange={this.onFocusedInputChange}
                 format={null}
+                startDate={startDate}
+                endDate={endDate}
                 useMobileMargins
                 validate={composeValidators(
                   required(requiredMessage),

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { ensureOwnListing } from '../../util/data';
-import { ListingLink } from '../../components';
+import { ListingLinkEvent } from '../../components';
 import { EditEventDescriptionForm } from '../../forms';
 
 import css from './EditEventDescriptionPanel.css';
@@ -28,29 +28,31 @@ const EditEventDescriptionPanel = props => {
   const panelTitle = currentListing.id ? (
     <FormattedMessage
       id="EditEventDescriptionPanel.title"
-      values={{ listingTitle: <ListingLink listing={listing} /> }}
+      values={{ listingTitle: <ListingLinkEvent listing={listing} /> }}
     />
   ) : (
     <FormattedMessage id="EditEventDescriptionPanel.createListingTitle" />
   );
 
+  
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
       <EditEventDescriptionForm
         className={css.form}
-        initialValues={{ description, title, eventDate:publicData }}
+        initialValues={{ description, title, bookingDates:publicData}}
         saveActionMsg={submitButtonText}
         
         onSubmit={values => {
-          let date = new Date();
-          publicData.customDate = date.getTime();
-          const { description, title} = values;
+          
+          const { description, title, bookingDates } = values;
+          const date = new Date(bookingDates);         
+          const customDate = date.getTime();
+          
           const updateValues = {
             title: title.trim(),
             description,
-            publicData: {eventDate: publicData.customDate}
-          
+            publicData: {customDate}
           };
           onSubmit(updateValues);
         }}

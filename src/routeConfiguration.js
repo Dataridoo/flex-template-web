@@ -5,7 +5,7 @@ import {
   AuthenticationPage,
   BlogPage,
   CheckoutPage,
-  //CheckoutPageEvent,
+  CheckoutPageEvent,
   ContactDetailsPage,
   ContactUsPage,
   EditListingPage,
@@ -157,13 +157,13 @@ const routeConfiguration = () => {
       component: props => <EventsListingPage {...props} />,
       loadData: EventsListingPage.loadData,
     },
-   /*  {
+    {
       path: '/e/:slug/:id/checkout',
       name: 'EventCheckoutPage',
       auth: true,
       component: props => <CheckoutPageEvent {...props} />,
       setInitialValues: CheckoutPageEvent.setInitialValues,
-    }, */
+    },
    
     {
       path: '/e/:slug/:id/:variant',
@@ -253,6 +253,8 @@ const routeConfiguration = () => {
         />
       ),
     },
+
+
     {
       path: '/l/:slug/:id/:type/:tab',
       name: 'EditListingPage',
